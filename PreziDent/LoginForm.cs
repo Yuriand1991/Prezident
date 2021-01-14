@@ -46,9 +46,11 @@ namespace PreziDent
 
                 // Convert hash byte array to string
                 hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+
+                Console.WriteLine(hash);
             }
 
-            using (UserContext db = new UserContext())
+            using (ClinicContext db = new ClinicContext())
             {
                 var us = db.users.Where(u => u.login == LoginField.Text).Where(u => u.password == hash);
                 if (us.Count() > 0)
@@ -65,6 +67,11 @@ namespace PreziDent
                     MessageBox.Show("Не правильный логин или пароль");
                 }
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -6,33 +6,20 @@ namespace PreziDent
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class user
+    public partial class group_services
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
+        public group_services()
         {
-            rooms = new HashSet<room>();
+            services = new HashSet<service>();
         }
 
         public int id { get; set; }
 
-        [Required]
-        [StringLength(30)]
-        public string login { get; set; }
-
-        [Required]
-        [StringLength(32)]
-        public string password { get; set; }
-
-        [Required]
         [StringLength(80)]
-        public string first_name { get; set; }
-
-        public int role_id { get; set; }
-
-        public virtual role role { get; set; }
+        public string name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<room> rooms { get; set; }
+        public virtual ICollection<service> services { get; set; }
     }
 }

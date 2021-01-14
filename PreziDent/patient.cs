@@ -6,19 +6,21 @@ namespace PreziDent
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class patients
+    public partial class patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public patients()
+        public patient()
         {
-            appointments = new HashSet<appointments>();
+            appointments = new HashSet<appointment>();
         }
 
         public int id { get; set; }
 
+        [Required]
         [StringLength(80)]
         public string first_name { get; set; }
 
+        [Required]
         [StringLength(80)]
         public string last_name { get; set; }
 
@@ -38,6 +40,6 @@ namespace PreziDent
         public DateTime? reg_date { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointments> appointments { get; set; }
+        public virtual ICollection<appointment> appointments { get; set; }
     }
 }

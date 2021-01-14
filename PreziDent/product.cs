@@ -6,11 +6,15 @@ namespace PreziDent
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class roles
+    public partial class product
     {
         public int id { get; set; }
 
-        [StringLength(20)]
+        [Required]
+        [StringLength(80)]
         public string name { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal price { get; set; }
     }
 }

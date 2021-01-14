@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace PreziDent
 {
     public partial class MainForm : MaterialForm
     {
+        private ClinicContext db;
         private user User;
         public void SetUser(user User)
         {
@@ -43,15 +45,36 @@ namespace PreziDent
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {   
+        {
+            DateLabel.Text = DateTime.Now.Date.ToLongDateString();
             switch (User.role_id)
             {
                 case 1:
                     MainTabControl.TabPages.Remove(Room);
+                    
                 break;
                 case 2:
                     MainTabControl.TabPages.Remove(Rooms);
+                    db = new ClinicContext();
+                    db.shedules.Load();
+                    SheduleView.DataSource = db.shedules.Select(s => new SheduleShow
+                    {
+                        start_time = s.start_time,
+                        end_time = s.end_time
+                    }).ToList();
                 break;
+            }
+        }
+
+        private void SheduleView_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewColumn header in SheduleView.Columns)
+            {
+                if(header.HeaderText == "start_time")
+                    header.HeaderText = "Начало";
+                
+                if (header.HeaderText == "end_time")
+                    header.HeaderText = "Конец";
             }
         }
     }

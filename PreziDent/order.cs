@@ -6,22 +6,24 @@ namespace PreziDent
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("schedule")]
-    public partial class schedule
+    public partial class order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public schedule()
+        public order()
         {
-            appointments = new HashSet<appointments>();
+            orders_services = new HashSet<orders_services>();
         }
 
         public int id { get; set; }
 
-        public TimeSpan? start_time { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime date { get; set; }
 
-        public TimeSpan? end_time { get; set; }
+        public int appointment_id { get; set; }
+
+        public int room_id { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointments> appointments { get; set; }
+        public virtual ICollection<orders_services> orders_services { get; set; }
     }
 }

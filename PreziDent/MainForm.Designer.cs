@@ -39,12 +39,15 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Rooms = new System.Windows.Forms.TabPage();
             this.Room = new System.Windows.Forms.TabPage();
+            this.SheduleView = new System.Windows.Forms.DataGridView();
             this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
             this.DateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
             this.OrdersOfRoomsCard.SuspendLayout();
+            this.Room.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -95,7 +98,7 @@
             this.materialLabel2.Location = new System.Drawing.Point(108, 14);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(64, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(64, 20);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Планинг";
             // 
@@ -127,7 +130,7 @@
             this.ButtonRoom2Orders.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonRoom2Orders.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonRoom2Orders.Name = "ButtonRoom2Orders";
-            this.ButtonRoom2Orders.Size = new System.Drawing.Size(113, 36);
+            this.ButtonRoom2Orders.Size = new System.Drawing.Size(115, 36);
             this.ButtonRoom2Orders.TabIndex = 3;
             this.ButtonRoom2Orders.Text = "Кабинет №2";
             this.ButtonRoom2Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -145,7 +148,7 @@
             this.ButtonRoom1Orders.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonRoom1Orders.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonRoom1Orders.Name = "ButtonRoom1Orders";
-            this.ButtonRoom1Orders.Size = new System.Drawing.Size(113, 36);
+            this.ButtonRoom1Orders.Size = new System.Drawing.Size(115, 36);
             this.ButtonRoom1Orders.TabIndex = 2;
             this.ButtonRoom1Orders.Text = "Кабинет №1";
             this.ButtonRoom1Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -163,7 +166,7 @@
             this.ButtonRoom9Orders.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonRoom9Orders.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonRoom9Orders.Name = "ButtonRoom9Orders";
-            this.ButtonRoom9Orders.Size = new System.Drawing.Size(113, 36);
+            this.ButtonRoom9Orders.Size = new System.Drawing.Size(115, 36);
             this.ButtonRoom9Orders.TabIndex = 1;
             this.ButtonRoom9Orders.Text = "Кабинет №9";
             this.ButtonRoom9Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -179,7 +182,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(17, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(57, 20);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Заказы";
             // 
@@ -195,6 +198,7 @@
             // 
             // Room
             // 
+            this.Room.Controls.Add(this.SheduleView);
             this.Room.Location = new System.Drawing.Point(4, 22);
             this.Room.Name = "Room";
             this.Room.Padding = new System.Windows.Forms.Padding(3);
@@ -202,6 +206,15 @@
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
             this.Room.UseVisualStyleBackColor = true;
+            // 
+            // SheduleView
+            // 
+            this.SheduleView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SheduleView.Location = new System.Drawing.Point(59, 45);
+            this.SheduleView.Name = "SheduleView";
+            this.SheduleView.Size = new System.Drawing.Size(234, 364);
+            this.SheduleView.TabIndex = 0;
+            this.SheduleView.Paint += new System.Windows.Forms.PaintEventHandler(this.SheduleView_Paint);
             // 
             // MainDrawer
             // 
@@ -253,6 +266,8 @@
             this.PlanCard.PerformLayout();
             this.OrdersOfRoomsCard.ResumeLayout(false);
             this.OrdersOfRoomsCard.PerformLayout();
+            this.Room.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +288,7 @@
         private MaterialSkin.Controls.MaterialCard PlanCard;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel DateLabel;
+        private System.Windows.Forms.DataGridView SheduleView;
     }
 }
 
