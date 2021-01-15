@@ -15,7 +15,7 @@ namespace PreziDent
 {
     public partial class MainForm : MaterialForm
     {
-        private ClinicContext db;
+        private PrezidentClinicEntities db;
         private user User;
         public void SetUser(user User)
         {
@@ -33,6 +33,11 @@ namespace PreziDent
              materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Arial", 14);
              materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Arial", 14);
              materialSkinManager.ROBOTO_REGULAR_11 = new Font("Arial", 14);*/
+
+            db = new PrezidentClinicEntities();
+            db.products.Load();
+
+            ProductsView.DataSource = db.products.Local.ToBindingList();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,13 +60,14 @@ namespace PreziDent
                 break;
                 case 2:
                     MainTabControl.TabPages.Remove(Rooms);
-                    db = new ClinicContext();
+                   /* db = new PrezidentClinicEntities();
                     db.shedules.Load();
                     SheduleView.DataSource = db.shedules.Select(s => new SheduleShow
                     {
                         start_time = s.start_time,
-                        end_time = s.end_time
-                    }).ToList();
+                        end_time = s.end_time,
+                        name_patient = "***"
+                    }).ToList();*/
                 break;
             }
         }
@@ -76,6 +82,74 @@ namespace PreziDent
                 if (header.HeaderText == "end_time")
                     header.HeaderText = "Конец";
             }
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            DialogResult Result = productForm.ShowDialog(this);
+            
+            if (Result == DialogResult.Cancel)
+                return;
+
+            product Product = new product();
+            Product.name = productForm.NameProduct.Text;
+            Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
+            Product.type_id = 1;
+
+            db.products.Add(Product);
+            db.SaveChanges();
+        }
+
+        private void ChangeProductButton_Click(object sender, EventArgs e)
+        {
+            if(ProductsView.SelectedRows.Count > 0)
+            {
+                int index = ProductsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(ProductsView[0, index].Value.ToString(), out id);
+                
+                if (converted == false)
+                    return;
+
+                product Product = db.products.Find(id);
+
+                ProductForm productForm = new ProductForm();
+
+                productForm.NameProduct.Text = Product.name;
+                productForm.PriceProduct.Text = Product.price.ToString();
+
+                DialogResult Result = productForm.ShowDialog(this);
+
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                Product.name = productForm.NameProduct.Text;
+                Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
+                Product.type_id = 1;
+
+                db.SaveChanges();
+
+                ProductsView.Refresh(); // обновляем грид
+                MessageBox.Show("Продукт изменен");
+
+            }
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+            int index = ProductsView.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(ProductsView[0, index].Value.ToString(), out id);
+
+            if (converted == false)
+                return;
+
+            product Product = db.products.Find(id);
+            db.products.Remove(Product);
+            db.SaveChanges();
+
+            MessageBox.Show("Продукт удален");
         }
     }
 }

@@ -12,24 +12,18 @@ namespace PreziDent
     using System;
     using System.Collections.Generic;
     
-    public partial class patient
+    public partial class type_product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public patient()
+        public type_product()
         {
-            this.appointments = new HashSet<appointment>();
+            this.products = new HashSet<product>();
         }
     
         public int id { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string other_name { get; set; }
-        public string phone { get; set; }
-        public string email { get; set; }
-        public Nullable<System.DateTime> birthday { get; set; }
-        public Nullable<System.DateTime> reg_date { get; set; }
+        public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointment> appointments { get; set; }
+        public virtual ICollection<product> products { get; set; }
     }
 }

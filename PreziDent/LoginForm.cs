@@ -50,7 +50,7 @@ namespace PreziDent
                 Console.WriteLine(hash);
             }
 
-            using (ClinicContext db = new ClinicContext())
+            using (PrezidentClinicEntities db = new PrezidentClinicEntities())
             {
                 var us = db.users.Where(u => u.login == LoginField.Text).Where(u => u.password == hash);
                 if (us.Count() > 0)

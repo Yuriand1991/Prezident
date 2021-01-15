@@ -42,12 +42,19 @@
             this.SheduleView = new System.Windows.Forms.DataGridView();
             this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
             this.DateLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.Products = new System.Windows.Forms.TabPage();
+            this.ProductsView = new System.Windows.Forms.DataGridView();
+            this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
             this.OrdersOfRoomsCard.SuspendLayout();
             this.Room.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
+            this.Products.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -55,6 +62,7 @@
             this.MainTabControl.Controls.Add(this.MainPage);
             this.MainTabControl.Controls.Add(this.Rooms);
             this.MainTabControl.Controls.Add(this.Room);
+            this.MainTabControl.Controls.Add(this.Products);
             this.MainTabControl.Depth = 0;
             this.MainTabControl.Location = new System.Drawing.Point(256, 107);
             this.MainTabControl.MouseState = MaterialSkin.MouseState.HOVER;
@@ -98,7 +106,7 @@
             this.materialLabel2.Location = new System.Drawing.Point(108, 14);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(64, 20);
+            this.materialLabel2.Size = new System.Drawing.Size(64, 19);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Планинг";
             // 
@@ -182,7 +190,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(17, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(57, 20);
+            this.materialLabel1.Size = new System.Drawing.Size(58, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Заказы";
             // 
@@ -212,7 +220,7 @@
             this.SheduleView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SheduleView.Location = new System.Drawing.Point(59, 45);
             this.SheduleView.Name = "SheduleView";
-            this.SheduleView.Size = new System.Drawing.Size(234, 364);
+            this.SheduleView.Size = new System.Drawing.Size(518, 364);
             this.SheduleView.TabIndex = 0;
             this.SheduleView.Paint += new System.Windows.Forms.PaintEventHandler(this.SheduleView_Paint);
             // 
@@ -248,6 +256,90 @@
             this.DateLabel.TabIndex = 3;
             this.DateLabel.Text = "26 Ноября 2020";
             // 
+            // Products
+            // 
+            this.Products.Controls.Add(this.ChangeProductButton);
+            this.Products.Controls.Add(this.DeleteProductButton);
+            this.Products.Controls.Add(this.AddProductButton);
+            this.Products.Controls.Add(this.ProductsView);
+            this.Products.Location = new System.Drawing.Point(4, 22);
+            this.Products.Name = "Products";
+            this.Products.Padding = new System.Windows.Forms.Padding(3);
+            this.Products.Size = new System.Drawing.Size(918, 632);
+            this.Products.TabIndex = 3;
+            this.Products.Text = "Товары";
+            this.Products.UseVisualStyleBackColor = true;
+            // 
+            // ProductsView
+            // 
+            this.ProductsView.AllowUserToAddRows = false;
+            this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsView.Location = new System.Drawing.Point(33, 36);
+            this.ProductsView.Name = "ProductsView";
+            this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductsView.Size = new System.Drawing.Size(544, 430);
+            this.ProductsView.TabIndex = 0;
+            // 
+            // AddProductButton
+            // 
+            this.AddProductButton.AutoSize = false;
+            this.AddProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddProductButton.Depth = 0;
+            this.AddProductButton.DrawShadows = true;
+            this.AddProductButton.HighEmphasis = true;
+            this.AddProductButton.Icon = null;
+            this.AddProductButton.Location = new System.Drawing.Point(608, 36);
+            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(185, 36);
+            this.AddProductButton.TabIndex = 1;
+            this.AddProductButton.Text = "Добавить продукт";
+            this.AddProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddProductButton.UseAccentColor = false;
+            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
+            // 
+            // DeleteProductButton
+            // 
+            this.DeleteProductButton.AutoSize = false;
+            this.DeleteProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteProductButton.Depth = 0;
+            this.DeleteProductButton.DrawShadows = true;
+            this.DeleteProductButton.HighEmphasis = true;
+            this.DeleteProductButton.Icon = null;
+            this.DeleteProductButton.Location = new System.Drawing.Point(608, 172);
+            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteProductButton.Name = "DeleteProductButton";
+            this.DeleteProductButton.Size = new System.Drawing.Size(185, 36);
+            this.DeleteProductButton.TabIndex = 2;
+            this.DeleteProductButton.Text = "Удалить продукт";
+            this.DeleteProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteProductButton.UseAccentColor = false;
+            this.DeleteProductButton.UseVisualStyleBackColor = true;
+            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
+            // 
+            // ChangeProductButton
+            // 
+            this.ChangeProductButton.AutoSize = false;
+            this.ChangeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeProductButton.Depth = 0;
+            this.ChangeProductButton.DrawShadows = true;
+            this.ChangeProductButton.HighEmphasis = true;
+            this.ChangeProductButton.Icon = null;
+            this.ChangeProductButton.Location = new System.Drawing.Point(608, 105);
+            this.ChangeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeProductButton.Name = "ChangeProductButton";
+            this.ChangeProductButton.Size = new System.Drawing.Size(185, 36);
+            this.ChangeProductButton.TabIndex = 3;
+            this.ChangeProductButton.Text = "Изменить продукт";
+            this.ChangeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeProductButton.UseAccentColor = false;
+            this.ChangeProductButton.UseVisualStyleBackColor = true;
+            this.ChangeProductButton.Click += new System.EventHandler(this.ChangeProductButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +360,8 @@
             this.OrdersOfRoomsCard.PerformLayout();
             this.Room.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
+            this.Products.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,6 +383,11 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel DateLabel;
         private System.Windows.Forms.DataGridView SheduleView;
+        private System.Windows.Forms.TabPage Products;
+        private System.Windows.Forms.DataGridView ProductsView;
+        private MaterialSkin.Controls.MaterialButton ChangeProductButton;
+        private MaterialSkin.Controls.MaterialButton DeleteProductButton;
+        private MaterialSkin.Controls.MaterialButton AddProductButton;
     }
 }
 

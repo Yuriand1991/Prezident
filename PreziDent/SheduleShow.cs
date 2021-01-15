@@ -10,5 +10,6 @@ namespace PreziDent
     {
         public TimeSpan? start_time { get; set; }
         public TimeSpan? end_time { get; set; }
+        public String name_patient { get; set; }
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e1927c551a5f489db45560c407bf35ae" Name="Diagram1">
+        <EntityTypeShape EntityType="PrezidentClinicModel.appointment" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.group_services" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.order" Width="1.5" PointX="10" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.orders_services" Width="1.5" PointX="12.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.patient" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.product" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.role" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.room" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.service" Width="1.5" PointX="10" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.shedule" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.user" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_appointment_patients" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_appointment_rooms" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_appointment_shedule" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_services_group_services" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_orders_services_orders" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_orders_services_services" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_users_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_rooms_users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.type_product" Width="1.5" PointX="2.25" PointY="7.25" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_products_type_product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
