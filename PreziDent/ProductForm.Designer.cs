@@ -35,6 +35,8 @@ namespace PreziDent
             this.CancelButton = new MaterialSkin.Controls.MaterialButton();
             this.NameProductLabel = new MaterialSkin.Controls.MaterialLabel();
             this.ProductPriceLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.TypeProduct = new MaterialSkin.Controls.MaterialComboBox();
+            this.ProductTypeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // NameProduct
@@ -76,7 +78,7 @@ namespace PreziDent
             this.OkButton.DrawShadows = true;
             this.OkButton.HighEmphasis = true;
             this.OkButton.Icon = null;
-            this.OkButton.Location = new System.Drawing.Point(55, 356);
+            this.OkButton.Location = new System.Drawing.Point(55, 423);
             this.OkButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OkButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OkButton.Name = "OkButton";
@@ -96,7 +98,7 @@ namespace PreziDent
             this.CancelButton.DrawShadows = true;
             this.CancelButton.HighEmphasis = true;
             this.CancelButton.Icon = null;
-            this.CancelButton.Location = new System.Drawing.Point(135, 356);
+            this.CancelButton.Location = new System.Drawing.Point(135, 423);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CancelButton.Name = "CancelButton";
@@ -131,11 +133,46 @@ namespace PreziDent
             this.ProductPriceLabel.TabIndex = 5;
             this.ProductPriceLabel.Text = "Цена:";
             // 
+            // TypeProduct
+            // 
+            this.TypeProduct.AutoResize = false;
+            this.TypeProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TypeProduct.Depth = 0;
+            this.TypeProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.TypeProduct.DropDownHeight = 174;
+            this.TypeProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeProduct.DropDownWidth = 121;
+            this.TypeProduct.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.TypeProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TypeProduct.FormattingEnabled = true;
+            this.TypeProduct.IntegralHeight = false;
+            this.TypeProduct.ItemHeight = 43;
+            this.TypeProduct.Location = new System.Drawing.Point(55, 315);
+            this.TypeProduct.MaxDropDownItems = 4;
+            this.TypeProduct.MouseState = MaterialSkin.MouseState.OUT;
+            this.TypeProduct.Name = "TypeProduct";
+            this.TypeProduct.Size = new System.Drawing.Size(229, 49);
+            this.TypeProduct.TabIndex = 6;
+            // 
+            // ProductTypeLabel
+            // 
+            this.ProductTypeLabel.AutoSize = true;
+            this.ProductTypeLabel.Depth = 0;
+            this.ProductTypeLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ProductTypeLabel.Location = new System.Drawing.Point(52, 283);
+            this.ProductTypeLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ProductTypeLabel.Name = "ProductTypeLabel";
+            this.ProductTypeLabel.Size = new System.Drawing.Size(83, 19);
+            this.ProductTypeLabel.TabIndex = 7;
+            this.ProductTypeLabel.Text = "Категория:";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 441);
+            this.ClientSize = new System.Drawing.Size(351, 497);
+            this.Controls.Add(this.ProductTypeLabel);
+            this.Controls.Add(this.TypeProduct);
             this.Controls.Add(this.ProductPriceLabel);
             this.Controls.Add(this.NameProductLabel);
             this.Controls.Add(this.CancelButton);
@@ -144,6 +181,7 @@ namespace PreziDent
             this.Controls.Add(this.NameProduct);
             this.Name = "ProductForm";
             this.Text = "Продукт";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +194,7 @@ namespace PreziDent
         protected internal MaterialSkin.Controls.MaterialTextBox PriceProduct;
         private MaterialSkin.Controls.MaterialLabel NameProductLabel;
         private MaterialSkin.Controls.MaterialLabel ProductPriceLabel;
+        private MaterialSkin.Controls.MaterialLabel ProductTypeLabel;
+        protected internal MaterialSkin.Controls.MaterialComboBox TypeProduct;
     }
 }
