@@ -37,6 +37,7 @@ namespace PreziDent
             this.ProductPriceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.TypeProduct = new MaterialSkin.Controls.MaterialComboBox();
             this.ProductTypeLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.AddTypeProductLink = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // NameProduct
@@ -142,7 +143,7 @@ namespace PreziDent
             this.TypeProduct.DropDownHeight = 174;
             this.TypeProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeProduct.DropDownWidth = 121;
-            this.TypeProduct.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.TypeProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.TypeProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TypeProduct.FormattingEnabled = true;
             this.TypeProduct.IntegralHeight = false;
@@ -166,11 +167,24 @@ namespace PreziDent
             this.ProductTypeLabel.TabIndex = 7;
             this.ProductTypeLabel.Text = "Категория:";
             // 
+            // AddTypeProductLink
+            // 
+            this.AddTypeProductLink.AutoSize = true;
+            this.AddTypeProductLink.Depth = 0;
+            this.AddTypeProductLink.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.AddTypeProductLink.Location = new System.Drawing.Point(52, 367);
+            this.AddTypeProductLink.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddTypeProductLink.Name = "AddTypeProductLink";
+            this.AddTypeProductLink.Size = new System.Drawing.Size(160, 19);
+            this.AddTypeProductLink.TabIndex = 8;
+            this.AddTypeProductLink.Text = "Добавить категорию";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 497);
+            this.Controls.Add(this.AddTypeProductLink);
             this.Controls.Add(this.ProductTypeLabel);
             this.Controls.Add(this.TypeProduct);
             this.Controls.Add(this.ProductPriceLabel);
@@ -196,5 +210,6 @@ namespace PreziDent
         private MaterialSkin.Controls.MaterialLabel ProductPriceLabel;
         private MaterialSkin.Controls.MaterialLabel ProductTypeLabel;
         protected internal MaterialSkin.Controls.MaterialComboBox TypeProduct;
+        private MaterialSkin.Controls.MaterialLabel AddTypeProductLink;
     }
 }

@@ -156,6 +156,12 @@
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="SheduleShow.cs" />
+    <Compile Include="TypeProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeProductForm.Designer.cs">
+      <DependentUpon>TypeProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="type_product.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
@@ -180,6 +186,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TypeProductForm.resx">
+      <DependentUpon>TypeProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <EntityDeploy Include="PreziDentDBEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

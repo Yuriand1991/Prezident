@@ -151,5 +151,11 @@ namespace PreziDent
 
             MessageBox.Show("Продукт удален");
         }
+
+        private void TypeProductButton_Click(object sender, EventArgs e)
+        {
+            TypeProductForm typeProductForm = new TypeProductForm();
+            typeProductForm.Show();
+        }
     }
 }
