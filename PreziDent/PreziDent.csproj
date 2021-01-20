@@ -99,6 +99,7 @@
     <Compile Include="appointment.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ControlAppForm.cs" />
     <Compile Include="group_services.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
@@ -212,6 +213,8 @@
     <None Include="PreziDentDBEntities.edmx.diagram">
       <DependentUpon>PreziDentDBEntities.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\product.datasource" />
+    <None Include="Properties\DataSources\type_product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

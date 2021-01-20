@@ -40,6 +40,7 @@ namespace PreziDent
             // 
             this.TypesProductsView.AllowUserToAddRows = false;
             this.TypesProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TypesProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TypesProductsView.Location = new System.Drawing.Point(7, 77);
             this.TypesProductsView.Name = "TypesProductsView";
             this.TypesProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -50,8 +51,10 @@ namespace PreziDent
             // 
             this.AddTypeProductButton.AutoSize = false;
             this.AddTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.AddTypeProductButton.Depth = 0;
             this.AddTypeProductButton.DrawShadows = true;
+            this.AddTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddTypeProductButton.HighEmphasis = true;
             this.AddTypeProductButton.Icon = null;
             this.AddTypeProductButton.Location = new System.Drawing.Point(13, 374);
@@ -63,15 +66,17 @@ namespace PreziDent
             this.AddTypeProductButton.Text = "Добавить";
             this.AddTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddTypeProductButton.UseAccentColor = false;
-            this.AddTypeProductButton.UseVisualStyleBackColor = true;
+            this.AddTypeProductButton.UseVisualStyleBackColor = false;
             this.AddTypeProductButton.Click += new System.EventHandler(this.AddTypeProductButton_Click);
             // 
             // ChangeTypeProductButton
             // 
             this.ChangeTypeProductButton.AutoSize = false;
             this.ChangeTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ChangeTypeProductButton.Depth = 0;
             this.ChangeTypeProductButton.DrawShadows = true;
+            this.ChangeTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeTypeProductButton.HighEmphasis = true;
             this.ChangeTypeProductButton.Icon = null;
             this.ChangeTypeProductButton.Location = new System.Drawing.Point(168, 374);
@@ -83,15 +88,17 @@ namespace PreziDent
             this.ChangeTypeProductButton.Text = "Изменить";
             this.ChangeTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ChangeTypeProductButton.UseAccentColor = false;
-            this.ChangeTypeProductButton.UseVisualStyleBackColor = true;
+            this.ChangeTypeProductButton.UseVisualStyleBackColor = false;
             this.ChangeTypeProductButton.Click += new System.EventHandler(this.ChangeTypeProductButton_Click);
             // 
             // DeleteTypeProductlButton
             // 
             this.DeleteTypeProductlButton.AutoSize = false;
             this.DeleteTypeProductlButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteTypeProductlButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.DeleteTypeProductlButton.Depth = 0;
             this.DeleteTypeProductlButton.DrawShadows = true;
+            this.DeleteTypeProductlButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteTypeProductlButton.HighEmphasis = true;
             this.DeleteTypeProductlButton.Icon = null;
             this.DeleteTypeProductlButton.Location = new System.Drawing.Point(324, 374);
@@ -103,7 +110,7 @@ namespace PreziDent
             this.DeleteTypeProductlButton.Text = "Удалить";
             this.DeleteTypeProductlButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeleteTypeProductlButton.UseAccentColor = false;
-            this.DeleteTypeProductlButton.UseVisualStyleBackColor = true;
+            this.DeleteTypeProductlButton.UseVisualStyleBackColor = false;
             this.DeleteTypeProductlButton.Click += new System.EventHandler(this.DeleteTypeProductlButton_Click);
             // 
             // TypesProductsForm

@@ -15,30 +15,29 @@ namespace PreziDent
 {
     public partial class TypesProductsForm : PreziDent.AppFrom
     {
-        private PrezidentClinicEntities db;
+        PrezidentClinicEntities db;
         public TypesProductsForm()
         {
             InitializeComponent();
-            
+
             db = new PrezidentClinicEntities();
             db.type_product.Load();
             TypesProductsView.DataSource = db.type_product.Local.ToBindingList();
+            
         }
 
+        /********************************/
+        /*Метод добавления типа продукта*/
+        /********************************/
         private void AddTypeProductButton_Click(object sender, EventArgs e)
         {
-            TypeProductsForm typeProductsForm = new TypeProductsForm();
-            DialogResult Result = typeProductsForm.ShowDialog(this);
-
-            if (Result == DialogResult.Cancel)
-                return;
-
-            type_product TypeProducts = new type_product();
-            TypeProducts.name = typeProductsForm.NameTypeProduct.Text;
-            db.type_product.Add(TypeProducts);
-            db.SaveChanges();
+            ControlAppForm.OpenAddTypeProductForm(this);
+            db.type_product.Load();
         }
 
+        /*******************************/
+        /*Метод изменения типа продукта*/
+        /*******************************/
         private void ChangeTypeProductButton_Click(object sender, EventArgs e)
         {
             int index = TypesProductsView.SelectedRows[0].Index;
@@ -47,6 +46,8 @@ namespace PreziDent
 
             if (converted == false)
                 return;
+
+
 
             type_product TypeProduct = db.type_product.Find(id);
 
@@ -61,12 +62,17 @@ namespace PreziDent
 
             TypeProduct.name = typeProductsForm.NameTypeProduct.Text;
 
+            db.Entry(TypeProduct).State = EntityState.Modified;
+
             db.SaveChanges();
 
             TypesProductsView.Refresh(); // обновляем грид
             MessageBox.Show("Продукт изменен");
         }
 
+        /*******************************/
+        /*Метод удаления типа продукта */
+        /*******************************/
         private void DeleteTypeProductlButton_Click(object sender, EventArgs e)
         {
             DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
@@ -84,6 +90,7 @@ namespace PreziDent
 
             type_product TypeProduct = db.type_product.Find(id);
             db.type_product.Remove(TypeProduct);
+            db.Entry(TypeProduct).State = EntityState.Deleted;
             db.SaveChanges();
 
             MessageBox.Show("Продукт удален");

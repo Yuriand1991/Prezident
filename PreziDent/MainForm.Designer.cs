@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.DateLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
             this.MainTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.MainPage = new System.Windows.Forms.TabPage();
             this.PlanCard = new MaterialSkin.Controls.MaterialCard();
@@ -46,8 +49,12 @@
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
-            this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
-            this.DateLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeproductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -56,7 +63,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DateLabel.Depth = 0;
+            this.DateLabel.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.DateLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DateLabel.Location = new System.Drawing.Point(460, 75);
+            this.DateLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(174, 29);
+            this.DateLabel.TabIndex = 3;
+            this.DateLabel.Text = "26 Ноября 2020";
+            // 
+            // MainDrawer
+            // 
+            this.MainDrawer.AutoHide = false;
+            this.MainDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.MainDrawer.BackgroundWithAccent = false;
+            this.MainDrawer.BaseTabControl = this.MainTabControl;
+            this.MainDrawer.Depth = 0;
+            this.MainDrawer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MainDrawer.HighlightWithAccent = true;
+            this.MainDrawer.IndicatorWidth = 0;
+            this.MainDrawer.IsOpen = true;
+            this.MainDrawer.Location = new System.Drawing.Point(0, 107);
+            this.MainDrawer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.MainDrawer.Name = "MainDrawer";
+            this.MainDrawer.ShowIconsWhenHidden = false;
+            this.MainDrawer.Size = new System.Drawing.Size(250, 431);
+            this.MainDrawer.TabIndex = 2;
+            this.MainDrawer.Text = "MainDrawer";
+            this.MainDrawer.UseColors = false;
             // 
             // MainTabControl
             // 
@@ -343,48 +386,56 @@
             // ProductsView
             // 
             this.ProductsView.AllowUserToAddRows = false;
+            this.ProductsView.AutoGenerateColumns = false;
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.typeidDataGridViewTextBoxColumn,
+            this.typeproductDataGridViewTextBoxColumn});
+            this.ProductsView.DataSource = this.productBindingSource;
             this.ProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ProductsView.Location = new System.Drawing.Point(33, 36);
+            this.ProductsView.Location = new System.Drawing.Point(6, 6);
             this.ProductsView.Name = "ProductsView";
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductsView.Size = new System.Drawing.Size(544, 430);
+            this.ProductsView.Size = new System.Drawing.Size(580, 430);
             this.ProductsView.TabIndex = 0;
             // 
-            // MainDrawer
+            // idDataGridViewTextBoxColumn
             // 
-            this.MainDrawer.AutoHide = false;
-            this.MainDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.MainDrawer.BackgroundWithAccent = false;
-            this.MainDrawer.BaseTabControl = this.MainTabControl;
-            this.MainDrawer.Depth = 0;
-            this.MainDrawer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MainDrawer.HighlightWithAccent = true;
-            this.MainDrawer.IndicatorWidth = 0;
-            this.MainDrawer.IsOpen = true;
-            this.MainDrawer.Location = new System.Drawing.Point(0, 107);
-            this.MainDrawer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.MainDrawer.Name = "MainDrawer";
-            this.MainDrawer.ShowIconsWhenHidden = false;
-            this.MainDrawer.Size = new System.Drawing.Size(250, 431);
-            this.MainDrawer.TabIndex = 2;
-            this.MainDrawer.Text = "MainDrawer";
-            this.MainDrawer.UseColors = false;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // DateLabel
+            // nameDataGridViewTextBoxColumn
             // 
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.DateLabel.Depth = 0;
-            this.DateLabel.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.DateLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DateLabel.Location = new System.Drawing.Point(460, 75);
-            this.DateLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(174, 29);
-            this.DateLabel.TabIndex = 3;
-            this.DateLabel.Text = "26 Ноября 2020";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 128;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // typeidDataGridViewTextBoxColumn
+            // 
+            this.typeidDataGridViewTextBoxColumn.DataPropertyName = "type_id";
+            this.typeidDataGridViewTextBoxColumn.HeaderText = "type_id";
+            this.typeidDataGridViewTextBoxColumn.Name = "typeidDataGridViewTextBoxColumn";
+            // 
+            // typeproductDataGridViewTextBoxColumn
+            // 
+            this.typeproductDataGridViewTextBoxColumn.DataPropertyName = "type_product";
+            this.typeproductDataGridViewTextBoxColumn.HeaderText = "type_product";
+            this.typeproductDataGridViewTextBoxColumn.Name = "typeproductDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(PreziDent.product);
             // 
             // MainForm
             // 
@@ -408,6 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,6 +487,12 @@
         private MaterialSkin.Controls.MaterialButton DeleteProductButton;
         private MaterialSkin.Controls.MaterialButton AddProductButton;
         private MaterialSkin.Controls.MaterialButton TypeProductButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeproductDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productBindingSource;
     }
 }
 

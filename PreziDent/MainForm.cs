@@ -67,7 +67,7 @@ namespace PreziDent
         {
             foreach (DataGridViewColumn header in SheduleView.Columns)
             {
-                if(header.HeaderText == "start_time")
+               if(header.HeaderText == "start_time")
                     header.HeaderText = "Начало";
                 
                 if (header.HeaderText == "end_time")

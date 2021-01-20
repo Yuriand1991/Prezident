@@ -29,6 +29,7 @@ namespace PreziDent
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NameProduct = new MaterialSkin.Controls.MaterialTextBox();
             this.PriceProduct = new MaterialSkin.Controls.MaterialTextBox();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
@@ -38,6 +39,8 @@ namespace PreziDent
             this.TypeProduct = new MaterialSkin.Controls.MaterialComboBox();
             this.ProductTypeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AddTypeProductLink = new MaterialSkin.Controls.MaterialLabel();
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // NameProduct
@@ -150,7 +153,9 @@ namespace PreziDent
             // 
             this.TypeProduct.AutoResize = false;
             this.TypeProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.TypeProduct.DataSource = this.typeproductBindingSource;
             this.TypeProduct.Depth = 0;
+            this.TypeProduct.DisplayMember = "name";
             this.TypeProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.TypeProduct.DropDownHeight = 174;
             this.TypeProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -166,6 +171,7 @@ namespace PreziDent
             this.TypeProduct.Name = "TypeProduct";
             this.TypeProduct.Size = new System.Drawing.Size(229, 49);
             this.TypeProduct.TabIndex = 6;
+            this.TypeProduct.ValueMember = "id";
             // 
             // ProductTypeLabel
             // 
@@ -194,6 +200,11 @@ namespace PreziDent
             this.AddTypeProductLink.Size = new System.Drawing.Size(160, 19);
             this.AddTypeProductLink.TabIndex = 8;
             this.AddTypeProductLink.Text = "Добавить категорию";
+            this.AddTypeProductLink.Click += new System.EventHandler(this.AddTypeProductLink_Click);
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // ProductForm
             // 
@@ -212,6 +223,7 @@ namespace PreziDent
             this.Name = "ProductForm";
             this.Text = "Продукт";
             this.Load += new System.EventHandler(this.ProductForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +239,6 @@ namespace PreziDent
         private MaterialSkin.Controls.MaterialLabel ProductTypeLabel;
         protected internal MaterialSkin.Controls.MaterialComboBox TypeProduct;
         private MaterialSkin.Controls.MaterialLabel AddTypeProductLink;
+        private System.Windows.Forms.BindingSource typeproductBindingSource;
     }
 }

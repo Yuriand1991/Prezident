@@ -23,17 +23,19 @@ namespace PreziDent
 
             db = new PrezidentClinicEntities();
             db.type_product.Load();
+            TypeProduct.DataSource = db.type_product.Local.ToBindingList();
 
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            var TypeProducs = db.type_product.ToList();
 
-            foreach (var tp in TypeProducs)
-            {
-                TypeProduct.Items.Add(tp.name);
-            }
+        }
+
+        private void AddTypeProductLink_Click(object sender, EventArgs e)
+        {
+            ControlAppForm.OpenAddTypeProductForm(this);
+            db.type_product.Load();
         }
     }
 }
