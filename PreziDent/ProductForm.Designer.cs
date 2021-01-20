@@ -42,9 +42,11 @@ namespace PreziDent
             // 
             // NameProduct
             // 
+            this.NameProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.NameProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameProduct.Depth = 0;
             this.NameProduct.Font = new System.Drawing.Font("Roboto", 12F);
+            this.NameProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.NameProduct.Hint = "Введите наименование";
             this.NameProduct.Location = new System.Drawing.Point(55, 120);
             this.NameProduct.MaxLength = 50;
@@ -57,9 +59,11 @@ namespace PreziDent
             // 
             // PriceProduct
             // 
+            this.PriceProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.PriceProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PriceProduct.Depth = 0;
             this.PriceProduct.Font = new System.Drawing.Font("Roboto", 12F);
+            this.PriceProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PriceProduct.Hint = "Введите цену";
             this.PriceProduct.Location = new System.Drawing.Point(55, 209);
             this.PriceProduct.MaxLength = 50;
@@ -74,9 +78,11 @@ namespace PreziDent
             // 
             this.OkButton.AutoSize = false;
             this.OkButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.OkButton.Depth = 0;
             this.OkButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OkButton.DrawShadows = true;
+            this.OkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.OkButton.HighEmphasis = true;
             this.OkButton.Icon = null;
             this.OkButton.Location = new System.Drawing.Point(55, 423);
@@ -88,15 +94,17 @@ namespace PreziDent
             this.OkButton.Text = "Ок";
             this.OkButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.OkButton.UseAccentColor = false;
-            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.UseVisualStyleBackColor = false;
             // 
             // CancelButton
             // 
             this.CancelButton.AutoSize = false;
             this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.CancelButton.Depth = 0;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.DrawShadows = true;
+            this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CancelButton.HighEmphasis = true;
             this.CancelButton.Icon = null;
             this.CancelButton.Location = new System.Drawing.Point(135, 423);
@@ -108,13 +116,15 @@ namespace PreziDent
             this.CancelButton.Text = "Отмена";
             this.CancelButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.CancelButton.UseAccentColor = false;
-            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.UseVisualStyleBackColor = false;
             // 
             // NameProductLabel
             // 
             this.NameProductLabel.AutoSize = true;
+            this.NameProductLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.NameProductLabel.Depth = 0;
             this.NameProductLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NameProductLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.NameProductLabel.Location = new System.Drawing.Point(52, 98);
             this.NameProductLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.NameProductLabel.Name = "NameProductLabel";
@@ -125,8 +135,10 @@ namespace PreziDent
             // ProductPriceLabel
             // 
             this.ProductPriceLabel.AutoSize = true;
+            this.ProductPriceLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ProductPriceLabel.Depth = 0;
             this.ProductPriceLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ProductPriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ProductPriceLabel.Location = new System.Drawing.Point(52, 187);
             this.ProductPriceLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.ProductPriceLabel.Name = "ProductPriceLabel";
@@ -137,7 +149,7 @@ namespace PreziDent
             // TypeProduct
             // 
             this.TypeProduct.AutoResize = false;
-            this.TypeProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TypeProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TypeProduct.Depth = 0;
             this.TypeProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.TypeProduct.DropDownHeight = 174;
@@ -158,8 +170,10 @@ namespace PreziDent
             // ProductTypeLabel
             // 
             this.ProductTypeLabel.AutoSize = true;
+            this.ProductTypeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ProductTypeLabel.Depth = 0;
             this.ProductTypeLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ProductTypeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ProductTypeLabel.Location = new System.Drawing.Point(52, 283);
             this.ProductTypeLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.ProductTypeLabel.Name = "ProductTypeLabel";
@@ -170,8 +184,10 @@ namespace PreziDent
             // AddTypeProductLink
             // 
             this.AddTypeProductLink.AutoSize = true;
+            this.AddTypeProductLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.AddTypeProductLink.Depth = 0;
             this.AddTypeProductLink.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.AddTypeProductLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddTypeProductLink.Location = new System.Drawing.Point(52, 367);
             this.AddTypeProductLink.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddTypeProductLink.Name = "AddTypeProductLink";

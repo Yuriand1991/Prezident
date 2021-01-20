@@ -41,13 +41,13 @@
             this.Room = new System.Windows.Forms.TabPage();
             this.SheduleView = new System.Windows.Forms.DataGridView();
             this.Products = new System.Windows.Forms.TabPage();
+            this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
             this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
             this.DateLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -65,6 +65,7 @@
             this.MainTabControl.Controls.Add(this.Room);
             this.MainTabControl.Controls.Add(this.Products);
             this.MainTabControl.Depth = 0;
+            this.MainTabControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MainTabControl.Location = new System.Drawing.Point(256, 107);
             this.MainTabControl.MouseState = MaterialSkin.MouseState.HOVER;
             this.MainTabControl.Multiline = true;
@@ -75,6 +76,7 @@
             // 
             // MainPage
             // 
+            this.MainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.MainPage.Controls.Add(this.PlanCard);
             this.MainPage.Controls.Add(this.OrdersOfRoomsCard);
             this.MainPage.Location = new System.Drawing.Point(4, 22);
@@ -83,7 +85,6 @@
             this.MainPage.Size = new System.Drawing.Size(918, 632);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Главная";
-            this.MainPage.UseVisualStyleBackColor = true;
             // 
             // PlanCard
             // 
@@ -102,8 +103,10 @@
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(108, 14);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -131,8 +134,10 @@
             // ButtonRoom2Orders
             // 
             this.ButtonRoom2Orders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonRoom2Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ButtonRoom2Orders.Depth = 0;
             this.ButtonRoom2Orders.DrawShadows = true;
+            this.ButtonRoom2Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ButtonRoom2Orders.HighEmphasis = true;
             this.ButtonRoom2Orders.Icon = null;
             this.ButtonRoom2Orders.Location = new System.Drawing.Point(33, 147);
@@ -144,13 +149,15 @@
             this.ButtonRoom2Orders.Text = "Кабинет №2";
             this.ButtonRoom2Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ButtonRoom2Orders.UseAccentColor = false;
-            this.ButtonRoom2Orders.UseVisualStyleBackColor = true;
+            this.ButtonRoom2Orders.UseVisualStyleBackColor = false;
             // 
             // ButtonRoom1Orders
             // 
             this.ButtonRoom1Orders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonRoom1Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ButtonRoom1Orders.Depth = 0;
             this.ButtonRoom1Orders.DrawShadows = true;
+            this.ButtonRoom1Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ButtonRoom1Orders.HighEmphasis = true;
             this.ButtonRoom1Orders.Icon = null;
             this.ButtonRoom1Orders.Location = new System.Drawing.Point(33, 99);
@@ -162,13 +169,15 @@
             this.ButtonRoom1Orders.Text = "Кабинет №1";
             this.ButtonRoom1Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ButtonRoom1Orders.UseAccentColor = false;
-            this.ButtonRoom1Orders.UseVisualStyleBackColor = true;
+            this.ButtonRoom1Orders.UseVisualStyleBackColor = false;
             // 
             // ButtonRoom9Orders
             // 
             this.ButtonRoom9Orders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonRoom9Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ButtonRoom9Orders.Depth = 0;
             this.ButtonRoom9Orders.DrawShadows = true;
+            this.ButtonRoom9Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ButtonRoom9Orders.HighEmphasis = true;
             this.ButtonRoom9Orders.Icon = null;
             this.ButtonRoom9Orders.Location = new System.Drawing.Point(33, 51);
@@ -180,14 +189,16 @@
             this.ButtonRoom9Orders.Text = "Кабинет №9";
             this.ButtonRoom9Orders.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ButtonRoom9Orders.UseAccentColor = false;
-            this.ButtonRoom9Orders.UseVisualStyleBackColor = true;
+            this.ButtonRoom9Orders.UseVisualStyleBackColor = false;
             this.ButtonRoom9Orders.Click += new System.EventHandler(this.ButtonRoom9Orders_Click);
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(17, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -197,16 +208,17 @@
             // 
             // Rooms
             // 
+            this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.Rooms.Location = new System.Drawing.Point(4, 22);
             this.Rooms.Name = "Rooms";
             this.Rooms.Padding = new System.Windows.Forms.Padding(3);
             this.Rooms.Size = new System.Drawing.Size(918, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Кабинеты";
-            this.Rooms.UseVisualStyleBackColor = true;
             // 
             // Room
             // 
+            this.Room.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.Room.Controls.Add(this.SheduleView);
             this.Room.Location = new System.Drawing.Point(4, 22);
             this.Room.Name = "Room";
@@ -214,11 +226,11 @@
             this.Room.Size = new System.Drawing.Size(918, 632);
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
-            this.Room.UseVisualStyleBackColor = true;
             // 
             // SheduleView
             // 
             this.SheduleView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SheduleView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleView.Location = new System.Drawing.Point(59, 45);
             this.SheduleView.Name = "SheduleView";
             this.SheduleView.Size = new System.Drawing.Size(518, 364);
@@ -227,6 +239,7 @@
             // 
             // Products
             // 
+            this.Products.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.Products.Controls.Add(this.TypeProductButton);
             this.Products.Controls.Add(this.ChangeProductButton);
             this.Products.Controls.Add(this.DeleteProductButton);
@@ -238,14 +251,37 @@
             this.Products.Size = new System.Drawing.Size(918, 632);
             this.Products.TabIndex = 3;
             this.Products.Text = "Товары";
-            this.Products.UseVisualStyleBackColor = true;
+            // 
+            // TypeProductButton
+            // 
+            this.TypeProductButton.AutoSize = false;
+            this.TypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.TypeProductButton.Depth = 0;
+            this.TypeProductButton.DrawShadows = true;
+            this.TypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TypeProductButton.HighEmphasis = true;
+            this.TypeProductButton.Icon = null;
+            this.TypeProductButton.Location = new System.Drawing.Point(608, 430);
+            this.TypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TypeProductButton.Name = "TypeProductButton";
+            this.TypeProductButton.Size = new System.Drawing.Size(185, 36);
+            this.TypeProductButton.TabIndex = 4;
+            this.TypeProductButton.Text = "Категории продуктов";
+            this.TypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.TypeProductButton.UseAccentColor = false;
+            this.TypeProductButton.UseVisualStyleBackColor = false;
+            this.TypeProductButton.Click += new System.EventHandler(this.TypeProductButton_Click);
             // 
             // ChangeProductButton
             // 
             this.ChangeProductButton.AutoSize = false;
             this.ChangeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ChangeProductButton.Depth = 0;
             this.ChangeProductButton.DrawShadows = true;
+            this.ChangeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeProductButton.HighEmphasis = true;
             this.ChangeProductButton.Icon = null;
             this.ChangeProductButton.Location = new System.Drawing.Point(608, 96);
@@ -257,15 +293,17 @@
             this.ChangeProductButton.Text = "Изменить продукт";
             this.ChangeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ChangeProductButton.UseAccentColor = false;
-            this.ChangeProductButton.UseVisualStyleBackColor = true;
+            this.ChangeProductButton.UseVisualStyleBackColor = false;
             this.ChangeProductButton.Click += new System.EventHandler(this.ChangeProductButton_Click);
             // 
             // DeleteProductButton
             // 
             this.DeleteProductButton.AutoSize = false;
             this.DeleteProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.DeleteProductButton.Depth = 0;
             this.DeleteProductButton.DrawShadows = true;
+            this.DeleteProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteProductButton.HighEmphasis = true;
             this.DeleteProductButton.Icon = null;
             this.DeleteProductButton.Location = new System.Drawing.Point(608, 157);
@@ -277,15 +315,17 @@
             this.DeleteProductButton.Text = "Удалить продукт";
             this.DeleteProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeleteProductButton.UseAccentColor = false;
-            this.DeleteProductButton.UseVisualStyleBackColor = true;
+            this.DeleteProductButton.UseVisualStyleBackColor = false;
             this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
             // AddProductButton
             // 
             this.AddProductButton.AutoSize = false;
             this.AddProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.AddProductButton.Depth = 0;
             this.AddProductButton.DrawShadows = true;
+            this.AddProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddProductButton.HighEmphasis = true;
             this.AddProductButton.Icon = null;
             this.AddProductButton.Location = new System.Drawing.Point(608, 36);
@@ -297,13 +337,14 @@
             this.AddProductButton.Text = "Добавить продукт";
             this.AddProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddProductButton.UseAccentColor = false;
-            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.UseVisualStyleBackColor = false;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // ProductsView
             // 
             this.ProductsView.AllowUserToAddRows = false;
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsView.Location = new System.Drawing.Point(33, 36);
             this.ProductsView.Name = "ProductsView";
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -313,9 +354,11 @@
             // MainDrawer
             // 
             this.MainDrawer.AutoHide = false;
+            this.MainDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.MainDrawer.BackgroundWithAccent = false;
             this.MainDrawer.BaseTabControl = this.MainTabControl;
             this.MainDrawer.Depth = 0;
+            this.MainDrawer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MainDrawer.HighlightWithAccent = true;
             this.MainDrawer.IndicatorWidth = 0;
             this.MainDrawer.IsOpen = true;
@@ -331,36 +374,17 @@
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.DateLabel.Depth = 0;
             this.DateLabel.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.DateLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DateLabel.Location = new System.Drawing.Point(460, 75);
             this.DateLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(174, 29);
             this.DateLabel.TabIndex = 3;
             this.DateLabel.Text = "26 Ноября 2020";
-            // 
-            // TypeProductButton
-            // 
-            this.TypeProductButton.AutoSize = false;
-            this.TypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TypeProductButton.Depth = 0;
-            this.TypeProductButton.DrawShadows = true;
-            this.TypeProductButton.HighEmphasis = true;
-            this.TypeProductButton.Icon = null;
-            this.TypeProductButton.Location = new System.Drawing.Point(608, 430);
-            this.TypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.TypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TypeProductButton.Name = "TypeProductButton";
-            this.TypeProductButton.Size = new System.Drawing.Size(185, 36);
-            this.TypeProductButton.TabIndex = 4;
-            this.TypeProductButton.Text = "Категории продуктов";
-            this.TypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.TypeProductButton.UseAccentColor = false;
-            this.TypeProductButton.UseVisualStyleBackColor = true;
-            this.TypeProductButton.Click += new System.EventHandler(this.TypeProductButton_Click);
             // 
             // MainForm
             // 

@@ -13,17 +13,13 @@ using System.Data.Entity;
 
 namespace PreziDent
 {
-    public partial class ProductForm : MaterialForm
+    public partial class ProductForm : PreziDent.AppFrom
     {
         private PrezidentClinicEntities db;
 
         public ProductForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Orange700, TextShade.WHITE);
 
             db = new PrezidentClinicEntities();
             db.type_product.Load();

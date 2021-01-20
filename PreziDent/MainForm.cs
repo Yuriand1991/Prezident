@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PreziDent
 {
-    public partial class MainForm : MaterialForm
+    public partial class MainForm : PreziDent.AppFrom
     {
         private PrezidentClinicEntities db;
         private user User;
@@ -24,15 +24,6 @@ namespace PreziDent
         public MainForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.LightGreen200, TextShade.WHITE);
-
-            /* materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Arial", 14);
-             materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Arial", 14);
-             materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Arial", 14);
-             materialSkinManager.ROBOTO_REGULAR_11 = new Font("Arial", 14);*/
 
             db = new PrezidentClinicEntities();
             db.products.Load();
@@ -84,6 +75,9 @@ namespace PreziDent
             }
         }
 
+        /**************************************/
+        /*Метод добавления продукта           */
+        /**************************************/
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             ProductForm productForm = new ProductForm();
@@ -101,6 +95,9 @@ namespace PreziDent
             db.SaveChanges();
         }
 
+        /**************************************/
+        /*Метод изменения продукта            */
+        /**************************************/
         private void ChangeProductButton_Click(object sender, EventArgs e)
         {
             if(ProductsView.SelectedRows.Count > 0)
@@ -136,8 +133,17 @@ namespace PreziDent
             }
         }
 
+        /**************************************/
+        /*Метод удаления продукта             */
+        /**************************************/
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
+            DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?", 
+                                               "Confirmation", MessageBoxButtons.OKCancel,
+                                               MessageBoxIcon.Information);
+            if (Result == DialogResult.Cancel)
+                return;
+
             int index = ProductsView.SelectedRows[0].Index;
             int id = 0;
             bool converted = Int32.TryParse(ProductsView[0, index].Value.ToString(), out id);
@@ -154,8 +160,9 @@ namespace PreziDent
 
         private void TypeProductButton_Click(object sender, EventArgs e)
         {
-            TypeProductForm typeProductForm = new TypeProductForm();
-            typeProductForm.Show();
+            TypesProductsForm typesProductsForm = new TypesProductsForm();
+            typesProductsForm.Show();
         }
+
     }
 }

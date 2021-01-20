@@ -1,7 +1,7 @@
 ﻿
 namespace PreziDent
 {
-    partial class TypeProductForm
+    partial class TypesProductsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,22 @@ namespace PreziDent
         /// </summary>
         private void InitializeComponent()
         {
-            this.TypeProductView = new System.Windows.Forms.DataGridView();
+            this.TypesProductsView = new System.Windows.Forms.DataGridView();
             this.AddTypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeTypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteTypeProductlButton = new MaterialSkin.Controls.MaterialButton();
-            ((System.ComponentModel.ISupportInitialize)(this.TypeProductView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).BeginInit();
             this.SuspendLayout();
             // 
-            // TypeProductView
+            // TypesProductsView
             // 
-            this.TypeProductView.AllowUserToAddRows = false;
-            this.TypeProductView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TypeProductView.Location = new System.Drawing.Point(7, 77);
-            this.TypeProductView.Name = "TypeProductView";
-            this.TypeProductView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TypeProductView.Size = new System.Drawing.Size(462, 274);
-            this.TypeProductView.TabIndex = 0;
+            this.TypesProductsView.AllowUserToAddRows = false;
+            this.TypesProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TypesProductsView.Location = new System.Drawing.Point(7, 77);
+            this.TypesProductsView.Name = "TypesProductsView";
+            this.TypesProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TypesProductsView.Size = new System.Drawing.Size(462, 274);
+            this.TypesProductsView.TabIndex = 0;
             // 
             // AddTypeProductButton
             // 
@@ -64,6 +64,7 @@ namespace PreziDent
             this.AddTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddTypeProductButton.UseAccentColor = false;
             this.AddTypeProductButton.UseVisualStyleBackColor = true;
+            this.AddTypeProductButton.Click += new System.EventHandler(this.AddTypeProductButton_Click);
             // 
             // ChangeTypeProductButton
             // 
@@ -83,6 +84,7 @@ namespace PreziDent
             this.ChangeTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ChangeTypeProductButton.UseAccentColor = false;
             this.ChangeTypeProductButton.UseVisualStyleBackColor = true;
+            this.ChangeTypeProductButton.Click += new System.EventHandler(this.ChangeTypeProductButton_Click);
             // 
             // DeleteTypeProductlButton
             // 
@@ -102,8 +104,9 @@ namespace PreziDent
             this.DeleteTypeProductlButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeleteTypeProductlButton.UseAccentColor = false;
             this.DeleteTypeProductlButton.UseVisualStyleBackColor = true;
+            this.DeleteTypeProductlButton.Click += new System.EventHandler(this.DeleteTypeProductlButton_Click);
             // 
-            // TypeProductForm
+            // TypesProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,17 +114,17 @@ namespace PreziDent
             this.Controls.Add(this.DeleteTypeProductlButton);
             this.Controls.Add(this.ChangeTypeProductButton);
             this.Controls.Add(this.AddTypeProductButton);
-            this.Controls.Add(this.TypeProductView);
-            this.Name = "TypeProductForm";
+            this.Controls.Add(this.TypesProductsView);
+            this.Name = "TypesProductsForm";
             this.Text = "Категории продуктов";
-            ((System.ComponentModel.ISupportInitialize)(this.TypeProductView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView TypeProductView;
+        private System.Windows.Forms.DataGridView TypesProductsView;
         private MaterialSkin.Controls.MaterialButton AddTypeProductButton;
         private MaterialSkin.Controls.MaterialButton ChangeTypeProductButton;
         private MaterialSkin.Controls.MaterialButton DeleteTypeProductlButton;

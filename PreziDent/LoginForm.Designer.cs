@@ -37,9 +37,11 @@
             // 
             this.LoginButton.AutoSize = false;
             this.LoginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.LoginButton.Depth = 0;
             this.LoginButton.DrawShadows = true;
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
             this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -52,14 +54,16 @@
             this.LoginButton.Text = "Войти";
             this.LoginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.LoginButton.UseAccentColor = false;
-            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // LoginField
             // 
+            this.LoginField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.LoginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LoginField.Depth = 0;
             this.LoginField.Font = new System.Drawing.Font("Roboto", 12F);
+            this.LoginField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LoginField.Hint = "Введите логин";
             this.LoginField.Location = new System.Drawing.Point(61, 134);
             this.LoginField.MaxLength = 50;
@@ -72,9 +76,11 @@
             // 
             // PasswordField
             // 
+            this.PasswordField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.PasswordField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PasswordField.Depth = 0;
             this.PasswordField.Font = new System.Drawing.Font("Roboto", 12F);
+            this.PasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PasswordField.Hint = "Введите пароль";
             this.PasswordField.Location = new System.Drawing.Point(61, 206);
             this.PasswordField.MaxLength = 50;

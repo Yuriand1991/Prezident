@@ -90,6 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFrom.Designer.cs">
+      <DependentUpon>AppFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="appointment.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
@@ -156,11 +162,17 @@
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="SheduleShow.cs" />
-    <Compile Include="TypeProductForm.cs">
+    <Compile Include="TypeProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TypeProductForm.Designer.cs">
-      <DependentUpon>TypeProductForm.cs</DependentUpon>
+    <Compile Include="TypeProductsForm.Designer.cs">
+      <DependentUpon>TypeProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypesProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypesProductsForm.Designer.cs">
+      <DependentUpon>TypesProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="type_product.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
@@ -186,8 +198,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TypeProductForm.resx">
-      <DependentUpon>TypeProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="TypeProductsForm.resx">
+      <DependentUpon>TypeProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypesProductsForm.resx">
+      <DependentUpon>TypesProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <EntityDeploy Include="PreziDentDBEntities.edmx">

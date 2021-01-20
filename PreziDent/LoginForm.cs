@@ -13,20 +13,11 @@ using System.Windows.Forms;
 
 namespace PreziDent
 {
-    public partial class LoginForm : MaterialForm
+    public partial class LoginForm : PreziDent.AppFrom
     {
         public LoginForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Orange700, TextShade.WHITE);
-            
-          /*  materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Arial", 14);
-            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Arial", 14);
-            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Arial", 14);
-            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Arial", 14);*/
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
