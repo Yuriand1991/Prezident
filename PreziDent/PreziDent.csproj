@@ -213,8 +213,15 @@
     <None Include="PreziDentDBEntities.edmx.diagram">
       <DependentUpon>PreziDentDBEntities.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\order.datasource" />
+    <None Include="Properties\DataSources\patient.datasource" />
     <None Include="Properties\DataSources\product.datasource" />
+    <None Include="Properties\DataSources\role.datasource" />
+    <None Include="Properties\DataSources\room.datasource" />
+    <None Include="Properties\DataSources\service.datasource" />
+    <None Include="Properties\DataSources\shedule.datasource" />
     <None Include="Properties\DataSources\type_product.datasource" />
+    <None Include="Properties\DataSources\user.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

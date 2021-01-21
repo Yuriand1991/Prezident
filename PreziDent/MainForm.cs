@@ -24,10 +24,14 @@ namespace PreziDent
         public MainForm()
         {
             InitializeComponent();
+            LoadProducts();
 
+        }
+
+        public void LoadProducts()
+        {
             db = new PrezidentClinicEntities();
             db.products.Load();
-
             ProductsView.DataSource = db.products.Local.ToBindingList();
         }
 
@@ -87,12 +91,18 @@ namespace PreziDent
                 return;
 
             product Product = new product();
+            
             Product.name = productForm.NameProduct.Text;
+           
             Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
-            Product.type_id = 1;
+
+            Product.type_id = (int)productForm.TypeProduct.SelectedValue;
 
             db.products.Add(Product);
+            db.Entry(Product).State = EntityState.Added;
             db.SaveChanges();
+
+            LoadProducts();
         }
 
         /**************************************/

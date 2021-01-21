@@ -50,11 +50,13 @@
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeproductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeproductBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -64,6 +66,10 @@
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -390,10 +396,8 @@
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.typeidDataGridViewTextBoxColumn,
-            this.typeproductDataGridViewTextBoxColumn});
+            this.price,
+            this.type_product});
             this.ProductsView.DataSource = this.productBindingSource;
             this.ProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsView.Location = new System.Drawing.Point(6, 6);
@@ -408,34 +412,37 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // nameDataGridViewTextBoxColumn
+            // price
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 128;
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
             // 
-            // priceDataGridViewTextBoxColumn
+            // type_product
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // typeidDataGridViewTextBoxColumn
-            // 
-            this.typeidDataGridViewTextBoxColumn.DataPropertyName = "type_id";
-            this.typeidDataGridViewTextBoxColumn.HeaderText = "type_id";
-            this.typeidDataGridViewTextBoxColumn.Name = "typeidDataGridViewTextBoxColumn";
-            // 
-            // typeproductDataGridViewTextBoxColumn
-            // 
-            this.typeproductDataGridViewTextBoxColumn.DataPropertyName = "type_product";
-            this.typeproductDataGridViewTextBoxColumn.HeaderText = "type_product";
-            this.typeproductDataGridViewTextBoxColumn.Name = "typeproductDataGridViewTextBoxColumn";
+            this.type_product.DataPropertyName = "type_product";
+            this.type_product.HeaderText = "Тип продукта";
+            this.type_product.Name = "type_product";
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(PreziDent.product);
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
+            // 
+            // typeproductBindingSource1
+            // 
+            this.typeproductBindingSource1.DataSource = typeof(PreziDent.type_product);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(PreziDent.user);
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataSource = typeof(PreziDent.product);
             // 
             // MainForm
             // 
@@ -460,6 +467,10 @@
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,12 +498,14 @@
         private MaterialSkin.Controls.MaterialButton DeleteProductButton;
         private MaterialSkin.Controls.MaterialButton AddProductButton;
         private MaterialSkin.Controls.MaterialButton TypeProductButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeproductDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.BindingSource typeproductBindingSource;
+        private System.Windows.Forms.BindingSource typeproductBindingSource1;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type_product;
+        private System.Windows.Forms.BindingSource productBindingSource1;
     }
 }
 

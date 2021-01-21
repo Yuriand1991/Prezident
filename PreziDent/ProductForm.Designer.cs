@@ -37,9 +37,9 @@ namespace PreziDent
             this.NameProductLabel = new MaterialSkin.Controls.MaterialLabel();
             this.ProductPriceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.TypeProduct = new MaterialSkin.Controls.MaterialComboBox();
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProductTypeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AddTypeProductLink = new MaterialSkin.Controls.MaterialLabel();
-            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,6 +173,10 @@ namespace PreziDent
             this.TypeProduct.TabIndex = 6;
             this.TypeProduct.ValueMember = "id";
             // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
+            // 
             // ProductTypeLabel
             // 
             this.ProductTypeLabel.AutoSize = true;
@@ -201,10 +205,6 @@ namespace PreziDent
             this.AddTypeProductLink.TabIndex = 8;
             this.AddTypeProductLink.Text = "Добавить категорию";
             this.AddTypeProductLink.Click += new System.EventHandler(this.AddTypeProductLink_Click);
-            // 
-            // typeproductBindingSource
-            // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // ProductForm
             // 
