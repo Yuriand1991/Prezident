@@ -67,7 +67,6 @@ namespace PreziDent
             db.SaveChanges();
 
             TypesProductsView.Refresh(); // обновляем грид
-            MessageBox.Show("Продукт изменен");
         }
 
         /*******************************/
@@ -75,25 +74,29 @@ namespace PreziDent
         /*******************************/
         private void DeleteTypeProductlButton_Click(object sender, EventArgs e)
         {
-            DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+
+            if (TypesProductsView.RowCount > 0)
+            {
+                DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
                                    "Confirmation", MessageBoxButtons.OKCancel,
                                    MessageBoxIcon.Information);
-            if (Result == DialogResult.Cancel)
-                return;
+                if (Result == DialogResult.Cancel)
+                    return;
 
-            int index = TypesProductsView.SelectedRows[0].Index;
-            int id = 0;
-            bool converted = Int32.TryParse(TypesProductsView[0, index].Value.ToString(), out id);
+                int index = TypesProductsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(TypesProductsView[0, index].Value.ToString(), out id);
 
-            if (converted == false)
-                return;
+                if (converted == false)
+                    return;
 
-            type_product TypeProduct = db.type_product.Find(id);
-            db.type_product.Remove(TypeProduct);
-            db.Entry(TypeProduct).State = EntityState.Deleted;
-            db.SaveChanges();
-
-            MessageBox.Show("Продукт удален");
+                type_product TypeProduct = db.type_product.Find(id);
+                db.type_product.Remove(TypeProduct);
+                db.Entry(TypeProduct).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+            else
+                MessageBox.Show("Таблица пуста!");
         }
     }
 }

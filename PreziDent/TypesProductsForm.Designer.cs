@@ -29,23 +29,51 @@ namespace PreziDent
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TypesProductsView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddTypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeTypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteTypeProductlButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TypesProductsView
             // 
             this.TypesProductsView.AllowUserToAddRows = false;
+            this.TypesProductsView.AutoGenerateColumns = false;
             this.TypesProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TypesProductsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.TypesProductsView.DataSource = this.typeproductBindingSource;
             this.TypesProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TypesProductsView.Location = new System.Drawing.Point(7, 77);
             this.TypesProductsView.Name = "TypesProductsView";
             this.TypesProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TypesProductsView.Size = new System.Drawing.Size(462, 274);
             this.TypesProductsView.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 256;
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // AddTypeProductButton
             // 
@@ -125,6 +153,7 @@ namespace PreziDent
             this.Name = "TypesProductsForm";
             this.Text = "Категории продуктов";
             ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +164,8 @@ namespace PreziDent
         private MaterialSkin.Controls.MaterialButton AddTypeProductButton;
         private MaterialSkin.Controls.MaterialButton ChangeTypeProductButton;
         private MaterialSkin.Controls.MaterialButton DeleteTypeProductlButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource typeproductBindingSource;
     }
 }

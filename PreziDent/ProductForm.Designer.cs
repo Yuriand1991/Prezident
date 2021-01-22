@@ -83,7 +83,6 @@ namespace PreziDent
             this.OkButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.OkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.OkButton.Depth = 0;
-            this.OkButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OkButton.DrawShadows = true;
             this.OkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.OkButton.HighEmphasis = true;
@@ -98,6 +97,7 @@ namespace PreziDent
             this.OkButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.OkButton.UseAccentColor = false;
             this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // CancelButton
             // 
@@ -163,6 +163,7 @@ namespace PreziDent
             this.TypeProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.TypeProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TypeProduct.FormattingEnabled = true;
+            this.TypeProduct.Hint = "Выберете категорию";
             this.TypeProduct.IntegralHeight = false;
             this.TypeProduct.ItemHeight = 43;
             this.TypeProduct.Location = new System.Drawing.Point(55, 315);

@@ -50,6 +50,7 @@
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -311,7 +312,7 @@
             this.TypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TypeProductButton.HighEmphasis = true;
             this.TypeProductButton.Icon = null;
-            this.TypeProductButton.Location = new System.Drawing.Point(608, 430);
+            this.TypeProductButton.Location = new System.Drawing.Point(717, 423);
             this.TypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.TypeProductButton.Name = "TypeProductButton";
@@ -333,7 +334,7 @@
             this.ChangeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeProductButton.HighEmphasis = true;
             this.ChangeProductButton.Icon = null;
-            this.ChangeProductButton.Location = new System.Drawing.Point(608, 96);
+            this.ChangeProductButton.Location = new System.Drawing.Point(717, 85);
             this.ChangeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeProductButton.Name = "ChangeProductButton";
@@ -355,7 +356,7 @@
             this.DeleteProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteProductButton.HighEmphasis = true;
             this.DeleteProductButton.Icon = null;
-            this.DeleteProductButton.Location = new System.Drawing.Point(608, 157);
+            this.DeleteProductButton.Location = new System.Drawing.Point(717, 142);
             this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteProductButton.Name = "DeleteProductButton";
@@ -377,7 +378,7 @@
             this.AddProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddProductButton.HighEmphasis = true;
             this.AddProductButton.Icon = null;
-            this.AddProductButton.Location = new System.Drawing.Point(608, 36);
+            this.AddProductButton.Location = new System.Drawing.Point(717, 24);
             this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddProductButton.Name = "AddProductButton";
@@ -396,6 +397,7 @@
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.name,
             this.price,
             this.type_product});
             this.ProductsView.DataSource = this.productBindingSource;
@@ -403,7 +405,7 @@
             this.ProductsView.Location = new System.Drawing.Point(6, 6);
             this.ProductsView.Name = "ProductsView";
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductsView.Size = new System.Drawing.Size(580, 430);
+            this.ProductsView.Size = new System.Drawing.Size(704, 430);
             this.ProductsView.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -411,6 +413,14 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Наименование";
+            this.name.Name = "name";
+            this.name.Width = 256;
             // 
             // price
             // 
@@ -423,6 +433,7 @@
             this.type_product.DataPropertyName = "type_product";
             this.type_product.HeaderText = "Тип продукта";
             this.type_product.Name = "type_product";
+            this.type_product.Width = 256;
             // 
             // productBindingSource
             // 
@@ -502,10 +513,11 @@
         private System.Windows.Forms.BindingSource typeproductBindingSource;
         private System.Windows.Forms.BindingSource typeproductBindingSource1;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource productBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn type_product;
-        private System.Windows.Forms.BindingSource productBindingSource1;
     }
 }
 

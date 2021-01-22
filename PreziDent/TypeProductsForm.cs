@@ -19,5 +19,17 @@ namespace PreziDent
             InitializeComponent();
    
         }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            if (NameTypeProduct.Text.Trim() == "")
+            {
+                MessageBox.Show("Введите наименование категории!");
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
     }
 }

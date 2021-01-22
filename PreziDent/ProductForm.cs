@@ -37,5 +37,47 @@ namespace PreziDent
             ControlAppForm.OpenAddTypeProductForm(this);
             db.type_product.Load();
         }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            String Message = "";
+            int Price;
+
+            if(NameProduct.Text.Trim() == "")
+            {
+                Message += "Введите наименование!\n";
+            }
+
+            if (PriceProduct.Text.Trim() == "")
+            {
+                Message += "Введите цену!\n";
+            }
+            else
+            {
+                try
+                {
+                    Price = Convert.ToInt32(PriceProduct.Text);
+                }
+                catch (FormatException)
+                {
+                    Message += "Не правильно введена цена!\n";
+                }
+            }
+
+            if (TypeProduct.SelectedValue == null)
+            {
+                Message += "Выберете категорию продукта!\n";
+            }
+
+            if (Message != "")
+            {
+                MessageBox.Show(Message);
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
     }
 }

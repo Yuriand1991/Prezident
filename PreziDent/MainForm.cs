@@ -24,11 +24,11 @@ namespace PreziDent
         public MainForm()
         {
             InitializeComponent();
-            LoadProducts();
+            LoadDB();
 
         }
 
-        public void LoadProducts()
+        public void LoadDB()
         {
             db = new PrezidentClinicEntities();
             db.products.Load();
@@ -90,10 +90,11 @@ namespace PreziDent
             if (Result == DialogResult.Cancel)
                 return;
 
+
             product Product = new product();
-            
+
             Product.name = productForm.NameProduct.Text;
-           
+
             Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
 
             Product.type_id = (int)productForm.TypeProduct.SelectedValue;
@@ -102,7 +103,7 @@ namespace PreziDent
             db.Entry(Product).State = EntityState.Added;
             db.SaveChanges();
 
-            LoadProducts();
+            LoadDB();
         }
 
         /**************************************/
@@ -138,8 +139,6 @@ namespace PreziDent
                 db.SaveChanges();
 
                 ProductsView.Refresh(); // обновляем грид
-                MessageBox.Show("Продукт изменен");
-
             }
         }
 
@@ -148,24 +147,27 @@ namespace PreziDent
         /**************************************/
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
-            DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?", 
-                                               "Confirmation", MessageBoxButtons.OKCancel,
-                                               MessageBoxIcon.Information);
-            if (Result == DialogResult.Cancel)
-                return;
+            if (ProductsView.RowCount > 0)
+            {
+                DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+                                                   "Confirmation", MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
+                if (Result == DialogResult.Cancel)
+                    return;
 
-            int index = ProductsView.SelectedRows[0].Index;
-            int id = 0;
-            bool converted = Int32.TryParse(ProductsView[0, index].Value.ToString(), out id);
+                int index = ProductsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(ProductsView[0, index].Value.ToString(), out id);
 
-            if (converted == false)
-                return;
+                if (converted == false)
+                    return;
 
-            product Product = db.products.Find(id);
-            db.products.Remove(Product);
-            db.SaveChanges();
-
-            MessageBox.Show("Продукт удален");
+                product Product = db.products.Find(id);
+                db.products.Remove(Product);
+                db.SaveChanges();
+            }
+            else
+                MessageBox.Show("Таблица пуста!");
         }
 
         private void TypeProductButton_Click(object sender, EventArgs e)
