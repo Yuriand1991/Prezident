@@ -15,7 +15,6 @@ namespace PreziDent
 {
     public partial class MainForm : PreziDent.AppFrom
     {
-        private PrezidentClinicEntities db;
         private user User;
         public void SetUser(user User)
         {
@@ -25,14 +24,14 @@ namespace PreziDent
         {
             InitializeComponent();
             LoadDB();
-
         }
 
         public void LoadDB()
         {
-            db = new PrezidentClinicEntities();
-            db.products.Load();
-            ProductsView.DataSource = db.products.Local.ToBindingList();
+            PrezidentClinicEntities db = new PrezidentClinicEntities();
+            DataBase.db = db;
+            DataBase.db.products.Load();
+            ProductsView.DataSource = DataBase.db.products.Local.ToBindingList();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -99,11 +98,9 @@ namespace PreziDent
 
             Product.type_id = (int)productForm.TypeProduct.SelectedValue;
 
-            db.products.Add(Product);
-            db.Entry(Product).State = EntityState.Added;
-            db.SaveChanges();
-
-            LoadDB();
+            DataBase.db.products.Add(Product);
+            DataBase.db.Entry(Product).State = EntityState.Added;
+            DataBase.db.SaveChanges();
         }
 
         /**************************************/
@@ -120,7 +117,7 @@ namespace PreziDent
                 if (converted == false)
                     return;
 
-                product Product = db.products.Find(id);
+                product Product = DataBase.db.products.Find(id);
 
                 ProductForm productForm = new ProductForm();
 
@@ -136,7 +133,7 @@ namespace PreziDent
                 Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
                 Product.type_id = 1;
 
-                db.SaveChanges();
+                DataBase.db.SaveChanges();
 
                 ProductsView.Refresh(); // обновляем грид
             }
@@ -162,9 +159,9 @@ namespace PreziDent
                 if (converted == false)
                     return;
 
-                product Product = db.products.Find(id);
-                db.products.Remove(Product);
-                db.SaveChanges();
+                product Product = DataBase.db.products.Find(id);
+                DataBase.db.products.Remove(Product);
+                DataBase.db.SaveChanges();
             }
             else
                 MessageBox.Show("Таблица пуста!");

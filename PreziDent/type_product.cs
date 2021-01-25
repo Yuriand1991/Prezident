@@ -17,21 +17,17 @@ namespace PreziDent
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public type_product()
         {
-            //this.products = new HashSet<product>();
-            this.products = new List<product>();
+            this.products = new HashSet<product>();
         }
-    
-        public int id { get; set; }
-        public string name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products { get; set; }
-       // public virtual ICollection<product> productsList { get; set; }
-
-
         public override string ToString()
         {
-            return name;
+            return name.Trim();
         }
+
+        public int id { get; set; }
+        public string name { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<product> products { get; set; }
     }
 }

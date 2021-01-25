@@ -41,6 +41,11 @@
             this.ButtonRoom9Orders = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Rooms = new System.Windows.Forms.TabPage();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Room = new System.Windows.Forms.TabPage();
             this.SheduleView = new System.Windows.Forms.DataGridView();
             this.Products = new System.Windows.Forms.TabPage();
@@ -49,19 +54,23 @@
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeproductBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
             this.OrdersOfRoomsCard.SuspendLayout();
+            this.Rooms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.Room.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
             this.Products.SuspendLayout();
@@ -71,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -259,12 +269,64 @@
             // Rooms
             // 
             this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Rooms.Controls.Add(this.materialButton1);
+            this.Rooms.Controls.Add(this.dataGridView1);
             this.Rooms.Location = new System.Drawing.Point(4, 22);
             this.Rooms.Name = "Rooms";
             this.Rooms.Padding = new System.Windows.Forms.Padding(3);
             this.Rooms.Size = new System.Drawing.Size(918, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Кабинеты";
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(704, 223);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(158, 36);
+            this.materialButton1.TabIndex = 1;
+            this.materialButton1.Text = "materialButton1";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.numberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.roomBindingSource;
+            this.dataGridView1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridView1.Location = new System.Drawing.Point(426, 101);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(255, 211);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataSource = typeof(PreziDent.room);
             // 
             // Room
             // 
@@ -408,6 +470,30 @@
             this.ProductsView.Size = new System.Drawing.Size(704, 430);
             this.ProductsView.TabIndex = 0;
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(PreziDent.product);
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
+            // 
+            // typeproductBindingSource1
+            // 
+            this.typeproductBindingSource1.DataSource = typeof(PreziDent.type_product);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(PreziDent.user);
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataSource = typeof(PreziDent.product);
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataSource = typeof(PreziDent.product);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -431,29 +517,9 @@
             // type_product
             // 
             this.type_product.DataPropertyName = "type_product";
-            this.type_product.HeaderText = "Тип продукта";
+            this.type_product.HeaderText = "Категория продукта";
             this.type_product.Name = "type_product";
             this.type_product.Width = 256;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(PreziDent.product);
-            // 
-            // typeproductBindingSource
-            // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
-            // 
-            // typeproductBindingSource1
-            // 
-            this.typeproductBindingSource1.DataSource = typeof(PreziDent.type_product);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(PreziDent.user);
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataSource = typeof(PreziDent.product);
             // 
             // MainForm
             // 
@@ -473,6 +539,10 @@
             this.PlanCard.PerformLayout();
             this.OrdersOfRoomsCard.ResumeLayout(false);
             this.OrdersOfRoomsCard.PerformLayout();
+            this.Rooms.ResumeLayout(false);
+            this.Rooms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.Room.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
             this.Products.ResumeLayout(false);
@@ -482,6 +552,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,6 +585,12 @@
         private System.Windows.Forms.BindingSource typeproductBindingSource1;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private System.Windows.Forms.BindingSource productBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;

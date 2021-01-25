@@ -172,7 +172,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_products_type_product">
-          <End Role="type_product" Type="Self.type_product" Multiplicity="1" />
+          <End Role="type_product" Type="Self.type_product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="products" Type="Self.products" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="type_product">
@@ -544,7 +546,9 @@
           <NavigationProperty Name="products" Relationship="PrezidentClinicModel.FK_products_type_product" FromRole="type_product" ToRole="product" />
         </EntityType>
         <Association Name="FK_products_type_product">
-          <End Type="PrezidentClinicModel.type_product" Role="type_product" Multiplicity="1" />
+          <End Type="PrezidentClinicModel.type_product" Role="type_product" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="PrezidentClinicModel.product" Role="product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="type_product">

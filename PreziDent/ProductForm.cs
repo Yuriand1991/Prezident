@@ -15,15 +15,11 @@ namespace PreziDent
 {
     public partial class ProductForm : PreziDent.AppFrom
     {
-        private PrezidentClinicEntities db;
-
         public ProductForm()
         {
             InitializeComponent();
-
-            db = new PrezidentClinicEntities();
-            db.type_product.Load();
-            TypeProduct.DataSource = db.type_product.Local.ToBindingList();
+            DataBase.db.type_product.Load();
+            TypeProduct.DataSource = DataBase.db.type_product.Local.ToBindingList();
 
         }
 
@@ -35,7 +31,7 @@ namespace PreziDent
         private void AddTypeProductLink_Click(object sender, EventArgs e)
         {
             ControlAppForm.OpenAddTypeProductForm(this);
-            db.type_product.Load();
+            DataBase.db.type_product.Load();
         }
 
         private void OkButton_Click(object sender, EventArgs e)

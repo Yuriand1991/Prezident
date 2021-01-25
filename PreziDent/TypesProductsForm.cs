@@ -15,14 +15,12 @@ namespace PreziDent
 {
     public partial class TypesProductsForm : PreziDent.AppFrom
     {
-        PrezidentClinicEntities db;
         public TypesProductsForm()
         {
             InitializeComponent();
 
-            db = new PrezidentClinicEntities();
-            db.type_product.Load();
-            TypesProductsView.DataSource = db.type_product.Local.ToBindingList();
+            DataBase.db.type_product.Load();
+            TypesProductsView.DataSource = DataBase.db.type_product.Local.ToBindingList();
             
         }
 
@@ -32,7 +30,7 @@ namespace PreziDent
         private void AddTypeProductButton_Click(object sender, EventArgs e)
         {
             ControlAppForm.OpenAddTypeProductForm(this);
-            db.type_product.Load();
+            DataBase.db.type_product.Load();
         }
 
         /*******************************/
@@ -49,7 +47,7 @@ namespace PreziDent
 
 
 
-            type_product TypeProduct = db.type_product.Find(id);
+            type_product TypeProduct = DataBase.db.type_product.Find(id);
 
             TypeProductsForm typeProductsForm = new TypeProductsForm();
 
@@ -62,9 +60,9 @@ namespace PreziDent
 
             TypeProduct.name = typeProductsForm.NameTypeProduct.Text;
 
-            db.Entry(TypeProduct).State = EntityState.Modified;
+            DataBase.db.Entry(TypeProduct).State = EntityState.Modified;
 
-            db.SaveChanges();
+            DataBase.db.SaveChanges();
 
             TypesProductsView.Refresh(); // обновляем грид
         }
@@ -90,10 +88,10 @@ namespace PreziDent
                 if (converted == false)
                     return;
 
-                type_product TypeProduct = db.type_product.Find(id);
-                db.type_product.Remove(TypeProduct);
-                db.Entry(TypeProduct).State = EntityState.Deleted;
-                db.SaveChanges();
+                type_product TypeProduct = DataBase.db.type_product.Find(id);
+                DataBase.db.type_product.Remove(TypeProduct);
+                DataBase.db.Entry(TypeProduct).State = EntityState.Deleted;
+                DataBase.db.SaveChanges();
             }
             else
                 MessageBox.Show("Таблица пуста!");
