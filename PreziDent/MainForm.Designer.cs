@@ -43,9 +43,6 @@
             this.Rooms = new System.Windows.Forms.TabPage();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Room = new System.Windows.Forms.TabPage();
             this.SheduleView = new System.Windows.Forms.DataGridView();
             this.Products = new System.Windows.Forms.TabPage();
@@ -55,11 +52,7 @@
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeproductBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.Services = new System.Windows.Forms.TabPage();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,17 +63,11 @@
             this.OrdersOfRoomsCard.SuspendLayout();
             this.Rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.Room.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -113,7 +100,7 @@
             this.MainDrawer.MouseState = MaterialSkin.MouseState.HOVER;
             this.MainDrawer.Name = "MainDrawer";
             this.MainDrawer.ShowIconsWhenHidden = false;
-            this.MainDrawer.Size = new System.Drawing.Size(250, 431);
+            this.MainDrawer.Size = new System.Drawing.Size(182, 431);
             this.MainDrawer.TabIndex = 2;
             this.MainDrawer.Text = "MainDrawer";
             this.MainDrawer.UseColors = false;
@@ -124,14 +111,15 @@
             this.MainTabControl.Controls.Add(this.Rooms);
             this.MainTabControl.Controls.Add(this.Room);
             this.MainTabControl.Controls.Add(this.Products);
+            this.MainTabControl.Controls.Add(this.Services);
             this.MainTabControl.Depth = 0;
             this.MainTabControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MainTabControl.Location = new System.Drawing.Point(256, 107);
+            this.MainTabControl.Location = new System.Drawing.Point(188, 107);
             this.MainTabControl.MouseState = MaterialSkin.MouseState.HOVER;
             this.MainTabControl.Multiline = true;
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(926, 658);
+            this.MainTabControl.Size = new System.Drawing.Size(1008, 658);
             this.MainTabControl.TabIndex = 0;
             // 
             // MainPage
@@ -300,33 +288,12 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.numberDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.roomBindingSource;
             this.dataGridView1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridView1.Location = new System.Drawing.Point(426, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(255, 211);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            // 
-            // roomBindingSource
-            // 
-            this.roomBindingSource.DataSource = typeof(PreziDent.room);
             // 
             // Room
             // 
@@ -360,7 +327,7 @@
             this.Products.Location = new System.Drawing.Point(4, 22);
             this.Products.Name = "Products";
             this.Products.Padding = new System.Windows.Forms.Padding(3);
-            this.Products.Size = new System.Drawing.Size(918, 632);
+            this.Products.Size = new System.Drawing.Size(1000, 632);
             this.Products.TabIndex = 3;
             this.Products.Text = "Товары";
             // 
@@ -374,7 +341,7 @@
             this.TypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TypeProductButton.HighEmphasis = true;
             this.TypeProductButton.Icon = null;
-            this.TypeProductButton.Location = new System.Drawing.Point(717, 423);
+            this.TypeProductButton.Location = new System.Drawing.Point(797, 587);
             this.TypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.TypeProductButton.Name = "TypeProductButton";
@@ -396,7 +363,7 @@
             this.ChangeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeProductButton.HighEmphasis = true;
             this.ChangeProductButton.Icon = null;
-            this.ChangeProductButton.Location = new System.Drawing.Point(717, 85);
+            this.ChangeProductButton.Location = new System.Drawing.Point(797, 85);
             this.ChangeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeProductButton.Name = "ChangeProductButton";
@@ -418,7 +385,7 @@
             this.DeleteProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteProductButton.HighEmphasis = true;
             this.DeleteProductButton.Icon = null;
-            this.DeleteProductButton.Location = new System.Drawing.Point(717, 142);
+            this.DeleteProductButton.Location = new System.Drawing.Point(797, 150);
             this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteProductButton.Name = "DeleteProductButton";
@@ -440,7 +407,7 @@
             this.AddProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddProductButton.HighEmphasis = true;
             this.AddProductButton.Icon = null;
-            this.AddProductButton.Location = new System.Drawing.Point(717, 24);
+            this.AddProductButton.Location = new System.Drawing.Point(797, 19);
             this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddProductButton.Name = "AddProductButton";
@@ -467,32 +434,22 @@
             this.ProductsView.Location = new System.Drawing.Point(6, 6);
             this.ProductsView.Name = "ProductsView";
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductsView.Size = new System.Drawing.Size(704, 430);
+            this.ProductsView.Size = new System.Drawing.Size(769, 620);
             this.ProductsView.TabIndex = 0;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(PreziDent.product);
             // 
-            // typeproductBindingSource
+            // Services
             // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
-            // 
-            // typeproductBindingSource1
-            // 
-            this.typeproductBindingSource1.DataSource = typeof(PreziDent.type_product);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(PreziDent.user);
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataSource = typeof(PreziDent.product);
-            // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataSource = typeof(PreziDent.product);
+            this.Services.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Services.Location = new System.Drawing.Point(4, 22);
+            this.Services.Name = "Services";
+            this.Services.Padding = new System.Windows.Forms.Padding(3);
+            this.Services.Size = new System.Drawing.Size(986, 632);
+            this.Services.TabIndex = 4;
+            this.Services.Text = "Услуги";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -506,7 +463,7 @@
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Наименование";
             this.name.Name = "name";
-            this.name.Width = 256;
+            this.name.Width = 300;
             // 
             // price
             // 
@@ -519,7 +476,8 @@
             this.type_product.DataPropertyName = "type_product";
             this.type_product.HeaderText = "Категория продукта";
             this.type_product.Name = "type_product";
-            this.type_product.Width = 256;
+            this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.type_product.Width = 300;
             // 
             // MainForm
             // 
@@ -542,17 +500,11 @@
             this.Rooms.ResumeLayout(false);
             this.Rooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.Room.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,16 +533,9 @@
         private MaterialSkin.Controls.MaterialButton AddProductButton;
         private MaterialSkin.Controls.MaterialButton TypeProductButton;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.BindingSource typeproductBindingSource;
-        private System.Windows.Forms.BindingSource typeproductBindingSource1;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.BindingSource productBindingSource1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource roomBindingSource;
-        private System.Windows.Forms.BindingSource productBindingSource2;
+        private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
