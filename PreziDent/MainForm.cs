@@ -30,8 +30,12 @@ namespace PreziDent
         {
             PrezidentClinicEntities db = new PrezidentClinicEntities();
             DataBase.db = db;
+            //Загрузка продуктов
             DataBase.db.products.Load();
             ProductsView.DataSource = DataBase.db.products.Local.ToBindingList();
+            //Загрузка услуг
+            DataBase.db.services.Load();
+            ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -173,5 +177,96 @@ namespace PreziDent
             typesProductsForm.Show();
         }
 
+        /**************************************/
+        /*Метод добавления услуги             */
+        /**************************************/
+        private void AddServiceButton_Click(object sender, EventArgs e)
+        {
+            ServiceForm serviceForm = new ServiceForm();
+            DialogResult Result = serviceForm.ShowDialog(this);
+
+            if (Result == DialogResult.Cancel)
+                return;
+
+            service Service = new service();
+
+            Service.code_service = serviceForm.CodeService.Text;
+            Service.name = serviceForm.NameService.Text;
+            Service.price = System.Convert.ToDecimal(serviceForm.PriceService.Text);
+            Service.group_services_id = (int)serviceForm.GroupService.SelectedValue;
+            Service.description = serviceForm.DescriptionService.Text;
+
+            DataBase.db.services.Add(Service);
+            DataBase.db.Entry(Service).State = EntityState.Added;
+            DataBase.db.SaveChanges();
+        }
+
+        /**************************************/
+        /*Метод изменения услуги              */
+        /**************************************/
+        private void ChangeServiceButton_Click(object sender, EventArgs e)
+        {
+            if (ServicesView.SelectedRows.Count > 0)
+            {
+                int index = ServicesView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(ServicesView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                service Service = DataBase.db.services.Find(id);
+
+                ServiceForm serviceForm = new ServiceForm();
+
+                serviceForm.CodeService.Text = Service.code_service;
+                serviceForm.NameService.Text = Service.name;
+                serviceForm.PriceService.Text = Service.price.ToString();
+                serviceForm.DescriptionService.Text = Service.description;
+
+                serviceForm.GroupService.SelectedIndex = serviceForm.GroupService.FindStringExact(DataBase.db.group_services.Find(Service.group_services_id).name.ToString());
+
+                DialogResult Result = serviceForm.ShowDialog(this);
+
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                Service.code_service = serviceForm.CodeService.Text;
+                Service.name = serviceForm.NameService.Text;
+                Service.price = System.Convert.ToDecimal(serviceForm.PriceService.Text);
+                Service.group_services_id = (int)serviceForm.GroupService.SelectedValue;
+                Service.description = serviceForm.DescriptionService.Text;
+
+                DataBase.db.SaveChanges();
+
+                ServicesView.Refresh(); // обновляем грид
+            }
+        }
+
+        /**************************************/
+        /*Метод удаления услуги               */
+        /**************************************/
+        private void DeleteServiceButton_Click(object sender, EventArgs e)
+        {
+            if (ServicesView.RowCount > 0)
+            {
+                DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+                                                   "Confirmation", MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                int index = ServicesView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(ServicesView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                service Service = DataBase.db.services.Find(id);
+                DataBase.db.services.Remove(Service);
+                DataBase.db.SaveChanges();
+            }
+        }
     }
 }

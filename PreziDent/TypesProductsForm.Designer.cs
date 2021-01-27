@@ -30,16 +30,82 @@ namespace PreziDent
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.DeleteTypeProductlButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeTypeProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddTypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.TypesProductsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AddTypeProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeTypeProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteTypeProductlButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DeleteTypeProductlButton
+            // 
+            this.DeleteTypeProductlButton.AutoSize = false;
+            this.DeleteTypeProductlButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteTypeProductlButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteTypeProductlButton.Depth = 0;
+            this.DeleteTypeProductlButton.DrawShadows = true;
+            this.DeleteTypeProductlButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteTypeProductlButton.HighEmphasis = true;
+            this.DeleteTypeProductlButton.Icon = null;
+            this.DeleteTypeProductlButton.Location = new System.Drawing.Point(324, 374);
+            this.DeleteTypeProductlButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteTypeProductlButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteTypeProductlButton.Name = "DeleteTypeProductlButton";
+            this.DeleteTypeProductlButton.Size = new System.Drawing.Size(136, 36);
+            this.DeleteTypeProductlButton.TabIndex = 3;
+            this.DeleteTypeProductlButton.Text = "Удалить";
+            this.DeleteTypeProductlButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteTypeProductlButton.UseAccentColor = false;
+            this.DeleteTypeProductlButton.UseVisualStyleBackColor = false;
+            this.DeleteTypeProductlButton.Click += new System.EventHandler(this.DeleteTypeProductlButton_Click);
+            // 
+            // ChangeTypeProductButton
+            // 
+            this.ChangeTypeProductButton.AutoSize = false;
+            this.ChangeTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangeTypeProductButton.Depth = 0;
+            this.ChangeTypeProductButton.DrawShadows = true;
+            this.ChangeTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangeTypeProductButton.HighEmphasis = true;
+            this.ChangeTypeProductButton.Icon = null;
+            this.ChangeTypeProductButton.Location = new System.Drawing.Point(168, 374);
+            this.ChangeTypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeTypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeTypeProductButton.Name = "ChangeTypeProductButton";
+            this.ChangeTypeProductButton.Size = new System.Drawing.Size(136, 36);
+            this.ChangeTypeProductButton.TabIndex = 2;
+            this.ChangeTypeProductButton.Text = "Изменить";
+            this.ChangeTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeTypeProductButton.UseAccentColor = false;
+            this.ChangeTypeProductButton.UseVisualStyleBackColor = false;
+            this.ChangeTypeProductButton.Click += new System.EventHandler(this.ChangeTypeProductButton_Click);
+            // 
+            // AddTypeProductButton
+            // 
+            this.AddTypeProductButton.AutoSize = false;
+            this.AddTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddTypeProductButton.Depth = 0;
+            this.AddTypeProductButton.DrawShadows = true;
+            this.AddTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddTypeProductButton.HighEmphasis = true;
+            this.AddTypeProductButton.Icon = null;
+            this.AddTypeProductButton.Location = new System.Drawing.Point(13, 374);
+            this.AddTypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddTypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddTypeProductButton.Name = "AddTypeProductButton";
+            this.AddTypeProductButton.Size = new System.Drawing.Size(136, 36);
+            this.AddTypeProductButton.TabIndex = 1;
+            this.AddTypeProductButton.Text = "Добавить";
+            this.AddTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddTypeProductButton.UseAccentColor = false;
+            this.AddTypeProductButton.UseVisualStyleBackColor = false;
+            this.AddTypeProductButton.Click += new System.EventHandler(this.AddTypeProductButton_Click);
             // 
             // TypesProductsView
             // 
@@ -74,72 +140,6 @@ namespace PreziDent
             // typeproductBindingSource
             // 
             this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
-            // 
-            // AddTypeProductButton
-            // 
-            this.AddTypeProductButton.AutoSize = false;
-            this.AddTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AddTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.AddTypeProductButton.Depth = 0;
-            this.AddTypeProductButton.DrawShadows = true;
-            this.AddTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AddTypeProductButton.HighEmphasis = true;
-            this.AddTypeProductButton.Icon = null;
-            this.AddTypeProductButton.Location = new System.Drawing.Point(13, 374);
-            this.AddTypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.AddTypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AddTypeProductButton.Name = "AddTypeProductButton";
-            this.AddTypeProductButton.Size = new System.Drawing.Size(136, 36);
-            this.AddTypeProductButton.TabIndex = 1;
-            this.AddTypeProductButton.Text = "Добавить";
-            this.AddTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.AddTypeProductButton.UseAccentColor = false;
-            this.AddTypeProductButton.UseVisualStyleBackColor = false;
-            this.AddTypeProductButton.Click += new System.EventHandler(this.AddTypeProductButton_Click);
-            // 
-            // ChangeTypeProductButton
-            // 
-            this.ChangeTypeProductButton.AutoSize = false;
-            this.ChangeTypeProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ChangeTypeProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ChangeTypeProductButton.Depth = 0;
-            this.ChangeTypeProductButton.DrawShadows = true;
-            this.ChangeTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ChangeTypeProductButton.HighEmphasis = true;
-            this.ChangeTypeProductButton.Icon = null;
-            this.ChangeTypeProductButton.Location = new System.Drawing.Point(168, 374);
-            this.ChangeTypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ChangeTypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ChangeTypeProductButton.Name = "ChangeTypeProductButton";
-            this.ChangeTypeProductButton.Size = new System.Drawing.Size(136, 36);
-            this.ChangeTypeProductButton.TabIndex = 2;
-            this.ChangeTypeProductButton.Text = "Изменить";
-            this.ChangeTypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.ChangeTypeProductButton.UseAccentColor = false;
-            this.ChangeTypeProductButton.UseVisualStyleBackColor = false;
-            this.ChangeTypeProductButton.Click += new System.EventHandler(this.ChangeTypeProductButton_Click);
-            // 
-            // DeleteTypeProductlButton
-            // 
-            this.DeleteTypeProductlButton.AutoSize = false;
-            this.DeleteTypeProductlButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DeleteTypeProductlButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.DeleteTypeProductlButton.Depth = 0;
-            this.DeleteTypeProductlButton.DrawShadows = true;
-            this.DeleteTypeProductlButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DeleteTypeProductlButton.HighEmphasis = true;
-            this.DeleteTypeProductlButton.Icon = null;
-            this.DeleteTypeProductlButton.Location = new System.Drawing.Point(324, 374);
-            this.DeleteTypeProductlButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.DeleteTypeProductlButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeleteTypeProductlButton.Name = "DeleteTypeProductlButton";
-            this.DeleteTypeProductlButton.Size = new System.Drawing.Size(136, 36);
-            this.DeleteTypeProductlButton.TabIndex = 3;
-            this.DeleteTypeProductlButton.Text = "Удалить";
-            this.DeleteTypeProductlButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.DeleteTypeProductlButton.UseAccentColor = false;
-            this.DeleteTypeProductlButton.UseVisualStyleBackColor = false;
-            this.DeleteTypeProductlButton.Click += new System.EventHandler(this.DeleteTypeProductlButton_Click);
             // 
             // TypesProductsForm
             // 

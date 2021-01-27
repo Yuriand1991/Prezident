@@ -51,12 +51,25 @@
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Services = new System.Windows.Forms.TabPage();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Services = new System.Windows.Forms.TabPage();
+            this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.ServicesView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -68,6 +81,9 @@
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            this.Services.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -130,7 +146,7 @@
             this.MainPage.Location = new System.Drawing.Point(4, 22);
             this.MainPage.Name = "MainPage";
             this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(918, 632);
+            this.MainPage.Size = new System.Drawing.Size(1000, 632);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Главная";
             // 
@@ -262,7 +278,7 @@
             this.Rooms.Location = new System.Drawing.Point(4, 22);
             this.Rooms.Name = "Rooms";
             this.Rooms.Padding = new System.Windows.Forms.Padding(3);
-            this.Rooms.Size = new System.Drawing.Size(918, 632);
+            this.Rooms.Size = new System.Drawing.Size(1000, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Кабинеты";
             // 
@@ -302,7 +318,7 @@
             this.Room.Location = new System.Drawing.Point(4, 22);
             this.Room.Name = "Room";
             this.Room.Padding = new System.Windows.Forms.Padding(3);
-            this.Room.Size = new System.Drawing.Size(918, 632);
+            this.Room.Size = new System.Drawing.Size(1000, 632);
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
             // 
@@ -437,20 +453,6 @@
             this.ProductsView.Size = new System.Drawing.Size(769, 620);
             this.ProductsView.TabIndex = 0;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(PreziDent.product);
-            // 
-            // Services
-            // 
-            this.Services.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Services.Location = new System.Drawing.Point(4, 22);
-            this.Services.Name = "Services";
-            this.Services.Padding = new System.Windows.Forms.Padding(3);
-            this.Services.Size = new System.Drawing.Size(986, 632);
-            this.Services.TabIndex = 4;
-            this.Services.Text = "Услуги";
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -479,6 +481,186 @@
             this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.type_product.Width = 300;
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(PreziDent.product);
+            // 
+            // Services
+            // 
+            this.Services.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Services.Controls.Add(this.GroupServiceButton);
+            this.Services.Controls.Add(this.DeleteServiceButton);
+            this.Services.Controls.Add(this.ChangeServiceButton);
+            this.Services.Controls.Add(this.AddServiceButton);
+            this.Services.Controls.Add(this.ServicesView);
+            this.Services.Location = new System.Drawing.Point(4, 22);
+            this.Services.Name = "Services";
+            this.Services.Padding = new System.Windows.Forms.Padding(3);
+            this.Services.Size = new System.Drawing.Size(1000, 632);
+            this.Services.TabIndex = 4;
+            this.Services.Text = "Услуги";
+            // 
+            // GroupServiceButton
+            // 
+            this.GroupServiceButton.AutoSize = false;
+            this.GroupServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GroupServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GroupServiceButton.Depth = 0;
+            this.GroupServiceButton.DrawShadows = true;
+            this.GroupServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GroupServiceButton.HighEmphasis = true;
+            this.GroupServiceButton.Icon = null;
+            this.GroupServiceButton.Location = new System.Drawing.Point(791, 587);
+            this.GroupServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.GroupServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GroupServiceButton.Name = "GroupServiceButton";
+            this.GroupServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.GroupServiceButton.TabIndex = 4;
+            this.GroupServiceButton.Text = "Группа услуг";
+            this.GroupServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.GroupServiceButton.UseAccentColor = false;
+            this.GroupServiceButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteServiceButton
+            // 
+            this.DeleteServiceButton.AutoSize = false;
+            this.DeleteServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteServiceButton.Depth = 0;
+            this.DeleteServiceButton.DrawShadows = true;
+            this.DeleteServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteServiceButton.HighEmphasis = true;
+            this.DeleteServiceButton.Icon = null;
+            this.DeleteServiceButton.Location = new System.Drawing.Point(791, 137);
+            this.DeleteServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteServiceButton.Name = "DeleteServiceButton";
+            this.DeleteServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.DeleteServiceButton.TabIndex = 3;
+            this.DeleteServiceButton.Text = "Удалить услугу";
+            this.DeleteServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteServiceButton.UseAccentColor = false;
+            this.DeleteServiceButton.UseVisualStyleBackColor = false;
+            this.DeleteServiceButton.Click += new System.EventHandler(this.DeleteServiceButton_Click);
+            // 
+            // ChangeServiceButton
+            // 
+            this.ChangeServiceButton.AutoSize = false;
+            this.ChangeServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangeServiceButton.Depth = 0;
+            this.ChangeServiceButton.DrawShadows = true;
+            this.ChangeServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangeServiceButton.HighEmphasis = true;
+            this.ChangeServiceButton.Icon = null;
+            this.ChangeServiceButton.Location = new System.Drawing.Point(791, 78);
+            this.ChangeServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeServiceButton.Name = "ChangeServiceButton";
+            this.ChangeServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.ChangeServiceButton.TabIndex = 2;
+            this.ChangeServiceButton.Text = "Изменить услугу";
+            this.ChangeServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeServiceButton.UseAccentColor = false;
+            this.ChangeServiceButton.UseVisualStyleBackColor = false;
+            this.ChangeServiceButton.Click += new System.EventHandler(this.ChangeServiceButton_Click);
+            // 
+            // AddServiceButton
+            // 
+            this.AddServiceButton.AutoSize = false;
+            this.AddServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddServiceButton.Depth = 0;
+            this.AddServiceButton.DrawShadows = true;
+            this.AddServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddServiceButton.HighEmphasis = true;
+            this.AddServiceButton.Icon = null;
+            this.AddServiceButton.Location = new System.Drawing.Point(791, 20);
+            this.AddServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddServiceButton.Name = "AddServiceButton";
+            this.AddServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.AddServiceButton.TabIndex = 1;
+            this.AddServiceButton.Text = "Добавить услугу";
+            this.AddServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddServiceButton.UseAccentColor = false;
+            this.AddServiceButton.UseVisualStyleBackColor = false;
+            this.AddServiceButton.Click += new System.EventHandler(this.AddServiceButton_Click);
+            // 
+            // ServicesView
+            // 
+            this.ServicesView.AllowUserToAddRows = false;
+            this.ServicesView.AutoGenerateColumns = false;
+            this.ServicesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServicesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.codeserviceDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.groupservicesDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.ServicesView.DataSource = this.serviceBindingSource;
+            this.ServicesView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ServicesView.Location = new System.Drawing.Point(6, 6);
+            this.ServicesView.Name = "ServicesView";
+            this.ServicesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServicesView.Size = new System.Drawing.Size(769, 620);
+            this.ServicesView.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // codeserviceDataGridViewTextBoxColumn
+            // 
+            this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
+            this.codeserviceDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
+            this.codeserviceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 170;
+            // 
+            // groupservicesDataGridViewTextBoxColumn
+            // 
+            this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
+            this.groupservicesDataGridViewTextBoxColumn.HeaderText = "Группа";
+            this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
+            this.groupservicesDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(PreziDent.service);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "type_product";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Категория продукта";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +687,9 @@
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            this.Services.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,6 +725,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn type_product;
+        private System.Windows.Forms.DataGridView ServicesView;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeserviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupservicesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private MaterialSkin.Controls.MaterialButton GroupServiceButton;
+        private MaterialSkin.Controls.MaterialButton DeleteServiceButton;
+        private MaterialSkin.Controls.MaterialButton ChangeServiceButton;
+        private MaterialSkin.Controls.MaterialButton AddServiceButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
 

@@ -30,7 +30,7 @@ namespace PreziDent
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.CancelButton = new MaterialSkin.Controls.MaterialButton();
+            this.CnclButton = new MaterialSkin.Controls.MaterialButton();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
             this.NameTypeProduct = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
@@ -49,27 +49,27 @@ namespace PreziDent
             this.materialLabel1.TabIndex = 3;
             this.materialLabel1.Text = "Новая категория:";
             // 
-            // CancelButton
+            // CnclButton
             // 
-            this.CancelButton.AutoSize = false;
-            this.CancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.CancelButton.Depth = 0;
-            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.DrawShadows = true;
-            this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CancelButton.HighEmphasis = true;
-            this.CancelButton.Icon = null;
-            this.CancelButton.Location = new System.Drawing.Point(136, 171);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CancelButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(184, 36);
-            this.CancelButton.TabIndex = 2;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.CancelButton.UseAccentColor = false;
-            this.CancelButton.UseVisualStyleBackColor = false;
+            this.CnclButton.AutoSize = false;
+            this.CnclButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CnclButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.CnclButton.Depth = 0;
+            this.CnclButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CnclButton.DrawShadows = true;
+            this.CnclButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CnclButton.HighEmphasis = true;
+            this.CnclButton.Icon = null;
+            this.CnclButton.Location = new System.Drawing.Point(136, 171);
+            this.CnclButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CnclButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CnclButton.Name = "CnclButton";
+            this.CnclButton.Size = new System.Drawing.Size(184, 36);
+            this.CnclButton.TabIndex = 2;
+            this.CnclButton.Text = "Отмена";
+            this.CnclButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.CnclButton.UseAccentColor = false;
+            this.CnclButton.UseVisualStyleBackColor = false;
             // 
             // OkButton
             // 
@@ -116,7 +116,7 @@ namespace PreziDent
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 227);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CnclButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.NameTypeProduct);
             this.Name = "TypeProductsForm";
@@ -128,7 +128,7 @@ namespace PreziDent
 
         #endregion
         private MaterialSkin.Controls.MaterialButton OkButton;
-        private MaterialSkin.Controls.MaterialButton CancelButton;
+        private MaterialSkin.Controls.MaterialButton CnclButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         protected internal MaterialSkin.Controls.MaterialTextBox NameTypeProduct;
     }

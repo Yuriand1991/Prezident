@@ -85,6 +85,8 @@
           <Property Name="name" Type="nchar" MaxLength="80" />
           <Property Name="price" Type="money" />
           <Property Name="group_services_id" Type="int" Nullable="false" />
+          <Property Name="code_service" Type="nchar" MaxLength="10" />
+          <Property Name="description" Type="ntext" />
         </EntityType>
         <EntityType Name="shedule">
           <Key>
@@ -369,6 +371,8 @@
           <Property Name="group_services_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="group_services" Relationship="Self.FK_services_group_services" FromRole="services" ToRole="group_services" />
           <NavigationProperty Name="orders_services" Relationship="Self.FK_orders_services_services" FromRole="services" ToRole="orders_services" />
+          <Property Name="code_service" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="shedule">
           <Key>
@@ -648,6 +652,8 @@
           <EntitySetMapping Name="services">
             <EntityTypeMapping TypeName="PrezidentClinicModel.service">
               <MappingFragment StoreEntitySet="services">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code_service" ColumnName="code_service" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="price" ColumnName="price" />
