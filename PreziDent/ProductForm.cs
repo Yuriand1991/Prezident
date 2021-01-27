@@ -39,7 +39,7 @@ namespace PreziDent
         private void OkButton_Click(object sender, EventArgs e)
         {
             String Message = "";
-            int Price;
+            Double Price;
 
             if(NameProduct.Text.Trim() == "")
             {
@@ -54,7 +54,7 @@ namespace PreziDent
             {
                 try
                 {
-                    Price = Convert.ToInt32(PriceProduct.Text);
+                    Price = Convert.ToDouble(PriceProduct.Text);
                 }
                 catch (FormatException)
                 {

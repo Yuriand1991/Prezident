@@ -127,6 +127,7 @@ namespace PreziDent
 
                 productForm.NameProduct.Text = Product.name;
                 productForm.PriceProduct.Text = Product.price.ToString();
+                productForm.TypeProduct.SelectedIndex = productForm.TypeProduct.FindStringExact(DataBase.db.type_product.Find(Product.type_id).name.ToString());
 
                 DialogResult Result = productForm.ShowDialog(this);
 
@@ -135,7 +136,7 @@ namespace PreziDent
 
                 Product.name = productForm.NameProduct.Text;
                 Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
-                Product.type_id = 1;
+                Product.type_id = (int)productForm.TypeProduct.SelectedValue;
 
                 DataBase.db.SaveChanges();
 
@@ -167,8 +168,6 @@ namespace PreziDent
                 DataBase.db.products.Remove(Product);
                 DataBase.db.SaveChanges();
             }
-            else
-                MessageBox.Show("Таблица пуста!");
         }
 
         private void TypeProductButton_Click(object sender, EventArgs e)
