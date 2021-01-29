@@ -19,7 +19,6 @@ namespace PreziDent
         {
             this.products = new HashSet<product>();
         }
-
         public override string ToString()
         {
             return name;

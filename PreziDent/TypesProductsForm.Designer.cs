@@ -51,7 +51,7 @@ namespace PreziDent
             this.DeleteTypeProductlButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteTypeProductlButton.HighEmphasis = true;
             this.DeleteTypeProductlButton.Icon = null;
-            this.DeleteTypeProductlButton.Location = new System.Drawing.Point(324, 374);
+            this.DeleteTypeProductlButton.Location = new System.Drawing.Point(340, 374);
             this.DeleteTypeProductlButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteTypeProductlButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteTypeProductlButton.Name = "DeleteTypeProductlButton";
@@ -73,7 +73,7 @@ namespace PreziDent
             this.ChangeTypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeTypeProductButton.HighEmphasis = true;
             this.ChangeTypeProductButton.Icon = null;
-            this.ChangeTypeProductButton.Location = new System.Drawing.Point(168, 374);
+            this.ChangeTypeProductButton.Location = new System.Drawing.Point(176, 374);
             this.ChangeTypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeTypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeTypeProductButton.Name = "ChangeTypeProductButton";
@@ -120,7 +120,7 @@ namespace PreziDent
             this.TypesProductsView.Location = new System.Drawing.Point(7, 77);
             this.TypesProductsView.Name = "TypesProductsView";
             this.TypesProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TypesProductsView.Size = new System.Drawing.Size(462, 274);
+            this.TypesProductsView.Size = new System.Drawing.Size(479, 274);
             this.TypesProductsView.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -145,13 +145,14 @@ namespace PreziDent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 437);
+            this.ClientSize = new System.Drawing.Size(496, 437);
             this.Controls.Add(this.DeleteTypeProductlButton);
             this.Controls.Add(this.ChangeTypeProductButton);
             this.Controls.Add(this.AddTypeProductButton);
             this.Controls.Add(this.TypesProductsView);
             this.Name = "TypesProductsForm";
             this.Text = "Категории продуктов";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TypesProductsForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.TypesProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             this.ResumeLayout(false);

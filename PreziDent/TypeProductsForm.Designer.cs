@@ -29,25 +29,25 @@ namespace PreziDent
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.NameTypeProductsLabel = new MaterialSkin.Controls.MaterialLabel();
             this.CnclButton = new MaterialSkin.Controls.MaterialButton();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
-            this.NameTypeProduct = new MaterialSkin.Controls.MaterialTextBox();
+            this.NameTypeProducts = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
-            // materialLabel1
+            // NameTypeProductsLabel
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 78);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(133, 19);
-            this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "Новая категория:";
+            this.NameTypeProductsLabel.AutoSize = true;
+            this.NameTypeProductsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.NameTypeProductsLabel.Depth = 0;
+            this.NameTypeProductsLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NameTypeProductsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.NameTypeProductsLabel.Location = new System.Drawing.Point(12, 78);
+            this.NameTypeProductsLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.NameTypeProductsLabel.Name = "NameTypeProductsLabel";
+            this.NameTypeProductsLabel.Size = new System.Drawing.Size(197, 19);
+            this.NameTypeProductsLabel.TabIndex = 3;
+            this.NameTypeProductsLabel.Text = "Наименование категории:";
             // 
             // CnclButton
             // 
@@ -93,32 +93,32 @@ namespace PreziDent
             this.OkButton.UseVisualStyleBackColor = false;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // NameTypeProduct
+            // NameTypeProducts
             // 
-            this.NameTypeProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.NameTypeProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTypeProduct.Depth = 0;
-            this.NameTypeProduct.Font = new System.Drawing.Font("Roboto", 12F);
-            this.NameTypeProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.NameTypeProduct.Hint = "Введите наименование";
-            this.NameTypeProduct.Location = new System.Drawing.Point(12, 100);
-            this.NameTypeProduct.MaxLength = 50;
-            this.NameTypeProduct.MouseState = MaterialSkin.MouseState.OUT;
-            this.NameTypeProduct.Multiline = false;
-            this.NameTypeProduct.Name = "NameTypeProduct";
-            this.NameTypeProduct.Size = new System.Drawing.Size(308, 50);
-            this.NameTypeProduct.TabIndex = 0;
-            this.NameTypeProduct.Text = "";
+            this.NameTypeProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.NameTypeProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NameTypeProducts.Depth = 0;
+            this.NameTypeProducts.Font = new System.Drawing.Font("Roboto", 12F);
+            this.NameTypeProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.NameTypeProducts.Hint = "Введите наименование";
+            this.NameTypeProducts.Location = new System.Drawing.Point(12, 100);
+            this.NameTypeProducts.MaxLength = 50;
+            this.NameTypeProducts.MouseState = MaterialSkin.MouseState.OUT;
+            this.NameTypeProducts.Multiline = false;
+            this.NameTypeProducts.Name = "NameTypeProducts";
+            this.NameTypeProducts.Size = new System.Drawing.Size(308, 50);
+            this.NameTypeProducts.TabIndex = 0;
+            this.NameTypeProducts.Text = "";
             // 
             // TypeProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 227);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.NameTypeProductsLabel);
             this.Controls.Add(this.CnclButton);
             this.Controls.Add(this.OkButton);
-            this.Controls.Add(this.NameTypeProduct);
+            this.Controls.Add(this.NameTypeProducts);
             this.Name = "TypeProductsForm";
             this.Text = "Категория продукта";
             this.ResumeLayout(false);
@@ -129,7 +129,7 @@ namespace PreziDent
         #endregion
         private MaterialSkin.Controls.MaterialButton OkButton;
         private MaterialSkin.Controls.MaterialButton CnclButton;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        protected internal MaterialSkin.Controls.MaterialTextBox NameTypeProduct;
+        private MaterialSkin.Controls.MaterialLabel NameTypeProductsLabel;
+        protected internal MaterialSkin.Controls.MaterialTextBox NameTypeProducts;
     }
 }

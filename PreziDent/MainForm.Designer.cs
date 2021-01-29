@@ -520,6 +520,7 @@
             this.GroupServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.GroupServiceButton.UseAccentColor = false;
             this.GroupServiceButton.UseVisualStyleBackColor = false;
+            this.GroupServiceButton.Click += new System.EventHandler(this.GroupServiceButton_Click);
             // 
             // DeleteServiceButton
             // 

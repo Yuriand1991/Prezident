@@ -27,7 +27,9 @@ namespace PreziDent
         {
 
         }
-
+        /**************************************/
+        /*Метод добавления нового типа товаров*/
+        /**************************************/
         private void AddTypeProductLink_Click(object sender, EventArgs e)
         {
             ControlAppForm.OpenAddTypeProductForm(this);

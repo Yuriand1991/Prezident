@@ -200,7 +200,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_services_group_services">
-          <End Role="group_services" Type="Self.group_services" Multiplicity="1" />
+          <End Role="group_services" Type="Self.group_services" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="services" Type="Self.services" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="group_services">
@@ -432,7 +434,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_services_group_services">
-          <End Role="group_services" Type="Self.group_services" Multiplicity="1" />
+          <End Role="group_services" Type="Self.group_services" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="services" Type="Self.service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="group_services">

@@ -170,10 +170,17 @@ namespace PreziDent
             }
         }
 
+        /***********************************/
+        /*Метод отображения типов продуктов*/
+        /***********************************/
         private void TypeProductButton_Click(object sender, EventArgs e)
         {
             TypesProductsForm typesProductsForm = new TypesProductsForm();
-            typesProductsForm.Show();
+
+            DialogResult Result = typesProductsForm.ShowDialog(this);
+            if (Result == DialogResult.OK)
+                ProductsView.Refresh();
+
         }
 
         /**************************************/
@@ -266,6 +273,19 @@ namespace PreziDent
                 DataBase.db.services.Remove(Service);
                 DataBase.db.SaveChanges();
             }
+        }
+
+        /***********************************/
+        /*Метод отображения групп услуг    */
+        /***********************************/
+        private void GroupServiceButton_Click(object sender, EventArgs e)
+        {
+            GroupsServicesForm groupsProductsForm = new GroupsServicesForm();
+            DialogResult Result = groupsProductsForm.ShowDialog(this);
+
+            if (Result == DialogResult.OK)
+                ServicesView.Refresh();
+                
         }
     }
 }

@@ -65,6 +65,13 @@ namespace PreziDent
                 this.DialogResult = DialogResult.OK;
             }
         }
-
+        /********************************/
+        /*Метод добавления группы услуг */
+        /********************************/
+        private void AddGroupServiceLink_Click(object sender, EventArgs e)
+        {
+            ControlAppForm.OpenAddGroupServicesForm(this);
+            DataBase.db.group_services.Load();
+        }
     }
 }

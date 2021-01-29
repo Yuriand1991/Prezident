@@ -265,6 +265,7 @@ namespace PreziDent
             this.AddGroupServiceLink.Size = new System.Drawing.Size(129, 19);
             this.AddGroupServiceLink.TabIndex = 12;
             this.AddGroupServiceLink.Text = "Добавить группу";
+            this.AddGroupServiceLink.Click += new System.EventHandler(this.AddGroupServiceLink_Click);
             // 
             // ServiceForm
             // 

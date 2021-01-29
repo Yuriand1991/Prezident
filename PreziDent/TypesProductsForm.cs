@@ -51,14 +51,14 @@ namespace PreziDent
 
             TypeProductsForm typeProductsForm = new TypeProductsForm();
 
-            typeProductsForm.NameTypeProduct.Text = TypeProduct.name.Trim();
+            typeProductsForm.NameTypeProducts.Text = TypeProduct.name.Trim();
 
             DialogResult Result = typeProductsForm.ShowDialog(this);
 
             if (Result == DialogResult.Cancel)
                 return;
 
-            TypeProduct.name = typeProductsForm.NameTypeProduct.Text;
+            TypeProduct.name = typeProductsForm.NameTypeProducts.Text;
 
             DataBase.db.Entry(TypeProduct).State = EntityState.Modified;
 
@@ -95,6 +95,14 @@ namespace PreziDent
             }
             else
                 MessageBox.Show("Таблица пуста!");
+        }
+
+        /********************/
+        /*Закрытие формы    */
+        /********************/
+        private void TypesProductsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;//Чтобы обновить грид продуктов на главной форме
         }
     }
 }
