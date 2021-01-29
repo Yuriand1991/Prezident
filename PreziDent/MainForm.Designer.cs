@@ -51,17 +51,23 @@
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
             this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ProductsView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Services = new System.Windows.Forms.TabPage();
             this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.AddServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.ServicesView = new System.Windows.Forms.DataGridView();
+            this.Patients = new System.Windows.Forms.TabPage();
+            this.PatientsView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddPatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangePatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeletePatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +75,15 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.othernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -80,10 +94,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.Services.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
+            this.Patients.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -128,6 +145,7 @@
             this.MainTabControl.Controls.Add(this.Room);
             this.MainTabControl.Controls.Add(this.Products);
             this.MainTabControl.Controls.Add(this.Services);
+            this.MainTabControl.Controls.Add(this.Patients);
             this.MainTabControl.Depth = 0;
             this.MainTabControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MainTabControl.Location = new System.Drawing.Point(188, 107);
@@ -453,13 +471,6 @@
             this.ProductsView.Size = new System.Drawing.Size(769, 620);
             this.ProductsView.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
             // name
             // 
             this.name.DataPropertyName = "name";
@@ -480,10 +491,6 @@
             this.type_product.Name = "type_product";
             this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.type_product.Width = 300;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(PreziDent.product);
             // 
             // Services
             // 
@@ -608,6 +615,124 @@
             this.ServicesView.Size = new System.Drawing.Size(769, 620);
             this.ServicesView.TabIndex = 0;
             // 
+            // Patients
+            // 
+            this.Patients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Patients.Controls.Add(this.DeletePatientButton);
+            this.Patients.Controls.Add(this.ChangePatientButton);
+            this.Patients.Controls.Add(this.AddPatientButton);
+            this.Patients.Controls.Add(this.PatientsView);
+            this.Patients.Location = new System.Drawing.Point(4, 22);
+            this.Patients.Name = "Patients";
+            this.Patients.Padding = new System.Windows.Forms.Padding(3);
+            this.Patients.Size = new System.Drawing.Size(1000, 632);
+            this.Patients.TabIndex = 5;
+            this.Patients.Text = "Пациенты";
+            // 
+            // PatientsView
+            // 
+            this.PatientsView.AllowUserToAddRows = false;
+            this.PatientsView.AutoGenerateColumns = false;
+            this.PatientsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PatientsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.firstnameDataGridViewTextBoxColumn,
+            this.lastnameDataGridViewTextBoxColumn,
+            this.othernameDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.birthdayDataGridViewTextBoxColumn,
+            this.regdateDataGridViewTextBoxColumn});
+            this.PatientsView.DataSource = this.patientBindingSource;
+            this.PatientsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PatientsView.Location = new System.Drawing.Point(6, 3);
+            this.PatientsView.Name = "PatientsView";
+            this.PatientsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PatientsView.Size = new System.Drawing.Size(759, 458);
+            this.PatientsView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "type_product";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Категория продукта";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // AddPatientButton
+            // 
+            this.AddPatientButton.AutoSize = false;
+            this.AddPatientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddPatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddPatientButton.Depth = 0;
+            this.AddPatientButton.DrawShadows = true;
+            this.AddPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddPatientButton.HighEmphasis = true;
+            this.AddPatientButton.Icon = null;
+            this.AddPatientButton.Location = new System.Drawing.Point(785, 29);
+            this.AddPatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddPatientButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddPatientButton.Name = "AddPatientButton";
+            this.AddPatientButton.Size = new System.Drawing.Size(170, 36);
+            this.AddPatientButton.TabIndex = 1;
+            this.AddPatientButton.Text = "Добавить";
+            this.AddPatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddPatientButton.UseAccentColor = false;
+            this.AddPatientButton.UseVisualStyleBackColor = false;
+            // 
+            // ChangePatientButton
+            // 
+            this.ChangePatientButton.AutoSize = false;
+            this.ChangePatientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangePatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangePatientButton.Depth = 0;
+            this.ChangePatientButton.DrawShadows = true;
+            this.ChangePatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangePatientButton.HighEmphasis = true;
+            this.ChangePatientButton.Icon = null;
+            this.ChangePatientButton.Location = new System.Drawing.Point(785, 86);
+            this.ChangePatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangePatientButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangePatientButton.Name = "ChangePatientButton";
+            this.ChangePatientButton.Size = new System.Drawing.Size(170, 36);
+            this.ChangePatientButton.TabIndex = 2;
+            this.ChangePatientButton.Text = "Изменить";
+            this.ChangePatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangePatientButton.UseAccentColor = false;
+            this.ChangePatientButton.UseVisualStyleBackColor = false;
+            // 
+            // DeletePatientButton
+            // 
+            this.DeletePatientButton.AutoSize = false;
+            this.DeletePatientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeletePatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeletePatientButton.Depth = 0;
+            this.DeletePatientButton.DrawShadows = true;
+            this.DeletePatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeletePatientButton.HighEmphasis = true;
+            this.DeletePatientButton.Icon = null;
+            this.DeletePatientButton.Location = new System.Drawing.Point(785, 145);
+            this.DeletePatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeletePatientButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeletePatientButton.Name = "DeletePatientButton";
+            this.DeletePatientButton.Size = new System.Drawing.Size(170, 36);
+            this.DeletePatientButton.TabIndex = 3;
+            this.DeletePatientButton.Text = "Удалить";
+            this.DeletePatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeletePatientButton.UseAccentColor = false;
+            this.DeletePatientButton.UseVisualStyleBackColor = false;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(PreziDent.product);
+            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
@@ -654,13 +779,58 @@
             // 
             this.serviceBindingSource.DataSource = typeof(PreziDent.service);
             // 
-            // dataGridViewTextBoxColumn1
+            // idDataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "type_product";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Категория продукта";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.Width = 300;
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            // 
+            // othernameDataGridViewTextBoxColumn
+            // 
+            this.othernameDataGridViewTextBoxColumn.DataPropertyName = "other_name";
+            this.othernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.othernameDataGridViewTextBoxColumn.Name = "othernameDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // birthdayDataGridViewTextBoxColumn
+            // 
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "День рождения";
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            // 
+            // regdateDataGridViewTextBoxColumn
+            // 
+            this.regdateDataGridViewTextBoxColumn.DataPropertyName = "reg_date";
+            this.regdateDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
+            this.regdateDataGridViewTextBoxColumn.Name = "regdateDataGridViewTextBoxColumn";
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(PreziDent.patient);
             // 
             // MainForm
             // 
@@ -687,10 +857,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.Services.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
+            this.Patients.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,6 +912,20 @@
         private MaterialSkin.Controls.MaterialButton ChangeServiceButton;
         private MaterialSkin.Controls.MaterialButton AddServiceButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TabPage Patients;
+        private System.Windows.Forms.DataGridView PatientsView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn othernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource patientBindingSource;
+        private MaterialSkin.Controls.MaterialButton DeletePatientButton;
+        private MaterialSkin.Controls.MaterialButton ChangePatientButton;
+        private MaterialSkin.Controls.MaterialButton AddPatientButton;
     }
 }
 

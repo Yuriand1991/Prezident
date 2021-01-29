@@ -19,11 +19,7 @@ namespace PreziDent
         {
             this.services = new HashSet<service>();
         }
-        public override string ToString()
-        {
-            return name;
-        }
-
+    
         public int id { get; set; }
         public string name { get; set; }
     

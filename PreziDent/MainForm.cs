@@ -36,6 +36,9 @@ namespace PreziDent
             //Загрузка услуг
             DataBase.db.services.Load();
             ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
+            //Загрузка пациентов
+            DataBase.db.patients.Load();
+            PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

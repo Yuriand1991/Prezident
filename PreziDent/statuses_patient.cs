@@ -12,29 +12,18 @@ namespace PreziDent
     using System;
     using System.Collections.Generic;
     
-    public partial class patient
+    public partial class statuses_patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public patient()
+        public statuses_patient()
         {
-            this.appointments = new HashSet<appointment>();
+            this.patients = new HashSet<patient>();
         }
     
         public int id { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string other_name { get; set; }
-        public string phone { get; set; }
-        public string email { get; set; }
-        public Nullable<System.DateTime> birthday { get; set; }
-        public Nullable<System.DateTime> reg_date { get; set; }
-        public string notes { get; set; }
-        public string address { get; set; }
-        public int status_id { get; set; }
-        public string num_card { get; set; }
+        public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointment> appointments { get; set; }
-        public virtual statuses_patient statuses_patient { get; set; }
+        public virtual ICollection<patient> patients { get; set; }
     }
 }

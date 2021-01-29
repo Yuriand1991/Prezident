@@ -37,5 +37,6 @@ namespace PreziDent
         public virtual DbSet<shedule> shedules { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<type_product> type_product { get; set; }
+        public virtual DbSet<statuses_patient> statuses_patient { get; set; }
     }
 }

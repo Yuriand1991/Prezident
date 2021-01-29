@@ -52,6 +52,10 @@
           <Property Name="email" Type="nchar" MaxLength="80" />
           <Property Name="birthday" Type="date" />
           <Property Name="reg_date" Type="date" />
+          <Property Name="notes" Type="ntext" />
+          <Property Name="address" Type="ntext" />
+          <Property Name="status_id" Type="int" Nullable="false" />
+          <Property Name="num_card" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="products">
           <Key>
@@ -95,6 +99,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="start_time" Type="time" Precision="7" />
           <Property Name="end_time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="statuses_patient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="char" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="type_product">
           <Key>
@@ -173,6 +184,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_patients_statuses_patient">
+          <End Role="statuses_patient" Type="Self.statuses_patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="patients" Type="Self.patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statuses_patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patients">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_products_type_product">
           <End Role="type_product" Type="Self.type_product" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -236,6 +261,7 @@
           <EntitySet Name="rooms" EntityType="Self.rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shedule" EntityType="Self.shedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="statuses_patient" EntityType="Self.statuses_patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="type_product" EntityType="Self.type_product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_appointment_patients" Association="Self.FK_appointment_patients">
@@ -257,6 +283,10 @@
           <AssociationSet Name="FK_orders_services_services" Association="Self.FK_orders_services_services">
             <End Role="services" EntitySet="services" />
             <End Role="orders_services" EntitySet="orders_services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_patients_statuses_patient" Association="Self.FK_patients_statuses_patient">
+            <End Role="statuses_patient" EntitySet="statuses_patient" />
+            <End Role="patients" EntitySet="patients" />
           </AssociationSet>
           <AssociationSet Name="FK_products_type_product" Association="Self.FK_products_type_product">
             <End Role="type_product" EntitySet="type_product" />
@@ -334,6 +364,11 @@
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="reg_date" Type="DateTime" Precision="0" />
           <NavigationProperty Name="appointments" Relationship="Self.FK_appointment_patients" FromRole="patients" ToRole="appointment" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_id" Type="Int32" Nullable="false" />
+          <Property Name="num_card" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="statuses_patient" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="patient" ToRole="statuses_patient" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -544,6 +579,11 @@
             <End Role="type_product" EntitySet="type_product" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
+          <EntitySet Name="statuses_patient" EntityType="PrezidentClinicModel.statuses_patient" />
+          <AssociationSet Name="FK_patients_statuses_patient" Association="PrezidentClinicModel.FK_patients_statuses_patient">
+            <End Role="statuses_patient" EntitySet="statuses_patient" />
+            <End Role="patient" EntitySet="patients" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="type_product">
           <Key>
@@ -564,6 +604,28 @@
             </Principal>
             <Dependent Role="product">
               <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="statuses_patient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="patients" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="statuses_patient" ToRole="patient" />
+        </EntityType>
+        <Association Name="FK_patients_statuses_patient">
+          <End Type="PrezidentClinicModel.statuses_patient" Role="statuses_patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statuses_patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient">
+              <PropertyRef Name="status_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -615,6 +677,10 @@
           <EntitySetMapping Name="patients">
             <EntityTypeMapping TypeName="PrezidentClinicModel.patient">
               <MappingFragment StoreEntitySet="patients">
+                <ScalarProperty Name="num_card" ColumnName="num_card" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -688,6 +754,14 @@
           <EntitySetMapping Name="type_product">
             <EntityTypeMapping TypeName="PrezidentClinicModel.type_product">
               <MappingFragment StoreEntitySet="type_product">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statuses_patient">
+            <EntityTypeMapping TypeName="PrezidentClinicModel.statuses_patient">
+              <MappingFragment StoreEntitySet="statuses_patient">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
