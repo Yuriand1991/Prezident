@@ -261,6 +261,7 @@
     <None Include="Properties\DataSources\room.datasource" />
     <None Include="Properties\DataSources\service.datasource" />
     <None Include="Properties\DataSources\shedule.datasource" />
+    <None Include="Properties\DataSources\statuses_patient.datasource" />
     <None Include="Properties\DataSources\type_product.datasource" />
     <None Include="Properties\DataSources\user.datasource" />
     <None Include="Properties\Settings.settings">

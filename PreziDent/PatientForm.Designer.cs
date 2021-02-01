@@ -29,6 +29,7 @@ namespace PreziDent
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FirstNamePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.LastNamePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.OtherNamePatient = new MaterialSkin.Controls.MaterialTextBox();
@@ -49,6 +50,12 @@ namespace PreziDent
             this.AddressPatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.NotesPatient = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.NotesPatientLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.StatusPatient = new MaterialSkin.Controls.MaterialComboBox();
+            this.statusespatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.StatusPatientLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.OkButton = new MaterialSkin.Controls.MaterialButton();
+            this.CnclButton = new MaterialSkin.Controls.MaterialButton();
+            ((System.ComponentModel.ISupportInitialize)(this.statusespatientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstNamePatient
@@ -117,7 +124,7 @@ namespace PreziDent
             this.RegistrationDatePatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.RegistrationDatePatient.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.RegistrationDatePatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RegistrationDatePatient.Location = new System.Drawing.Point(23, 388);
+            this.RegistrationDatePatient.Location = new System.Drawing.Point(23, 440);
             this.RegistrationDatePatient.Name = "RegistrationDatePatient";
             this.RegistrationDatePatient.Size = new System.Drawing.Size(178, 24);
             this.RegistrationDatePatient.TabIndex = 4;
@@ -247,7 +254,7 @@ namespace PreziDent
             this.RegistrationDatePatientLabel.Depth = 0;
             this.RegistrationDatePatientLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.RegistrationDatePatientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RegistrationDatePatientLabel.Location = new System.Drawing.Point(20, 366);
+            this.RegistrationDatePatientLabel.Location = new System.Drawing.Point(20, 418);
             this.RegistrationDatePatientLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.RegistrationDatePatientLabel.Name = "RegistrationDatePatientLabel";
             this.RegistrationDatePatientLabel.Size = new System.Drawing.Size(141, 19);
@@ -296,7 +303,7 @@ namespace PreziDent
             this.AddressPatient.Location = new System.Drawing.Point(261, 316);
             this.AddressPatient.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddressPatient.Name = "AddressPatient";
-            this.AddressPatient.Size = new System.Drawing.Size(217, 96);
+            this.AddressPatient.Size = new System.Drawing.Size(217, 88);
             this.AddressPatient.TabIndex = 16;
             this.AddressPatient.Text = "";
             // 
@@ -343,11 +350,101 @@ namespace PreziDent
             this.NotesPatientLabel.TabIndex = 19;
             this.NotesPatientLabel.Text = "Примечания:";
             // 
+            // StatusPatient
+            // 
+            this.StatusPatient.AutoResize = false;
+            this.StatusPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.StatusPatient.DataSource = this.statusespatientBindingSource;
+            this.StatusPatient.Depth = 0;
+            this.StatusPatient.DisplayMember = "name";
+            this.StatusPatient.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.StatusPatient.DropDownHeight = 174;
+            this.StatusPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StatusPatient.DropDownWidth = 121;
+            this.StatusPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.StatusPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.StatusPatient.FormattingEnabled = true;
+            this.StatusPatient.IntegralHeight = false;
+            this.StatusPatient.ItemHeight = 43;
+            this.StatusPatient.Location = new System.Drawing.Point(261, 440);
+            this.StatusPatient.MaxDropDownItems = 4;
+            this.StatusPatient.MouseState = MaterialSkin.MouseState.OUT;
+            this.StatusPatient.Name = "StatusPatient";
+            this.StatusPatient.Size = new System.Drawing.Size(217, 49);
+            this.StatusPatient.TabIndex = 20;
+            this.StatusPatient.ValueMember = "id";
+            // 
+            // statusespatientBindingSource
+            // 
+            this.statusespatientBindingSource.DataSource = typeof(PreziDent.statuses_patient);
+            // 
+            // StatusPatientLabel
+            // 
+            this.StatusPatientLabel.AutoSize = true;
+            this.StatusPatientLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.StatusPatientLabel.Depth = 0;
+            this.StatusPatientLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.StatusPatientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.StatusPatientLabel.Location = new System.Drawing.Point(258, 418);
+            this.StatusPatientLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.StatusPatientLabel.Name = "StatusPatientLabel";
+            this.StatusPatientLabel.Size = new System.Drawing.Size(56, 19);
+            this.StatusPatientLabel.TabIndex = 21;
+            this.StatusPatientLabel.Text = "Статус:";
+            // 
+            // OkButton
+            // 
+            this.OkButton.AutoSize = false;
+            this.OkButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.OkButton.Depth = 0;
+            this.OkButton.DrawShadows = true;
+            this.OkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.OkButton.HighEmphasis = true;
+            this.OkButton.Icon = null;
+            this.OkButton.Location = new System.Drawing.Point(23, 498);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.OkButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(67, 36);
+            this.OkButton.TabIndex = 22;
+            this.OkButton.Text = "ОК";
+            this.OkButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.OkButton.UseAccentColor = false;
+            this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
+            // CnclButton
+            // 
+            this.CnclButton.AutoSize = false;
+            this.CnclButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CnclButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.CnclButton.Depth = 0;
+            this.CnclButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CnclButton.DrawShadows = true;
+            this.CnclButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CnclButton.HighEmphasis = true;
+            this.CnclButton.Icon = null;
+            this.CnclButton.Location = new System.Drawing.Point(106, 498);
+            this.CnclButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CnclButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CnclButton.Name = "CnclButton";
+            this.CnclButton.Size = new System.Drawing.Size(95, 36);
+            this.CnclButton.TabIndex = 23;
+            this.CnclButton.Text = "Отмена";
+            this.CnclButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.CnclButton.UseAccentColor = false;
+            this.CnclButton.UseVisualStyleBackColor = false;
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 546);
+            this.ClientSize = new System.Drawing.Size(748, 572);
+            this.Controls.Add(this.CnclButton);
+            this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.StatusPatientLabel);
+            this.Controls.Add(this.StatusPatient);
             this.Controls.Add(this.NotesPatientLabel);
             this.Controls.Add(this.NotesPatient);
             this.Controls.Add(this.AddressPatientLabel);
@@ -370,32 +467,37 @@ namespace PreziDent
             this.Controls.Add(this.FirstNamePatient);
             this.Name = "PatientForm";
             this.Text = "Пациент";
+            ((System.ComponentModel.ISupportInitialize)(this.statusespatientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialTextBox FirstNamePatient;
-        private MaterialSkin.Controls.MaterialTextBox LastNamePatient;
-        private MaterialSkin.Controls.MaterialTextBox OtherNamePatient;
-        private System.Windows.Forms.DateTimePicker BirthDayPatient;
-        private System.Windows.Forms.DateTimePicker RegistrationDatePatient;
         private MaterialSkin.Controls.MaterialLabel LastNamePatientLabel;
         private MaterialSkin.Controls.MaterialLabel FirstPatientLabel;
         private MaterialSkin.Controls.MaterialLabel OtherNamePatientLabel;
-        private MaterialSkin.Controls.MaterialTextBox PhonePatient;
         private MaterialSkin.Controls.MaterialLabel PhonePatientLabel;
         private MaterialSkin.Controls.MaterialLabel EmailPatientLabel;
-        private MaterialSkin.Controls.MaterialTextBox EmailPatient;
         private MaterialSkin.Controls.MaterialLabel BirthDayPatientLabel;
         private MaterialSkin.Controls.MaterialLabel RegistrationDatePatientLabel;
-        private MaterialSkin.Controls.MaterialTextBox NumberCardPatient;
         private MaterialSkin.Controls.MaterialLabel NumberCardPatientLabel;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox AddressPatient;
         private MaterialSkin.Controls.MaterialLabel AddressPatientLabel;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox NotesPatient;
         private MaterialSkin.Controls.MaterialLabel NotesPatientLabel;
+        private MaterialSkin.Controls.MaterialLabel StatusPatientLabel;
+        private MaterialSkin.Controls.MaterialButton OkButton;
+        private MaterialSkin.Controls.MaterialButton CnclButton;
+        private System.Windows.Forms.BindingSource statusespatientBindingSource;
+        protected internal MaterialSkin.Controls.MaterialTextBox FirstNamePatient;
+        protected internal MaterialSkin.Controls.MaterialTextBox LastNamePatient;
+        protected internal MaterialSkin.Controls.MaterialTextBox OtherNamePatient;
+        protected internal System.Windows.Forms.DateTimePicker BirthDayPatient;
+        protected internal System.Windows.Forms.DateTimePicker RegistrationDatePatient;
+        protected internal MaterialSkin.Controls.MaterialTextBox PhonePatient;
+        protected internal MaterialSkin.Controls.MaterialTextBox EmailPatient;
+        protected internal MaterialSkin.Controls.MaterialTextBox NumberCardPatient;
+        protected internal MaterialSkin.Controls.MaterialMultiLineTextBox AddressPatient;
+        protected internal MaterialSkin.Controls.MaterialMultiLineTextBox NotesPatient;
+        protected internal MaterialSkin.Controls.MaterialComboBox StatusPatient;
     }
 }

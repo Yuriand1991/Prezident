@@ -128,7 +128,7 @@ namespace PreziDent
 
                 ProductForm productForm = new ProductForm();
 
-                productForm.NameProduct.Text = Product.name;
+                productForm.NameProduct.Text = Product.name.Trim();
                 productForm.PriceProduct.Text = Product.price.ToString();
                 productForm.TypeProduct.SelectedIndex = productForm.TypeProduct.FindStringExact(DataBase.db.type_product.Find(Product.type_id).name.ToString());
 
@@ -137,7 +137,7 @@ namespace PreziDent
                 if (Result == DialogResult.Cancel)
                     return;
 
-                Product.name = productForm.NameProduct.Text;
+                Product.name = productForm.NameProduct.Text.Trim();
                 Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
                 Product.type_id = (int)productForm.TypeProduct.SelectedValue;
 
@@ -228,10 +228,10 @@ namespace PreziDent
 
                 ServiceForm serviceForm = new ServiceForm();
 
-                serviceForm.CodeService.Text = Service.code_service;
-                serviceForm.NameService.Text = Service.name;
+                serviceForm.CodeService.Text = Service.code_service.Trim();
+                serviceForm.NameService.Text = Service.name.Trim();
                 serviceForm.PriceService.Text = Service.price.ToString();
-                serviceForm.DescriptionService.Text = Service.description;
+                serviceForm.DescriptionService.Text = Service.description.Trim();
 
                 serviceForm.GroupService.SelectedIndex = serviceForm.GroupService.FindStringExact(DataBase.db.group_services.Find(Service.group_services_id).name.ToString());
 
@@ -240,11 +240,11 @@ namespace PreziDent
                 if (Result == DialogResult.Cancel)
                     return;
 
-                Service.code_service = serviceForm.CodeService.Text;
-                Service.name = serviceForm.NameService.Text;
+                Service.code_service = serviceForm.CodeService.Text.Trim();
+                Service.name = serviceForm.NameService.Text.Trim();
                 Service.price = System.Convert.ToDecimal(serviceForm.PriceService.Text);
                 Service.group_services_id = (int)serviceForm.GroupService.SelectedValue;
-                Service.description = serviceForm.DescriptionService.Text;
+                Service.description = serviceForm.DescriptionService.Text.Trim();
 
                 DataBase.db.SaveChanges();
 
@@ -289,6 +289,147 @@ namespace PreziDent
             if (Result == DialogResult.OK)
                 ServicesView.Refresh();
                 
+        }
+
+        /*******************************/
+        /*Метод добавления пациента    */
+        /*******************************/
+        private void AddPatientButton_Click(object sender, EventArgs e)
+        {
+            PatientForm patientForm = new PatientForm();
+            DialogResult Result = patientForm.ShowDialog(this);
+
+            if (Result == DialogResult.Cancel)
+                return;
+
+            patient Patient = new patient();
+            Patient.last_name = patientForm.LastNamePatient.Text;
+            Patient.first_name = patientForm.FirstNamePatient.Text;
+            Patient.other_name = patientForm.OtherNamePatient.Text;
+            Patient.phone = patientForm.PhonePatient.Text;
+            Patient.reg_date = patientForm.RegistrationDatePatient.Value;
+            Patient.birthday = patientForm.BirthDayPatient.Value;
+            Patient.email = patientForm.EmailPatient.Text;
+            Patient.address = patientForm.AddressPatient.Text;
+            Patient.notes = patientForm.NotesPatient.Text;
+            Patient.num_card = patientForm.NumberCardPatient.Text;
+            Patient.status_id = (int)patientForm.StatusPatient.SelectedValue;
+
+            DataBase.db.patients.Add(Patient);
+            DataBase.db.Entry(Patient).State = EntityState.Added;
+            DataBase.db.SaveChanges();
+        }
+
+        /*******************************/
+        /*Метод изменения пациента     */
+        /*******************************/
+        private void ChangePatientButton_Click(object sender, EventArgs e)
+        {
+            if (PatientsView.SelectedRows.Count > 0)
+            {
+                int index = PatientsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(PatientsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                patient Patient = DataBase.db.patients.Find(id);
+
+                PatientForm patientForm = new PatientForm();
+
+                patientForm.LastNamePatient.Text = Patient.last_name.Trim();
+                patientForm.FirstNamePatient.Text = Patient.first_name.Trim();
+                patientForm.OtherNamePatient.Text = Patient.other_name.Trim();
+                patientForm.PhonePatient.Text = Patient.phone.Trim();
+                patientForm.RegistrationDatePatient.Value = (DateTime)Patient.reg_date;
+                patientForm.BirthDayPatient.Value = (DateTime)Patient.birthday;
+                patientForm.EmailPatient.Text = Patient.email.Trim();
+                patientForm.AddressPatient.Text = Patient.address.Trim();
+                patientForm.NotesPatient.Text = Patient.notes.Trim();
+                patientForm.NumberCardPatient.Text = Patient.num_card.Trim();
+                patientForm.StatusPatient.SelectedIndex = patientForm.StatusPatient.FindStringExact(DataBase.db.statuses_patient.Find(Patient.status_id).name.ToString()); 
+
+                DialogResult Result = patientForm.ShowDialog(this);
+
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                Patient.last_name = patientForm.LastNamePatient.Text.Trim();
+                Patient.first_name = patientForm.FirstNamePatient.Text.Trim();
+                Patient.other_name = patientForm.OtherNamePatient.Text.Trim();
+                Patient.phone = patientForm.PhonePatient.Text.Trim();
+                Patient.reg_date = patientForm.RegistrationDatePatient.Value;
+                Patient.birthday = patientForm.BirthDayPatient.Value;
+                Patient.email = patientForm.EmailPatient.Text.Trim();
+                Patient.address = patientForm.AddressPatient.Text.Trim();
+                Patient.notes = patientForm.NotesPatient.Text.Trim();
+                Patient.num_card = patientForm.NumberCardPatient.Text.Trim();
+                Patient.status_id = (int)patientForm.StatusPatient.SelectedValue;
+
+                DataBase.db.SaveChanges();
+                PatientsView.Refresh(); // обновляем грид
+            }
+        }
+
+        /*******************************/
+        /*Метод удаления пациента      */
+        /*******************************/
+        private void DeletePatientButton_Click(object sender, EventArgs e)
+        {
+            if (PatientsView.RowCount > 0)
+            {
+                DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+                                                   "Confirmation", MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                int index = PatientsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(PatientsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                patient Patient = DataBase.db.patients.Find(id);
+                DataBase.db.patients.Remove(Patient);
+                DataBase.db.SaveChanges();
+            }
+        }
+
+        /************************/
+        /*Метод о пациенте      */
+        /************************/
+        private void AboutPatientButton_Click(object sender, EventArgs e)
+        {
+            if (PatientsView.SelectedRows.Count > 0)
+            {
+                int index = PatientsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(PatientsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                patient Patient = DataBase.db.patients.Find(id);
+
+                PatientForm patientForm = new PatientForm();
+
+                patientForm.LastNamePatient.Text = Patient.last_name.Trim();
+                patientForm.FirstNamePatient.Text = Patient.first_name.Trim();
+                patientForm.OtherNamePatient.Text = Patient.other_name.Trim();
+                patientForm.PhonePatient.Text = Patient.phone.Trim();
+                patientForm.RegistrationDatePatient.Value = (DateTime)Patient.reg_date;
+                patientForm.BirthDayPatient.Value = (DateTime)Patient.birthday;
+                patientForm.EmailPatient.Text = Patient.email.Trim();
+                patientForm.AddressPatient.Text = Patient.address.Trim();
+                patientForm.NotesPatient.Text = Patient.notes.Trim();
+                patientForm.NumberCardPatient.Text = Patient.num_card.Trim();
+                patientForm.StatusPatient.SelectedIndex = patientForm.StatusPatient.FindStringExact(DataBase.db.statuses_patient.Find(Patient.status_id).name.ToString());
+
+                DialogResult Result = patientForm.ShowDialog(this);
+            }
         }
     }
 }
