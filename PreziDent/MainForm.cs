@@ -40,9 +40,10 @@ namespace PreziDent
             DataBase.db.patients.Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
             //Загрузка записей приема
+            DateTime? NowDate = DateTime.Now.Date;
             DataBase.db.shedules.Load();
             List<shedule> Shedules = DataBase.db.shedules.Local.ToList();
-            DataBase.db.appointments.Load();
+            DataBase.db.appointments.Where(a => a.date == NowDate).Load();
             List<appointment> Appointments = DataBase.db.appointments.Local.ToList();
 
             var query = from sh in Shedules
