@@ -23,7 +23,12 @@ namespace PreziDent
         public int id { get; set; }
         public Nullable<System.TimeSpan> start_time { get; set; }
         public Nullable<System.TimeSpan> end_time { get; set; }
-    
+
+        public override string ToString()
+        {
+            return start_time + " - " + end_time;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
     }

@@ -44,7 +44,7 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Room = new System.Windows.Forms.TabPage();
-            this.SheduleView = new System.Windows.Forms.DataGridView();
+            this.SheduleDayCabinetView = new System.Windows.Forms.DataGridView();
             this.Products = new System.Windows.Forms.TabPage();
             this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
@@ -85,6 +85,17 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointmentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sheduleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.treatmentdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSheduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -92,7 +103,7 @@
             this.Rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Room.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetView)).BeginInit();
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -102,6 +113,7 @@
             this.Patients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -333,7 +345,7 @@
             // Room
             // 
             this.Room.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Room.Controls.Add(this.SheduleView);
+            this.Room.Controls.Add(this.SheduleDayCabinetView);
             this.Room.Location = new System.Drawing.Point(4, 22);
             this.Room.Name = "Room";
             this.Room.Padding = new System.Windows.Forms.Padding(3);
@@ -341,15 +353,29 @@
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
             // 
-            // SheduleView
+            // SheduleDayCabinetView
             // 
-            this.SheduleView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SheduleView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.SheduleView.Location = new System.Drawing.Point(59, 45);
-            this.SheduleView.Name = "SheduleView";
-            this.SheduleView.Size = new System.Drawing.Size(518, 364);
-            this.SheduleView.TabIndex = 0;
-            this.SheduleView.Paint += new System.Windows.Forms.PaintEventHandler(this.SheduleView_Paint);
+            this.SheduleDayCabinetView.AllowUserToAddRows = false;
+            this.SheduleDayCabinetView.AutoGenerateColumns = false;
+            this.SheduleDayCabinetView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SheduleDayCabinetView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAppointmentDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.patientidDataGridViewTextBoxColumn,
+            this.roomidDataGridViewTextBoxColumn,
+            this.sheduleidDataGridViewTextBoxColumn,
+            this.starttimeDataGridViewTextBoxColumn,
+            this.endtimeDataGridViewTextBoxColumn,
+            this.namepatientDataGridViewTextBoxColumn,
+            this.treatmentdescDataGridViewTextBoxColumn,
+            this.idSheduleDataGridViewTextBoxColumn});
+            this.SheduleDayCabinetView.DataSource = this.appointmentViewBindingSource;
+            this.SheduleDayCabinetView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.SheduleDayCabinetView.Location = new System.Drawing.Point(4, 6);
+            this.SheduleDayCabinetView.Name = "SheduleDayCabinetView";
+            this.SheduleDayCabinetView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SheduleDayCabinetView.Size = new System.Drawing.Size(990, 403);
+            this.SheduleDayCabinetView.TabIndex = 0;
             // 
             // Products
             // 
@@ -859,6 +885,78 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
+            // appointmentViewBindingSource
+            // 
+            this.appointmentViewBindingSource.DataSource = typeof(PreziDent.AppointmentView);
+            // 
+            // idAppointmentDataGridViewTextBoxColumn
+            // 
+            this.idAppointmentDataGridViewTextBoxColumn.DataPropertyName = "IdAppointment";
+            this.idAppointmentDataGridViewTextBoxColumn.HeaderText = "IdAppointment";
+            this.idAppointmentDataGridViewTextBoxColumn.Name = "idAppointmentDataGridViewTextBoxColumn";
+            this.idAppointmentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // patientidDataGridViewTextBoxColumn
+            // 
+            this.patientidDataGridViewTextBoxColumn.DataPropertyName = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.HeaderText = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.Name = "patientidDataGridViewTextBoxColumn";
+            this.patientidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // roomidDataGridViewTextBoxColumn
+            // 
+            this.roomidDataGridViewTextBoxColumn.DataPropertyName = "room_id";
+            this.roomidDataGridViewTextBoxColumn.HeaderText = "room_id";
+            this.roomidDataGridViewTextBoxColumn.Name = "roomidDataGridViewTextBoxColumn";
+            this.roomidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sheduleidDataGridViewTextBoxColumn
+            // 
+            this.sheduleidDataGridViewTextBoxColumn.DataPropertyName = "shedule_id";
+            this.sheduleidDataGridViewTextBoxColumn.HeaderText = "shedule_id";
+            this.sheduleidDataGridViewTextBoxColumn.Name = "sheduleidDataGridViewTextBoxColumn";
+            this.sheduleidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // starttimeDataGridViewTextBoxColumn
+            // 
+            this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "start_time";
+            this.starttimeDataGridViewTextBoxColumn.HeaderText = "Начало";
+            this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
+            // 
+            // endtimeDataGridViewTextBoxColumn
+            // 
+            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "end_time";
+            this.endtimeDataGridViewTextBoxColumn.HeaderText = "Окончание";
+            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
+            // 
+            // namepatientDataGridViewTextBoxColumn
+            // 
+            this.namepatientDataGridViewTextBoxColumn.DataPropertyName = "name_patient";
+            this.namepatientDataGridViewTextBoxColumn.HeaderText = "Пациент";
+            this.namepatientDataGridViewTextBoxColumn.Name = "namepatientDataGridViewTextBoxColumn";
+            this.namepatientDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // treatmentdescDataGridViewTextBoxColumn
+            // 
+            this.treatmentdescDataGridViewTextBoxColumn.DataPropertyName = "treatment_desc";
+            this.treatmentdescDataGridViewTextBoxColumn.HeaderText = "Лечение";
+            this.treatmentdescDataGridViewTextBoxColumn.Name = "treatmentdescDataGridViewTextBoxColumn";
+            this.treatmentdescDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // idSheduleDataGridViewTextBoxColumn
+            // 
+            this.idSheduleDataGridViewTextBoxColumn.DataPropertyName = "IdShedule";
+            this.idSheduleDataGridViewTextBoxColumn.HeaderText = "IdShedule";
+            this.idSheduleDataGridViewTextBoxColumn.Name = "idSheduleDataGridViewTextBoxColumn";
+            this.idSheduleDataGridViewTextBoxColumn.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,7 +979,7 @@
             this.Rooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Room.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SheduleView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetView)).EndInit();
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -891,6 +989,7 @@
             this.Patients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -911,7 +1010,7 @@
         private MaterialSkin.Controls.MaterialCard PlanCard;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel DateLabel;
-        private System.Windows.Forms.DataGridView SheduleView;
+        private System.Windows.Forms.DataGridView SheduleDayCabinetView;
         private System.Windows.Forms.TabPage Products;
         private System.Windows.Forms.DataGridView ProductsView;
         private MaterialSkin.Controls.MaterialButton ChangeProductButton;
@@ -954,6 +1053,17 @@
         private MaterialSkin.Controls.MaterialButton ChangePatientButton;
         private MaterialSkin.Controls.MaterialButton AddPatientButton;
         private MaterialSkin.Controls.MaterialButton AboutPatientButton;
+        private System.Windows.Forms.BindingSource appointmentViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAppointmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sheduleidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namepatientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentdescDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSheduleDataGridViewTextBoxColumn;
     }
 }
 

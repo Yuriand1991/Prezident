@@ -15,6 +15,7 @@
           <Property Name="room_id" Type="int" Nullable="false" />
           <Property Name="shedule_id" Type="int" Nullable="false" />
           <Property Name="name_patient" Type="nchar" MaxLength="255" />
+          <Property Name="treatment_desc" Type="ntext" />
         </EntityType>
         <EntityType Name="group_services">
           <Key>
@@ -322,6 +323,7 @@
           <NavigationProperty Name="patient" Relationship="Self.FK_appointment_patients" FromRole="appointment" ToRole="patients" />
           <NavigationProperty Name="room" Relationship="Self.FK_appointment_rooms" FromRole="appointment" ToRole="rooms" />
           <NavigationProperty Name="shedule" Relationship="Self.FK_appointment_shedule" FromRole="appointment" ToRole="shedule" />
+          <Property Name="treatment_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="group_services">
           <Key>
@@ -638,6 +640,7 @@
           <EntitySetMapping Name="appointments">
             <EntityTypeMapping TypeName="PrezidentClinicModel.appointment">
               <MappingFragment StoreEntitySet="appointment">
+                <ScalarProperty Name="treatment_desc" ColumnName="treatment_desc" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />

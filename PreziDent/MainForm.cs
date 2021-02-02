@@ -39,6 +39,21 @@ namespace PreziDent
             //Загрузка пациентов
             DataBase.db.patients.Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
+            //Загрузка записей приема
+            DataBase.db.shedules.Load();
+            List<shedule> Shedules = DataBase.db.shedules.Local.ToList();
+            DataBase.db.appointments.Load();
+            List<appointment> Appointments = DataBase.db.appointments.Local.ToList();
+
+            var query = from sh in Shedules
+                        join app in Appointments on sh.id equals app.shedule_id into gj
+                        from subapp in gj.DefaultIfEmpty()
+                        select new { sh.start_time, 
+                                     sh.end_time,
+                                     name_patient = subapp?.name_patient.ToString() ?? String.Empty,
+                                     treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty };
+
+            SheduleDayCabinetView.DataSource = query.ToList();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,18 +85,6 @@ namespace PreziDent
                         name_patient = "***"
                     }).ToList();*/
                 break;
-            }
-        }
-
-        private void SheduleView_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (DataGridViewColumn header in SheduleView.Columns)
-            {
-               if(header.HeaderText == "start_time")
-                    header.HeaderText = "Начало";
-                
-                if (header.HeaderText == "end_time")
-                    header.HeaderText = "Конец";
             }
         }
 
@@ -439,8 +442,9 @@ namespace PreziDent
                 patientForm.NumberCardPatient.Text = Patient.num_card.Trim();
                 patientForm.StatusPatient.SelectedIndex = patientForm.StatusPatient.FindStringExact(DataBase.db.statuses_patient.Find(Patient.status_id).name.ToString());
 
-                DialogResult Result = patientForm.ShowDialog(this);
+                patientForm.ShowDialog(this);
             }
         }
+
     }
 }

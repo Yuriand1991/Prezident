@@ -99,6 +99,7 @@
     <Compile Include="appointment.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentView.cs" />
     <Compile Include="ControlAppForm.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="GroupServicesForm.cs">
@@ -253,6 +254,8 @@
     <None Include="PreziDentDBEntities.edmx.diagram">
       <DependentUpon>PreziDentDBEntities.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\appointment.datasource" />
+    <None Include="Properties\DataSources\AppointmentView.datasource" />
     <None Include="Properties\DataSources\group_services.datasource" />
     <None Include="Properties\DataSources\order.datasource" />
     <None Include="Properties\DataSources\patient.datasource" />
