@@ -108,6 +108,7 @@ namespace PreziDent
             DataBase.db.products.Add(Product);
             DataBase.db.Entry(Product).State = EntityState.Added;
             DataBase.db.SaveChanges();
+            ProductsView.Refresh(); // обновляем грид
         }
 
         /**************************************/
@@ -141,8 +142,8 @@ namespace PreziDent
                 Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
                 Product.type_id = (int)productForm.TypeProduct.SelectedValue;
 
+                DataBase.db.Entry(Product).State = EntityState.Modified;
                 DataBase.db.SaveChanges();
-
                 ProductsView.Refresh(); // обновляем грид
             }
         }
@@ -169,7 +170,9 @@ namespace PreziDent
 
                 product Product = DataBase.db.products.Find(id);
                 DataBase.db.products.Remove(Product);
+                DataBase.db.Entry(Product).State = EntityState.Deleted;
                 DataBase.db.SaveChanges();
+                ProductsView.Refresh(); // обновляем грид
             }
         }
 
@@ -208,6 +211,7 @@ namespace PreziDent
             DataBase.db.services.Add(Service);
             DataBase.db.Entry(Service).State = EntityState.Added;
             DataBase.db.SaveChanges();
+            ServicesView.Refresh(); // обновляем грид
         }
 
         /**************************************/
@@ -246,6 +250,7 @@ namespace PreziDent
                 Service.group_services_id = (int)serviceForm.GroupService.SelectedValue;
                 Service.description = serviceForm.DescriptionService.Text.Trim();
 
+                DataBase.db.Entry(Service).State = EntityState.Modified;
                 DataBase.db.SaveChanges();
 
                 ServicesView.Refresh(); // обновляем грид
@@ -274,7 +279,9 @@ namespace PreziDent
 
                 service Service = DataBase.db.services.Find(id);
                 DataBase.db.services.Remove(Service);
+                DataBase.db.Entry(Service).State = EntityState.Deleted;
                 DataBase.db.SaveChanges();
+                ServicesView.Refresh(); // обновляем грид
             }
         }
 
@@ -318,6 +325,7 @@ namespace PreziDent
             DataBase.db.patients.Add(Patient);
             DataBase.db.Entry(Patient).State = EntityState.Added;
             DataBase.db.SaveChanges();
+            PatientsView.Refresh(); // обновляем грид
         }
 
         /*******************************/
@@ -367,6 +375,7 @@ namespace PreziDent
                 Patient.num_card = patientForm.NumberCardPatient.Text.Trim();
                 Patient.status_id = (int)patientForm.StatusPatient.SelectedValue;
 
+                DataBase.db.Entry(Patient).State = EntityState.Modified;
                 DataBase.db.SaveChanges();
                 PatientsView.Refresh(); // обновляем грид
             }
@@ -394,7 +403,9 @@ namespace PreziDent
 
                 patient Patient = DataBase.db.patients.Find(id);
                 DataBase.db.patients.Remove(Patient);
+                DataBase.db.Entry(Patient).State = EntityState.Deleted;
                 DataBase.db.SaveChanges();
+                PatientsView.Refresh(); // обновляем грид
             }
         }
 

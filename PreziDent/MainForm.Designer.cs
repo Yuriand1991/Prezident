@@ -70,6 +70,7 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Patients = new System.Windows.Forms.TabPage();
+            this.AboutPatientButton = new MaterialSkin.Controls.MaterialButton();
             this.DeletePatientButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangePatientButton = new MaterialSkin.Controls.MaterialButton();
             this.AddPatientButton = new MaterialSkin.Controls.MaterialButton();
@@ -84,7 +85,6 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AboutPatientButton = new MaterialSkin.Controls.MaterialButton();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.PlanCard.SuspendLayout();
@@ -688,6 +688,28 @@
             this.Patients.TabIndex = 5;
             this.Patients.Text = "Пациенты";
             // 
+            // AboutPatientButton
+            // 
+            this.AboutPatientButton.AutoSize = false;
+            this.AboutPatientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AboutPatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AboutPatientButton.Depth = 0;
+            this.AboutPatientButton.DrawShadows = true;
+            this.AboutPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AboutPatientButton.HighEmphasis = true;
+            this.AboutPatientButton.Icon = null;
+            this.AboutPatientButton.Location = new System.Drawing.Point(785, 26);
+            this.AboutPatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AboutPatientButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AboutPatientButton.Name = "AboutPatientButton";
+            this.AboutPatientButton.Size = new System.Drawing.Size(170, 36);
+            this.AboutPatientButton.TabIndex = 4;
+            this.AboutPatientButton.Text = "Подробно";
+            this.AboutPatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AboutPatientButton.UseAccentColor = false;
+            this.AboutPatientButton.UseVisualStyleBackColor = false;
+            this.AboutPatientButton.Click += new System.EventHandler(this.AboutPatientButton_Click);
+            // 
             // DeletePatientButton
             // 
             this.DeletePatientButton.AutoSize = false;
@@ -698,7 +720,7 @@
             this.DeletePatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeletePatientButton.HighEmphasis = true;
             this.DeletePatientButton.Icon = null;
-            this.DeletePatientButton.Location = new System.Drawing.Point(785, 198);
+            this.DeletePatientButton.Location = new System.Drawing.Point(785, 211);
             this.DeletePatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeletePatientButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeletePatientButton.Name = "DeletePatientButton";
@@ -720,7 +742,7 @@
             this.ChangePatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangePatientButton.HighEmphasis = true;
             this.ChangePatientButton.Icon = null;
-            this.ChangePatientButton.Location = new System.Drawing.Point(785, 133);
+            this.ChangePatientButton.Location = new System.Drawing.Point(785, 149);
             this.ChangePatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangePatientButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangePatientButton.Name = "ChangePatientButton";
@@ -742,7 +764,7 @@
             this.AddPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddPatientButton.HighEmphasis = true;
             this.AddPatientButton.Icon = null;
-            this.AddPatientButton.Location = new System.Drawing.Point(785, 74);
+            this.AddPatientButton.Location = new System.Drawing.Point(785, 87);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddPatientButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddPatientButton.Name = "AddPatientButton";
@@ -836,26 +858,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // AboutPatientButton
-            // 
-            this.AboutPatientButton.AutoSize = false;
-            this.AboutPatientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AboutPatientButton.Depth = 0;
-            this.AboutPatientButton.DrawShadows = true;
-            this.AboutPatientButton.HighEmphasis = true;
-            this.AboutPatientButton.Icon = null;
-            this.AboutPatientButton.Location = new System.Drawing.Point(785, 26);
-            this.AboutPatientButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.AboutPatientButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AboutPatientButton.Name = "AboutPatientButton";
-            this.AboutPatientButton.Size = new System.Drawing.Size(170, 36);
-            this.AboutPatientButton.TabIndex = 4;
-            this.AboutPatientButton.Text = "Подробно";
-            this.AboutPatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.AboutPatientButton.UseAccentColor = false;
-            this.AboutPatientButton.UseVisualStyleBackColor = true;
-            this.AboutPatientButton.Click += new System.EventHandler(this.AboutPatientButton_Click);
             // 
             // MainForm
             // 
