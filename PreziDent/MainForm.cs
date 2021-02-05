@@ -54,7 +54,9 @@ namespace PreziDent
                 if (Cabinet != null)
                 {
                     MyCabinetNumLabel.Text = "Кабинет № " + Cabinet.number.ToString();
-                    LoadAppointmentForRoom(NowDate, Cabinet);
+                    SheduleDayCabinetView.DataSource = LoadAppointmentForRoom(NowDate, Cabinet);
+                    SheduleDayCabinetViewLabel.Text = GenerateDateCaption(NowDate);
+                    SheduleDayCabinetView.Refresh();
                 }
                 else
                     MessageBox.Show("Не удалось загрузить расписание!");
@@ -64,7 +66,7 @@ namespace PreziDent
         /************************************************************/
         /*Метод загрузки расписания и записей на прием для кабинета */
         /************************************************************/
-        public void LoadAppointmentForRoom(DateTime date, room cabinet)
+        public object LoadAppointmentForRoom(DateTime date, room cabinet)
         {
             using (PrezidentClinicEntities db = new PrezidentClinicEntities())
             {
@@ -85,23 +87,31 @@ namespace PreziDent
                                 treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty,
                                 patient_id = subapp?.patient_id ?? null
                             };
-                SheduleDayCabinetView.DataSource = query.ToList();
-                if (date == DateTime.Now.Date)
-                {
-                    SheduleDayCabinetViewLabel.Text = "Записи на сегодня:";
-                }
-                else
-                {
-                    SheduleDayCabinetViewLabel.Text = "Записи на " + date.ToLongDateString() + ":";
-                }
-                SheduleDayCabinetView.Refresh();
+                object DataSource = query.ToList();
+
+                return DataSource;
+            }
+        }
+
+        /*************************************************/
+        /*Генерация заголовка с датой для таблицы записей*/
+        /*************************************************/
+        public string GenerateDateCaption(DateTime date)
+        {
+            if (date == DateTime.Now.Date)
+            {
+                return "Записи на сегодня:";
+            }
+            else
+            {
+                return "Записи на " + date.ToLongDateString() + ":";
             }
         }
 
         /*****************************************/
         /*Метод выделения записи на прием в гриде*/
         /*****************************************/
-        public void SelectAppointment(int id)
+        public void SelectSheduleApp(int id)
         {
             SheduleDayCabinetView.Rows[0].Selected = false;
 
@@ -504,7 +514,9 @@ namespace PreziDent
         /*********************************************************************/
         private void MyCabinetCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, Cabinet);
+            SheduleDayCabinetView.DataSource = LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, Cabinet);
+            SheduleDayCabinetViewLabel.Text = GenerateDateCaption(MyCabinetCalendar.SelectionRange.Start);
+            SheduleDayCabinetView.Refresh();
         }
 
         /******************************************************/
@@ -551,8 +563,18 @@ namespace PreziDent
                     DataBase.db.Entry(Appointment).State = EntityState.Modified;
                     DataBase.db.SaveChanges();
 
-                    MyCabinetCalendar.SelectionStart = AppDate;
-                    SelectAppointment(ShId);
+                    if (MyCabinetCalendar.SelectionStart == AppDate)
+                    {
+                        SheduleDayCabinetView.DataSource = LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, Cabinet);
+                        SheduleDayCabinetViewLabel.Text = GenerateDateCaption(MyCabinetCalendar.SelectionRange.Start);
+                        SheduleDayCabinetView.Refresh();
+                    }
+                    else
+                    {
+                        MyCabinetCalendar.SelectionStart = AppDate;
+                    }
+
+                    SelectSheduleApp(ShId);
                 }
                 else
                 {
@@ -590,8 +612,18 @@ namespace PreziDent
                     DataBase.db.Entry(Appointment).State = EntityState.Added;
                     DataBase.db.SaveChanges();
 
-                    MyCabinetCalendar.SelectionStart = AppDate;
-                    SelectAppointment(ShId);
+                    if (MyCabinetCalendar.SelectionStart == AppDate)
+                    {
+                        SheduleDayCabinetView.DataSource = LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, Cabinet);
+                        SheduleDayCabinetViewLabel.Text = GenerateDateCaption(MyCabinetCalendar.SelectionRange.Start);
+                        SheduleDayCabinetView.Refresh();
+                    }
+                    else
+                    {
+                        MyCabinetCalendar.SelectionStart = AppDate;
+                    }
+
+                    SelectSheduleApp(ShId);
                 }
             }
 
@@ -640,7 +672,9 @@ namespace PreziDent
                     DataBase.db.appointments.Remove(Appointment);
                     DataBase.db.Entry(Appointment).State = EntityState.Deleted;
                     DataBase.db.SaveChanges();
-                    LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, this.Cabinet);
+                    SheduleDayCabinetView.DataSource = LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, this.Cabinet);
+                    SheduleDayCabinetViewLabel.Text = GenerateDateCaption(MyCabinetCalendar.SelectionRange.Start);
+                    SheduleDayCabinetView.Refresh();
                 }
             }
         }

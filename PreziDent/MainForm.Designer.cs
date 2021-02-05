@@ -51,8 +51,6 @@
             this.MyCabinetCalendar = new System.Windows.Forms.MonthCalendar();
             this.MyCabinetNumLabel = new MaterialSkin.Controls.MaterialLabel();
             this.Rooms = new System.Windows.Forms.TabPage();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Products = new System.Windows.Forms.TabPage();
             this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
@@ -93,6 +91,9 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
             this.SheduleDayCabinetViewLabel.SuspendLayout();
@@ -100,7 +101,6 @@
             this.SheduleDayCabinetViewMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
             this.Rooms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -162,7 +162,7 @@
             this.MainTabControl.Multiline = true;
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(1008, 658);
+            this.MainTabControl.Size = new System.Drawing.Size(1149, 658);
             this.MainTabControl.TabIndex = 0;
             // 
             // MainPage
@@ -184,7 +184,7 @@
             this.Room.Location = new System.Drawing.Point(4, 22);
             this.Room.Name = "Room";
             this.Room.Padding = new System.Windows.Forms.Padding(3);
-            this.Room.Size = new System.Drawing.Size(1000, 632);
+            this.Room.Size = new System.Drawing.Size(1141, 632);
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
             // 
@@ -334,43 +334,15 @@
             // Rooms
             // 
             this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Rooms.Controls.Add(this.materialButton1);
-            this.Rooms.Controls.Add(this.dataGridView1);
+            this.Rooms.Controls.Add(this.groupBox3);
+            this.Rooms.Controls.Add(this.groupBox2);
+            this.Rooms.Controls.Add(this.groupBox1);
             this.Rooms.Location = new System.Drawing.Point(4, 22);
             this.Rooms.Name = "Rooms";
             this.Rooms.Padding = new System.Windows.Forms.Padding(3);
-            this.Rooms.Size = new System.Drawing.Size(1000, 632);
+            this.Rooms.Size = new System.Drawing.Size(1141, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Кабинеты";
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(704, 223);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "materialButton1";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dataGridView1.Location = new System.Drawing.Point(426, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(255, 211);
-            this.dataGridView1.TabIndex = 0;
             // 
             // Products
             // 
@@ -880,11 +852,38 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(17, 122);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(356, 481);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Кабинет №";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(390, 122);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(367, 481);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Кабинет №";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(768, 122);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(367, 481);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Кабинет №";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 777);
+            this.ClientSize = new System.Drawing.Size(1349, 777);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.MainDrawer);
             this.Controls.Add(this.MainTabControl);
@@ -900,8 +899,6 @@
             this.SheduleDayCabinetViewMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             this.Rooms.ResumeLayout(false);
-            this.Rooms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Products.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -932,8 +929,6 @@
         private MaterialSkin.Controls.MaterialButton AddProductButton;
         private MaterialSkin.Controls.MaterialButton TypeProductButton;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -982,6 +977,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn treatmentdescDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip SheduleDayCabinetViewMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem DeleteToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
