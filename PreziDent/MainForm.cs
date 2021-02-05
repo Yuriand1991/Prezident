@@ -16,6 +16,7 @@ namespace PreziDent
     public partial class MainForm : PreziDent.AppFrom
     {
         private user User;
+        private room Cabinet;
         public void SetUser(user User)
         {
             this.User = User; 
@@ -23,9 +24,10 @@ namespace PreziDent
         public MainForm()
         {
             InitializeComponent();
-            LoadDB();
         }
-
+        /***********************************************/
+        /*Метод загрузки данных из бд для главной формы*/
+        /***********************************************/
         public void LoadDB()
         {
             PrezidentClinicEntities db = new PrezidentClinicEntities();
@@ -37,24 +39,82 @@ namespace PreziDent
             DataBase.db.services.Load();
             ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
             //Загрузка пациентов
-            DataBase.db.patients.Load();
+            DataBase.db.patients.Where(p => p.id != 0 /*не загружаем безымянного пациента*/).Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
-            //Загрузка записей приема
-            DateTime? NowDate = DateTime.Now.Date;
-            DataBase.db.shedules.Load();
-            List<shedule> Shedules = DataBase.db.shedules.Local.ToList();
-            DataBase.db.appointments.Where(a => a.date == NowDate).Load();
-            List<appointment> Appointments = DataBase.db.appointments.Local.ToList();
+            
+            
+            if (this.User.role_id != 1)//Если пользователь не администратор, а врач
+            {
+                //Загрузка записей приема
+                DateTime NowDate = DateTime.Now.Date;
+                int UserId = this.User.id;
+                // MessageBox.Show(UserId.ToString());
+                DataBase.db.rooms.Where(r => r.user_id == UserId).Load();
+                this.Cabinet = DataBase.db.rooms.Local.FirstOrDefault();
+                if (Cabinet != null)
+                {
+                    MyCabinetNumLabel.Text = "Кабинет № " + Cabinet.number.ToString();
+                    LoadAppointmentForRoom(NowDate, Cabinet);
+                }
+                else
+                    MessageBox.Show("Не удалось загрузить расписание!");
+            }
+        }
 
-            var query = from sh in Shedules
-                        join app in Appointments on sh.id equals app.shedule_id into gj
-                        from subapp in gj.DefaultIfEmpty()
-                        select new { sh.start_time, 
-                                     sh.end_time,
-                                     name_patient = subapp?.name_patient.ToString() ?? String.Empty,
-                                     treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty };
+        /************************************************************/
+        /*Метод загрузки расписания и записей на прием для кабинета */
+        /************************************************************/
+        public void LoadAppointmentForRoom(DateTime date, room cabinet)
+        {
+            using (PrezidentClinicEntities db = new PrezidentClinicEntities())
+            {
+                db.shedules.Load();
+                List<shedule> Shedules = db.shedules.Local.ToList();
+                db.appointments.Where(a => a.date == date).Where(a => a.room_id == cabinet.id).Load();
+                BindingList<appointment> Appointments = db.appointments.Local.ToBindingList();
+                var query = from sh in Shedules
+                            join app in Appointments on sh.id equals app.shedule_id into gj
+                            from subapp in gj.DefaultIfEmpty()
+                            select new
+                            {
+                                shedule_id = sh.id,
+                                sh.start_time,
+                                sh.end_time,
+                                id = subapp?.id ?? 0,
+                                name_patient = subapp?.name_patient.ToString() ?? String.Empty,
+                                treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty,
+                                patient_id = subapp?.patient_id ?? null
+                            };
+                SheduleDayCabinetView.DataSource = query.ToList();
+                if (date == DateTime.Now.Date)
+                {
+                    SheduleDayCabinetViewLabel.Text = "Записи на сегодня:";
+                }
+                else
+                {
+                    SheduleDayCabinetViewLabel.Text = "Записи на " + date.ToLongDateString() + ":";
+                }
+                SheduleDayCabinetView.Refresh();
+            }
+        }
 
-            SheduleDayCabinetView.DataSource = query.ToList();
+        /*****************************************/
+        /*Метод выделения записи на прием в гриде*/
+        /*****************************************/
+        public void SelectAppointment(int id)
+        {
+            SheduleDayCabinetView.Rows[0].Selected = false;
+
+            int rowIndex = -1;
+
+            DataGridViewRow row = SheduleDayCabinetView.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => r.Cells["sheduleidDataGridViewTextBoxColumn"].Value.ToString().Equals(id.ToString()))
+                .First();
+
+            rowIndex = row.Index;
+
+            SheduleDayCabinetView.Rows[rowIndex].Selected = true;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,22 +129,14 @@ namespace PreziDent
         private void MainForm_Load(object sender, EventArgs e)
         {
             DateLabel.Text = DateTime.Now.Date.ToLongDateString();
+            LoadDB();
             switch (User.role_id)
             {
                 case 1:
                     MainTabControl.TabPages.Remove(Room);
-                    
                 break;
                 case 2:
-                    MainTabControl.TabPages.Remove(Rooms);
-                   /* db = new PrezidentClinicEntities();
-                    db.shedules.Load();
-                    SheduleView.DataSource = db.shedules.Select(s => new SheduleShow
-                    {
-                        start_time = s.start_time,
-                        end_time = s.end_time,
-                        name_patient = "***"
-                    }).ToList();*/
+                    //MainTabControl.TabPages.Remove(Rooms);
                 break;
             }
         }
@@ -447,5 +499,150 @@ namespace PreziDent
             }
         }
 
+        /*********************************************************************/
+        /*Навигация по календарю записей кабинета и загрузка записей на прием*/
+        /*********************************************************************/
+        private void MyCabinetCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, Cabinet);
+        }
+
+        /******************************************************/
+        /*Добавление/изменение записи на прием в моем кабинете*/
+        /******************************************************/
+        private void SheduleDayCabinetView_DoubleClick(object sender, EventArgs e)
+        {
+            if (SheduleDayCabinetView.SelectedRows.Count > 0)
+            {
+                int index = SheduleDayCabinetView.SelectedRows[0].Index;
+                int id = 0;
+
+                bool converted = Int32.TryParse(SheduleDayCabinetView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                AppointmentForm appointmentForm = new AppointmentForm();
+                if (id != 0)
+                {
+                    //TODO изменить запись
+                    appointment Appointment = DataBase.db.appointments.Find(id);
+
+                    appointmentForm.NamePatient.Text = Appointment.name_patient.Trim();
+                    appointmentForm.StartTime.SelectedIndex = appointmentForm.StartTime.FindStringExact(DataBase.db.shedules.Find(Appointment.shedule_id).start_time.ToString());
+                    appointmentForm.AppointmentDate.Value = (DateTime)Appointment.date;
+                    appointmentForm.Treatment.Text = Appointment.treatment_desc.Trim();
+                    appointmentForm.SetPatientID(Appointment.patient_id);
+
+                    DialogResult Result = appointmentForm.ShowDialog(this);
+
+                    if (Result == DialogResult.Cancel)
+                        return;
+                    DateTime AppDate;
+                    int ShId;
+                    Appointment.name_patient = appointmentForm.NamePatient.Text;
+                    Appointment.shedule_id = (int)appointmentForm.StartTime.SelectedValue;
+                    ShId = Appointment.shedule_id;
+                    Appointment.date = appointmentForm.AppointmentDate.Value;
+                    AppDate = (DateTime)Appointment.date;
+                    Appointment.patient_id = appointmentForm.GetPatientID();
+                    Appointment.treatment_desc = appointmentForm.Treatment.Text;
+
+                    DataBase.db.Entry(Appointment).State = EntityState.Modified;
+                    DataBase.db.SaveChanges();
+
+                    MyCabinetCalendar.SelectionStart = AppDate;
+                    SelectAppointment(ShId);
+                }
+                else
+                {
+                    int idShedule = 0;
+
+                    bool convertedIdShedule = Int32.TryParse(SheduleDayCabinetView[1, index].Value.ToString(), out idShedule);
+
+                    if (convertedIdShedule == false)
+                        return;
+
+                    shedule Shedule = DataBase.db.shedules.Find(idShedule);
+                    appointmentForm.StartTime.SelectedIndex = appointmentForm.StartTime.FindStringExact(DataBase.db.shedules.Find(idShedule).start_time.ToString());
+                    appointmentForm.AppointmentDate.Value = MyCabinetCalendar.SelectionRange.Start;
+                    appointmentForm.SetPatientID(0);
+                    DialogResult Result = appointmentForm.ShowDialog(this);
+
+                    if (Result == DialogResult.Cancel)
+                        return;
+
+                    DateTime AppDate;
+                    int ShId;
+
+                    appointment Appointment = new appointment();
+                    Appointment.patient_id = appointmentForm.GetPatientID();
+                    Appointment.name_patient = appointmentForm.NamePatient.Text;
+
+                    Appointment.shedule_id = (int)appointmentForm.StartTime.SelectedValue;
+                    ShId = Appointment.shedule_id;
+                    Appointment.date = appointmentForm.AppointmentDate.Value;
+                    AppDate = (DateTime)Appointment.date;
+                    Appointment.patient_id = appointmentForm.GetPatientID();
+                    Appointment.treatment_desc = appointmentForm.Treatment.Text;
+                    Appointment.room_id = this.Cabinet.id;
+
+                    DataBase.db.Entry(Appointment).State = EntityState.Added;
+                    DataBase.db.SaveChanges();
+
+                    MyCabinetCalendar.SelectionStart = AppDate;
+                    SelectAppointment(ShId);
+                }
+            }
+
+        }
+
+        /*******************************************************************************/
+        /*Выделение строки записей на прием при на жатии правой кнопкой мыши на таблицы*/
+        /*******************************************************************************/
+        private void SheduleDayCabinetView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int rowSelected = e.RowIndex;
+                if (e.RowIndex != -1)
+                {
+                    this.SheduleDayCabinetView.ClearSelection();
+                    this.SheduleDayCabinetView.Rows[rowSelected].Selected = true;
+                }
+            }
+        }
+
+        /**************************/
+        /*Удаление записи на прием*/
+        /**************************/
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SheduleDayCabinetView.SelectedRows.Count > 0)
+            {
+                int index = SheduleDayCabinetView.SelectedRows[0].Index;
+                int id = 0;
+
+                bool converted = Int32.TryParse(SheduleDayCabinetView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                if (id != 0)
+                {
+                    DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+                                                   "Confirmation", MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
+                    if (Result == DialogResult.Cancel)
+                        return;
+
+                    appointment Appointment = DataBase.db.appointments.Find(id);
+                    DataBase.db.appointments.Remove(Appointment);
+                    DataBase.db.Entry(Appointment).State = EntityState.Deleted;
+                    DataBase.db.SaveChanges();
+                    LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, this.Cabinet);
+                }
+            }
+        }
     }
 }
