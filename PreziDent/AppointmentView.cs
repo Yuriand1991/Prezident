@@ -15,6 +15,7 @@ namespace PreziDent
         public int shedule_id { get; set; }
         public string name_patient { get; set; }
         public string treatment_desc { get; set; }
+        public string phone_patient { get; set; }
 
         public Nullable<System.TimeSpan> start_time { get; set; }
         public Nullable<System.TimeSpan> end_time { get; set; } 

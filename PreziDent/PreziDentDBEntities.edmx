@@ -16,6 +16,7 @@
           <Property Name="shedule_id" Type="int" Nullable="false" />
           <Property Name="name_patient" Type="nchar" MaxLength="255" />
           <Property Name="treatment_desc" Type="ntext" />
+          <Property Name="phone_patient" Type="nchar" MaxLength="12" />
         </EntityType>
         <EntityType Name="group_services">
           <Key>
@@ -214,7 +215,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_rooms_users">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="rooms" Type="Self.rooms" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -324,6 +327,7 @@
           <NavigationProperty Name="room" Relationship="Self.FK_appointment_rooms" FromRole="appointment" ToRole="rooms" />
           <NavigationProperty Name="shedule" Relationship="Self.FK_appointment_shedule" FromRole="appointment" ToRole="shedule" />
           <Property Name="treatment_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone_patient" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="group_services">
           <Key>
@@ -640,6 +644,7 @@
           <EntitySetMapping Name="appointments">
             <EntityTypeMapping TypeName="PrezidentClinicModel.appointment">
               <MappingFragment StoreEntitySet="appointment">
+                <ScalarProperty Name="phone_patient" ColumnName="phone_patient" />
                 <ScalarProperty Name="treatment_desc" ColumnName="treatment_desc" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="date" ColumnName="date" />

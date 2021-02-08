@@ -50,11 +50,6 @@ namespace PreziDent
             }
         }
 
-        private void SelectPatientFromDBCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            SelectPatientFromDBButton.Enabled = SelectPatientFromDBCheckbox.Checked;
-        }
-
         private void AppointmentForm_Shown(object sender, EventArgs e)
         {
             NavigateEndTime();
@@ -67,7 +62,29 @@ namespace PreziDent
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            String Message = "";
+
+            if (NamePatient.Text.Trim() == "")
+            {
+                Message += "Введите ФИО пациента" +
+                    "!\n";
+            }
+
+            if (PhonePatient.Text.Trim() == "")
+            {
+                Message += "Введите телефон пациента" +
+                    "!\n";
+            }
+
+            if (Message != "")
+            {
+                MessageBox.Show(Message);
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+
         }
     }
 }

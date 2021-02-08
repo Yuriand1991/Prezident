@@ -21,6 +21,7 @@ namespace PreziDent
         public int shedule_id { get; set; }
         public string name_patient { get; set; }
         public string treatment_desc { get; set; }
+        public string phone_patient { get; set; }
     
         public virtual patient patient { get; set; }
         public virtual room room { get; set; }

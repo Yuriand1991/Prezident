@@ -85,7 +85,8 @@ namespace PreziDent
                                 id = subapp?.id ?? 0,
                                 name_patient = subapp?.name_patient.ToString() ?? String.Empty,
                                 treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty,
-                                patient_id = subapp?.patient_id ?? null
+                                patient_id = subapp?.patient_id ?? null,
+                                phone_patient = subapp?.phone_patient.ToString() ?? String.Empty
                             };
                 object DataSource = query.ToList();
 
@@ -545,6 +546,7 @@ namespace PreziDent
                     appointmentForm.AppointmentDate.Value = (DateTime)Appointment.date;
                     appointmentForm.Treatment.Text = Appointment.treatment_desc.Trim();
                     appointmentForm.SetPatientID(Appointment.patient_id);
+                    appointmentForm.PhonePatient.Text = Appointment.phone_patient.Trim();
 
                     DialogResult Result = appointmentForm.ShowDialog(this);
 
@@ -559,6 +561,7 @@ namespace PreziDent
                     AppDate = (DateTime)Appointment.date;
                     Appointment.patient_id = appointmentForm.GetPatientID();
                     Appointment.treatment_desc = appointmentForm.Treatment.Text;
+                    Appointment.phone_patient = appointmentForm.PhonePatient.Text;
 
                     DataBase.db.Entry(Appointment).State = EntityState.Modified;
                     DataBase.db.SaveChanges();
@@ -608,6 +611,7 @@ namespace PreziDent
                     Appointment.patient_id = appointmentForm.GetPatientID();
                     Appointment.treatment_desc = appointmentForm.Treatment.Text;
                     Appointment.room_id = this.Cabinet.id;
+                    Appointment.phone_patient = appointmentForm.PhonePatient.Text;
 
                     DataBase.db.Entry(Appointment).State = EntityState.Added;
                     DataBase.db.SaveChanges();

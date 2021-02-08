@@ -31,8 +31,6 @@ namespace PreziDent
         {
             this.components = new System.ComponentModel.Container();
             this.PatientBox = new System.Windows.Forms.GroupBox();
-            this.SelectPatientFromDBButton = new MaterialSkin.Controls.MaterialButton();
-            this.SelectPatientFromDBCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
             this.NamePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.AppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.AppointmentDateLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -47,6 +45,9 @@ namespace PreziDent
             this.Treatment = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
             this.CnclButton = new MaterialSkin.Controls.MaterialButton();
+            this.PhonePatient = new MaterialSkin.Controls.MaterialTextBox();
+            this.PhonePatientLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.NamePatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.PatientBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource1)).BeginInit();
@@ -57,56 +58,18 @@ namespace PreziDent
             // PatientBox
             // 
             this.PatientBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.PatientBox.Controls.Add(this.SelectPatientFromDBButton);
-            this.PatientBox.Controls.Add(this.SelectPatientFromDBCheckbox);
+            this.PatientBox.Controls.Add(this.NamePatientLabel);
+            this.PatientBox.Controls.Add(this.PhonePatientLabel);
+            this.PatientBox.Controls.Add(this.PhonePatient);
             this.PatientBox.Controls.Add(this.NamePatient);
             this.PatientBox.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PatientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PatientBox.Location = new System.Drawing.Point(44, 99);
+            this.PatientBox.Location = new System.Drawing.Point(44, 71);
             this.PatientBox.Name = "PatientBox";
-            this.PatientBox.Size = new System.Drawing.Size(678, 165);
+            this.PatientBox.Size = new System.Drawing.Size(678, 203);
             this.PatientBox.TabIndex = 0;
             this.PatientBox.TabStop = false;
             this.PatientBox.Text = "Пациент:";
-            // 
-            // SelectPatientFromDBButton
-            // 
-            this.SelectPatientFromDBButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SelectPatientFromDBButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.SelectPatientFromDBButton.Depth = 0;
-            this.SelectPatientFromDBButton.DrawShadows = true;
-            this.SelectPatientFromDBButton.Enabled = false;
-            this.SelectPatientFromDBButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SelectPatientFromDBButton.HighEmphasis = true;
-            this.SelectPatientFromDBButton.Icon = null;
-            this.SelectPatientFromDBButton.Location = new System.Drawing.Point(530, 112);
-            this.SelectPatientFromDBButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.SelectPatientFromDBButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SelectPatientFromDBButton.Name = "SelectPatientFromDBButton";
-            this.SelectPatientFromDBButton.Size = new System.Drawing.Size(90, 36);
-            this.SelectPatientFromDBButton.TabIndex = 7;
-            this.SelectPatientFromDBButton.Text = "Выбрать";
-            this.SelectPatientFromDBButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.SelectPatientFromDBButton.UseAccentColor = false;
-            this.SelectPatientFromDBButton.UseVisualStyleBackColor = false;
-            // 
-            // SelectPatientFromDBCheckbox
-            // 
-            this.SelectPatientFromDBCheckbox.AutoSize = true;
-            this.SelectPatientFromDBCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.SelectPatientFromDBCheckbox.Depth = 0;
-            this.SelectPatientFromDBCheckbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SelectPatientFromDBCheckbox.Location = new System.Drawing.Point(344, 112);
-            this.SelectPatientFromDBCheckbox.Margin = new System.Windows.Forms.Padding(0);
-            this.SelectPatientFromDBCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.SelectPatientFromDBCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SelectPatientFromDBCheckbox.Name = "SelectPatientFromDBCheckbox";
-            this.SelectPatientFromDBCheckbox.Ripple = true;
-            this.SelectPatientFromDBCheckbox.Size = new System.Drawing.Size(164, 37);
-            this.SelectPatientFromDBCheckbox.TabIndex = 6;
-            this.SelectPatientFromDBCheckbox.Text = "Выбрать из базы";
-            this.SelectPatientFromDBCheckbox.UseVisualStyleBackColor = false;
-            this.SelectPatientFromDBCheckbox.CheckedChanged += new System.EventHandler(this.SelectPatientFromDBCheckbox_CheckedChanged);
             // 
             // NamePatient
             // 
@@ -116,7 +79,7 @@ namespace PreziDent
             this.NamePatient.Font = new System.Drawing.Font("Roboto", 12F);
             this.NamePatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.NamePatient.Hint = "Введите ФИО пациента";
-            this.NamePatient.Location = new System.Drawing.Point(25, 37);
+            this.NamePatient.Location = new System.Drawing.Point(25, 58);
             this.NamePatient.MaxLength = 50;
             this.NamePatient.MouseState = MaterialSkin.MouseState.OUT;
             this.NamePatient.Multiline = false;
@@ -324,6 +287,47 @@ namespace PreziDent
             this.CnclButton.UseAccentColor = false;
             this.CnclButton.UseVisualStyleBackColor = false;
             // 
+            // PhonePatient
+            // 
+            this.PhonePatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PhonePatient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PhonePatient.Depth = 0;
+            this.PhonePatient.Font = new System.Drawing.Font("Roboto", 12F);
+            this.PhonePatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PhonePatient.Hint = "Введите номер телефона";
+            this.PhonePatient.Location = new System.Drawing.Point(182, 138);
+            this.PhonePatient.MaxLength = 50;
+            this.PhonePatient.MouseState = MaterialSkin.MouseState.OUT;
+            this.PhonePatient.Multiline = false;
+            this.PhonePatient.Name = "PhonePatient";
+            this.PhonePatient.Size = new System.Drawing.Size(438, 50);
+            this.PhonePatient.TabIndex = 1;
+            this.PhonePatient.Text = "";
+            // 
+            // PhonePatientLabel
+            // 
+            this.PhonePatientLabel.AutoSize = true;
+            this.PhonePatientLabel.Depth = 0;
+            this.PhonePatientLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PhonePatientLabel.Location = new System.Drawing.Point(24, 153);
+            this.PhonePatientLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PhonePatientLabel.Name = "PhonePatientLabel";
+            this.PhonePatientLabel.Size = new System.Drawing.Size(70, 19);
+            this.PhonePatientLabel.TabIndex = 2;
+            this.PhonePatientLabel.Text = "Телефон:";
+            // 
+            // NamePatientLabel
+            // 
+            this.NamePatientLabel.AutoSize = true;
+            this.NamePatientLabel.Depth = 0;
+            this.NamePatientLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NamePatientLabel.Location = new System.Drawing.Point(24, 36);
+            this.NamePatientLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.NamePatientLabel.Name = "NamePatientLabel";
+            this.NamePatientLabel.Size = new System.Drawing.Size(39, 19);
+            this.NamePatientLabel.TabIndex = 3;
+            this.NamePatientLabel.Text = "ФИО:";
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,8 +355,6 @@ namespace PreziDent
         #endregion
 
         private System.Windows.Forms.GroupBox PatientBox;
-        private MaterialSkin.Controls.MaterialButton SelectPatientFromDBButton;
-        private MaterialSkin.Controls.MaterialCheckbox SelectPatientFromDBCheckbox;
         private MaterialSkin.Controls.MaterialLabel AppointmentDateLabel;
         protected internal MaterialSkin.Controls.MaterialTextBox NamePatient;
         private System.Windows.Forms.BindingSource sheduleBindingSource;
@@ -367,5 +369,8 @@ namespace PreziDent
         protected internal System.Windows.Forms.DateTimePicker AppointmentDate;
         private MaterialSkin.Controls.MaterialButton OkButton;
         private MaterialSkin.Controls.MaterialButton CnclButton;
+        private MaterialSkin.Controls.MaterialLabel NamePatientLabel;
+        private MaterialSkin.Controls.MaterialLabel PhonePatientLabel;
+        protected internal MaterialSkin.Controls.MaterialTextBox PhonePatient;
     }
 }
