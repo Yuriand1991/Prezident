@@ -14,6 +14,8 @@ namespace PreziDent
     public partial class AppointmentForm : PreziDent.AppFrom
     {
         private int PatientID;
+        private int AppointmentID;
+        private int RoomID;
         public AppointmentForm()
         {
             InitializeComponent();
@@ -28,6 +30,22 @@ namespace PreziDent
         public void SetPatientID(int PatientID)
         {
             this.PatientID = PatientID;
+        }
+
+        /*******************************/
+        /*Установка ид записи на прием*/
+        /******************************/
+        public void SetAppointmentID(int AppointmentID)
+        {
+            this.AppointmentID = AppointmentID;
+        }
+
+        /***************************/
+        /*Установка ид пользователя*/
+        /***************************/
+        public void SetRoomID(int RoomID)
+        {
+            this.RoomID = RoomID;
         }
 
         /***************************/
@@ -70,18 +88,22 @@ namespace PreziDent
                     "!\n";
             }
 
-            if (PhonePatient.Text.Trim() == "")
-            {
-                Message += "Введите телефон пациента" +
-                    "!\n";
-            }
-
             if (Message != "")
             {
                 MessageBox.Show(Message);
             }
             else
             {
+                //Проверяем, есть ли запись на данное время
+                if (DataBase.db.appointments.Where(a => a.date == (DateTime)AppointmentDate.Value)
+                                                    .Where(a => a.shedule_id == (int)StartTime.SelectedValue)
+                                                    .Where(a => a.id != AppointmentID)
+                                                    .Where(a => a.room_id == RoomID).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("На данное время уже записан пациент!");
+                    return;
+                }
+
                 this.DialogResult = DialogResult.OK;
             }
 
