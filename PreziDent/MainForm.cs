@@ -687,7 +687,7 @@ namespace PreziDent
                 }
     
                 //Обновление таблицы
-                if ((sender as DataGridView).Name == "SheduleDayCabinetView")
+                if ((sender as DataGridView).Name == "SheduleDayCabinetView")//Если свой кабинет
                 {
                     if (MyCabinetCalendar.SelectionStart == AppDate)
                     {
