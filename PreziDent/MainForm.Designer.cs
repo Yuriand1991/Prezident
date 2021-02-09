@@ -118,6 +118,7 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SheduleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -307,6 +308,7 @@
             // Rooms
             // 
             this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Rooms.Controls.Add(this.SheduleDayAllCabinetViewLabel);
             this.Rooms.Controls.Add(this.AllCabinetCalendar);
             this.Rooms.Controls.Add(this.SheduleDayCabinetNineLabel);
             this.Rooms.Controls.Add(this.SheduleDayCabinetTwoLabel);
@@ -335,9 +337,9 @@
             this.SheduleDayCabinetNineLabel.Controls.Add(this.SheduleDayCabinetNineView);
             this.SheduleDayCabinetNineLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetNineLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SheduleDayCabinetNineLabel.Location = new System.Drawing.Point(771, 183);
+            this.SheduleDayCabinetNineLabel.Location = new System.Drawing.Point(771, 218);
             this.SheduleDayCabinetNineLabel.Name = "SheduleDayCabinetNineLabel";
-            this.SheduleDayCabinetNineLabel.Size = new System.Drawing.Size(367, 443);
+            this.SheduleDayCabinetNineLabel.Size = new System.Drawing.Size(364, 408);
             this.SheduleDayCabinetNineLabel.TabIndex = 2;
             this.SheduleDayCabinetNineLabel.TabStop = false;
             this.SheduleDayCabinetNineLabel.Text = "Кабинет №";
@@ -361,10 +363,10 @@
             this.SheduleDayCabinetNineView.ContextMenuStrip = this.SheduleDayCabinetViewMenuStrip;
             this.SheduleDayCabinetNineView.DataSource = this.appointmentViewBindingSource;
             this.SheduleDayCabinetNineView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.SheduleDayCabinetNineView.Location = new System.Drawing.Point(6, 23);
+            this.SheduleDayCabinetNineView.Location = new System.Drawing.Point(6, 21);
             this.SheduleDayCabinetNineView.Name = "SheduleDayCabinetNineView";
             this.SheduleDayCabinetNineView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SheduleDayCabinetNineView.Size = new System.Drawing.Size(344, 414);
+            this.SheduleDayCabinetNineView.Size = new System.Drawing.Size(344, 388);
             this.SheduleDayCabinetNineView.TabIndex = 1;
             this.SheduleDayCabinetNineView.Tag = "9";
             this.SheduleDayCabinetNineView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
@@ -444,9 +446,9 @@
             this.SheduleDayCabinetTwoLabel.Controls.Add(this.SheduleDayCabinetTwoView);
             this.SheduleDayCabinetTwoLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetTwoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SheduleDayCabinetTwoLabel.Location = new System.Drawing.Point(395, 183);
+            this.SheduleDayCabinetTwoLabel.Location = new System.Drawing.Point(395, 218);
             this.SheduleDayCabinetTwoLabel.Name = "SheduleDayCabinetTwoLabel";
-            this.SheduleDayCabinetTwoLabel.Size = new System.Drawing.Size(367, 443);
+            this.SheduleDayCabinetTwoLabel.Size = new System.Drawing.Size(367, 408);
             this.SheduleDayCabinetTwoLabel.TabIndex = 1;
             this.SheduleDayCabinetTwoLabel.TabStop = false;
             this.SheduleDayCabinetTwoLabel.Text = "Кабинет №";
@@ -470,10 +472,10 @@
             this.SheduleDayCabinetTwoView.ContextMenuStrip = this.SheduleDayCabinetViewMenuStrip;
             this.SheduleDayCabinetTwoView.DataSource = this.appointmentViewBindingSource;
             this.SheduleDayCabinetTwoView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.SheduleDayCabinetTwoView.Location = new System.Drawing.Point(6, 23);
+            this.SheduleDayCabinetTwoView.Location = new System.Drawing.Point(6, 21);
             this.SheduleDayCabinetTwoView.Name = "SheduleDayCabinetTwoView";
             this.SheduleDayCabinetTwoView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SheduleDayCabinetTwoView.Size = new System.Drawing.Size(344, 414);
+            this.SheduleDayCabinetTwoView.Size = new System.Drawing.Size(344, 388);
             this.SheduleDayCabinetTwoView.TabIndex = 1;
             this.SheduleDayCabinetTwoView.Tag = "2";
             this.SheduleDayCabinetTwoView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
@@ -553,9 +555,9 @@
             this.SheduleDayCabinetOneLabel.Controls.Add(this.SheduleDayCabinetOneView);
             this.SheduleDayCabinetOneLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetOneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SheduleDayCabinetOneLabel.Location = new System.Drawing.Point(18, 183);
+            this.SheduleDayCabinetOneLabel.Location = new System.Drawing.Point(18, 218);
             this.SheduleDayCabinetOneLabel.Name = "SheduleDayCabinetOneLabel";
-            this.SheduleDayCabinetOneLabel.Size = new System.Drawing.Size(356, 443);
+            this.SheduleDayCabinetOneLabel.Size = new System.Drawing.Size(371, 408);
             this.SheduleDayCabinetOneLabel.TabIndex = 0;
             this.SheduleDayCabinetOneLabel.TabStop = false;
             this.SheduleDayCabinetOneLabel.Text = "Кабинет №";
@@ -579,10 +581,10 @@
             this.SheduleDayCabinetOneView.ContextMenuStrip = this.SheduleDayCabinetViewMenuStrip;
             this.SheduleDayCabinetOneView.DataSource = this.appointmentViewBindingSource;
             this.SheduleDayCabinetOneView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.SheduleDayCabinetOneView.Location = new System.Drawing.Point(6, 23);
+            this.SheduleDayCabinetOneView.Location = new System.Drawing.Point(12, 21);
             this.SheduleDayCabinetOneView.Name = "SheduleDayCabinetOneView";
             this.SheduleDayCabinetOneView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SheduleDayCabinetOneView.Size = new System.Drawing.Size(344, 414);
+            this.SheduleDayCabinetOneView.Size = new System.Drawing.Size(344, 388);
             this.SheduleDayCabinetOneView.TabIndex = 0;
             this.SheduleDayCabinetOneView.Tag = "1";
             this.SheduleDayCabinetOneView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
@@ -1164,23 +1166,39 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
+            // SheduleDayAllCabinetViewLabel
+            // 
+            this.SheduleDayAllCabinetViewLabel.AutoSize = true;
+            this.SheduleDayAllCabinetViewLabel.Depth = 0;
+            this.SheduleDayAllCabinetViewLabel.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.SheduleDayAllCabinetViewLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.SheduleDayAllCabinetViewLabel.Location = new System.Drawing.Point(26, 191);
+            this.SheduleDayAllCabinetViewLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SheduleDayAllCabinetViewLabel.Name = "SheduleDayAllCabinetViewLabel";
+            this.SheduleDayAllCabinetViewLabel.Size = new System.Drawing.Size(173, 24);
+            this.SheduleDayAllCabinetViewLabel.TabIndex = 4;
+            this.SheduleDayAllCabinetViewLabel.Text = "Записи на сегодня";
+            // 
             // idDataGridViewTextBoxColumn4
             // 
             this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn4.HeaderText = "id";
             this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.Visible = false;
             // 
             // SheduleId
             // 
             this.SheduleId.DataPropertyName = "shedule_id";
             this.SheduleId.HeaderText = "shedule_id";
             this.SheduleId.Name = "SheduleId";
+            this.SheduleId.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "patient_id";
             this.dataGridViewTextBoxColumn3.HeaderText = "patient_id";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -1213,7 +1231,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "name_patient";
             this.dataGridViewTextBoxColumn6.HeaderText = "Пациент";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 200;
+            this.dataGridViewTextBoxColumn6.Width = 300;
             // 
             // phonepatientDataGridViewTextBoxColumn
             // 
@@ -1227,7 +1245,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "treatment_desc";
             this.dataGridViewTextBoxColumn7.HeaderText = "Лечение";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 200;
+            this.dataGridViewTextBoxColumn7.Width = 300;
             // 
             // MainForm
             // 
@@ -1249,6 +1267,7 @@
             this.SheduleDayCabinetViewMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             this.Rooms.ResumeLayout(false);
+            this.Rooms.PerformLayout();
             this.SheduleDayCabinetNineLabel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetNineView)).EndInit();
             this.SheduleDayCabinetTwoLabel.ResumeLayout(false);
@@ -1369,6 +1388,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.MonthCalendar AllCabinetCalendar;
+        private MaterialSkin.Controls.MaterialLabel SheduleDayAllCabinetViewLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn SheduleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
