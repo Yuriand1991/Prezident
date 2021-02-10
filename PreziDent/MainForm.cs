@@ -15,6 +15,13 @@ namespace PreziDent
 {
     public partial class MainForm : PreziDent.AppFrom
     {
+        public const int ADMIN = 1;
+        public const int DOCTOR = 2;
+        public const int FIRST_ROOM = 1;
+        public const int TWO_ROOM = 2;
+        public const int NINE_ROOM = 9;
+        public const int NONE_APPOINTMENT = 0;
+
         private user User;
         private room Cabinet;
         public void SetUser(user User)
@@ -43,7 +50,7 @@ namespace PreziDent
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
 
             DateTime NowDate = DateTime.Now.Date;
-            if (this.User.role_id != 1)//Если пользователь не администратор, а врач
+            if (this.User.role_id != ADMIN)//Если пользователь не администратор, а врач
             {
                 //Загрузка записей приема
                 int UserId = this.User.id;
@@ -82,7 +89,7 @@ namespace PreziDent
                                 shedule_id = sh.id,
                                 sh.start_time,
                                 sh.end_time,
-                                id = subapp?.id ?? 0,
+                                id = subapp?.id ?? NONE_APPOINTMENT,
                                 name_patient = subapp?.name_patient.ToString() ?? String.Empty,
                                 treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty,
                                 patient_id = subapp?.patient_id ?? null,
@@ -112,15 +119,15 @@ namespace PreziDent
             {
                 switch (r.number)
                 {
-                    case 1:
+                    case FIRST_ROOM:
                          SheduleDayCabinetOneView.DataSource = LoadAppointmentForRoom(date, r.id);
                          SheduleDayCabinetOneLabel.Text = "Кабинет № " + r.number.ToString();
                     break;
-                    case 2:
+                    case TWO_ROOM:
                          SheduleDayCabinetTwoView.DataSource = LoadAppointmentForRoom(date, r.id);
                          SheduleDayCabinetTwoLabel.Text = "Кабинет № " + r.number.ToString();
                         break;
-                    case 9:
+                    case NINE_ROOM:
                          SheduleDayCabinetNineView.DataSource = LoadAppointmentForRoom(date, r.id);
                          SheduleDayCabinetNineLabel.Text = "Кабинет № " + r.number.ToString();
                         break;
@@ -193,10 +200,10 @@ namespace PreziDent
             LoadDB();
             switch (User.role_id)
             {
-                case 1:
+                case ADMIN:
                     MainTabControl.TabPages.Remove(Room);
                 break;
-                case 2:
+                case DOCTOR:
                     //MainTabControl.TabPages.Remove(Rooms);
                 break;
             }
@@ -214,13 +221,14 @@ namespace PreziDent
                 return;
 
 
-            product Product = new product();
+            product Product = new product
+            {
+                name = productForm.NameProduct.Text,
 
-            Product.name = productForm.NameProduct.Text;
+                price = System.Convert.ToDecimal(productForm.PriceProduct.Text),
 
-            Product.price = System.Convert.ToDecimal(productForm.PriceProduct.Text);
-
-            Product.type_id = (int)productForm.TypeProduct.SelectedValue;
+                type_id = (int)productForm.TypeProduct.SelectedValue
+            };
 
             DataBase.db.products.Add(Product);
             DataBase.db.Entry(Product).State = EntityState.Added;
@@ -317,13 +325,14 @@ namespace PreziDent
             if (Result == DialogResult.Cancel)
                 return;
 
-            service Service = new service();
-
-            Service.code_service = serviceForm.CodeService.Text;
-            Service.name = serviceForm.NameService.Text;
-            Service.price = System.Convert.ToDecimal(serviceForm.PriceService.Text);
-            Service.group_services_id = (int)serviceForm.GroupService.SelectedValue;
-            Service.description = serviceForm.DescriptionService.Text;
+            service Service = new service
+            {
+                code_service = serviceForm.CodeService.Text,
+                name = serviceForm.NameService.Text,
+                price = System.Convert.ToDecimal(serviceForm.PriceService.Text),
+                group_services_id = (int)serviceForm.GroupService.SelectedValue,
+                description = serviceForm.DescriptionService.Text
+            };
 
             DataBase.db.services.Add(Service);
             DataBase.db.Entry(Service).State = EntityState.Added;
@@ -426,18 +435,20 @@ namespace PreziDent
             if (Result == DialogResult.Cancel)
                 return;
 
-            patient Patient = new patient();
-            Patient.last_name = patientForm.LastNamePatient.Text;
-            Patient.first_name = patientForm.FirstNamePatient.Text;
-            Patient.other_name = patientForm.OtherNamePatient.Text;
-            Patient.phone = patientForm.PhonePatient.Text;
-            Patient.reg_date = patientForm.RegistrationDatePatient.Value;
-            Patient.birthday = patientForm.BirthDayPatient.Value;
-            Patient.email = patientForm.EmailPatient.Text;
-            Patient.address = patientForm.AddressPatient.Text;
-            Patient.notes = patientForm.NotesPatient.Text;
-            Patient.num_card = patientForm.NumberCardPatient.Text;
-            Patient.status_id = (int)patientForm.StatusPatient.SelectedValue;
+            patient Patient = new patient
+            {
+                last_name = patientForm.LastNamePatient.Text,
+                first_name = patientForm.FirstNamePatient.Text,
+                other_name = patientForm.OtherNamePatient.Text,
+                phone = patientForm.PhonePatient.Text,
+                reg_date = patientForm.RegistrationDatePatient.Value,
+                birthday = patientForm.BirthDayPatient.Value,
+                email = patientForm.EmailPatient.Text,
+                address = patientForm.AddressPatient.Text,
+                notes = patientForm.NotesPatient.Text,
+                num_card = patientForm.NumberCardPatient.Text,
+                status_id = (int)patientForm.StatusPatient.SelectedValue
+            };
 
             DataBase.db.patients.Add(Patient);
             DataBase.db.Entry(Patient).State = EntityState.Added;
@@ -590,7 +601,7 @@ namespace PreziDent
 
                 AppointmentForm appointmentForm = new AppointmentForm();
                 
-                if (id != 0)//редактируем запись
+                if (id != NONE_APPOINTMENT)//редактируем запись
                 {
                     
                     appointment Appointment = DataBase.db.appointments.Find(id);
@@ -619,12 +630,13 @@ namespace PreziDent
 
                     Appointment.name_patient = appointmentForm.NamePatient.Text;
                     Appointment.shedule_id = (int)appointmentForm.StartTime.SelectedValue;
-                    ShId = Appointment.shedule_id;
                     Appointment.date = appointmentForm.AppointmentDate.Value;
-                    AppDate = (DateTime)Appointment.date;
                     Appointment.patient_id = appointmentForm.GetPatientID();
                     Appointment.treatment_desc = appointmentForm.Treatment.Text;
                     Appointment.phone_patient = appointmentForm.PhonePatient.Text;
+
+                    ShId = Appointment.shedule_id;
+                    AppDate = (DateTime)Appointment.date;
 
                     DataBase.db.Entry(Appointment).State = EntityState.Modified;
                     DataBase.db.SaveChanges();
@@ -667,20 +679,19 @@ namespace PreziDent
                     if (Result == DialogResult.Cancel)
                         return;
 
-                    ShId = (int)appointmentForm.StartTime.SelectedValue;
+                    appointment Appointment = new appointment
+                    {
+                        patient_id = appointmentForm.GetPatientID(),
+                        name_patient = appointmentForm.NamePatient.Text,
+                        shedule_id = (int)appointmentForm.StartTime.SelectedValue,
+                        date = appointmentForm.AppointmentDate.Value,
+                        treatment_desc = appointmentForm.Treatment.Text,
+                        room_id = Convert.ToInt32(CbId),
+                        phone_patient = appointmentForm.PhonePatient.Text
+                    };
 
-                    appointment Appointment = new appointment();
-                    Appointment.patient_id = appointmentForm.GetPatientID();
-                    Appointment.name_patient = appointmentForm.NamePatient.Text;
-
-                    Appointment.shedule_id = ShId;
                     ShId = Appointment.shedule_id;
-                    Appointment.date = appointmentForm.AppointmentDate.Value;
                     AppDate = (DateTime)Appointment.date;
-                    Appointment.patient_id = appointmentForm.GetPatientID();
-                    Appointment.treatment_desc = appointmentForm.Treatment.Text;
-                    Appointment.room_id = Convert.ToInt32(CbId);
-                    Appointment.phone_patient = appointmentForm.PhonePatient.Text;
 
                     DataBase.db.Entry(Appointment).State = EntityState.Added;
                     DataBase.db.SaveChanges();
@@ -689,7 +700,7 @@ namespace PreziDent
                 //Обновление таблицы
                 if ((sender as DataGridView).Name == "SheduleDayCabinetView")//Если свой кабинет
                 {
-                    if (MyCabinetCalendar.SelectionStart == AppDate)
+                    if (MyCabinetCalendar.SelectionStart == AppDate)//Если дату не изменили в форме записи
                     {
                         (sender as DataGridView).DataSource = LoadAppointmentForRoom(MyCabinetCalendar.SelectionRange.Start, CbId);
                         (sender as DataGridView).Refresh();
@@ -699,10 +710,10 @@ namespace PreziDent
                         MyCabinetCalendar.SelectionStart = AppDate;
                     }
                 }
-                else
+                else//если из вкладки все кабинеты
                 {
                     
-                    if (AllCabinetCalendar.SelectionStart == AppDate)
+                    if (AllCabinetCalendar.SelectionStart == AppDate)//Если дату не изменили в форме записи
                     {
                         (sender as DataGridView).DataSource = LoadAppointmentForRoom(AllCabinetCalendar.SelectionRange.Start, CbId);
                         (sender as DataGridView).Refresh();
@@ -749,7 +760,7 @@ namespace PreziDent
                 if (converted == false)
                     return;
 
-                if (id != 0)
+                if (id != NONE_APPOINTMENT)
                 {
                     DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
                                                    "Confirmation", MessageBoxButtons.OKCancel,

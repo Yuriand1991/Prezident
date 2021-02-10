@@ -41,6 +41,7 @@
             this.MyCabinetCalendar = new System.Windows.Forms.MonthCalendar();
             this.MyCabinetNumLabel = new MaterialSkin.Controls.MaterialLabel();
             this.Rooms = new System.Windows.Forms.TabPage();
+            this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AllCabinetCalendar = new System.Windows.Forms.MonthCalendar();
             this.SheduleDayCabinetNineLabel = new System.Windows.Forms.GroupBox();
             this.SheduleDayCabinetNineView = new System.Windows.Forms.DataGridView();
@@ -118,10 +119,8 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SheduleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -240,7 +239,6 @@
             this.SheduleDayCabinetView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn4,
             this.SheduleId,
-            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn2,
@@ -319,6 +317,21 @@
             this.Rooms.Size = new System.Drawing.Size(1141, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Все кабинеты";
+            // 
+            // SheduleDayAllCabinetViewLabel
+            // 
+            this.SheduleDayAllCabinetViewLabel.AutoSize = true;
+            this.SheduleDayAllCabinetViewLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.SheduleDayAllCabinetViewLabel.Depth = 0;
+            this.SheduleDayAllCabinetViewLabel.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.SheduleDayAllCabinetViewLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.SheduleDayAllCabinetViewLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SheduleDayAllCabinetViewLabel.Location = new System.Drawing.Point(26, 191);
+            this.SheduleDayAllCabinetViewLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SheduleDayAllCabinetViewLabel.Name = "SheduleDayAllCabinetViewLabel";
+            this.SheduleDayAllCabinetViewLabel.Size = new System.Drawing.Size(173, 24);
+            this.SheduleDayAllCabinetViewLabel.TabIndex = 4;
+            this.SheduleDayAllCabinetViewLabel.Text = "Записи на сегодня";
             // 
             // AllCabinetCalendar
             // 
@@ -1166,19 +1179,6 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
-            // SheduleDayAllCabinetViewLabel
-            // 
-            this.SheduleDayAllCabinetViewLabel.AutoSize = true;
-            this.SheduleDayAllCabinetViewLabel.Depth = 0;
-            this.SheduleDayAllCabinetViewLabel.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.SheduleDayAllCabinetViewLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.SheduleDayAllCabinetViewLabel.Location = new System.Drawing.Point(26, 191);
-            this.SheduleDayAllCabinetViewLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SheduleDayAllCabinetViewLabel.Name = "SheduleDayAllCabinetViewLabel";
-            this.SheduleDayAllCabinetViewLabel.Size = new System.Drawing.Size(173, 24);
-            this.SheduleDayAllCabinetViewLabel.TabIndex = 4;
-            this.SheduleDayAllCabinetViewLabel.Text = "Записи на сегодня";
-            // 
             // idDataGridViewTextBoxColumn4
             // 
             this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
@@ -1192,13 +1192,6 @@
             this.SheduleId.HeaderText = "shedule_id";
             this.SheduleId.Name = "SheduleId";
             this.SheduleId.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "patient_id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "patient_id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -1339,7 +1332,7 @@
         private MaterialSkin.Controls.MaterialLabel MyCabinetNumLabel;
         private System.Windows.Forms.MonthCalendar MyCabinetCalendar;
         private System.Windows.Forms.GroupBox SheduleDayCabinetViewLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+       /* private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn sheduleidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
@@ -1347,7 +1340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namepatientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentdescDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentdescDataGridViewTextBoxColumn;*/
         private System.Windows.Forms.ContextMenuStrip SheduleDayCabinetViewMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem DeleteToolStripMenuItem;
         private System.Windows.Forms.GroupBox SheduleDayCabinetOneLabel;
@@ -1391,7 +1384,6 @@
         private MaterialSkin.Controls.MaterialLabel SheduleDayAllCabinetViewLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn SheduleId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
