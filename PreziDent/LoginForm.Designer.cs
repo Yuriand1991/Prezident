@@ -80,7 +80,7 @@
             this.PasswordField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PasswordField.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PasswordField.Depth = 0;
-            this.PasswordField.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordField.Font = new System.Drawing.Font("Roboto", 12F);
             this.PasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PasswordField.Hint = "Введите пароль";
             this.PasswordField.Location = new System.Drawing.Point(61, 206);
@@ -106,6 +106,7 @@
             this.Text = "Авторизация";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
+
         }
 
         #endregion

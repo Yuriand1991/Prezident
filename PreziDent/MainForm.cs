@@ -812,5 +812,11 @@ namespace PreziDent
         {
             AllCabinetRefresh();
         }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            CabinetOrderForm MyCabinetOrderForm = new CabinetOrderForm();
+            MyCabinetOrderForm.ShowDialog(this);
+        }
     }
 }

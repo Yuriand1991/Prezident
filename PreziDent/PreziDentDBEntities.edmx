@@ -31,8 +31,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="appointment_id" Type="int" Nullable="false" />
-          <Property Name="room_id" Type="int" Nullable="false" />
+          <Property Name="number_tooth" Type="int" />
+          <Property Name="count" Type="int" Nullable="false" />
+          <Property Name="patient_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="orders_services">
           <Key>
@@ -41,6 +42,8 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_id" Type="int" Nullable="false" />
           <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="name_service" Type="nchar" MaxLength="200" />
+          <Property Name="price_service" Type="money" />
         </EntityType>
         <EntityType Name="patients">
           <Key>
@@ -88,11 +91,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="80" />
+          <Property Name="name" Type="nchar" MaxLength="200" />
           <Property Name="price" Type="money" />
           <Property Name="group_services_id" Type="int" Nullable="false" />
           <Property Name="code_service" Type="nchar" MaxLength="10" />
           <Property Name="description" Type="ntext" />
+          <Property Name="deleted_at" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="shedule">
           <Key>
@@ -159,6 +163,20 @@
             </Principal>
             <Dependent Role="appointment">
               <PropertyRef Name="shedule_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orders_patients">
+          <End Role="patients" Type="Self.patients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="patient_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -280,6 +298,10 @@
             <End Role="shedule" EntitySet="shedule" />
             <End Role="appointment" EntitySet="appointment" />
           </AssociationSet>
+          <AssociationSet Name="FK_orders_patients" Association="Self.FK_orders_patients">
+            <End Role="patients" EntitySet="patients" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_orders_services_orders" Association="Self.FK_orders_services_orders">
             <End Role="orders" EntitySet="orders" />
             <End Role="orders_services" EntitySet="orders_services" />
@@ -343,9 +365,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="appointment_id" Type="Int32" Nullable="false" />
-          <Property Name="room_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="orders_services" Relationship="Self.FK_orders_services_orders" FromRole="orders" ToRole="orders_services" />
+          <Property Name="number_tooth" Type="Int32" />
+          <Property Name="count" Type="Int32" Nullable="false" />
+          <Property Name="patient_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="patient" Relationship="PrezidentClinicModel.FK_orders_patients" FromRole="order" ToRole="patient" />
         </EntityType>
         <EntityType Name="orders_services">
           <Key>
@@ -356,6 +380,8 @@
           <Property Name="service_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="order" Relationship="Self.FK_orders_services_orders" FromRole="orders_services" ToRole="orders" />
           <NavigationProperty Name="service" Relationship="Self.FK_orders_services_services" FromRole="orders_services" ToRole="services" />
+          <Property Name="name_service" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="price_service" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="patient">
           <Key>
@@ -375,6 +401,7 @@
           <Property Name="status_id" Type="Int32" Nullable="false" />
           <Property Name="num_card" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="statuses_patient" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="patient" ToRole="statuses_patient" />
+          <NavigationProperty Name="orders" Relationship="PrezidentClinicModel.FK_orders_patients" FromRole="patient" ToRole="order" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -409,13 +436,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="group_services_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="group_services" Relationship="Self.FK_services_group_services" FromRole="services" ToRole="group_services" />
           <NavigationProperty Name="orders_services" Relationship="Self.FK_orders_services_services" FromRole="services" ToRole="orders_services" />
           <Property Name="code_service" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="deleted_at" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="shedule">
           <Key>
@@ -590,6 +618,10 @@
             <End Role="statuses_patient" EntitySet="statuses_patient" />
             <End Role="patient" EntitySet="patients" />
           </AssociationSet>
+          <AssociationSet Name="FK_orders_patients" Association="PrezidentClinicModel.FK_orders_patients">
+            <End Role="patient" EntitySet="patients" />
+            <End Role="order" EntitySet="orders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="type_product">
           <Key>
@@ -635,6 +667,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_orders_patients">
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.order" Role="order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -666,16 +712,19 @@
           <EntitySetMapping Name="orders">
             <EntityTypeMapping TypeName="PrezidentClinicModel.order">
               <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="number_tooth" ColumnName="number_tooth" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="appointment_id" ColumnName="appointment_id" />
-                <ScalarProperty Name="room_id" ColumnName="room_id" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="orders_services">
             <EntityTypeMapping TypeName="PrezidentClinicModel.orders_services">
               <MappingFragment StoreEntitySet="orders_services">
+                <ScalarProperty Name="price_service" ColumnName="price_service" />
+                <ScalarProperty Name="name_service" ColumnName="name_service" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="service_id" ColumnName="service_id" />
@@ -730,6 +779,7 @@
           <EntitySetMapping Name="services">
             <EntityTypeMapping TypeName="PrezidentClinicModel.service">
               <MappingFragment StoreEntitySet="services">
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="code_service" ColumnName="code_service" />
                 <ScalarProperty Name="id" ColumnName="id" />

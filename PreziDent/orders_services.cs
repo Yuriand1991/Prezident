@@ -17,6 +17,8 @@ namespace PreziDent
         public int id { get; set; }
         public int order_id { get; set; }
         public int service_id { get; set; }
+        public string name_service { get; set; }
+        public Nullable<decimal> price_service { get; set; }
     
         public virtual order order { get; set; }
         public virtual service service { get; set; }

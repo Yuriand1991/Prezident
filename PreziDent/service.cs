@@ -26,6 +26,7 @@ namespace PreziDent
         public int group_services_id { get; set; }
         public string code_service { get; set; }
         public string description { get; set; }
+        public byte[] deleted_at { get; set; }
     
         public virtual group_services group_services { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

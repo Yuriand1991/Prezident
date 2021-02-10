@@ -106,6 +106,12 @@
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppointmentView.cs" />
+    <Compile Include="CabinetOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CabinetOrderForm.Designer.cs">
+      <DependentUpon>CabinetOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlAppForm.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="GroupServicesForm.cs">
@@ -138,6 +144,7 @@
     <Compile Include="order.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderItemView.cs" />
     <Compile Include="orders_services.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
@@ -219,6 +226,9 @@
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CabinetOrderForm.resx">
+      <DependentUpon>CabinetOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupServicesForm.resx">
       <DependentUpon>GroupServicesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +277,7 @@
     <None Include="Properties\DataSources\AppointmentView.datasource" />
     <None Include="Properties\DataSources\group_services.datasource" />
     <None Include="Properties\DataSources\order.datasource" />
+    <None Include="Properties\DataSources\OrderItemView.datasource" />
     <None Include="Properties\DataSources\patient.datasource" />
     <None Include="Properties\DataSources\product.datasource" />
     <None Include="Properties\DataSources\role.datasource" />

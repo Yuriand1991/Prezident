@@ -22,10 +22,12 @@ namespace PreziDent
     
         public int id { get; set; }
         public System.DateTime date { get; set; }
-        public int appointment_id { get; set; }
-        public int room_id { get; set; }
+        public Nullable<int> number_tooth { get; set; }
+        public int count { get; set; }
+        public int patient_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders_services> orders_services { get; set; }
+        public virtual patient patient { get; set; }
     }
 }

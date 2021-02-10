@@ -18,6 +18,7 @@ namespace PreziDent
         public patient()
         {
             this.appointments = new HashSet<appointment>();
+            this.orders = new HashSet<order>();
         }
     
         public int id { get; set; }
@@ -36,5 +37,7 @@ namespace PreziDent
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
         public virtual statuses_patient statuses_patient { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<order> orders { get; set; }
     }
 }
