@@ -59,7 +59,7 @@ namespace PreziDent
             this.CodeService.MouseState = MaterialSkin.MouseState.OUT;
             this.CodeService.Multiline = false;
             this.CodeService.Name = "CodeService";
-            this.CodeService.Size = new System.Drawing.Size(216, 50);
+            this.CodeService.Size = new System.Drawing.Size(252, 50);
             this.CodeService.TabIndex = 0;
             this.CodeService.Text = "";
             // 
@@ -89,7 +89,7 @@ namespace PreziDent
             this.NameService.MouseState = MaterialSkin.MouseState.OUT;
             this.NameService.Multiline = false;
             this.NameService.Name = "NameService";
-            this.NameService.Size = new System.Drawing.Size(216, 50);
+            this.NameService.Size = new System.Drawing.Size(252, 50);
             this.NameService.TabIndex = 2;
             this.NameService.Text = "";
             // 
@@ -127,7 +127,7 @@ namespace PreziDent
             this.GroupService.MaxDropDownItems = 4;
             this.GroupService.MouseState = MaterialSkin.MouseState.OUT;
             this.GroupService.Name = "GroupService";
-            this.GroupService.Size = new System.Drawing.Size(216, 49);
+            this.GroupService.Size = new System.Drawing.Size(252, 49);
             this.GroupService.TabIndex = 4;
             this.GroupService.ValueMember = "id";
             // 
@@ -161,7 +161,7 @@ namespace PreziDent
             this.PriceService.MouseState = MaterialSkin.MouseState.OUT;
             this.PriceService.Multiline = false;
             this.PriceService.Name = "PriceService";
-            this.PriceService.Size = new System.Drawing.Size(216, 50);
+            this.PriceService.Size = new System.Drawing.Size(252, 50);
             this.PriceService.TabIndex = 6;
             this.PriceService.Text = "";
             // 

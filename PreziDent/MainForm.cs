@@ -45,6 +45,8 @@ namespace PreziDent
             //Загрузка услуг
             DataBase.db.services.Load();
             ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
+            //Загрузка группы услуг
+            DataBase.db.group_services.Load();
             //Загрузка пациентов
             DataBase.db.patients.Where(p => p.id != 0 /*не загружаем безымянного пациента*/).Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();

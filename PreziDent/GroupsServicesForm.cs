@@ -17,8 +17,6 @@ namespace PreziDent
         public GroupsServicesForm()
         {
             InitializeComponent();
-
-            DataBase.db.group_services.Load();
             GroupsServicesView.DataSource = DataBase.db.group_services.Local.ToBindingList();
         }
 

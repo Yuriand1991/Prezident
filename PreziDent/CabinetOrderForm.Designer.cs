@@ -136,6 +136,7 @@ namespace PreziDent
             this.AddServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddServiceButton.UseAccentColor = false;
             this.AddServiceButton.UseVisualStyleBackColor = false;
+            this.AddServiceButton.Click += new System.EventHandler(this.AddServiceButton_Click);
             // 
             // OrdersServicesView
             // 
@@ -308,7 +309,7 @@ namespace PreziDent
             this.PatientName.MouseState = MaterialSkin.MouseState.OUT;
             this.PatientName.Multiline = false;
             this.PatientName.Name = "PatientName";
-            this.PatientName.Size = new System.Drawing.Size(225, 36);
+            this.PatientName.Size = new System.Drawing.Size(373, 36);
             this.PatientName.TabIndex = 0;
             this.PatientName.Text = "";
             this.PatientName.UseTallSize = false;

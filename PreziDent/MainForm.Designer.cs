@@ -129,6 +129,8 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
             this.SheduleDayCabinetViewLabel.SuspendLayout();
@@ -767,6 +769,7 @@
             // Products
             // 
             this.Products.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Products.Controls.Add(this.PriceProductButton);
             this.Products.Controls.Add(this.TypeProductButton);
             this.Products.Controls.Add(this.ChangeProductButton);
             this.Products.Controls.Add(this.DeleteProductButton);
@@ -795,7 +798,7 @@
             this.TypeProductButton.Name = "TypeProductButton";
             this.TypeProductButton.Size = new System.Drawing.Size(185, 36);
             this.TypeProductButton.TabIndex = 4;
-            this.TypeProductButton.Text = "Категории продуктов";
+            this.TypeProductButton.Text = "Категории товаров";
             this.TypeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.TypeProductButton.UseAccentColor = false;
             this.TypeProductButton.UseVisualStyleBackColor = false;
@@ -817,7 +820,7 @@
             this.ChangeProductButton.Name = "ChangeProductButton";
             this.ChangeProductButton.Size = new System.Drawing.Size(185, 36);
             this.ChangeProductButton.TabIndex = 3;
-            this.ChangeProductButton.Text = "Изменить продукт";
+            this.ChangeProductButton.Text = "Изменить товар";
             this.ChangeProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ChangeProductButton.UseAccentColor = false;
             this.ChangeProductButton.UseVisualStyleBackColor = false;
@@ -839,7 +842,7 @@
             this.DeleteProductButton.Name = "DeleteProductButton";
             this.DeleteProductButton.Size = new System.Drawing.Size(185, 36);
             this.DeleteProductButton.TabIndex = 2;
-            this.DeleteProductButton.Text = "Удалить продукт";
+            this.DeleteProductButton.Text = "Удалить товар";
             this.DeleteProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeleteProductButton.UseAccentColor = false;
             this.DeleteProductButton.UseVisualStyleBackColor = false;
@@ -861,7 +864,7 @@
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(185, 36);
             this.AddProductButton.TabIndex = 1;
-            this.AddProductButton.Text = "Добавить продукт";
+            this.AddProductButton.Text = "Добавить товар";
             this.AddProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddProductButton.UseAccentColor = false;
             this.AddProductButton.UseVisualStyleBackColor = false;
@@ -921,6 +924,7 @@
             // Services
             // 
             this.Services.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Services.Controls.Add(this.PriceServiceButton);
             this.Services.Controls.Add(this.GroupServiceButton);
             this.Services.Controls.Add(this.DeleteServiceButton);
             this.Services.Controls.Add(this.ChangeServiceButton);
@@ -1282,6 +1286,48 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
+            // PriceProductButton
+            // 
+            this.PriceProductButton.AutoSize = false;
+            this.PriceProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PriceProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PriceProductButton.Depth = 0;
+            this.PriceProductButton.DrawShadows = true;
+            this.PriceProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PriceProductButton.HighEmphasis = true;
+            this.PriceProductButton.Icon = null;
+            this.PriceProductButton.Location = new System.Drawing.Point(949, 248);
+            this.PriceProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PriceProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PriceProductButton.Name = "PriceProductButton";
+            this.PriceProductButton.Size = new System.Drawing.Size(185, 36);
+            this.PriceProductButton.TabIndex = 5;
+            this.PriceProductButton.Text = "Прайс товаров";
+            this.PriceProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PriceProductButton.UseAccentColor = false;
+            this.PriceProductButton.UseVisualStyleBackColor = false;
+            // 
+            // PriceServiceButton
+            // 
+            this.PriceServiceButton.AutoSize = false;
+            this.PriceServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PriceServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PriceServiceButton.Depth = 0;
+            this.PriceServiceButton.DrawShadows = true;
+            this.PriceServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PriceServiceButton.HighEmphasis = true;
+            this.PriceServiceButton.Icon = null;
+            this.PriceServiceButton.Location = new System.Drawing.Point(949, 248);
+            this.PriceServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PriceServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PriceServiceButton.Name = "PriceServiceButton";
+            this.PriceServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.PriceServiceButton.TabIndex = 6;
+            this.PriceServiceButton.Text = "Прайс услуг";
+            this.PriceServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PriceServiceButton.UseAccentColor = false;
+            this.PriceServiceButton.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1435,6 +1481,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn type_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private MaterialSkin.Controls.MaterialButton OrderButton;
+        private MaterialSkin.Controls.MaterialButton PriceProductButton;
+        private MaterialSkin.Controls.MaterialButton PriceServiceButton;
     }
 }
 
