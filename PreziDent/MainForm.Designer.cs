@@ -90,6 +90,7 @@
             this.phonepatientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Products = new System.Windows.Forms.TabPage();
+            this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
             this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
@@ -101,6 +102,7 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Services = new System.Windows.Forms.TabPage();
+            this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeServiceButton = new MaterialSkin.Controls.MaterialButton();
@@ -129,8 +131,6 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
             this.SheduleDayCabinetViewLabel.SuspendLayout();
@@ -782,6 +782,27 @@
             this.Products.TabIndex = 3;
             this.Products.Text = "Товары";
             // 
+            // PriceProductButton
+            // 
+            this.PriceProductButton.AutoSize = false;
+            this.PriceProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PriceProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PriceProductButton.Depth = 0;
+            this.PriceProductButton.DrawShadows = true;
+            this.PriceProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PriceProductButton.HighEmphasis = true;
+            this.PriceProductButton.Icon = null;
+            this.PriceProductButton.Location = new System.Drawing.Point(949, 248);
+            this.PriceProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PriceProductButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PriceProductButton.Name = "PriceProductButton";
+            this.PriceProductButton.Size = new System.Drawing.Size(185, 36);
+            this.PriceProductButton.TabIndex = 5;
+            this.PriceProductButton.Text = "Прайс товаров";
+            this.PriceProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PriceProductButton.UseAccentColor = false;
+            this.PriceProductButton.UseVisualStyleBackColor = false;
+            // 
             // TypeProductButton
             // 
             this.TypeProductButton.AutoSize = false;
@@ -936,6 +957,27 @@
             this.Services.Size = new System.Drawing.Size(1141, 632);
             this.Services.TabIndex = 4;
             this.Services.Text = "Услуги";
+            // 
+            // PriceServiceButton
+            // 
+            this.PriceServiceButton.AutoSize = false;
+            this.PriceServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PriceServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PriceServiceButton.Depth = 0;
+            this.PriceServiceButton.DrawShadows = true;
+            this.PriceServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PriceServiceButton.HighEmphasis = true;
+            this.PriceServiceButton.Icon = null;
+            this.PriceServiceButton.Location = new System.Drawing.Point(949, 248);
+            this.PriceServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PriceServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PriceServiceButton.Name = "PriceServiceButton";
+            this.PriceServiceButton.Size = new System.Drawing.Size(185, 36);
+            this.PriceServiceButton.TabIndex = 6;
+            this.PriceServiceButton.Text = "Прайс услуг";
+            this.PriceServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PriceServiceButton.UseAccentColor = false;
+            this.PriceServiceButton.UseVisualStyleBackColor = false;
             // 
             // GroupServiceButton
             // 
@@ -1285,48 +1327,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // PriceProductButton
-            // 
-            this.PriceProductButton.AutoSize = false;
-            this.PriceProductButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PriceProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.PriceProductButton.Depth = 0;
-            this.PriceProductButton.DrawShadows = true;
-            this.PriceProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PriceProductButton.HighEmphasis = true;
-            this.PriceProductButton.Icon = null;
-            this.PriceProductButton.Location = new System.Drawing.Point(949, 248);
-            this.PriceProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.PriceProductButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PriceProductButton.Name = "PriceProductButton";
-            this.PriceProductButton.Size = new System.Drawing.Size(185, 36);
-            this.PriceProductButton.TabIndex = 5;
-            this.PriceProductButton.Text = "Прайс товаров";
-            this.PriceProductButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.PriceProductButton.UseAccentColor = false;
-            this.PriceProductButton.UseVisualStyleBackColor = false;
-            // 
-            // PriceServiceButton
-            // 
-            this.PriceServiceButton.AutoSize = false;
-            this.PriceServiceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PriceServiceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.PriceServiceButton.Depth = 0;
-            this.PriceServiceButton.DrawShadows = true;
-            this.PriceServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PriceServiceButton.HighEmphasis = true;
-            this.PriceServiceButton.Icon = null;
-            this.PriceServiceButton.Location = new System.Drawing.Point(949, 248);
-            this.PriceServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.PriceServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PriceServiceButton.Name = "PriceServiceButton";
-            this.PriceServiceButton.Size = new System.Drawing.Size(185, 36);
-            this.PriceServiceButton.TabIndex = 6;
-            this.PriceServiceButton.Text = "Прайс услуг";
-            this.PriceServiceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.PriceServiceButton.UseAccentColor = false;
-            this.PriceServiceButton.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 

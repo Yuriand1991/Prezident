@@ -30,11 +30,19 @@ namespace PreziDent
 
             if (Result == DialogResult.Cancel)
                 return;
-
+            int? NumberTooth;
+            try
+            {
+                NumberTooth = Convert.ToInt32(addServiceToOrderForm.NumberTooth.Text);
+            }
+            catch (FormatException)
+            {
+                NumberTooth = null;
+            }
             order Order = new order
             {
                 count = Convert.ToInt32(addServiceToOrderForm.Count.Text),
-                number_tooth = Convert.ToInt32(addServiceToOrderForm.NumberTooth.Text),
+                number_tooth = NumberTooth,
                 patient_id = 0 //TODO потом сделать по нормальному
             };
 
