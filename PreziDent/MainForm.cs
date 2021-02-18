@@ -42,11 +42,27 @@ namespace PreziDent
             //Загрузка продуктов
             DataBase.db.products.Load();
             ProductsView.DataSource = DataBase.db.products.Local.ToBindingList();
+
+            //Загрузка каткгорий продуктов
+            DataBase.db.type_product.Load();
+            List<type_product> GroupProductList = DataBase.db.type_product.Local.ToList();
+            type_product gp = new type_product();
+            gp.name = "Все";
+            GroupProductList.Insert(0, gp);
+            GroupsProduct.DataSource = GroupProductList;
+
             //Загрузка услуг
             DataBase.db.services.Load();
             ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
-            //Загрузка группы услуг
+           
+            //Загрузка категорий услуг
             DataBase.db.group_services.Load();
+            List<group_services> GroupServiceList = DataBase.db.group_services.Local.ToList();
+            group_services gs = new group_services();
+            gs.name = "Все";
+            GroupServiceList.Insert(0, gs);
+            GroupService.DataSource = GroupServiceList;
+
             //Загрузка пациентов
             DataBase.db.patients.Where(p => p.id != 0 /*не загружаем безымянного пациента*/).Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
@@ -815,10 +831,37 @@ namespace PreziDent
             AllCabinetRefresh();
         }
 
+        /*************************/
+        /*Обработка кнопки заказа*/
+        /*************************/
         private void OrderButton_Click(object sender, EventArgs e)
         {
             CabinetOrderForm MyCabinetOrderForm = new CabinetOrderForm();
             MyCabinetOrderForm.ShowDialog(this);
+        }
+
+        /*******************************/
+        /*Сортировка товаров по группам*/
+        /*******************************/
+        private void GroupsProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int GroupID = Convert.ToInt32(GroupsProduct.SelectedValue);
+            if (GroupID != 0)
+                ProductsView.DataSource = DataBase.db.products.Local.Where(p => p.type_id == GroupID).ToList();
+            else
+                ProductsView.DataSource = DataBase.db.products.Local.ToBindingList();
+        }
+
+        /*******************************/
+        /*Сортировка услуг по группам*/
+        /*******************************/
+        private void GroupService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int GroupID = Convert.ToInt32(GroupService.SelectedValue);
+            if (GroupID != 0)
+                ServicesView.DataSource = DataBase.db.services.Local.Where(s => s.group_services_id == GroupID).ToList();
+            else
+                ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
         }
     }
 }
