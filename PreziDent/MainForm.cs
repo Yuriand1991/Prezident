@@ -854,7 +854,7 @@ namespace PreziDent
         }
 
         /*******************************/
-        /*Сортировка услуг по группам*/
+        /*Сортировка услуг по группам  */
         /*******************************/
         private void GroupService_SelectedIndexChanged(object sender, EventArgs e)
         {
