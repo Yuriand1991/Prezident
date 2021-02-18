@@ -53,6 +53,8 @@ namespace PreziDent
             DataBase.db.Entry(OrderItem).State = EntityState.Added;
             DataBase.db.SaveChanges();
 
+            OrdersServicesView.DataSource = null;
+
             using (PrezidentClinicEntities db = new PrezidentClinicEntities())
             {
                 var orderItem = db.orders_services.Where(os => os.order_id == OrderID).Join(db.orders,// второй набор
@@ -67,9 +69,10 @@ namespace PreziDent
 
                 foreach(OrderItemView oi in orderItem)
                     Items.Add(oi);
-
-                OrdersServicesView.DataSource = Items;
             }
+
+            OrdersServicesView.DataSource = Items;
+            OrdersServicesView.Refresh();
 
         }
     }
