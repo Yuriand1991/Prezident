@@ -51,6 +51,7 @@
             this.MyCabinetCalendar = new System.Windows.Forms.MonthCalendar();
             this.MyCabinetNumLabel = new MaterialSkin.Controls.MaterialLabel();
             this.Rooms = new System.Windows.Forms.TabPage();
+            this.AllAppointmentsButton = new MaterialSkin.Controls.MaterialButton();
             this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AllCabinetCalendar = new System.Windows.Forms.MonthCalendar();
             this.SheduleDayCabinetNineLabel = new System.Windows.Forms.GroupBox();
@@ -90,6 +91,9 @@
             this.phonepatientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Products = new System.Windows.Forms.TabPage();
+            this.GroupsProduct = new MaterialSkin.Controls.MaterialComboBox();
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GroupsProductLabel = new MaterialSkin.Controls.MaterialLabel();
             this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
             this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
             this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
@@ -102,6 +106,9 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Services = new System.Windows.Forms.TabPage();
+            this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
+            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
@@ -131,12 +138,6 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupsProductLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.GroupsProduct = new MaterialSkin.Controls.MaterialComboBox();
-            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
-            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
             this.SheduleDayCabinetViewLabel.SuspendLayout();
@@ -151,16 +152,16 @@
             this.SheduleDayCabinetOneLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetOneView)).BeginInit();
             this.Products.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.Services.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.Patients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DateLabel
@@ -403,6 +404,7 @@
             // Rooms
             // 
             this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Rooms.Controls.Add(this.AllAppointmentsButton);
             this.Rooms.Controls.Add(this.SheduleDayAllCabinetViewLabel);
             this.Rooms.Controls.Add(this.AllCabinetCalendar);
             this.Rooms.Controls.Add(this.SheduleDayCabinetNineLabel);
@@ -414,6 +416,27 @@
             this.Rooms.Size = new System.Drawing.Size(1141, 632);
             this.Rooms.TabIndex = 1;
             this.Rooms.Text = "Все кабинеты";
+            // 
+            // AllAppointmentsButton
+            // 
+            this.AllAppointmentsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AllAppointmentsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AllAppointmentsButton.Depth = 0;
+            this.AllAppointmentsButton.DrawShadows = true;
+            this.AllAppointmentsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AllAppointmentsButton.HighEmphasis = true;
+            this.AllAppointmentsButton.Icon = null;
+            this.AllAppointmentsButton.Location = new System.Drawing.Point(1022, 171);
+            this.AllAppointmentsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AllAppointmentsButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AllAppointmentsButton.Name = "AllAppointmentsButton";
+            this.AllAppointmentsButton.Size = new System.Drawing.Size(112, 36);
+            this.AllAppointmentsButton.TabIndex = 5;
+            this.AllAppointmentsButton.Text = "Все записи";
+            this.AllAppointmentsButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AllAppointmentsButton.UseAccentColor = false;
+            this.AllAppointmentsButton.UseVisualStyleBackColor = false;
+            this.AllAppointmentsButton.Click += new System.EventHandler(this.AllAppointmentsButton_Click);
             // 
             // SheduleDayAllCabinetViewLabel
             // 
@@ -792,6 +815,49 @@
             this.Products.TabIndex = 3;
             this.Products.Text = "Товары";
             // 
+            // GroupsProduct
+            // 
+            this.GroupsProduct.AutoResize = false;
+            this.GroupsProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GroupsProduct.DataSource = this.typeproductBindingSource;
+            this.GroupsProduct.Depth = 0;
+            this.GroupsProduct.DisplayMember = "name";
+            this.GroupsProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.GroupsProduct.DropDownHeight = 174;
+            this.GroupsProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GroupsProduct.DropDownWidth = 121;
+            this.GroupsProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.GroupsProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GroupsProduct.FormattingEnabled = true;
+            this.GroupsProduct.IntegralHeight = false;
+            this.GroupsProduct.ItemHeight = 43;
+            this.GroupsProduct.Location = new System.Drawing.Point(949, 38);
+            this.GroupsProduct.MaxDropDownItems = 4;
+            this.GroupsProduct.MouseState = MaterialSkin.MouseState.OUT;
+            this.GroupsProduct.Name = "GroupsProduct";
+            this.GroupsProduct.Size = new System.Drawing.Size(183, 49);
+            this.GroupsProduct.TabIndex = 7;
+            this.GroupsProduct.ValueMember = "id";
+            this.GroupsProduct.SelectedIndexChanged += new System.EventHandler(this.GroupsProduct_SelectedIndexChanged);
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
+            // 
+            // GroupsProductLabel
+            // 
+            this.GroupsProductLabel.AutoSize = true;
+            this.GroupsProductLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GroupsProductLabel.Depth = 0;
+            this.GroupsProductLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GroupsProductLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GroupsProductLabel.Location = new System.Drawing.Point(948, 16);
+            this.GroupsProductLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GroupsProductLabel.Name = "GroupsProductLabel";
+            this.GroupsProductLabel.Size = new System.Drawing.Size(143, 19);
+            this.GroupsProductLabel.TabIndex = 6;
+            this.GroupsProductLabel.Text = "Отбражать группу:";
+            // 
             // PriceProductButton
             // 
             this.PriceProductButton.AutoSize = false;
@@ -969,6 +1035,49 @@
             this.Services.Size = new System.Drawing.Size(1141, 632);
             this.Services.TabIndex = 4;
             this.Services.Text = "Услуги";
+            // 
+            // GroupService
+            // 
+            this.GroupService.AutoResize = false;
+            this.GroupService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GroupService.DataSource = this.groupservicesBindingSource;
+            this.GroupService.Depth = 0;
+            this.GroupService.DisplayMember = "name";
+            this.GroupService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.GroupService.DropDownHeight = 174;
+            this.GroupService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GroupService.DropDownWidth = 121;
+            this.GroupService.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.GroupService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GroupService.FormattingEnabled = true;
+            this.GroupService.IntegralHeight = false;
+            this.GroupService.ItemHeight = 43;
+            this.GroupService.Location = new System.Drawing.Point(951, 52);
+            this.GroupService.MaxDropDownItems = 4;
+            this.GroupService.MouseState = MaterialSkin.MouseState.OUT;
+            this.GroupService.Name = "GroupService";
+            this.GroupService.Size = new System.Drawing.Size(183, 49);
+            this.GroupService.TabIndex = 8;
+            this.GroupService.ValueMember = "id";
+            this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
+            // 
+            // groupservicesBindingSource
+            // 
+            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
+            // 
+            // GroupServiceLabel
+            // 
+            this.GroupServiceLabel.AutoSize = true;
+            this.GroupServiceLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GroupServiceLabel.Depth = 0;
+            this.GroupServiceLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GroupServiceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GroupServiceLabel.Location = new System.Drawing.Point(948, 30);
+            this.GroupServiceLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GroupServiceLabel.Name = "GroupServiceLabel";
+            this.GroupServiceLabel.Size = new System.Drawing.Size(183, 19);
+            this.GroupServiceLabel.TabIndex = 7;
+            this.GroupServiceLabel.Text = "Отображать категорию:";
             // 
             // PriceServiceButton
             // 
@@ -1340,90 +1449,6 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
-            // GroupsProductLabel
-            // 
-            this.GroupsProductLabel.AutoSize = true;
-            this.GroupsProductLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.GroupsProductLabel.Depth = 0;
-            this.GroupsProductLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GroupsProductLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GroupsProductLabel.Location = new System.Drawing.Point(948, 16);
-            this.GroupsProductLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.GroupsProductLabel.Name = "GroupsProductLabel";
-            this.GroupsProductLabel.Size = new System.Drawing.Size(143, 19);
-            this.GroupsProductLabel.TabIndex = 6;
-            this.GroupsProductLabel.Text = "Отбражать группу:";
-            // 
-            // GroupsProduct
-            // 
-            this.GroupsProduct.AutoResize = false;
-            this.GroupsProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.GroupsProduct.DataSource = this.typeproductBindingSource;
-            this.GroupsProduct.Depth = 0;
-            this.GroupsProduct.DisplayMember = "name";
-            this.GroupsProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.GroupsProduct.DropDownHeight = 174;
-            this.GroupsProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GroupsProduct.DropDownWidth = 121;
-            this.GroupsProduct.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.GroupsProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GroupsProduct.FormattingEnabled = true;
-            this.GroupsProduct.IntegralHeight = false;
-            this.GroupsProduct.ItemHeight = 43;
-            this.GroupsProduct.Location = new System.Drawing.Point(949, 38);
-            this.GroupsProduct.MaxDropDownItems = 4;
-            this.GroupsProduct.MouseState = MaterialSkin.MouseState.OUT;
-            this.GroupsProduct.Name = "GroupsProduct";
-            this.GroupsProduct.Size = new System.Drawing.Size(183, 49);
-            this.GroupsProduct.TabIndex = 7;
-            this.GroupsProduct.ValueMember = "id";
-            this.GroupsProduct.SelectedIndexChanged += new System.EventHandler(this.GroupsProduct_SelectedIndexChanged);
-            // 
-            // groupservicesBindingSource
-            // 
-            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
-            // 
-            // GroupServiceLabel
-            // 
-            this.GroupServiceLabel.AutoSize = true;
-            this.GroupServiceLabel.Depth = 0;
-            this.GroupServiceLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GroupServiceLabel.Location = new System.Drawing.Point(948, 30);
-            this.GroupServiceLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.GroupServiceLabel.Name = "GroupServiceLabel";
-            this.GroupServiceLabel.Size = new System.Drawing.Size(183, 19);
-            this.GroupServiceLabel.TabIndex = 7;
-            this.GroupServiceLabel.Text = "Отображать категорию:";
-            // 
-            // GroupService
-            // 
-            this.GroupService.AutoResize = false;
-            this.GroupService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GroupService.DataSource = this.groupservicesBindingSource;
-            this.GroupService.Depth = 0;
-            this.GroupService.DisplayMember = "name";
-            this.GroupService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.GroupService.DropDownHeight = 174;
-            this.GroupService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GroupService.DropDownWidth = 121;
-            this.GroupService.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.GroupService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GroupService.FormattingEnabled = true;
-            this.GroupService.IntegralHeight = false;
-            this.GroupService.ItemHeight = 43;
-            this.GroupService.Location = new System.Drawing.Point(951, 52);
-            this.GroupService.MaxDropDownItems = 4;
-            this.GroupService.MouseState = MaterialSkin.MouseState.OUT;
-            this.GroupService.Name = "GroupService";
-            this.GroupService.Size = new System.Drawing.Size(183, 49);
-            this.GroupService.TabIndex = 8;
-            this.GroupService.ValueMember = "id";
-            this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
-            // 
-            // typeproductBindingSource
-            // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1454,17 +1479,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetOneView)).EndInit();
             this.Products.ResumeLayout(false);
             this.Products.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.Services.ResumeLayout(false);
             this.Services.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.Patients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1589,6 +1614,7 @@
         private System.Windows.Forms.BindingSource typeproductBindingSource;
         private MaterialSkin.Controls.MaterialComboBox GroupService;
         private MaterialSkin.Controls.MaterialLabel GroupServiceLabel;
+        private MaterialSkin.Controls.MaterialButton AllAppointmentsButton;
     }
 }
 

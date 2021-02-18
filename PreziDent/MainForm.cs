@@ -91,7 +91,7 @@ namespace PreziDent
         /************************************************************/
         /*Метод загрузки расписания и записей на прием для кабинета */
         /************************************************************/
-        public object LoadAppointmentForRoom(DateTime date, int RoomID)
+        public static object LoadAppointmentForRoom(DateTime date, int RoomID)
         {
             using (PrezidentClinicEntities db = new PrezidentClinicEntities())
             {
@@ -111,7 +111,8 @@ namespace PreziDent
                                 name_patient = subapp?.name_patient.ToString() ?? String.Empty,
                                 treatment_desc = subapp?.treatment_desc.ToString() ?? String.Empty,
                                 patient_id = subapp?.patient_id ?? null,
-                                phone_patient = subapp?.phone_patient.ToString() ?? String.Empty
+                                phone_patient = subapp?.phone_patient.ToString() ?? String.Empty,
+                                room_num = subapp?.room.number ?? 0
                             };
                 object DataSource = query.ToList();
 
@@ -862,6 +863,12 @@ namespace PreziDent
                 ServicesView.DataSource = DataBase.db.services.Local.Where(s => s.group_services_id == GroupID).ToList();
             else
                 ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
+        }
+
+        private void AllAppointmentsButton_Click(object sender, EventArgs e)
+        {
+            AllAppointmentsForm allAppointmentsForm = new AllAppointmentsForm();
+            allAppointmentsForm.ShowDialog(this);
         }
     }
 }

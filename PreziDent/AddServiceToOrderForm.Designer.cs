@@ -32,18 +32,7 @@ namespace PreziDent
             this.components = new System.ComponentModel.Container();
             this.ServicesViewBox = new System.Windows.Forms.GroupBox();
             this.ServicesView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupservicesidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deletedatDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
-            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.ServiceName = new MaterialSkin.Controls.MaterialTextBox();
             this.ServiceNameLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -57,10 +46,21 @@ namespace PreziDent
             this.TotalPrice = new MaterialSkin.Controls.MaterialTextBox();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
             this.CnclButton = new MaterialSkin.Controls.MaterialButton();
+            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupservicesidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deletedatDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicesViewBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ServicesViewBox
@@ -101,73 +101,6 @@ namespace PreziDent
             this.ServicesView.TabIndex = 0;
             this.ServicesView.DoubleClick += new System.EventHandler(this.ServicesView_DoubleClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // groupservicesidDataGridViewTextBoxColumn
-            // 
-            this.groupservicesidDataGridViewTextBoxColumn.DataPropertyName = "group_services_id";
-            this.groupservicesidDataGridViewTextBoxColumn.HeaderText = "group_services_id";
-            this.groupservicesidDataGridViewTextBoxColumn.Name = "groupservicesidDataGridViewTextBoxColumn";
-            this.groupservicesidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codeserviceDataGridViewTextBoxColumn
-            // 
-            this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
-            this.codeserviceDataGridViewTextBoxColumn.HeaderText = "code_service";
-            this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
-            this.codeserviceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // deletedatDataGridViewImageColumn
-            // 
-            this.deletedatDataGridViewImageColumn.DataPropertyName = "deleted_at";
-            this.deletedatDataGridViewImageColumn.HeaderText = "deleted_at";
-            this.deletedatDataGridViewImageColumn.Name = "deletedatDataGridViewImageColumn";
-            this.deletedatDataGridViewImageColumn.Visible = false;
-            // 
-            // groupservicesDataGridViewTextBoxColumn
-            // 
-            this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
-            this.groupservicesDataGridViewTextBoxColumn.HeaderText = "group_services";
-            this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
-            this.groupservicesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ordersservicesDataGridViewTextBoxColumn
-            // 
-            this.ordersservicesDataGridViewTextBoxColumn.DataPropertyName = "orders_services";
-            this.ordersservicesDataGridViewTextBoxColumn.HeaderText = "orders_services";
-            this.ordersservicesDataGridViewTextBoxColumn.Name = "ordersservicesDataGridViewTextBoxColumn";
-            this.ordersservicesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataSource = typeof(PreziDent.service);
-            // 
             // GroupService
             // 
             this.GroupService.AutoResize = false;
@@ -192,10 +125,6 @@ namespace PreziDent
             this.GroupService.TabIndex = 1;
             this.GroupService.ValueMember = "id";
             this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
-            // 
-            // groupservicesBindingSource
-            // 
-            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
             // 
             // GroupServiceLabel
             // 
@@ -410,6 +339,77 @@ namespace PreziDent
             this.CnclButton.UseAccentColor = false;
             this.CnclButton.UseVisualStyleBackColor = false;
             // 
+            // groupservicesBindingSource
+            // 
+            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // groupservicesidDataGridViewTextBoxColumn
+            // 
+            this.groupservicesidDataGridViewTextBoxColumn.DataPropertyName = "group_services_id";
+            this.groupservicesidDataGridViewTextBoxColumn.HeaderText = "group_services_id";
+            this.groupservicesidDataGridViewTextBoxColumn.Name = "groupservicesidDataGridViewTextBoxColumn";
+            this.groupservicesidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codeserviceDataGridViewTextBoxColumn
+            // 
+            this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
+            this.codeserviceDataGridViewTextBoxColumn.HeaderText = "code_service";
+            this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
+            this.codeserviceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // deletedatDataGridViewImageColumn
+            // 
+            this.deletedatDataGridViewImageColumn.DataPropertyName = "deleted_at";
+            this.deletedatDataGridViewImageColumn.HeaderText = "deleted_at";
+            this.deletedatDataGridViewImageColumn.Name = "deletedatDataGridViewImageColumn";
+            this.deletedatDataGridViewImageColumn.Visible = false;
+            // 
+            // groupservicesDataGridViewTextBoxColumn
+            // 
+            this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
+            this.groupservicesDataGridViewTextBoxColumn.HeaderText = "group_services";
+            this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
+            this.groupservicesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ordersservicesDataGridViewTextBoxColumn
+            // 
+            this.ordersservicesDataGridViewTextBoxColumn.DataPropertyName = "orders_services";
+            this.ordersservicesDataGridViewTextBoxColumn.HeaderText = "orders_services";
+            this.ordersservicesDataGridViewTextBoxColumn.Name = "ordersservicesDataGridViewTextBoxColumn";
+            this.ordersservicesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(PreziDent.service);
+            // 
             // AddServiceToOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,8 +434,8 @@ namespace PreziDent
             this.Text = "Добавление услуги в заказ";
             this.ServicesViewBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

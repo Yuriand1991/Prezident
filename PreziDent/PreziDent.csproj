@@ -96,6 +96,12 @@
     <Compile Include="AddServiceToOrderForm.Designer.cs">
       <DependentUpon>AddServiceToOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllAppointmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllAppointmentsForm.Designer.cs">
+      <DependentUpon>AllAppointmentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </Compile>
     <EmbeddedResource Include="AddServiceToOrderForm.resx">
       <DependentUpon>AddServiceToOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllAppointmentsForm.resx">
+      <DependentUpon>AllAppointmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>

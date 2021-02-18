@@ -12,6 +12,7 @@ namespace PreziDent
         public Nullable<System.DateTime> date { get; set; }
         public int patient_id { get; set; }
         public int room_id { get; set; }
+        public int room_num { get; set; }
         public int shedule_id { get; set; }
         public string name_patient { get; set; }
         public string treatment_desc { get; set; }
