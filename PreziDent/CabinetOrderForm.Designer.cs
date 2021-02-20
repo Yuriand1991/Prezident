@@ -36,12 +36,6 @@ namespace PreziDent
             this.TotalPrice = new MaterialSkin.Controls.MaterialTextBox();
             this.AddServiceButton = new MaterialSkin.Controls.MaterialButton();
             this.OrdersServicesView = new System.Windows.Forms.DataGridView();
-            this.PrintDocsButton = new MaterialSkin.Controls.MaterialButton();
-            this.SaveButton = new MaterialSkin.Controls.MaterialButton();
-            this.DateOrderLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.DateOrder = new System.Windows.Forms.DateTimePicker();
-            this.PatientNameLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.PatientName = new MaterialSkin.Controls.MaterialTextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +45,12 @@ namespace PreziDent
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalpriceserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderItemViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PrintDocsButton = new MaterialSkin.Controls.MaterialButton();
+            this.SaveButton = new MaterialSkin.Controls.MaterialButton();
+            this.DateOrderLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.DateOrder = new System.Windows.Forms.DateTimePicker();
+            this.PatientNameLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.PatientName = new MaterialSkin.Controls.MaterialTextBox();
             this.FunctionalPlanLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersServicesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemViewBindingSource)).BeginInit();
@@ -160,6 +160,62 @@ namespace PreziDent
             this.OrdersServicesView.Size = new System.Drawing.Size(643, 228);
             this.OrdersServicesView.TabIndex = 6;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // orderidDataGridViewTextBoxColumn
+            // 
+            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "order_id";
+            this.orderidDataGridViewTextBoxColumn.HeaderText = "order_id";
+            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
+            this.orderidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // serviceidDataGridViewTextBoxColumn
+            // 
+            this.serviceidDataGridViewTextBoxColumn.DataPropertyName = "service_id";
+            this.serviceidDataGridViewTextBoxColumn.HeaderText = "service_id";
+            this.serviceidDataGridViewTextBoxColumn.Name = "serviceidDataGridViewTextBoxColumn";
+            this.serviceidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameserviceDataGridViewTextBoxColumn
+            // 
+            this.nameserviceDataGridViewTextBoxColumn.DataPropertyName = "name_service";
+            this.nameserviceDataGridViewTextBoxColumn.HeaderText = "Наименование услуги";
+            this.nameserviceDataGridViewTextBoxColumn.Name = "nameserviceDataGridViewTextBoxColumn";
+            this.nameserviceDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // priceserviceDataGridViewTextBoxColumn
+            // 
+            this.priceserviceDataGridViewTextBoxColumn.DataPropertyName = "price_service";
+            this.priceserviceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceserviceDataGridViewTextBoxColumn.Name = "priceserviceDataGridViewTextBoxColumn";
+            // 
+            // numbertoothDataGridViewTextBoxColumn
+            // 
+            this.numbertoothDataGridViewTextBoxColumn.DataPropertyName = "number_tooth";
+            this.numbertoothDataGridViewTextBoxColumn.HeaderText = "№ зуба";
+            this.numbertoothDataGridViewTextBoxColumn.Name = "numbertoothDataGridViewTextBoxColumn";
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            // 
+            // totalpriceserviceDataGridViewTextBoxColumn
+            // 
+            this.totalpriceserviceDataGridViewTextBoxColumn.DataPropertyName = "total_price_service";
+            this.totalpriceserviceDataGridViewTextBoxColumn.HeaderText = "Сумма";
+            this.totalpriceserviceDataGridViewTextBoxColumn.Name = "totalpriceserviceDataGridViewTextBoxColumn";
+            // 
+            // orderItemViewBindingSource
+            // 
+            this.orderItemViewBindingSource.DataSource = typeof(PreziDent.OrderItemView);
+            // 
             // PrintDocsButton
             // 
             this.PrintDocsButton.AutoSize = false;
@@ -257,62 +313,6 @@ namespace PreziDent
             this.PatientName.TabIndex = 0;
             this.PatientName.Text = "";
             this.PatientName.UseTallSize = false;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // orderidDataGridViewTextBoxColumn
-            // 
-            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "order_id";
-            this.orderidDataGridViewTextBoxColumn.HeaderText = "order_id";
-            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
-            this.orderidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // serviceidDataGridViewTextBoxColumn
-            // 
-            this.serviceidDataGridViewTextBoxColumn.DataPropertyName = "service_id";
-            this.serviceidDataGridViewTextBoxColumn.HeaderText = "service_id";
-            this.serviceidDataGridViewTextBoxColumn.Name = "serviceidDataGridViewTextBoxColumn";
-            this.serviceidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameserviceDataGridViewTextBoxColumn
-            // 
-            this.nameserviceDataGridViewTextBoxColumn.DataPropertyName = "name_service";
-            this.nameserviceDataGridViewTextBoxColumn.HeaderText = "Наименование услуги";
-            this.nameserviceDataGridViewTextBoxColumn.Name = "nameserviceDataGridViewTextBoxColumn";
-            this.nameserviceDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // priceserviceDataGridViewTextBoxColumn
-            // 
-            this.priceserviceDataGridViewTextBoxColumn.DataPropertyName = "price_service";
-            this.priceserviceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceserviceDataGridViewTextBoxColumn.Name = "priceserviceDataGridViewTextBoxColumn";
-            // 
-            // numbertoothDataGridViewTextBoxColumn
-            // 
-            this.numbertoothDataGridViewTextBoxColumn.DataPropertyName = "number_tooth";
-            this.numbertoothDataGridViewTextBoxColumn.HeaderText = "№ зуба";
-            this.numbertoothDataGridViewTextBoxColumn.Name = "numbertoothDataGridViewTextBoxColumn";
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            // 
-            // totalpriceserviceDataGridViewTextBoxColumn
-            // 
-            this.totalpriceserviceDataGridViewTextBoxColumn.DataPropertyName = "total_price_service";
-            this.totalpriceserviceDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.totalpriceserviceDataGridViewTextBoxColumn.Name = "totalpriceserviceDataGridViewTextBoxColumn";
-            // 
-            // orderItemViewBindingSource
-            // 
-            this.orderItemViewBindingSource.DataSource = typeof(PreziDent.OrderItemView);
             // 
             // CabinetOrderForm
             // 
