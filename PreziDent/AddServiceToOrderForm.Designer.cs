@@ -44,9 +44,9 @@ namespace PreziDent
             this.ServiceName = new MaterialSkin.Controls.MaterialTextBox();
             this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
+            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicesViewBox = new System.Windows.Forms.GroupBox();
             this.ServicesView = new System.Windows.Forms.DataGridView();
-            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,9 @@ namespace PreziDent
             this.groupservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersservicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
             this.ServicesViewBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -301,6 +301,10 @@ namespace PreziDent
             this.GroupService.ValueMember = "id";
             this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
             // 
+            // groupservicesBindingSource
+            // 
+            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
+            // 
             // ServicesViewBox
             // 
             this.ServicesViewBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -338,10 +342,6 @@ namespace PreziDent
             this.ServicesView.Size = new System.Drawing.Size(511, 307);
             this.ServicesView.TabIndex = 0;
             this.ServicesView.DoubleClick += new System.EventHandler(this.ServicesView_DoubleClick);
-            // 
-            // groupservicesBindingSource
-            // 
-            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -432,9 +432,9 @@ namespace PreziDent
             this.Controls.Add(this.ServicesViewBox);
             this.Name = "AddServiceToOrderForm";
             this.Text = "Добавление услуги в заказ";
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
             this.ServicesViewBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

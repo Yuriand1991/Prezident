@@ -39,44 +39,6 @@
             this.OrderButton = new MaterialSkin.Controls.MaterialButton();
             this.SheduleDayCabinetViewLabel = new System.Windows.Forms.GroupBox();
             this.SheduleDayCabinetView = new System.Windows.Forms.DataGridView();
-            this.MyCabinetCalendar = new System.Windows.Forms.MonthCalendar();
-            this.MyCabinetNumLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.Rooms = new System.Windows.Forms.TabPage();
-            this.AllAppointmentsButton = new MaterialSkin.Controls.MaterialButton();
-            this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.AllCabinetCalendar = new System.Windows.Forms.MonthCalendar();
-            this.SheduleDayCabinetNineLabel = new System.Windows.Forms.GroupBox();
-            this.SheduleDayCabinetNineView = new System.Windows.Forms.DataGridView();
-            this.SheduleDayCabinetTwoLabel = new System.Windows.Forms.GroupBox();
-            this.SheduleDayCabinetTwoView = new System.Windows.Forms.DataGridView();
-            this.SheduleDayCabinetOneLabel = new System.Windows.Forms.GroupBox();
-            this.SheduleDayCabinetOneView = new System.Windows.Forms.DataGridView();
-            this.Products = new System.Windows.Forms.TabPage();
-            this.GroupsProduct = new MaterialSkin.Controls.MaterialComboBox();
-            this.GroupsProductLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
-            this.ProductsView = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Services = new System.Windows.Forms.TabPage();
-            this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
-            this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
-            this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeServiceButton = new MaterialSkin.Controls.MaterialButton();
-            this.AddServiceButton = new MaterialSkin.Controls.MaterialButton();
-            this.ServicesView = new System.Windows.Forms.DataGridView();
-            this.Patients = new System.Windows.Forms.TabPage();
-            this.AboutPatientButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeletePatientButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangePatientButton = new MaterialSkin.Controls.MaterialButton();
-            this.AddPatientButton = new MaterialSkin.Controls.MaterialButton();
-            this.PatientsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SheduleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +49,14 @@
             this.phonepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appointmentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MyCabinetCalendar = new System.Windows.Forms.MonthCalendar();
+            this.MyCabinetNumLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.Rooms = new System.Windows.Forms.TabPage();
+            this.AllAppointmentsButton = new MaterialSkin.Controls.MaterialButton();
+            this.SheduleDayAllCabinetViewLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.AllCabinetCalendar = new System.Windows.Forms.MonthCalendar();
+            this.SheduleDayCabinetNineLabel = new System.Windows.Forms.GroupBox();
+            this.SheduleDayCabinetNineView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +67,8 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SheduleDayCabinetTwoLabel = new System.Windows.Forms.GroupBox();
+            this.SheduleDayCabinetTwoView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +79,8 @@
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SheduleDayCabinetOneLabel = new System.Windows.Forms.GroupBox();
+            this.SheduleDayCabinetOneView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,11 +91,31 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonepatientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Products = new System.Windows.Forms.TabPage();
+            this.GroupsProduct = new MaterialSkin.Controls.MaterialComboBox();
             this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GroupsProductLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.PriceProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.TypeProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddProductButton = new MaterialSkin.Controls.MaterialButton();
+            this.ProductsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Services = new System.Windows.Forms.TabPage();
+            this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
             this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.PriceServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.GroupServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddServiceButton = new MaterialSkin.Controls.MaterialButton();
+            this.ServicesView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,6 +123,12 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Patients = new System.Windows.Forms.TabPage();
+            this.AboutPatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeletePatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangePatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddPatientButton = new MaterialSkin.Controls.MaterialButton();
+            this.PatientsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +143,7 @@
             this.Room.SuspendLayout();
             this.SheduleDayCabinetViewLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
             this.Rooms.SuspendLayout();
             this.SheduleDayCabinetNineLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetNineView)).BeginInit();
@@ -151,16 +152,15 @@
             this.SheduleDayCabinetOneLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetOneView)).BeginInit();
             this.Products.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.Services.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.Patients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,6 +318,71 @@
             this.SheduleDayCabinetView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
             this.SheduleDayCabinetView.DoubleClick += new System.EventHandler(this.SheduleDayCabinetView_DoubleClick);
             // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // SheduleId
+            // 
+            this.SheduleId.DataPropertyName = "shedule_id";
+            this.SheduleId.HeaderText = "shedule_id";
+            this.SheduleId.Name = "SheduleId";
+            this.SheduleId.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "start_time";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Начало";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "end_time";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Окончание";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn2.HeaderText = "date";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "room_id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "room_id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "name_patient";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Пациент";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 300;
+            // 
+            // phonepatientDataGridViewTextBoxColumn
+            // 
+            this.phonepatientDataGridViewTextBoxColumn.DataPropertyName = "phone_patient";
+            this.phonepatientDataGridViewTextBoxColumn.HeaderText = "phone_patient";
+            this.phonepatientDataGridViewTextBoxColumn.Name = "phonepatientDataGridViewTextBoxColumn";
+            this.phonepatientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "treatment_desc";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Лечение";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 300;
+            // 
+            // appointmentViewBindingSource
+            // 
+            this.appointmentViewBindingSource.DataSource = typeof(PreziDent.AppointmentView);
+            // 
             // MyCabinetCalendar
             // 
             this.MyCabinetCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -449,6 +514,75 @@
             this.SheduleDayCabinetNineView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
             this.SheduleDayCabinetNineView.DoubleClick += new System.EventHandler(this.SheduleDayCabinetView_DoubleClick);
             // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn28.HeaderText = "id";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "shedule_id";
+            this.dataGridViewTextBoxColumn29.HeaderText = "shedule_id";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "patient_id";
+            this.dataGridViewTextBoxColumn30.HeaderText = "patient_id";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn31.HeaderText = "date";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "room_id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "room_id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "start_time";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Время";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "end_time";
+            this.dataGridViewTextBoxColumn34.HeaderText = "end_time";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "name_patient";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Пациент";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "phone_patient";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "treatment_desc";
+            this.dataGridViewTextBoxColumn37.HeaderText = "treatment_desc";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Visible = false;
+            // 
             // SheduleDayCabinetTwoLabel
             // 
             this.SheduleDayCabinetTwoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -490,6 +624,75 @@
             this.SheduleDayCabinetTwoView.Tag = "2";
             this.SheduleDayCabinetTwoView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
             this.SheduleDayCabinetTwoView.DoubleClick += new System.EventHandler(this.SheduleDayCabinetView_DoubleClick);
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn18.HeaderText = "id";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "shedule_id";
+            this.dataGridViewTextBoxColumn19.HeaderText = "shedule_id";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "patient_id";
+            this.dataGridViewTextBoxColumn20.HeaderText = "patient_id";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn21.HeaderText = "date";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "room_id";
+            this.dataGridViewTextBoxColumn22.HeaderText = "room_id";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "start_time";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Время";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "end_time";
+            this.dataGridViewTextBoxColumn24.HeaderText = "end_time";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "name_patient";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Пациент";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "phone_patient";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "treatment_desc";
+            this.dataGridViewTextBoxColumn27.HeaderText = "treatment_desc";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Visible = false;
             // 
             // SheduleDayCabinetOneLabel
             // 
@@ -533,6 +736,75 @@
             this.SheduleDayCabinetOneView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SheduleDayCabinetView_CellMouseDown);
             this.SheduleDayCabinetOneView.DoubleClick += new System.EventHandler(this.SheduleDayCabinetView_DoubleClick);
             // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "shedule_id";
+            this.dataGridViewTextBoxColumn13.HeaderText = "shedule_id";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "patient_id";
+            this.dataGridViewTextBoxColumn11.HeaderText = "patient_id";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn10.HeaderText = "date";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "room_id";
+            this.dataGridViewTextBoxColumn12.HeaderText = "room_id";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "start_time";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Время";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "end_time";
+            this.dataGridViewTextBoxColumn17.HeaderText = "end_time";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "name_patient";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Пациент";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 150;
+            // 
+            // phonepatientDataGridViewTextBoxColumn1
+            // 
+            this.phonepatientDataGridViewTextBoxColumn1.DataPropertyName = "phone_patient";
+            this.phonepatientDataGridViewTextBoxColumn1.HeaderText = "Телефон";
+            this.phonepatientDataGridViewTextBoxColumn1.Name = "phonepatientDataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "treatment_desc";
+            this.dataGridViewTextBoxColumn15.HeaderText = "treatment_desc";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
             // Products
             // 
             this.Products.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -575,6 +847,10 @@
             this.GroupsProduct.TabIndex = 7;
             this.GroupsProduct.ValueMember = "id";
             this.GroupsProduct.SelectedIndexChanged += new System.EventHandler(this.GroupsProduct_SelectedIndexChanged);
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // GroupsProductLabel
             // 
@@ -718,6 +994,13 @@
             this.ProductsView.Size = new System.Drawing.Size(939, 626);
             this.ProductsView.TabIndex = 0;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
             // name
             // 
             this.name.DataPropertyName = "name";
@@ -725,11 +1008,23 @@
             this.name.Name = "name";
             this.name.Width = 300;
             // 
+            // type_product
+            // 
+            this.type_product.DataPropertyName = "type_product";
+            this.type_product.HeaderText = "Категория";
+            this.type_product.Name = "type_product";
+            this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.type_product.Width = 300;
+            // 
             // price
             // 
             this.price.DataPropertyName = "price";
             this.price.HeaderText = "Цена";
             this.price.Name = "price";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(PreziDent.product);
             // 
             // Services
             // 
@@ -773,6 +1068,10 @@
             this.GroupService.TabIndex = 8;
             this.GroupService.ValueMember = "id";
             this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
+            // 
+            // groupservicesBindingSource
+            // 
+            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
             // 
             // GroupServiceLabel
             // 
@@ -918,6 +1217,52 @@
             this.ServicesView.Size = new System.Drawing.Size(939, 626);
             this.ServicesView.TabIndex = 0;
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // codeserviceDataGridViewTextBoxColumn
+            // 
+            this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
+            this.codeserviceDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
+            this.codeserviceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 170;
+            // 
+            // groupservicesDataGridViewTextBoxColumn
+            // 
+            this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
+            this.groupservicesDataGridViewTextBoxColumn.HeaderText = "Группа";
+            this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
+            this.groupservicesDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(PreziDent.service);
+            // 
             // Patients
             // 
             this.Patients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -1044,351 +1389,6 @@
             this.PatientsView.Size = new System.Drawing.Size(939, 626);
             this.PatientsView.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // SheduleId
-            // 
-            this.SheduleId.DataPropertyName = "shedule_id";
-            this.SheduleId.HeaderText = "shedule_id";
-            this.SheduleId.Name = "SheduleId";
-            this.SheduleId.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "start_time";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Начало";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "end_time";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Окончание";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn2.HeaderText = "date";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "room_id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "room_id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "name_patient";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Пациент";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 300;
-            // 
-            // phonepatientDataGridViewTextBoxColumn
-            // 
-            this.phonepatientDataGridViewTextBoxColumn.DataPropertyName = "phone_patient";
-            this.phonepatientDataGridViewTextBoxColumn.HeaderText = "phone_patient";
-            this.phonepatientDataGridViewTextBoxColumn.Name = "phonepatientDataGridViewTextBoxColumn";
-            this.phonepatientDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "treatment_desc";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Лечение";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 300;
-            // 
-            // appointmentViewBindingSource
-            // 
-            this.appointmentViewBindingSource.DataSource = typeof(PreziDent.AppointmentView);
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn28.HeaderText = "id";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "shedule_id";
-            this.dataGridViewTextBoxColumn29.HeaderText = "shedule_id";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "patient_id";
-            this.dataGridViewTextBoxColumn30.HeaderText = "patient_id";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn31.HeaderText = "date";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "room_id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "room_id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "start_time";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Время";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "end_time";
-            this.dataGridViewTextBoxColumn34.HeaderText = "end_time";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "name_patient";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Пациент";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "phone_patient";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "treatment_desc";
-            this.dataGridViewTextBoxColumn37.HeaderText = "treatment_desc";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn18.HeaderText = "id";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "shedule_id";
-            this.dataGridViewTextBoxColumn19.HeaderText = "shedule_id";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "patient_id";
-            this.dataGridViewTextBoxColumn20.HeaderText = "patient_id";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn21.HeaderText = "date";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "room_id";
-            this.dataGridViewTextBoxColumn22.HeaderText = "room_id";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "start_time";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Время";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "end_time";
-            this.dataGridViewTextBoxColumn24.HeaderText = "end_time";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "name_patient";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Пациент";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "phone_patient";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "treatment_desc";
-            this.dataGridViewTextBoxColumn27.HeaderText = "treatment_desc";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Visible = false;
-            // 
-            // idDataGridViewTextBoxColumn5
-            // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            this.idDataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "shedule_id";
-            this.dataGridViewTextBoxColumn13.HeaderText = "shedule_id";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "patient_id";
-            this.dataGridViewTextBoxColumn11.HeaderText = "patient_id";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn10.HeaderText = "date";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "room_id";
-            this.dataGridViewTextBoxColumn12.HeaderText = "room_id";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "start_time";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Время";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "end_time";
-            this.dataGridViewTextBoxColumn17.HeaderText = "end_time";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "name_patient";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Пациент";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 150;
-            // 
-            // phonepatientDataGridViewTextBoxColumn1
-            // 
-            this.phonepatientDataGridViewTextBoxColumn1.DataPropertyName = "phone_patient";
-            this.phonepatientDataGridViewTextBoxColumn1.HeaderText = "Телефон";
-            this.phonepatientDataGridViewTextBoxColumn1.Name = "phonepatientDataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "treatment_desc";
-            this.dataGridViewTextBoxColumn15.HeaderText = "treatment_desc";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            // 
-            // typeproductBindingSource
-            // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // type_product
-            // 
-            this.type_product.DataPropertyName = "type_product";
-            this.type_product.HeaderText = "Категория";
-            this.type_product.Name = "type_product";
-            this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.type_product.Width = 300;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(PreziDent.product);
-            // 
-            // groupservicesBindingSource
-            // 
-            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // codeserviceDataGridViewTextBoxColumn
-            // 
-            this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
-            this.codeserviceDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
-            this.codeserviceDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 170;
-            // 
-            // groupservicesDataGridViewTextBoxColumn
-            // 
-            this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
-            this.groupservicesDataGridViewTextBoxColumn.HeaderText = "Группа";
-            this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
-            this.groupservicesDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataSource = typeof(PreziDent.service);
-            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
@@ -1468,6 +1468,7 @@
             this.Room.PerformLayout();
             this.SheduleDayCabinetViewLabel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             this.Rooms.ResumeLayout(false);
             this.Rooms.PerformLayout();
             this.SheduleDayCabinetNineLabel.ResumeLayout(false);
@@ -1478,17 +1479,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.SheduleDayCabinetOneView)).EndInit();
             this.Products.ResumeLayout(false);
             this.Products.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.Services.ResumeLayout(false);
             this.Services.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.Patients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
