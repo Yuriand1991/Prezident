@@ -29,6 +29,9 @@
         <EntityTypeShape EntityType="PrezidentClinicModel.statuses_patient" Width="1.5" PointX="3" PointY="9.75" />
         <AssociationConnector Association="PrezidentClinicModel.FK_patients_statuses_patient" />
         <AssociationConnector Association="PrezidentClinicModel.FK_orders_patients" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.contacts_firm" Width="1.5" PointX="9.625" PointY="9" />
+        <EntityTypeShape EntityType="PrezidentClinicModel.firm" Width="1.5" PointX="7.375" PointY="9.25" />
+        <AssociationConnector Association="PrezidentClinicModel.FK_contacts_firm_firm" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

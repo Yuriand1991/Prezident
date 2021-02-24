@@ -18,6 +18,27 @@
           <Property Name="treatment_desc" Type="ntext" />
           <Property Name="phone_patient" Type="nchar" MaxLength="12" />
         </EntityType>
+        <EntityType Name="contacts_firm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="255" />
+          <Property Name="phone" Type="nchar" MaxLength="12" />
+          <Property Name="email" Type="nchar" MaxLength="80" />
+          <Property Name="department" Type="nchar" MaxLength="80" />
+          <Property Name="notes" Type="ntext" />
+          <Property Name="id_firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="firm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="80" />
+          <Property Name="address" Type="nchar" MaxLength="80" />
+          <Property Name="notes" Type="ntext" />
+        </EntityType>
         <EntityType Name="group_services">
           <Key>
             <PropertyRef Name="id" />
@@ -166,6 +187,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_contacts_firm_firm">
+          <End Role="firm" Type="Self.firm" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="contacts_firm" Type="Self.contacts_firm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firm">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contacts_firm">
+              <PropertyRef Name="id_firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_orders_patients">
           <End Role="patients" Type="Self.patients" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -274,6 +309,8 @@
         </Association>
         <EntityContainer Name="Хранилище PrezidentClinicModelContainer">
           <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contacts_firm" EntityType="Self.contacts_firm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="firm" EntityType="Self.firm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="group_services" EntityType="Self.group_services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="orders_services" EntityType="Self.orders_services" Schema="dbo" store:Type="Tables" />
@@ -297,6 +334,10 @@
           <AssociationSet Name="FK_appointment_shedule" Association="Self.FK_appointment_shedule">
             <End Role="shedule" EntitySet="shedule" />
             <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_contacts_firm_firm" Association="Self.FK_contacts_firm_firm">
+            <End Role="firm" EntitySet="firm" />
+            <End Role="contacts_firm" EntitySet="contacts_firm" />
           </AssociationSet>
           <AssociationSet Name="FK_orders_patients" Association="Self.FK_orders_patients">
             <End Role="patients" EntitySet="patients" />
@@ -622,6 +663,12 @@
             <End Role="patient" EntitySet="patients" />
             <End Role="order" EntitySet="orders" />
           </AssociationSet>
+          <EntitySet Name="contacts_firm" EntityType="PrezidentClinicModel.contacts_firm" />
+          <EntitySet Name="firms" EntityType="PrezidentClinicModel.firm" />
+          <AssociationSet Name="FK_contacts_firm_firm" Association="PrezidentClinicModel.FK_contacts_firm_firm">
+            <End Role="firm" EntitySet="firms" />
+            <End Role="contacts_firm" EntitySet="contacts_firm" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="type_product">
           <Key>
@@ -678,6 +725,43 @@
             </Principal>
             <Dependent Role="order">
               <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="contacts_firm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="department" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="firm" Relationship="PrezidentClinicModel.FK_contacts_firm_firm" FromRole="contacts_firm" ToRole="firm" />
+        </EntityType>
+        <EntityType Name="firm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="contacts_firm" Relationship="PrezidentClinicModel.FK_contacts_firm_firm" FromRole="firm" ToRole="contacts_firm" />
+        </EntityType>
+        <Association Name="FK_contacts_firm_firm">
+          <End Type="PrezidentClinicModel.firm" Role="firm" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.contacts_firm" Role="contacts_firm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firm">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contacts_firm">
+              <PropertyRef Name="id_firm" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -820,6 +904,29 @@
           <EntitySetMapping Name="statuses_patient">
             <EntityTypeMapping TypeName="PrezidentClinicModel.statuses_patient">
               <MappingFragment StoreEntitySet="statuses_patient">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts_firm">
+            <EntityTypeMapping TypeName="PrezidentClinicModel.contacts_firm">
+              <MappingFragment StoreEntitySet="contacts_firm">
+                <ScalarProperty Name="id_firm" ColumnName="id_firm" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firms">
+            <EntityTypeMapping TypeName="PrezidentClinicModel.firm">
+              <MappingFragment StoreEntitySet="firm">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

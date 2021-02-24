@@ -12,18 +12,20 @@ namespace PreziDent
     using System;
     using System.Collections.Generic;
     
-    public partial class type_product
+    public partial class firm
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public type_product()
+        public firm()
         {
-            this.products = new HashSet<product>();
+            this.contacts_firm = new HashSet<contacts_firm>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
+        public string address { get; set; }
+        public string notes { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products { get; set; }
+        public virtual ICollection<contacts_firm> contacts_firm { get; set; }
     }
 }

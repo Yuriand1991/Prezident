@@ -127,8 +127,14 @@
     <Compile Include="CabinetOrderForm.Designer.cs">
       <DependentUpon>CabinetOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="contacts_firm.cs">
+      <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ControlAppForm.cs" />
     <Compile Include="DataBase.cs" />
+    <Compile Include="firm.cs">
+      <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="GroupServicesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,7 @@
     </None>
     <None Include="Properties\DataSources\appointment.datasource" />
     <None Include="Properties\DataSources\AppointmentView.datasource" />
+    <None Include="Properties\DataSources\firm.datasource" />
     <None Include="Properties\DataSources\group_services.datasource" />
     <None Include="Properties\DataSources\order.datasource" />
     <None Include="Properties\DataSources\OrderItemView.datasource" />

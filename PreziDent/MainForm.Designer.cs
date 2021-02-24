@@ -138,6 +138,17 @@
             this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Firms = new System.Windows.Forms.TabPage();
+            this.FirmsView = new System.Windows.Forms.DataGridView();
+            this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.AllContactFirmButton = new MaterialSkin.Controls.MaterialButton();
             this.SheduleDayCabinetViewMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
@@ -162,6 +173,9 @@
             this.Patients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            this.Firms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FirmsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SheduleDayCabinetViewMenuStrip
@@ -230,6 +244,7 @@
             this.MainTabControl.Controls.Add(this.Products);
             this.MainTabControl.Controls.Add(this.Services);
             this.MainTabControl.Controls.Add(this.Patients);
+            this.MainTabControl.Controls.Add(this.Firms);
             this.MainTabControl.Depth = 0;
             this.MainTabControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MainTabControl.Location = new System.Drawing.Point(188, 107);
@@ -839,7 +854,7 @@
             this.GroupsProduct.FormattingEnabled = true;
             this.GroupsProduct.IntegralHeight = false;
             this.GroupsProduct.ItemHeight = 43;
-            this.GroupsProduct.Location = new System.Drawing.Point(949, 38);
+            this.GroupsProduct.Location = new System.Drawing.Point(949, 25);
             this.GroupsProduct.MaxDropDownItems = 4;
             this.GroupsProduct.MouseState = MaterialSkin.MouseState.OUT;
             this.GroupsProduct.Name = "GroupsProduct";
@@ -859,7 +874,7 @@
             this.GroupsProductLabel.Depth = 0;
             this.GroupsProductLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GroupsProductLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GroupsProductLabel.Location = new System.Drawing.Point(948, 16);
+            this.GroupsProductLabel.Location = new System.Drawing.Point(948, 3);
             this.GroupsProductLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.GroupsProductLabel.Name = "GroupsProductLabel";
             this.GroupsProductLabel.Size = new System.Drawing.Size(143, 19);
@@ -876,7 +891,7 @@
             this.PriceProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PriceProductButton.HighEmphasis = true;
             this.PriceProductButton.Icon = null;
-            this.PriceProductButton.Location = new System.Drawing.Point(949, 463);
+            this.PriceProductButton.Location = new System.Drawing.Point(949, 587);
             this.PriceProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.PriceProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.PriceProductButton.Name = "PriceProductButton";
@@ -897,7 +912,7 @@
             this.TypeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TypeProductButton.HighEmphasis = true;
             this.TypeProductButton.Icon = null;
-            this.TypeProductButton.Location = new System.Drawing.Point(949, 417);
+            this.TypeProductButton.Location = new System.Drawing.Point(949, 539);
             this.TypeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TypeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.TypeProductButton.Name = "TypeProductButton";
@@ -919,7 +934,7 @@
             this.ChangeProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeProductButton.HighEmphasis = true;
             this.ChangeProductButton.Icon = null;
-            this.ChangeProductButton.Location = new System.Drawing.Point(949, 177);
+            this.ChangeProductButton.Location = new System.Drawing.Point(949, 145);
             this.ChangeProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeProductButton.Name = "ChangeProductButton";
@@ -941,7 +956,7 @@
             this.DeleteProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteProductButton.HighEmphasis = true;
             this.DeleteProductButton.Icon = null;
-            this.DeleteProductButton.Location = new System.Drawing.Point(949, 225);
+            this.DeleteProductButton.Location = new System.Drawing.Point(949, 193);
             this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteProductButton.Name = "DeleteProductButton";
@@ -963,7 +978,7 @@
             this.AddProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddProductButton.HighEmphasis = true;
             this.AddProductButton.Icon = null;
-            this.AddProductButton.Location = new System.Drawing.Point(949, 129);
+            this.AddProductButton.Location = new System.Drawing.Point(949, 97);
             this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddProductButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddProductButton.Name = "AddProductButton";
@@ -1060,11 +1075,11 @@
             this.GroupService.FormattingEnabled = true;
             this.GroupService.IntegralHeight = false;
             this.GroupService.ItemHeight = 43;
-            this.GroupService.Location = new System.Drawing.Point(951, 52);
+            this.GroupService.Location = new System.Drawing.Point(949, 25);
             this.GroupService.MaxDropDownItems = 4;
             this.GroupService.MouseState = MaterialSkin.MouseState.OUT;
             this.GroupService.Name = "GroupService";
-            this.GroupService.Size = new System.Drawing.Size(183, 49);
+            this.GroupService.Size = new System.Drawing.Size(185, 49);
             this.GroupService.TabIndex = 8;
             this.GroupService.ValueMember = "id";
             this.GroupService.SelectedIndexChanged += new System.EventHandler(this.GroupService_SelectedIndexChanged);
@@ -1080,7 +1095,7 @@
             this.GroupServiceLabel.Depth = 0;
             this.GroupServiceLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GroupServiceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GroupServiceLabel.Location = new System.Drawing.Point(948, 30);
+            this.GroupServiceLabel.Location = new System.Drawing.Point(946, 3);
             this.GroupServiceLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.GroupServiceLabel.Name = "GroupServiceLabel";
             this.GroupServiceLabel.Size = new System.Drawing.Size(183, 19);
@@ -1097,7 +1112,7 @@
             this.PriceServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PriceServiceButton.HighEmphasis = true;
             this.PriceServiceButton.Icon = null;
-            this.PriceServiceButton.Location = new System.Drawing.Point(949, 374);
+            this.PriceServiceButton.Location = new System.Drawing.Point(949, 587);
             this.PriceServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.PriceServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.PriceServiceButton.Name = "PriceServiceButton";
@@ -1118,7 +1133,7 @@
             this.GroupServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.GroupServiceButton.HighEmphasis = true;
             this.GroupServiceButton.Icon = null;
-            this.GroupServiceButton.Location = new System.Drawing.Point(949, 326);
+            this.GroupServiceButton.Location = new System.Drawing.Point(949, 539);
             this.GroupServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.GroupServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.GroupServiceButton.Name = "GroupServiceButton";
@@ -1140,7 +1155,7 @@
             this.DeleteServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteServiceButton.HighEmphasis = true;
             this.DeleteServiceButton.Icon = null;
-            this.DeleteServiceButton.Location = new System.Drawing.Point(949, 231);
+            this.DeleteServiceButton.Location = new System.Drawing.Point(949, 193);
             this.DeleteServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteServiceButton.Name = "DeleteServiceButton";
@@ -1162,7 +1177,7 @@
             this.ChangeServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangeServiceButton.HighEmphasis = true;
             this.ChangeServiceButton.Icon = null;
-            this.ChangeServiceButton.Location = new System.Drawing.Point(949, 183);
+            this.ChangeServiceButton.Location = new System.Drawing.Point(949, 145);
             this.ChangeServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeServiceButton.Name = "ChangeServiceButton";
@@ -1184,7 +1199,7 @@
             this.AddServiceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AddServiceButton.HighEmphasis = true;
             this.AddServiceButton.Icon = null;
-            this.AddServiceButton.Location = new System.Drawing.Point(949, 135);
+            this.AddServiceButton.Location = new System.Drawing.Point(949, 97);
             this.AddServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddServiceButton.Name = "AddServiceButton";
@@ -1449,6 +1464,147 @@
             // 
             this.patientBindingSource.DataSource = typeof(PreziDent.patient);
             // 
+            // Firms
+            // 
+            this.Firms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Firms.Controls.Add(this.AllContactFirmButton);
+            this.Firms.Controls.Add(this.DeleteFirmButton);
+            this.Firms.Controls.Add(this.ChangeFirmButton);
+            this.Firms.Controls.Add(this.AddFirmButton);
+            this.Firms.Controls.Add(this.FirmsView);
+            this.Firms.Location = new System.Drawing.Point(4, 22);
+            this.Firms.Name = "Firms";
+            this.Firms.Padding = new System.Windows.Forms.Padding(3);
+            this.Firms.Size = new System.Drawing.Size(1141, 632);
+            this.Firms.TabIndex = 6;
+            this.Firms.Text = "Фирмы";
+            // 
+            // FirmsView
+            // 
+            this.FirmsView.AllowUserToAddRows = false;
+            this.FirmsView.AutoGenerateColumns = false;
+            this.FirmsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FirmsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn3,
+            this.nameDataGridViewTextBoxColumn1,
+            this.addressDataGridViewTextBoxColumn,
+            this.notes});
+            this.FirmsView.DataSource = this.firmBindingSource;
+            this.FirmsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.FirmsView.Location = new System.Drawing.Point(6, 6);
+            this.FirmsView.Name = "FirmsView";
+            this.FirmsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.FirmsView.Size = new System.Drawing.Size(839, 475);
+            this.FirmsView.TabIndex = 0;
+            // 
+            // firmBindingSource
+            // 
+            this.firmBindingSource.DataSource = typeof(PreziDent.firm);
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // notes
+            // 
+            this.notes.DataPropertyName = "notes";
+            this.notes.HeaderText = "Примечание";
+            this.notes.Name = "notes";
+            this.notes.Width = 250;
+            // 
+            // AddFirmButton
+            // 
+            this.AddFirmButton.AutoSize = false;
+            this.AddFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddFirmButton.Depth = 0;
+            this.AddFirmButton.DrawShadows = true;
+            this.AddFirmButton.HighEmphasis = true;
+            this.AddFirmButton.Icon = null;
+            this.AddFirmButton.Location = new System.Drawing.Point(949, 9);
+            this.AddFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddFirmButton.Name = "AddFirmButton";
+            this.AddFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.AddFirmButton.TabIndex = 1;
+            this.AddFirmButton.Text = "Добавить";
+            this.AddFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddFirmButton.UseAccentColor = false;
+            this.AddFirmButton.UseVisualStyleBackColor = true;
+            // 
+            // ChangeFirmButton
+            // 
+            this.ChangeFirmButton.AutoSize = false;
+            this.ChangeFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeFirmButton.Depth = 0;
+            this.ChangeFirmButton.DrawShadows = true;
+            this.ChangeFirmButton.HighEmphasis = true;
+            this.ChangeFirmButton.Icon = null;
+            this.ChangeFirmButton.Location = new System.Drawing.Point(949, 57);
+            this.ChangeFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeFirmButton.Name = "ChangeFirmButton";
+            this.ChangeFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.ChangeFirmButton.TabIndex = 2;
+            this.ChangeFirmButton.Text = "Изменить";
+            this.ChangeFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeFirmButton.UseAccentColor = false;
+            this.ChangeFirmButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteFirmButton
+            // 
+            this.DeleteFirmButton.AutoSize = false;
+            this.DeleteFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteFirmButton.Depth = 0;
+            this.DeleteFirmButton.DrawShadows = true;
+            this.DeleteFirmButton.HighEmphasis = true;
+            this.DeleteFirmButton.Icon = null;
+            this.DeleteFirmButton.Location = new System.Drawing.Point(949, 105);
+            this.DeleteFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteFirmButton.Name = "DeleteFirmButton";
+            this.DeleteFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.DeleteFirmButton.TabIndex = 3;
+            this.DeleteFirmButton.Text = "Удалить";
+            this.DeleteFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteFirmButton.UseAccentColor = false;
+            this.DeleteFirmButton.UseVisualStyleBackColor = true;
+            // 
+            // AllContactFirmButton
+            // 
+            this.AllContactFirmButton.AutoSize = false;
+            this.AllContactFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AllContactFirmButton.Depth = 0;
+            this.AllContactFirmButton.DrawShadows = true;
+            this.AllContactFirmButton.HighEmphasis = true;
+            this.AllContactFirmButton.Icon = null;
+            this.AllContactFirmButton.Location = new System.Drawing.Point(949, 153);
+            this.AllContactFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AllContactFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AllContactFirmButton.Name = "AllContactFirmButton";
+            this.AllContactFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.AllContactFirmButton.TabIndex = 4;
+            this.AllContactFirmButton.Text = "Все контакты";
+            this.AllContactFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AllContactFirmButton.UseAccentColor = false;
+            this.AllContactFirmButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1490,6 +1646,9 @@
             this.Patients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PatientsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            this.Firms.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FirmsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1615,6 +1774,18 @@
         private MaterialSkin.Controls.MaterialLabel GroupServiceLabel;
         private MaterialSkin.Controls.MaterialButton AllAppointmentsButton;
         protected internal System.Windows.Forms.MonthCalendar AllCabinetCalendar;
+        private System.Windows.Forms.TabPage Firms;
+        private System.Windows.Forms.DataGridView FirmsView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource firmBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notes;
+        private MaterialSkin.Controls.MaterialButton AllContactFirmButton;
+        private MaterialSkin.Controls.MaterialButton DeleteFirmButton;
+        private MaterialSkin.Controls.MaterialButton ChangeFirmButton;
+        private MaterialSkin.Controls.MaterialButton AddFirmButton;
     }
 }
 
