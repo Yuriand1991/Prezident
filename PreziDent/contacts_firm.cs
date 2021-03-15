@@ -21,6 +21,7 @@ namespace PreziDent
         public string department { get; set; }
         public string notes { get; set; }
         public int id_firm { get; set; }
+        public string post { get; set; }
     
         public virtual firm firm { get; set; }
     }

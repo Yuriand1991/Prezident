@@ -29,6 +29,7 @@
           <Property Name="department" Type="nchar" MaxLength="80" />
           <Property Name="notes" Type="ntext" />
           <Property Name="id_firm" Type="int" Nullable="false" />
+          <Property Name="post" Type="nchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="firm">
           <Key>
@@ -740,6 +741,7 @@
           <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_firm" Type="Int32" Nullable="false" />
           <NavigationProperty Name="firm" Relationship="PrezidentClinicModel.FK_contacts_firm_firm" FromRole="contacts_firm" ToRole="firm" />
+          <Property Name="post" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="firm">
           <Key>
@@ -912,6 +914,7 @@
           <EntitySetMapping Name="contacts_firm">
             <EntityTypeMapping TypeName="PrezidentClinicModel.contacts_firm">
               <MappingFragment StoreEntitySet="contacts_firm">
+                <ScalarProperty Name="post" ColumnName="post" />
                 <ScalarProperty Name="id_firm" ColumnName="id_firm" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="department" ColumnName="department" />

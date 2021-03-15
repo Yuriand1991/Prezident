@@ -139,16 +139,17 @@
             this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Firms = new System.Windows.Forms.TabPage();
+            this.ContactsFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.AllContactFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddFirmButton = new MaterialSkin.Controls.MaterialButton();
             this.FirmsView = new System.Windows.Forms.DataGridView();
-            this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddFirmButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeFirmButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteFirmButton = new MaterialSkin.Controls.MaterialButton();
-            this.AllContactFirmButton = new MaterialSkin.Controls.MaterialButton();
+            this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SheduleDayCabinetViewMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
@@ -327,6 +328,7 @@
             this.SheduleDayCabinetView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetView.Location = new System.Drawing.Point(3, 20);
             this.SheduleDayCabinetView.Name = "SheduleDayCabinetView";
+            this.SheduleDayCabinetView.ReadOnly = true;
             this.SheduleDayCabinetView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SheduleDayCabinetView.Size = new System.Drawing.Size(1129, 420);
             this.SheduleDayCabinetView.TabIndex = 0;
@@ -338,6 +340,7 @@
             this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn4.HeaderText = "id";
             this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
             this.idDataGridViewTextBoxColumn4.Visible = false;
             // 
             // SheduleId
@@ -345,6 +348,7 @@
             this.SheduleId.DataPropertyName = "shedule_id";
             this.SheduleId.HeaderText = "shedule_id";
             this.SheduleId.Name = "SheduleId";
+            this.SheduleId.ReadOnly = true;
             this.SheduleId.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
@@ -352,18 +356,21 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "start_time";
             this.dataGridViewTextBoxColumn8.HeaderText = "Начало";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "end_time";
             this.dataGridViewTextBoxColumn9.HeaderText = "Окончание";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "date";
             this.dataGridViewTextBoxColumn2.HeaderText = "date";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
@@ -371,6 +378,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "room_id";
             this.dataGridViewTextBoxColumn4.HeaderText = "room_id";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
@@ -378,6 +386,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "name_patient";
             this.dataGridViewTextBoxColumn6.HeaderText = "Пациент";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 300;
             // 
             // phonepatientDataGridViewTextBoxColumn
@@ -385,6 +394,7 @@
             this.phonepatientDataGridViewTextBoxColumn.DataPropertyName = "phone_patient";
             this.phonepatientDataGridViewTextBoxColumn.HeaderText = "phone_patient";
             this.phonepatientDataGridViewTextBoxColumn.Name = "phonepatientDataGridViewTextBoxColumn";
+            this.phonepatientDataGridViewTextBoxColumn.ReadOnly = true;
             this.phonepatientDataGridViewTextBoxColumn.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
@@ -392,6 +402,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "treatment_desc";
             this.dataGridViewTextBoxColumn7.HeaderText = "Лечение";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 300;
             // 
             // appointmentViewBindingSource
@@ -522,6 +533,7 @@
             this.SheduleDayCabinetNineView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetNineView.Location = new System.Drawing.Point(3, 20);
             this.SheduleDayCabinetNineView.Name = "SheduleDayCabinetNineView";
+            this.SheduleDayCabinetNineView.ReadOnly = true;
             this.SheduleDayCabinetNineView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SheduleDayCabinetNineView.Size = new System.Drawing.Size(369, 396);
             this.SheduleDayCabinetNineView.TabIndex = 1;
@@ -534,6 +546,7 @@
             this.dataGridViewTextBoxColumn28.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn28.HeaderText = "id";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
             this.dataGridViewTextBoxColumn28.Visible = false;
             // 
             // dataGridViewTextBoxColumn29
@@ -541,6 +554,7 @@
             this.dataGridViewTextBoxColumn29.DataPropertyName = "shedule_id";
             this.dataGridViewTextBoxColumn29.HeaderText = "shedule_id";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
             this.dataGridViewTextBoxColumn29.Visible = false;
             // 
             // dataGridViewTextBoxColumn30
@@ -548,6 +562,7 @@
             this.dataGridViewTextBoxColumn30.DataPropertyName = "patient_id";
             this.dataGridViewTextBoxColumn30.HeaderText = "patient_id";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
             this.dataGridViewTextBoxColumn30.Visible = false;
             // 
             // dataGridViewTextBoxColumn31
@@ -555,6 +570,7 @@
             this.dataGridViewTextBoxColumn31.DataPropertyName = "date";
             this.dataGridViewTextBoxColumn31.HeaderText = "date";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
             this.dataGridViewTextBoxColumn31.Visible = false;
             // 
             // dataGridViewTextBoxColumn32
@@ -562,6 +578,7 @@
             this.dataGridViewTextBoxColumn32.DataPropertyName = "room_id";
             this.dataGridViewTextBoxColumn32.HeaderText = "room_id";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
             this.dataGridViewTextBoxColumn32.Visible = false;
             // 
             // dataGridViewTextBoxColumn33
@@ -569,6 +586,7 @@
             this.dataGridViewTextBoxColumn33.DataPropertyName = "start_time";
             this.dataGridViewTextBoxColumn33.HeaderText = "Время";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
             this.dataGridViewTextBoxColumn33.Width = 70;
             // 
             // dataGridViewTextBoxColumn34
@@ -576,6 +594,7 @@
             this.dataGridViewTextBoxColumn34.DataPropertyName = "end_time";
             this.dataGridViewTextBoxColumn34.HeaderText = "end_time";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
             this.dataGridViewTextBoxColumn34.Visible = false;
             // 
             // dataGridViewTextBoxColumn35
@@ -583,6 +602,7 @@
             this.dataGridViewTextBoxColumn35.DataPropertyName = "name_patient";
             this.dataGridViewTextBoxColumn35.HeaderText = "Пациент";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
             this.dataGridViewTextBoxColumn35.Width = 150;
             // 
             // dataGridViewTextBoxColumn36
@@ -590,12 +610,14 @@
             this.dataGridViewTextBoxColumn36.DataPropertyName = "phone_patient";
             this.dataGridViewTextBoxColumn36.HeaderText = "Телефон";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.DataPropertyName = "treatment_desc";
             this.dataGridViewTextBoxColumn37.HeaderText = "treatment_desc";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
             this.dataGridViewTextBoxColumn37.Visible = false;
             // 
             // SheduleDayCabinetTwoLabel
@@ -633,6 +655,7 @@
             this.SheduleDayCabinetTwoView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetTwoView.Location = new System.Drawing.Point(3, 20);
             this.SheduleDayCabinetTwoView.Name = "SheduleDayCabinetTwoView";
+            this.SheduleDayCabinetTwoView.ReadOnly = true;
             this.SheduleDayCabinetTwoView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SheduleDayCabinetTwoView.Size = new System.Drawing.Size(369, 396);
             this.SheduleDayCabinetTwoView.TabIndex = 1;
@@ -645,6 +668,7 @@
             this.dataGridViewTextBoxColumn18.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn18.HeaderText = "id";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Visible = false;
             // 
             // dataGridViewTextBoxColumn19
@@ -652,6 +676,7 @@
             this.dataGridViewTextBoxColumn19.DataPropertyName = "shedule_id";
             this.dataGridViewTextBoxColumn19.HeaderText = "shedule_id";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Visible = false;
             // 
             // dataGridViewTextBoxColumn20
@@ -659,6 +684,7 @@
             this.dataGridViewTextBoxColumn20.DataPropertyName = "patient_id";
             this.dataGridViewTextBoxColumn20.HeaderText = "patient_id";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
             this.dataGridViewTextBoxColumn20.Visible = false;
             // 
             // dataGridViewTextBoxColumn21
@@ -666,6 +692,7 @@
             this.dataGridViewTextBoxColumn21.DataPropertyName = "date";
             this.dataGridViewTextBoxColumn21.HeaderText = "date";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             this.dataGridViewTextBoxColumn21.Visible = false;
             // 
             // dataGridViewTextBoxColumn22
@@ -673,6 +700,7 @@
             this.dataGridViewTextBoxColumn22.DataPropertyName = "room_id";
             this.dataGridViewTextBoxColumn22.HeaderText = "room_id";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
             this.dataGridViewTextBoxColumn22.Visible = false;
             // 
             // dataGridViewTextBoxColumn23
@@ -680,6 +708,7 @@
             this.dataGridViewTextBoxColumn23.DataPropertyName = "start_time";
             this.dataGridViewTextBoxColumn23.HeaderText = "Время";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
             this.dataGridViewTextBoxColumn23.Width = 70;
             // 
             // dataGridViewTextBoxColumn24
@@ -687,6 +716,7 @@
             this.dataGridViewTextBoxColumn24.DataPropertyName = "end_time";
             this.dataGridViewTextBoxColumn24.HeaderText = "end_time";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
             this.dataGridViewTextBoxColumn24.Visible = false;
             // 
             // dataGridViewTextBoxColumn25
@@ -694,6 +724,7 @@
             this.dataGridViewTextBoxColumn25.DataPropertyName = "name_patient";
             this.dataGridViewTextBoxColumn25.HeaderText = "Пациент";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
             this.dataGridViewTextBoxColumn25.Width = 150;
             // 
             // dataGridViewTextBoxColumn26
@@ -701,12 +732,14 @@
             this.dataGridViewTextBoxColumn26.DataPropertyName = "phone_patient";
             this.dataGridViewTextBoxColumn26.HeaderText = "Телефон";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.DataPropertyName = "treatment_desc";
             this.dataGridViewTextBoxColumn27.HeaderText = "treatment_desc";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
             this.dataGridViewTextBoxColumn27.Visible = false;
             // 
             // SheduleDayCabinetOneLabel
@@ -744,6 +777,7 @@
             this.SheduleDayCabinetOneView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SheduleDayCabinetOneView.Location = new System.Drawing.Point(3, 20);
             this.SheduleDayCabinetOneView.Name = "SheduleDayCabinetOneView";
+            this.SheduleDayCabinetOneView.ReadOnly = true;
             this.SheduleDayCabinetOneView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SheduleDayCabinetOneView.Size = new System.Drawing.Size(369, 396);
             this.SheduleDayCabinetOneView.TabIndex = 0;
@@ -756,6 +790,7 @@
             this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn5.HeaderText = "id";
             this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
             this.idDataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn13
@@ -763,6 +798,7 @@
             this.dataGridViewTextBoxColumn13.DataPropertyName = "shedule_id";
             this.dataGridViewTextBoxColumn13.HeaderText = "shedule_id";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
@@ -770,6 +806,7 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "patient_id";
             this.dataGridViewTextBoxColumn11.HeaderText = "patient_id";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
@@ -777,6 +814,7 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "date";
             this.dataGridViewTextBoxColumn10.HeaderText = "date";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
@@ -784,6 +822,7 @@
             this.dataGridViewTextBoxColumn12.DataPropertyName = "room_id";
             this.dataGridViewTextBoxColumn12.HeaderText = "room_id";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Visible = false;
             // 
             // dataGridViewTextBoxColumn16
@@ -791,6 +830,7 @@
             this.dataGridViewTextBoxColumn16.DataPropertyName = "start_time";
             this.dataGridViewTextBoxColumn16.HeaderText = "Время";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Width = 70;
             // 
             // dataGridViewTextBoxColumn17
@@ -798,6 +838,7 @@
             this.dataGridViewTextBoxColumn17.DataPropertyName = "end_time";
             this.dataGridViewTextBoxColumn17.HeaderText = "end_time";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Visible = false;
             // 
             // dataGridViewTextBoxColumn14
@@ -805,6 +846,7 @@
             this.dataGridViewTextBoxColumn14.DataPropertyName = "name_patient";
             this.dataGridViewTextBoxColumn14.HeaderText = "Пациент";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             this.dataGridViewTextBoxColumn14.Width = 150;
             // 
             // phonepatientDataGridViewTextBoxColumn1
@@ -812,12 +854,14 @@
             this.phonepatientDataGridViewTextBoxColumn1.DataPropertyName = "phone_patient";
             this.phonepatientDataGridViewTextBoxColumn1.HeaderText = "Телефон";
             this.phonepatientDataGridViewTextBoxColumn1.Name = "phonepatientDataGridViewTextBoxColumn1";
+            this.phonepatientDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "treatment_desc";
             this.dataGridViewTextBoxColumn15.HeaderText = "treatment_desc";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Visible = false;
             // 
             // Products
@@ -1005,6 +1049,7 @@
             this.ProductsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsView.Location = new System.Drawing.Point(3, 3);
             this.ProductsView.Name = "ProductsView";
+            this.ProductsView.ReadOnly = true;
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductsView.Size = new System.Drawing.Size(939, 626);
             this.ProductsView.TabIndex = 0;
@@ -1014,6 +1059,7 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // name
@@ -1021,6 +1067,7 @@
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Наименование";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 300;
             // 
             // type_product
@@ -1028,6 +1075,7 @@
             this.type_product.DataPropertyName = "type_product";
             this.type_product.HeaderText = "Категория";
             this.type_product.Name = "type_product";
+            this.type_product.ReadOnly = true;
             this.type_product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.type_product.Width = 300;
             // 
@@ -1036,6 +1084,7 @@
             this.price.DataPropertyName = "price";
             this.price.HeaderText = "Цена";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // productBindingSource
             // 
@@ -1228,6 +1277,7 @@
             this.ServicesView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ServicesView.Location = new System.Drawing.Point(3, 3);
             this.ServicesView.Name = "ServicesView";
+            this.ServicesView.ReadOnly = true;
             this.ServicesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServicesView.Size = new System.Drawing.Size(939, 626);
             this.ServicesView.TabIndex = 0;
@@ -1237,6 +1287,7 @@
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn1.HeaderText = "id";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
             this.idDataGridViewTextBoxColumn1.Visible = false;
             // 
             // codeserviceDataGridViewTextBoxColumn
@@ -1244,6 +1295,7 @@
             this.codeserviceDataGridViewTextBoxColumn.DataPropertyName = "code_service";
             this.codeserviceDataGridViewTextBoxColumn.HeaderText = "Код";
             this.codeserviceDataGridViewTextBoxColumn.Name = "codeserviceDataGridViewTextBoxColumn";
+            this.codeserviceDataGridViewTextBoxColumn.ReadOnly = true;
             this.codeserviceDataGridViewTextBoxColumn.Width = 70;
             // 
             // nameDataGridViewTextBoxColumn
@@ -1251,6 +1303,7 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 170;
             // 
             // groupservicesDataGridViewTextBoxColumn
@@ -1258,6 +1311,7 @@
             this.groupservicesDataGridViewTextBoxColumn.DataPropertyName = "group_services";
             this.groupservicesDataGridViewTextBoxColumn.HeaderText = "Группа";
             this.groupservicesDataGridViewTextBoxColumn.Name = "groupservicesDataGridViewTextBoxColumn";
+            this.groupservicesDataGridViewTextBoxColumn.ReadOnly = true;
             this.groupservicesDataGridViewTextBoxColumn.Width = 200;
             // 
             // priceDataGridViewTextBoxColumn
@@ -1265,6 +1319,7 @@
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 70;
             // 
             // descriptionDataGridViewTextBoxColumn
@@ -1272,6 +1327,7 @@
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Width = 200;
             // 
             // serviceBindingSource
@@ -1400,6 +1456,7 @@
             this.PatientsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PatientsView.Location = new System.Drawing.Point(3, 3);
             this.PatientsView.Name = "PatientsView";
+            this.PatientsView.ReadOnly = true;
             this.PatientsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PatientsView.Size = new System.Drawing.Size(939, 626);
             this.PatientsView.TabIndex = 0;
@@ -1409,6 +1466,7 @@
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn2.HeaderText = "id";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
             this.idDataGridViewTextBoxColumn2.Visible = false;
             // 
             // firstnameDataGridViewTextBoxColumn
@@ -1416,6 +1474,7 @@
             this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.firstnameDataGridViewTextBoxColumn.Width = 150;
             // 
             // lastnameDataGridViewTextBoxColumn
@@ -1423,6 +1482,7 @@
             this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastnameDataGridViewTextBoxColumn.Width = 150;
             // 
             // othernameDataGridViewTextBoxColumn
@@ -1430,6 +1490,7 @@
             this.othernameDataGridViewTextBoxColumn.DataPropertyName = "other_name";
             this.othernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.othernameDataGridViewTextBoxColumn.Name = "othernameDataGridViewTextBoxColumn";
+            this.othernameDataGridViewTextBoxColumn.ReadOnly = true;
             this.othernameDataGridViewTextBoxColumn.Width = 150;
             // 
             // phoneDataGridViewTextBoxColumn
@@ -1437,6 +1498,7 @@
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneDataGridViewTextBoxColumn.Width = 110;
             // 
             // emailDataGridViewTextBoxColumn
@@ -1444,6 +1506,7 @@
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 150;
             // 
             // birthdayDataGridViewTextBoxColumn
@@ -1451,6 +1514,7 @@
             this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
             this.birthdayDataGridViewTextBoxColumn.HeaderText = "День рождения";
             this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
             this.birthdayDataGridViewTextBoxColumn.Visible = false;
             // 
             // regdateDataGridViewTextBoxColumn
@@ -1458,6 +1522,7 @@
             this.regdateDataGridViewTextBoxColumn.DataPropertyName = "reg_date";
             this.regdateDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
             this.regdateDataGridViewTextBoxColumn.Name = "regdateDataGridViewTextBoxColumn";
+            this.regdateDataGridViewTextBoxColumn.ReadOnly = true;
             this.regdateDataGridViewTextBoxColumn.Visible = false;
             // 
             // patientBindingSource
@@ -1467,6 +1532,7 @@
             // Firms
             // 
             this.Firms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Firms.Controls.Add(this.ContactsFirmButton);
             this.Firms.Controls.Add(this.AllContactFirmButton);
             this.Firms.Controls.Add(this.DeleteFirmButton);
             this.Firms.Controls.Add(this.ChangeFirmButton);
@@ -1478,6 +1544,116 @@
             this.Firms.Size = new System.Drawing.Size(1141, 632);
             this.Firms.TabIndex = 6;
             this.Firms.Text = "Фирмы";
+            // 
+            // ContactsFirmButton
+            // 
+            this.ContactsFirmButton.AutoSize = false;
+            this.ContactsFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ContactsFirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ContactsFirmButton.Depth = 0;
+            this.ContactsFirmButton.DrawShadows = true;
+            this.ContactsFirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ContactsFirmButton.HighEmphasis = true;
+            this.ContactsFirmButton.Icon = null;
+            this.ContactsFirmButton.Location = new System.Drawing.Point(949, 539);
+            this.ContactsFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ContactsFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ContactsFirmButton.Name = "ContactsFirmButton";
+            this.ContactsFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.ContactsFirmButton.TabIndex = 5;
+            this.ContactsFirmButton.Text = "Контакты фирмы";
+            this.ContactsFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ContactsFirmButton.UseAccentColor = false;
+            this.ContactsFirmButton.UseVisualStyleBackColor = false;
+            this.ContactsFirmButton.Click += new System.EventHandler(this.FirmsView_DoubleClick);
+            // 
+            // AllContactFirmButton
+            // 
+            this.AllContactFirmButton.AutoSize = false;
+            this.AllContactFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AllContactFirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AllContactFirmButton.Depth = 0;
+            this.AllContactFirmButton.DrawShadows = true;
+            this.AllContactFirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AllContactFirmButton.HighEmphasis = true;
+            this.AllContactFirmButton.Icon = null;
+            this.AllContactFirmButton.Location = new System.Drawing.Point(949, 587);
+            this.AllContactFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AllContactFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AllContactFirmButton.Name = "AllContactFirmButton";
+            this.AllContactFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.AllContactFirmButton.TabIndex = 4;
+            this.AllContactFirmButton.Text = "Все контакты";
+            this.AllContactFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AllContactFirmButton.UseAccentColor = false;
+            this.AllContactFirmButton.UseVisualStyleBackColor = false;
+            this.AllContactFirmButton.Click += new System.EventHandler(this.AllContactFirmButton_Click);
+            // 
+            // DeleteFirmButton
+            // 
+            this.DeleteFirmButton.AutoSize = false;
+            this.DeleteFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteFirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteFirmButton.Depth = 0;
+            this.DeleteFirmButton.DrawShadows = true;
+            this.DeleteFirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteFirmButton.HighEmphasis = true;
+            this.DeleteFirmButton.Icon = null;
+            this.DeleteFirmButton.Location = new System.Drawing.Point(949, 105);
+            this.DeleteFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteFirmButton.Name = "DeleteFirmButton";
+            this.DeleteFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.DeleteFirmButton.TabIndex = 3;
+            this.DeleteFirmButton.Text = "Удалить";
+            this.DeleteFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteFirmButton.UseAccentColor = false;
+            this.DeleteFirmButton.UseVisualStyleBackColor = false;
+            this.DeleteFirmButton.Click += new System.EventHandler(this.DeleteFirmButton_Click);
+            // 
+            // ChangeFirmButton
+            // 
+            this.ChangeFirmButton.AutoSize = false;
+            this.ChangeFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeFirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangeFirmButton.Depth = 0;
+            this.ChangeFirmButton.DrawShadows = true;
+            this.ChangeFirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangeFirmButton.HighEmphasis = true;
+            this.ChangeFirmButton.Icon = null;
+            this.ChangeFirmButton.Location = new System.Drawing.Point(949, 57);
+            this.ChangeFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeFirmButton.Name = "ChangeFirmButton";
+            this.ChangeFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.ChangeFirmButton.TabIndex = 2;
+            this.ChangeFirmButton.Text = "Изменить";
+            this.ChangeFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeFirmButton.UseAccentColor = false;
+            this.ChangeFirmButton.UseVisualStyleBackColor = false;
+            this.ChangeFirmButton.Click += new System.EventHandler(this.ChangeFirmButton_Click);
+            // 
+            // AddFirmButton
+            // 
+            this.AddFirmButton.AutoSize = false;
+            this.AddFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddFirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddFirmButton.Depth = 0;
+            this.AddFirmButton.DrawShadows = true;
+            this.AddFirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddFirmButton.HighEmphasis = true;
+            this.AddFirmButton.Icon = null;
+            this.AddFirmButton.Location = new System.Drawing.Point(949, 9);
+            this.AddFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddFirmButton.Name = "AddFirmButton";
+            this.AddFirmButton.Size = new System.Drawing.Size(185, 36);
+            this.AddFirmButton.TabIndex = 1;
+            this.AddFirmButton.Text = "Добавить";
+            this.AddFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddFirmButton.UseAccentColor = false;
+            this.AddFirmButton.UseVisualStyleBackColor = false;
+            this.AddFirmButton.Click += new System.EventHandler(this.AddFirmButton_Click);
             // 
             // FirmsView
             // 
@@ -1491,21 +1667,20 @@
             this.notes});
             this.FirmsView.DataSource = this.firmBindingSource;
             this.FirmsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.FirmsView.Location = new System.Drawing.Point(6, 6);
+            this.FirmsView.Location = new System.Drawing.Point(3, 3);
             this.FirmsView.Name = "FirmsView";
+            this.FirmsView.ReadOnly = true;
             this.FirmsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FirmsView.Size = new System.Drawing.Size(839, 475);
+            this.FirmsView.Size = new System.Drawing.Size(939, 626);
             this.FirmsView.TabIndex = 0;
-            // 
-            // firmBindingSource
-            // 
-            this.firmBindingSource.DataSource = typeof(PreziDent.firm);
+            this.FirmsView.DoubleClick += new System.EventHandler(this.FirmsView_DoubleClick);
             // 
             // idDataGridViewTextBoxColumn3
             // 
             this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn3.HeaderText = "id";
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
             this.idDataGridViewTextBoxColumn3.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn1
@@ -1513,6 +1688,7 @@
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Наименование";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn1.Width = 250;
             // 
             // addressDataGridViewTextBoxColumn
@@ -1520,6 +1696,7 @@
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Адрес";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             this.addressDataGridViewTextBoxColumn.Width = 250;
             // 
             // notes
@@ -1527,83 +1704,12 @@
             this.notes.DataPropertyName = "notes";
             this.notes.HeaderText = "Примечание";
             this.notes.Name = "notes";
+            this.notes.ReadOnly = true;
             this.notes.Width = 250;
             // 
-            // AddFirmButton
+            // firmBindingSource
             // 
-            this.AddFirmButton.AutoSize = false;
-            this.AddFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AddFirmButton.Depth = 0;
-            this.AddFirmButton.DrawShadows = true;
-            this.AddFirmButton.HighEmphasis = true;
-            this.AddFirmButton.Icon = null;
-            this.AddFirmButton.Location = new System.Drawing.Point(949, 9);
-            this.AddFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.AddFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AddFirmButton.Name = "AddFirmButton";
-            this.AddFirmButton.Size = new System.Drawing.Size(185, 36);
-            this.AddFirmButton.TabIndex = 1;
-            this.AddFirmButton.Text = "Добавить";
-            this.AddFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.AddFirmButton.UseAccentColor = false;
-            this.AddFirmButton.UseVisualStyleBackColor = true;
-            // 
-            // ChangeFirmButton
-            // 
-            this.ChangeFirmButton.AutoSize = false;
-            this.ChangeFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ChangeFirmButton.Depth = 0;
-            this.ChangeFirmButton.DrawShadows = true;
-            this.ChangeFirmButton.HighEmphasis = true;
-            this.ChangeFirmButton.Icon = null;
-            this.ChangeFirmButton.Location = new System.Drawing.Point(949, 57);
-            this.ChangeFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ChangeFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ChangeFirmButton.Name = "ChangeFirmButton";
-            this.ChangeFirmButton.Size = new System.Drawing.Size(185, 36);
-            this.ChangeFirmButton.TabIndex = 2;
-            this.ChangeFirmButton.Text = "Изменить";
-            this.ChangeFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.ChangeFirmButton.UseAccentColor = false;
-            this.ChangeFirmButton.UseVisualStyleBackColor = true;
-            // 
-            // DeleteFirmButton
-            // 
-            this.DeleteFirmButton.AutoSize = false;
-            this.DeleteFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DeleteFirmButton.Depth = 0;
-            this.DeleteFirmButton.DrawShadows = true;
-            this.DeleteFirmButton.HighEmphasis = true;
-            this.DeleteFirmButton.Icon = null;
-            this.DeleteFirmButton.Location = new System.Drawing.Point(949, 105);
-            this.DeleteFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.DeleteFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeleteFirmButton.Name = "DeleteFirmButton";
-            this.DeleteFirmButton.Size = new System.Drawing.Size(185, 36);
-            this.DeleteFirmButton.TabIndex = 3;
-            this.DeleteFirmButton.Text = "Удалить";
-            this.DeleteFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.DeleteFirmButton.UseAccentColor = false;
-            this.DeleteFirmButton.UseVisualStyleBackColor = true;
-            // 
-            // AllContactFirmButton
-            // 
-            this.AllContactFirmButton.AutoSize = false;
-            this.AllContactFirmButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AllContactFirmButton.Depth = 0;
-            this.AllContactFirmButton.DrawShadows = true;
-            this.AllContactFirmButton.HighEmphasis = true;
-            this.AllContactFirmButton.Icon = null;
-            this.AllContactFirmButton.Location = new System.Drawing.Point(949, 153);
-            this.AllContactFirmButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.AllContactFirmButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AllContactFirmButton.Name = "AllContactFirmButton";
-            this.AllContactFirmButton.Size = new System.Drawing.Size(185, 36);
-            this.AllContactFirmButton.TabIndex = 4;
-            this.AllContactFirmButton.Text = "Все контакты";
-            this.AllContactFirmButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.AllContactFirmButton.UseAccentColor = false;
-            this.AllContactFirmButton.UseVisualStyleBackColor = true;
+            this.firmBindingSource.DataSource = typeof(PreziDent.firm);
             // 
             // MainForm
             // 
@@ -1786,6 +1892,7 @@
         private MaterialSkin.Controls.MaterialButton DeleteFirmButton;
         private MaterialSkin.Controls.MaterialButton ChangeFirmButton;
         private MaterialSkin.Controls.MaterialButton AddFirmButton;
+        private MaterialSkin.Controls.MaterialButton ContactsFirmButton;
     }
 }
 

@@ -127,6 +127,18 @@
     <Compile Include="CabinetOrderForm.Designer.cs">
       <DependentUpon>CabinetOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsFirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactsFirmForm.Designer.cs">
+      <DependentUpon>ContactsFirmForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="contacts_firm.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
@@ -134,6 +146,12 @@
     <Compile Include="DataBase.cs" />
     <Compile Include="firm.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmForm.Designer.cs">
+      <DependentUpon>FirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupServicesForm.cs">
       <SubType>Form</SubType>
@@ -256,6 +274,15 @@
     <EmbeddedResource Include="CabinetOrderForm.resx">
       <DependentUpon>CabinetOrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactsFirmForm.resx">
+      <DependentUpon>ContactsFirmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmForm.resx">
+      <DependentUpon>FirmForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupServicesForm.resx">
       <DependentUpon>GroupServicesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +330,7 @@
     </None>
     <None Include="Properties\DataSources\appointment.datasource" />
     <None Include="Properties\DataSources\AppointmentView.datasource" />
+    <None Include="Properties\DataSources\contacts_firm.datasource" />
     <None Include="Properties\DataSources\firm.datasource" />
     <None Include="Properties\DataSources\group_services.datasource" />
     <None Include="Properties\DataSources\order.datasource" />

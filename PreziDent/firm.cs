@@ -24,7 +24,12 @@ namespace PreziDent
         public string name { get; set; }
         public string address { get; set; }
         public string notes { get; set; }
-    
+
+        public override string ToString()
+        {
+            return name;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<contacts_firm> contacts_firm { get; set; }
     }

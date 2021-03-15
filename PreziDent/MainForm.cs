@@ -43,7 +43,7 @@ namespace PreziDent
             DataBase.db.products.Load();
             ProductsView.DataSource = DataBase.db.products.Local.ToBindingList();
 
-            //Загрузка каткгорий продуктов
+            //Загрузка категорий продуктов
             DataBase.db.type_product.Load();
             List<type_product> GroupProductList = DataBase.db.type_product.Local.ToList();
             type_product gp = new type_product();
@@ -66,6 +66,13 @@ namespace PreziDent
             //Загрузка пациентов
             DataBase.db.patients.Where(p => p.id != 0 /*не загружаем безымянного пациента*/).Load();
             PatientsView.DataSource = DataBase.db.patients.Local.ToBindingList();
+
+            //Загрузка фирм
+            DataBase.db.firms.Load();
+            FirmsView.DataSource = DataBase.db.firms.Local.ToBindingList();
+
+            //Загрузка контактов фирм
+            DataBase.db.contacts_firm.Load();
 
             DateTime NowDate = DateTime.Now.Date;
             if (this.User.role_id != ADMIN)//Если пользователь не администратор, а врач
@@ -194,15 +201,15 @@ namespace PreziDent
         }
 
         /*****************************************/
-        /*Метод выделения записи на прием в гриде*/
+        /*Метод выделения записи в гриде по id   */
         /*****************************************/
-        public void SelectSheduleApp(int id, DataGridView Grid)
+        static public void SelectRowGrid(int id, DataGridView Grid, int PosFieldIdInGrid)
         {
             Grid.Rows[0].Selected = false;
 
             int rowIndex = -1;
 
-            String Name = Grid.Columns[1].Name;
+            String Name = Grid.Columns[PosFieldIdInGrid].Name;
 
             DataGridViewRow row = Grid.Rows
                 .Cast<DataGridViewRow>()
@@ -748,7 +755,7 @@ namespace PreziDent
                         AllCabinetCalendar.SelectionStart = AppDate;
                     }
                 }
-                SelectSheduleApp(ShId, (sender as DataGridView));
+                SelectRowGrid(ShId, (sender as DataGridView), 1);
             }
 
         }
@@ -871,10 +878,139 @@ namespace PreziDent
                 ServicesView.DataSource = DataBase.db.services.Local.ToBindingList();
         }
 
+        /*******************************/
+        /* Открыть все записи на прием */
+        /*******************************/
         private void AllAppointmentsButton_Click(object sender, EventArgs e)
         {
             AllAppointmentsForm allAppointmentsForm = new AllAppointmentsForm();
             allAppointmentsForm.ShowDialog(this);
+        }
+
+        /****************************/
+        /* Открыть все контакты фирм*/
+        /****************************/
+        private void AllContactFirmButton_Click(object sender, EventArgs e)
+        {
+            ContactsFirmForm allContactsFirmForm = new ContactsFirmForm();
+            allContactsFirmForm.ContactsFirmView.Columns[1].Visible = true;
+            allContactsFirmForm.ShowDialog(this);
+        }
+
+
+        /****************************/
+        /* Открыть контакты фирмы   */
+        /****************************/
+        private void FirmsView_DoubleClick(object sender, EventArgs e)
+        {
+
+            if (FirmsView.SelectedRows.Count > 0)
+            {
+                int index = FirmsView.SelectedRows[0].Index;
+                int id = 0;
+
+                bool converted = Int32.TryParse(FirmsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                String FirmName = FirmsView[1, index].Value.ToString();
+
+                ContactsFirmForm contactsFirmForm = new ContactsFirmForm();
+                contactsFirmForm.FirmID = id;
+                contactsFirmForm.FirmName = FirmName;
+                contactsFirmForm.ShowDialog(this);
+            }
+        }
+
+        /**************************/
+        /* Добавление новой фирмы */
+        /**************************/
+        private void AddFirmButton_Click(object sender, EventArgs e)
+        {
+            FirmForm firmForm = new FirmForm();
+            DialogResult Result = firmForm.ShowDialog(this);
+
+            if (Result == DialogResult.Cancel)
+                return;
+
+            firm Firm = new firm
+            {
+                name = firmForm.NameFirm.Text,
+                address = firmForm.AddressFirm.Text,
+                notes = firmForm.NotesFirm.Text
+            };
+
+            DataBase.db.firms.Add(Firm);
+            DataBase.db.Entry(Firm).State = EntityState.Added;
+            DataBase.db.SaveChanges();
+            FirmsView.Refresh(); // обновляем грид
+        }
+
+        /*******************/
+        /* Изменение фирмы */
+        /*******************/
+        private void ChangeFirmButton_Click(object sender, EventArgs e)
+        {
+            if (FirmsView.SelectedRows.Count > 0)
+            {
+                int index = FirmsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(FirmsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                firm Firm = DataBase.db.firms.Find(id);
+
+                FirmForm firmForm = new FirmForm();
+
+                firmForm.NameFirm.Text = Firm.name.Trim();
+                firmForm.AddressFirm.Text = Firm.address.Trim();
+                firmForm.NotesFirm.Text = Firm.notes.Trim();
+
+                DialogResult Result = firmForm.ShowDialog(this);
+
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                Firm.name = firmForm.NameFirm.Text;
+                Firm.address = firmForm.AddressFirm.Text;
+                Firm.notes = firmForm.NotesFirm.Text;
+
+                DataBase.db.Entry(Firm).State = EntityState.Modified;
+                DataBase.db.SaveChanges();
+
+                FirmsView.Refresh(); // обновляем грид
+            }
+        }
+        
+        /******************/
+        /* Удаление фирмы */
+        /******************/
+        private void DeleteFirmButton_Click(object sender, EventArgs e)
+        {
+            if (FirmsView.RowCount > 0)
+            {
+                DialogResult Result = MessageBox.Show("Вы действительно хотите удалить?",
+                                                   "Confirmation", MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
+                if (Result == DialogResult.Cancel)
+                    return;
+
+                int index = FirmsView.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(FirmsView[0, index].Value.ToString(), out id);
+
+                if (converted == false)
+                    return;
+
+                firm Firm = DataBase.db.firms.Find(id);
+                DataBase.db.firms.Remove(Firm);
+                DataBase.db.Entry(Firm).State = EntityState.Deleted;
+                DataBase.db.SaveChanges();
+                FirmsView.Refresh(); // обновляем грид
+            }
         }
     }
 }

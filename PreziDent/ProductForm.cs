@@ -18,7 +18,7 @@ namespace PreziDent
         public ProductForm()
         {
             InitializeComponent();
-            DataBase.db.type_product.Load();
+            
             TypeProduct.DataSource = DataBase.db.type_product.Local.ToBindingList();
 
         }
