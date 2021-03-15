@@ -53,7 +53,7 @@ namespace PreziDent
             this.GroupsServicesView.Location = new System.Drawing.Point(12, 77);
             this.GroupsServicesView.Name = "GroupsServicesView";
             this.GroupsServicesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GroupsServicesView.Size = new System.Drawing.Size(575, 277);
+            this.GroupsServicesView.Size = new System.Drawing.Size(575, 361);
             this.GroupsServicesView.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -82,7 +82,7 @@ namespace PreziDent
             this.AddGroupServiceButton.DrawShadows = true;
             this.AddGroupServiceButton.HighEmphasis = true;
             this.AddGroupServiceButton.Icon = null;
-            this.AddGroupServiceButton.Location = new System.Drawing.Point(13, 383);
+            this.AddGroupServiceButton.Location = new System.Drawing.Point(603, 77);
             this.AddGroupServiceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.AddGroupServiceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddGroupServiceButton.Name = "AddGroupServiceButton";
@@ -102,7 +102,7 @@ namespace PreziDent
             this.ChangeGroupServicesButton.DrawShadows = true;
             this.ChangeGroupServicesButton.HighEmphasis = true;
             this.ChangeGroupServicesButton.Icon = null;
-            this.ChangeGroupServicesButton.Location = new System.Drawing.Point(170, 383);
+            this.ChangeGroupServicesButton.Location = new System.Drawing.Point(603, 125);
             this.ChangeGroupServicesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChangeGroupServicesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangeGroupServicesButton.Name = "ChangeGroupServicesButton";
@@ -122,7 +122,7 @@ namespace PreziDent
             this.DeleteGroupServiceslButton.DrawShadows = true;
             this.DeleteGroupServiceslButton.HighEmphasis = true;
             this.DeleteGroupServiceslButton.Icon = null;
-            this.DeleteGroupServiceslButton.Location = new System.Drawing.Point(325, 383);
+            this.DeleteGroupServiceslButton.Location = new System.Drawing.Point(603, 173);
             this.DeleteGroupServiceslButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteGroupServiceslButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteGroupServiceslButton.Name = "DeleteGroupServiceslButton";
@@ -138,7 +138,7 @@ namespace PreziDent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 450);
+            this.ClientSize = new System.Drawing.Size(751, 450);
             this.Controls.Add(this.DeleteGroupServiceslButton);
             this.Controls.Add(this.ChangeGroupServicesButton);
             this.Controls.Add(this.AddGroupServiceButton);

@@ -74,6 +74,9 @@ namespace PreziDent
             //Загрузка контактов фирм
             DataBase.db.contacts_firm.Load();
 
+            //Загрузка расписания
+            DataBase.db.appointments.Load();
+
             DateTime NowDate = DateTime.Now.Date;
             if (this.User.role_id != ADMIN)//Если пользователь не администратор, а врач
             {

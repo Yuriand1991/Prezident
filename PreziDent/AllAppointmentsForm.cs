@@ -16,7 +16,8 @@ namespace PreziDent
         public AllAppointmentsForm()
         {
             InitializeComponent();
-           AllAppointmentsView.DataSource = MainForm.LoadAppointments();
+            AllAppointmentsView.DataSource = DataBase.db.appointments.Local.ToBindingList();
+            //MainForm.LoadAppointments();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,8 +61,10 @@ namespace PreziDent
                 }
             }
 
-            AllAppointmentsView.DataSource = MainForm.LoadAppointments();
+            AllAppointmentsView.Refresh();//DataSource = MainForm.LoadAppointments();
             (this.Owner as MainForm).LoadAppointmentForAllRoom((this.Owner as MainForm).AllCabinetCalendar.SelectionStart);//Обновляем на главной форме
         }
+
+
     }
 }

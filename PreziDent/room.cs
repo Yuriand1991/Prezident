@@ -19,7 +19,10 @@ namespace PreziDent
         {
             this.appointments = new HashSet<appointment>();
         }
-    
+        public override string ToString()
+        {
+            return number.ToString();
+        }
         public int id { get; set; }
         public int number { get; set; }
         public int user_id { get; set; }

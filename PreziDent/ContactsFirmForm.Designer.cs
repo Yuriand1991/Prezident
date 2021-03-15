@@ -31,10 +31,6 @@ namespace PreziDent
         {
             this.components = new System.ComponentModel.Container();
             this.ContactsFirmView = new System.Windows.Forms.DataGridView();
-            this.contactsfirmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AddContactButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeContactButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteContactButton = new MaterialSkin.Controls.MaterialButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@ namespace PreziDent
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idfirmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactsfirmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AddContactButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeContactButton = new MaterialSkin.Controls.MaterialButton();
+            this.DeleteContactButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsFirmView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsfirmBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,65 @@ namespace PreziDent
             this.ContactsFirmView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ContactsFirmView.Size = new System.Drawing.Size(970, 476);
             this.ContactsFirmView.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // firmDataGridViewTextBoxColumn
+            // 
+            this.firmDataGridViewTextBoxColumn.DataPropertyName = "firm";
+            this.firmDataGridViewTextBoxColumn.HeaderText = "Фирма";
+            this.firmDataGridViewTextBoxColumn.Name = "firmDataGridViewTextBoxColumn";
+            this.firmDataGridViewTextBoxColumn.Visible = false;
+            this.firmDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // postDataGridViewTextBoxColumn
+            // 
+            this.postDataGridViewTextBoxColumn.DataPropertyName = "post";
+            this.postDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.postDataGridViewTextBoxColumn.Name = "postDataGridViewTextBoxColumn";
+            // 
+            // departmentDataGridViewTextBoxColumn
+            // 
+            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "department";
+            this.departmentDataGridViewTextBoxColumn.HeaderText = "Отдел";
+            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Примечание";
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            // 
+            // idfirmDataGridViewTextBoxColumn
+            // 
+            this.idfirmDataGridViewTextBoxColumn.DataPropertyName = "id_firm";
+            this.idfirmDataGridViewTextBoxColumn.HeaderText = "id_firm";
+            this.idfirmDataGridViewTextBoxColumn.Name = "idfirmDataGridViewTextBoxColumn";
+            this.idfirmDataGridViewTextBoxColumn.Visible = false;
             // 
             // contactsfirmBindingSource
             // 
@@ -140,65 +199,6 @@ namespace PreziDent
             this.DeleteContactButton.UseAccentColor = false;
             this.DeleteContactButton.UseVisualStyleBackColor = false;
             this.DeleteContactButton.Click += new System.EventHandler(this.DeleteContactButton_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // firmDataGridViewTextBoxColumn
-            // 
-            this.firmDataGridViewTextBoxColumn.DataPropertyName = "firm";
-            this.firmDataGridViewTextBoxColumn.HeaderText = "Фирма";
-            this.firmDataGridViewTextBoxColumn.Name = "firmDataGridViewTextBoxColumn";
-            this.firmDataGridViewTextBoxColumn.Visible = false;
-            this.firmDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // postDataGridViewTextBoxColumn
-            // 
-            this.postDataGridViewTextBoxColumn.DataPropertyName = "post";
-            this.postDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.postDataGridViewTextBoxColumn.Name = "postDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "Отдел";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Примечание";
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            // 
-            // idfirmDataGridViewTextBoxColumn
-            // 
-            this.idfirmDataGridViewTextBoxColumn.DataPropertyName = "id_firm";
-            this.idfirmDataGridViewTextBoxColumn.HeaderText = "id_firm";
-            this.idfirmDataGridViewTextBoxColumn.Name = "idfirmDataGridViewTextBoxColumn";
-            this.idfirmDataGridViewTextBoxColumn.Visible = false;
             // 
             // ContactsFirmForm
             // 

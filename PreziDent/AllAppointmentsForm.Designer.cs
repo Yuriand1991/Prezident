@@ -33,18 +33,20 @@ namespace PreziDent
             this.AllAppointmentsView = new System.Windows.Forms.DataGridView();
             this.appointmentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteAppointmentButton = new MaterialSkin.Controls.MaterialButton();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sheduleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treatmentdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.AllAppointmentsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AllAppointmentsView
@@ -54,21 +56,21 @@ namespace PreziDent
             this.AllAppointmentsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AllAppointmentsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.shedule,
+            this.room,
             this.dateDataGridViewTextBoxColumn,
             this.patientidDataGridViewTextBoxColumn,
             this.roomidDataGridViewTextBoxColumn,
             this.sheduleidDataGridViewTextBoxColumn,
-            this.starttimeDataGridViewTextBoxColumn,
-            this.endtimeDataGridViewTextBoxColumn,
             this.namepatientDataGridViewTextBoxColumn,
             this.treatmentdescDataGridViewTextBoxColumn,
             this.phonepatientDataGridViewTextBoxColumn});
-            this.AllAppointmentsView.DataSource = this.appointmentViewBindingSource;
+            this.AllAppointmentsView.DataSource = this.appointmentBindingSource;
             this.AllAppointmentsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.AllAppointmentsView.Location = new System.Drawing.Point(12, 70);
             this.AllAppointmentsView.Name = "AllAppointmentsView";
             this.AllAppointmentsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AllAppointmentsView.Size = new System.Drawing.Size(836, 448);
+            this.AllAppointmentsView.Size = new System.Drawing.Size(925, 448);
             this.AllAppointmentsView.TabIndex = 0;
             // 
             // appointmentViewBindingSource
@@ -84,7 +86,7 @@ namespace PreziDent
             this.DeleteAppointmentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteAppointmentButton.HighEmphasis = true;
             this.DeleteAppointmentButton.Icon = null;
-            this.DeleteAppointmentButton.Location = new System.Drawing.Point(750, 527);
+            this.DeleteAppointmentButton.Location = new System.Drawing.Point(846, 537);
             this.DeleteAppointmentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteAppointmentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteAppointmentButton.Name = "DeleteAppointmentButton";
@@ -96,12 +98,28 @@ namespace PreziDent
             this.DeleteAppointmentButton.UseVisualStyleBackColor = false;
             this.DeleteAppointmentButton.Click += new System.EventHandler(this.materialButton1_Click);
             // 
+            // appointmentBindingSource
+            // 
+            this.appointmentBindingSource.DataSource = typeof(PreziDent.appointment);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // shedule
+            // 
+            this.shedule.DataPropertyName = "shedule";
+            this.shedule.HeaderText = "Время";
+            this.shedule.Name = "shedule";
+            // 
+            // room
+            // 
+            this.room.DataPropertyName = "room";
+            this.room.HeaderText = "Кабинет №";
+            this.room.Name = "room";
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -130,20 +148,6 @@ namespace PreziDent
             this.sheduleidDataGridViewTextBoxColumn.Name = "sheduleidDataGridViewTextBoxColumn";
             this.sheduleidDataGridViewTextBoxColumn.Visible = false;
             // 
-            // starttimeDataGridViewTextBoxColumn
-            // 
-            this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "start_time";
-            this.starttimeDataGridViewTextBoxColumn.HeaderText = "Начало";
-            this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
-            this.starttimeDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // endtimeDataGridViewTextBoxColumn
-            // 
-            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "end_time";
-            this.endtimeDataGridViewTextBoxColumn.HeaderText = "Конец";
-            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
-            this.endtimeDataGridViewTextBoxColumn.Width = 70;
-            // 
             // namepatientDataGridViewTextBoxColumn
             // 
             this.namepatientDataGridViewTextBoxColumn.DataPropertyName = "name_patient";
@@ -169,13 +173,14 @@ namespace PreziDent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 624);
+            this.ClientSize = new System.Drawing.Size(956, 624);
             this.Controls.Add(this.DeleteAppointmentButton);
             this.Controls.Add(this.AllAppointmentsView);
             this.Name = "AllAppointmentsForm";
             this.Text = "Все записи на прием";
             ((System.ComponentModel.ISupportInitialize)(this.AllAppointmentsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,13 +191,14 @@ namespace PreziDent
         private System.Windows.Forms.DataGridView AllAppointmentsView;
         private System.Windows.Forms.BindingSource appointmentViewBindingSource;
         private MaterialSkin.Controls.MaterialButton DeleteAppointmentButton;
+        private System.Windows.Forms.BindingSource appointmentBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn room;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sheduleidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namepatientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn treatmentdescDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonepatientDataGridViewTextBoxColumn;
