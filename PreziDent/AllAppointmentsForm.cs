@@ -20,12 +20,10 @@ namespace PreziDent
             //MainForm.LoadAppointments();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
+        /********************************/
+        /*  Обработка кнопки удаления   */
+        /********************************/
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
             Int32 selectedRowCount = AllAppointmentsView.Rows.GetRowCount(DataGridViewElementStates.Selected);
 

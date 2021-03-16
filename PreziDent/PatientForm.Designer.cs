@@ -34,7 +34,6 @@ namespace PreziDent
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
             this.StatusPatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.StatusPatient = new MaterialSkin.Controls.MaterialComboBox();
-            this.statusespatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NotesPatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.NotesPatient = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.AddressPatientLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -55,6 +54,7 @@ namespace PreziDent
             this.OtherNamePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.LastNamePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.FirstNamePatient = new MaterialSkin.Controls.MaterialTextBox();
+            this.statusespatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.statusespatientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,10 +139,6 @@ namespace PreziDent
             this.StatusPatient.Size = new System.Drawing.Size(217, 49);
             this.StatusPatient.TabIndex = 20;
             this.StatusPatient.ValueMember = "id";
-            // 
-            // statusespatientBindingSource
-            // 
-            this.statusespatientBindingSource.DataSource = typeof(PreziDent.statuses_patient);
             // 
             // NotesPatientLabel
             // 
@@ -435,6 +431,10 @@ namespace PreziDent
             this.FirstNamePatient.Size = new System.Drawing.Size(217, 50);
             this.FirstNamePatient.TabIndex = 0;
             this.FirstNamePatient.Text = "";
+            // 
+            // statusespatientBindingSource
+            // 
+            this.statusespatientBindingSource.DataSource = typeof(PreziDent.statuses_patient);
             // 
             // PatientForm
             // 

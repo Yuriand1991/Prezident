@@ -30,10 +30,8 @@ namespace PreziDent
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.AllAppointmentsView = new System.Windows.Forms.DataGridView();
-            this.appointmentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteAppointmentButton = new MaterialSkin.Controls.MaterialButton();
-            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AllAppointmentsView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +42,33 @@ namespace PreziDent
             this.namepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treatmentdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonepatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AllAppointmentsView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DeleteAppointmentButton
+            // 
+            this.DeleteAppointmentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteAppointmentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteAppointmentButton.Depth = 0;
+            this.DeleteAppointmentButton.DrawShadows = true;
+            this.DeleteAppointmentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteAppointmentButton.HighEmphasis = true;
+            this.DeleteAppointmentButton.Icon = null;
+            this.DeleteAppointmentButton.Location = new System.Drawing.Point(846, 537);
+            this.DeleteAppointmentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteAppointmentButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteAppointmentButton.Name = "DeleteAppointmentButton";
+            this.DeleteAppointmentButton.Size = new System.Drawing.Size(91, 36);
+            this.DeleteAppointmentButton.TabIndex = 1;
+            this.DeleteAppointmentButton.Text = "Удалить";
+            this.DeleteAppointmentButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteAppointmentButton.UseAccentColor = false;
+            this.DeleteAppointmentButton.UseVisualStyleBackColor = false;
+            this.DeleteAppointmentButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AllAppointmentsView
             // 
@@ -72,35 +93,6 @@ namespace PreziDent
             this.AllAppointmentsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AllAppointmentsView.Size = new System.Drawing.Size(925, 448);
             this.AllAppointmentsView.TabIndex = 0;
-            // 
-            // appointmentViewBindingSource
-            // 
-            this.appointmentViewBindingSource.DataSource = typeof(PreziDent.AppointmentView);
-            // 
-            // DeleteAppointmentButton
-            // 
-            this.DeleteAppointmentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DeleteAppointmentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.DeleteAppointmentButton.Depth = 0;
-            this.DeleteAppointmentButton.DrawShadows = true;
-            this.DeleteAppointmentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DeleteAppointmentButton.HighEmphasis = true;
-            this.DeleteAppointmentButton.Icon = null;
-            this.DeleteAppointmentButton.Location = new System.Drawing.Point(846, 537);
-            this.DeleteAppointmentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.DeleteAppointmentButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeleteAppointmentButton.Name = "DeleteAppointmentButton";
-            this.DeleteAppointmentButton.Size = new System.Drawing.Size(91, 36);
-            this.DeleteAppointmentButton.TabIndex = 1;
-            this.DeleteAppointmentButton.Text = "Удалить";
-            this.DeleteAppointmentButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.DeleteAppointmentButton.UseAccentColor = false;
-            this.DeleteAppointmentButton.UseVisualStyleBackColor = false;
-            this.DeleteAppointmentButton.Click += new System.EventHandler(this.materialButton1_Click);
-            // 
-            // appointmentBindingSource
-            // 
-            this.appointmentBindingSource.DataSource = typeof(PreziDent.appointment);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -169,6 +161,14 @@ namespace PreziDent
             this.phonepatientDataGridViewTextBoxColumn.Name = "phonepatientDataGridViewTextBoxColumn";
             this.phonepatientDataGridViewTextBoxColumn.Width = 150;
             // 
+            // appointmentBindingSource
+            // 
+            this.appointmentBindingSource.DataSource = typeof(PreziDent.appointment);
+            // 
+            // appointmentViewBindingSource
+            // 
+            this.appointmentViewBindingSource.DataSource = typeof(PreziDent.AppointmentView);
+            // 
             // AllAppointmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,8 +179,8 @@ namespace PreziDent
             this.Name = "AllAppointmentsForm";
             this.Text = "Все записи на прием";
             ((System.ComponentModel.ISupportInitialize)(this.AllAppointmentsView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentViewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

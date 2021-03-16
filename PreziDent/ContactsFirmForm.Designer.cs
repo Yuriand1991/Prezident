@@ -30,6 +30,9 @@ namespace PreziDent
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.DeleteContactButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeContactButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddContactButton = new MaterialSkin.Controls.MaterialButton();
             this.ContactsFirmView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +44,75 @@ namespace PreziDent
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idfirmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactsfirmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AddContactButton = new MaterialSkin.Controls.MaterialButton();
-            this.ChangeContactButton = new MaterialSkin.Controls.MaterialButton();
-            this.DeleteContactButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsFirmView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsfirmBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DeleteContactButton
+            // 
+            this.DeleteContactButton.AutoSize = false;
+            this.DeleteContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteContactButton.Depth = 0;
+            this.DeleteContactButton.DrawShadows = true;
+            this.DeleteContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteContactButton.HighEmphasis = true;
+            this.DeleteContactButton.Icon = null;
+            this.DeleteContactButton.Location = new System.Drawing.Point(989, 166);
+            this.DeleteContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteContactButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteContactButton.Name = "DeleteContactButton";
+            this.DeleteContactButton.Size = new System.Drawing.Size(158, 36);
+            this.DeleteContactButton.TabIndex = 4;
+            this.DeleteContactButton.Text = "Удалить";
+            this.DeleteContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteContactButton.UseAccentColor = false;
+            this.DeleteContactButton.UseVisualStyleBackColor = false;
+            this.DeleteContactButton.Click += new System.EventHandler(this.DeleteContactButton_Click);
+            // 
+            // ChangeContactButton
+            // 
+            this.ChangeContactButton.AutoSize = false;
+            this.ChangeContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangeContactButton.Depth = 0;
+            this.ChangeContactButton.DrawShadows = true;
+            this.ChangeContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangeContactButton.HighEmphasis = true;
+            this.ChangeContactButton.Icon = null;
+            this.ChangeContactButton.Location = new System.Drawing.Point(989, 118);
+            this.ChangeContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeContactButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeContactButton.Name = "ChangeContactButton";
+            this.ChangeContactButton.Size = new System.Drawing.Size(158, 36);
+            this.ChangeContactButton.TabIndex = 3;
+            this.ChangeContactButton.Text = "Изменить";
+            this.ChangeContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeContactButton.UseAccentColor = false;
+            this.ChangeContactButton.UseVisualStyleBackColor = false;
+            this.ChangeContactButton.Click += new System.EventHandler(this.ChangeContactButton_Click);
+            // 
+            // AddContactButton
+            // 
+            this.AddContactButton.AutoSize = false;
+            this.AddContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddContactButton.Depth = 0;
+            this.AddContactButton.DrawShadows = true;
+            this.AddContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddContactButton.HighEmphasis = true;
+            this.AddContactButton.Icon = null;
+            this.AddContactButton.Location = new System.Drawing.Point(989, 70);
+            this.AddContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddContactButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddContactButton.Name = "AddContactButton";
+            this.AddContactButton.Size = new System.Drawing.Size(158, 36);
+            this.AddContactButton.TabIndex = 2;
+            this.AddContactButton.Text = "Добавить";
+            this.AddContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddContactButton.UseAccentColor = false;
+            this.AddContactButton.UseVisualStyleBackColor = false;
+            this.AddContactButton.Click += new System.EventHandler(this.AddContactButton_Click);
             // 
             // ContactsFirmView
             // 
@@ -133,72 +199,6 @@ namespace PreziDent
             // contactsfirmBindingSource
             // 
             this.contactsfirmBindingSource.DataSource = typeof(PreziDent.contacts_firm);
-            // 
-            // AddContactButton
-            // 
-            this.AddContactButton.AutoSize = false;
-            this.AddContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AddContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.AddContactButton.Depth = 0;
-            this.AddContactButton.DrawShadows = true;
-            this.AddContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AddContactButton.HighEmphasis = true;
-            this.AddContactButton.Icon = null;
-            this.AddContactButton.Location = new System.Drawing.Point(989, 70);
-            this.AddContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.AddContactButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AddContactButton.Name = "AddContactButton";
-            this.AddContactButton.Size = new System.Drawing.Size(158, 36);
-            this.AddContactButton.TabIndex = 2;
-            this.AddContactButton.Text = "Добавить";
-            this.AddContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.AddContactButton.UseAccentColor = false;
-            this.AddContactButton.UseVisualStyleBackColor = false;
-            this.AddContactButton.Click += new System.EventHandler(this.AddContactButton_Click);
-            // 
-            // ChangeContactButton
-            // 
-            this.ChangeContactButton.AutoSize = false;
-            this.ChangeContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ChangeContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ChangeContactButton.Depth = 0;
-            this.ChangeContactButton.DrawShadows = true;
-            this.ChangeContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ChangeContactButton.HighEmphasis = true;
-            this.ChangeContactButton.Icon = null;
-            this.ChangeContactButton.Location = new System.Drawing.Point(989, 118);
-            this.ChangeContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ChangeContactButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ChangeContactButton.Name = "ChangeContactButton";
-            this.ChangeContactButton.Size = new System.Drawing.Size(158, 36);
-            this.ChangeContactButton.TabIndex = 3;
-            this.ChangeContactButton.Text = "Изменить";
-            this.ChangeContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.ChangeContactButton.UseAccentColor = false;
-            this.ChangeContactButton.UseVisualStyleBackColor = false;
-            this.ChangeContactButton.Click += new System.EventHandler(this.ChangeContactButton_Click);
-            // 
-            // DeleteContactButton
-            // 
-            this.DeleteContactButton.AutoSize = false;
-            this.DeleteContactButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DeleteContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.DeleteContactButton.Depth = 0;
-            this.DeleteContactButton.DrawShadows = true;
-            this.DeleteContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DeleteContactButton.HighEmphasis = true;
-            this.DeleteContactButton.Icon = null;
-            this.DeleteContactButton.Location = new System.Drawing.Point(989, 166);
-            this.DeleteContactButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.DeleteContactButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeleteContactButton.Name = "DeleteContactButton";
-            this.DeleteContactButton.Size = new System.Drawing.Size(158, 36);
-            this.DeleteContactButton.TabIndex = 4;
-            this.DeleteContactButton.Text = "Удалить";
-            this.DeleteContactButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.DeleteContactButton.UseAccentColor = false;
-            this.DeleteContactButton.UseVisualStyleBackColor = false;
-            this.DeleteContactButton.Click += new System.EventHandler(this.DeleteContactButton_Click);
             // 
             // ContactsFirmForm
             // 

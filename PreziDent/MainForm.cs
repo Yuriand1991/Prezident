@@ -74,7 +74,7 @@ namespace PreziDent
             //Загрузка контактов фирм
             DataBase.db.contacts_firm.Load();
 
-            //Загрузка расписания
+            //Загрузка расписания (просто таблицы из бд)
             DataBase.db.appointments.Load();
 
             DateTime NowDate = DateTime.Now.Date;
@@ -157,15 +157,18 @@ namespace PreziDent
                     case FIRST_ROOM:
                          SheduleDayCabinetOneView.DataSource = LoadAppointments(date, r.id);
                          SheduleDayCabinetOneLabel.Text = "Кабинет № " + r.number.ToString();
+                         OpenOneRoomButton.Tag = r.id;
                     break;
                     case TWO_ROOM:
                          SheduleDayCabinetTwoView.DataSource = LoadAppointments(date, r.id);
                          SheduleDayCabinetTwoLabel.Text = "Кабинет № " + r.number.ToString();
-                        break;
+                         OpenTwoRoomButton.Tag = r.id;
+                    break;
                     case NINE_ROOM:
                          SheduleDayCabinetNineView.DataSource = LoadAppointments(date, r.id);
                          SheduleDayCabinetNineLabel.Text = "Кабинет № " + r.number.ToString();
-                        break;
+                         OpenNineRoomButton.Tag = r.id;
+                    break;
                 }
             }
         }
@@ -810,13 +813,14 @@ namespace PreziDent
                     DataBase.db.SaveChanges();
                     
                     //если из своего кабинета
-                    if ((SheduleDayCabinetViewMenuStrip.SourceControl as DataGridView).Name != "SheduleDayCabinetView")
+                    if ((SheduleDayCabinetViewMenuStrip.SourceControl as DataGridView).Name == "SheduleDayCabinetView")
                     {
                         (SheduleDayCabinetViewMenuStrip.SourceControl as DataGridView).DataSource = LoadAppointments(MyCabinetCalendar.SelectionRange.Start, this.Cabinet.id);
                     }
                     else//из адмистрации
                     {
                         (SheduleDayCabinetViewMenuStrip.SourceControl as DataGridView).DataSource = LoadAppointments(AllCabinetCalendar.SelectionRange.Start, CbId);
+                        this.LoadAppointmentForAllRoom(AllCabinetCalendar.SelectionStart);//чтобы обновилось на главной форме при удалении в форме кабинета
                     }
                     (SheduleDayCabinetViewMenuStrip.SourceControl as DataGridView).Refresh();
                 }
@@ -1015,5 +1019,20 @@ namespace PreziDent
                 FirmsView.Refresh(); // обновляем грид
             }
         }
+
+        /*****************************/
+        /*  Открытие формы кабинета  */
+        /*****************************/
+        private void OpenCabinetButton_Click(object sender, EventArgs e)
+        {
+            CabinetForm cabinetForm = new CabinetForm();
+            cabinetForm.CabinetID = Convert.ToInt32((sender as MaterialButton).Tag);
+            cabinetForm.SelectDate = AllCabinetCalendar.SelectionStart;
+            cabinetForm.CabinetView.DoubleClick += this.SheduleDayCabinetView_DoubleClick;
+            cabinetForm.CabinetView.ContextMenuStrip = this.SheduleDayCabinetViewMenuStrip;
+            cabinetForm.Show(this);
+        }
+
+
     }
 }

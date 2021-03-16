@@ -33,13 +33,13 @@ namespace PreziDent
             this.AddTypeProductLink = new MaterialSkin.Controls.MaterialLabel();
             this.ProductTypeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.TypeProduct = new MaterialSkin.Controls.MaterialComboBox();
-            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProductPriceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.NameProductLabel = new MaterialSkin.Controls.MaterialLabel();
             this.CnclButton = new MaterialSkin.Controls.MaterialButton();
             this.OkButton = new MaterialSkin.Controls.MaterialButton();
             this.PriceProduct = new MaterialSkin.Controls.MaterialTextBox();
             this.NameProduct = new MaterialSkin.Controls.MaterialTextBox();
+            this.typeproductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.typeproductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,10 +96,6 @@ namespace PreziDent
             this.TypeProduct.Size = new System.Drawing.Size(229, 49);
             this.TypeProduct.TabIndex = 6;
             this.TypeProduct.ValueMember = "id";
-            // 
-            // typeproductBindingSource
-            // 
-            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // ProductPriceLabel
             // 
@@ -206,6 +202,10 @@ namespace PreziDent
             this.NameProduct.Size = new System.Drawing.Size(229, 50);
             this.NameProduct.TabIndex = 0;
             this.NameProduct.Text = "";
+            // 
+            // typeproductBindingSource
+            // 
+            this.typeproductBindingSource.DataSource = typeof(PreziDent.type_product);
             // 
             // ProductForm
             // 
