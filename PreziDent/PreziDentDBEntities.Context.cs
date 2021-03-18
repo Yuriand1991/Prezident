@@ -29,7 +29,6 @@ namespace PreziDent
         public virtual DbSet<group_services> group_services { get; set; }
         public virtual DbSet<order> orders { get; set; }
         public virtual DbSet<orders_services> orders_services { get; set; }
-        public virtual DbSet<patient> patients { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<room> rooms { get; set; }
@@ -40,5 +39,7 @@ namespace PreziDent
         public virtual DbSet<statuses_patient> statuses_patient { get; set; }
         public virtual DbSet<contacts_firm> contacts_firm { get; set; }
         public virtual DbSet<firm> firms { get; set; }
+        public virtual DbSet<surgery> surgeries { get; set; }
+        public virtual DbSet<patient> patients { get; set; }
     }
 }

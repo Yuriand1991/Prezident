@@ -19,6 +19,7 @@ namespace PreziDent
         {
             this.appointments = new HashSet<appointment>();
             this.orders = new HashSet<order>();
+            this.surgeries = new HashSet<surgery>();
         }
     
         public int id { get; set; }
@@ -27,17 +28,19 @@ namespace PreziDent
         public string other_name { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
-        public Nullable<System.DateTime> birthday { get; set; }
-        public Nullable<System.DateTime> reg_date { get; set; }
         public string notes { get; set; }
         public string address { get; set; }
         public int status_id { get; set; }
         public string num_card { get; set; }
-    
+
+        public string full_name { get { return last_name.Trim() + " " + first_name.Trim() + " " + other_name.Trim(); } }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
-        public virtual statuses_patient statuses_patient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
+        public virtual statuses_patient statuses_patient { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<surgery> surgeries { get; set; }
     }
 }

@@ -12,20 +12,19 @@ namespace PreziDent
     using System;
     using System.Collections.Generic;
     
-    public partial class firm
+    public partial class surgery
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public firm()
-        {
-            this.contacts_firm = new HashSet<contacts_firm>();
-        }
-    
         public int id { get; set; }
+        public int room_id { get; set; }
+        public int patient_id { get; set; }
         public string name { get; set; }
-        public string address { get; set; }
-        public string notes { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<System.DateTime> date_pay { get; set; }
+        public Nullable<System.DateTime> date_call { get; set; }
+        public Nullable<System.DateTime> date_test { get; set; }
+        public int status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<contacts_firm> contacts_firm { get; set; }
+        public virtual room room { get; set; }
+        public virtual patient patient { get; set; }
     }
 }

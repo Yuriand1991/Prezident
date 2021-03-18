@@ -19,10 +19,7 @@ namespace PreziDent
         {
             this.appointments = new HashSet<appointment>();
         }
-        public override string ToString()
-        {
-            return start_time.ToString() + "-" + end_time.ToString();
-        }
+    
         public int id { get; set; }
         public Nullable<System.TimeSpan> start_time { get; set; }
         public Nullable<System.TimeSpan> end_time { get; set; }

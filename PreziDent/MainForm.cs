@@ -479,8 +479,6 @@ namespace PreziDent
                 first_name = patientForm.FirstNamePatient.Text,
                 other_name = patientForm.OtherNamePatient.Text,
                 phone = patientForm.PhonePatient.Text,
-                reg_date = patientForm.RegistrationDatePatient.Value,
-                birthday = patientForm.BirthDayPatient.Value,
                 email = patientForm.EmailPatient.Text,
                 address = patientForm.AddressPatient.Text,
                 notes = patientForm.NotesPatient.Text,
@@ -516,8 +514,6 @@ namespace PreziDent
                 patientForm.FirstNamePatient.Text = Patient.first_name.Trim();
                 patientForm.OtherNamePatient.Text = Patient.other_name.Trim();
                 patientForm.PhonePatient.Text = Patient.phone.Trim();
-                patientForm.RegistrationDatePatient.Value = (DateTime)Patient.reg_date;
-                patientForm.BirthDayPatient.Value = (DateTime)Patient.birthday;
                 patientForm.EmailPatient.Text = Patient.email.Trim();
                 patientForm.AddressPatient.Text = Patient.address.Trim();
                 patientForm.NotesPatient.Text = Patient.notes.Trim();
@@ -533,8 +529,6 @@ namespace PreziDent
                 Patient.first_name = patientForm.FirstNamePatient.Text.Trim();
                 Patient.other_name = patientForm.OtherNamePatient.Text.Trim();
                 Patient.phone = patientForm.PhonePatient.Text.Trim();
-                Patient.reg_date = patientForm.RegistrationDatePatient.Value;
-                Patient.birthday = patientForm.BirthDayPatient.Value;
                 Patient.email = patientForm.EmailPatient.Text.Trim();
                 Patient.address = patientForm.AddressPatient.Text.Trim();
                 Patient.notes = patientForm.NotesPatient.Text.Trim();
@@ -597,8 +591,6 @@ namespace PreziDent
                 patientForm.FirstNamePatient.Text = Patient.first_name.Trim();
                 patientForm.OtherNamePatient.Text = Patient.other_name.Trim();
                 patientForm.PhonePatient.Text = Patient.phone.Trim();
-                patientForm.RegistrationDatePatient.Value = (DateTime)Patient.reg_date;
-                patientForm.BirthDayPatient.Value = (DateTime)Patient.birthday;
                 patientForm.EmailPatient.Text = Patient.email.Trim();
                 patientForm.AddressPatient.Text = Patient.address.Trim();
                 patientForm.NotesPatient.Text = Patient.notes.Trim();
@@ -1033,6 +1025,85 @@ namespace PreziDent
             cabinetForm.Show(this);
         }
 
+        /************************/
+        /*  Запись на операцию  */
+        /************************/
+        private void SurgeryButton_Click(object sender, EventArgs e)
+        {
+            SurgeryForm surgeryForm = new SurgeryForm();
+            DialogResult result = surgeryForm.ShowDialog(this);
 
+            if (result == DialogResult.Cancel)
+                return;
+           
+            if(Convert.ToInt32(surgeryForm.Patient.Tag) == 0)//созаем нового пациента
+            {
+                statuses_patient StatusPatient = DataBase.db.statuses_patient.Where(sp => sp.name == "Первичный").FirstOrDefault();
+
+                using (var transaction = DataBase.db.Database.BeginTransaction())//создаем транзакцию
+                {
+                    try
+                    {
+                        patient Patient = new patient
+                        {
+                            last_name = surgeryForm.FullName[0],
+                            first_name = surgeryForm.FullName[1],
+                            other_name = surgeryForm.FullName[2],
+                            phone = "",
+                            email = "",
+                            num_card = "",
+                            status_id = StatusPatient.id,
+                            address = "",
+                            notes = ""
+                        };
+
+                        DataBase.db.patients.Add(Patient);
+                        DataBase.db.Entry(Patient).State = EntityState.Added;
+                        DataBase.db.SaveChanges();
+
+                        surgery Surgery = new surgery
+                        {
+                            patient_id = Patient.id,
+                            date = surgeryForm.SurgeryData.Value,
+                            date_call = surgeryForm.SurgeryDateCall.Value,
+                            date_pay = surgeryForm.SurgeryDatePay.Value,
+                            date_test = surgeryForm.SurgeryDateTest.Value,
+                            status = surgeryForm.Status,
+                            room_id = this.Cabinet.id,
+                            name = surgeryForm.SurgeryName.Text
+                        };
+                        
+                        DataBase.db.surgeries.Add(Surgery);
+                        DataBase.db.Entry(Surgery).State = EntityState.Added;
+                        DataBase.db.SaveChanges();
+
+                        transaction.Commit();
+                    }
+                    catch(Exception)
+                    {
+                        transaction.Rollback();
+                    }
+                }
+
+            }
+            else//привязываем к существующему пациенту
+            {
+                surgery Surgery = new surgery
+                {
+                    patient_id = Convert.ToInt32(surgeryForm.Patient.Tag),
+                    date = surgeryForm.SurgeryData.Value,
+                    date_call = surgeryForm.SurgeryDateCall.Value,
+                    date_pay = surgeryForm.SurgeryDatePay.Value,
+                    date_test = surgeryForm.SurgeryDateTest.Value,
+                    status = surgeryForm.Status,
+                    room_id = this.Cabinet.id,
+                    name = surgeryForm.SurgeryName.Text
+                };
+
+                DataBase.db.surgeries.Add(Surgery);
+                DataBase.db.Entry(Surgery).State = EntityState.Added;
+                DataBase.db.SaveChanges();
+            }
+        }
     }
 }

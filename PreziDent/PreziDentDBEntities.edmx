@@ -77,8 +77,6 @@
           <Property Name="other_name" Type="nchar" MaxLength="80" />
           <Property Name="phone" Type="nchar" MaxLength="12" />
           <Property Name="email" Type="nchar" MaxLength="80" />
-          <Property Name="birthday" Type="date" />
-          <Property Name="reg_date" Type="date" />
           <Property Name="notes" Type="ntext" />
           <Property Name="address" Type="ntext" />
           <Property Name="status_id" Type="int" Nullable="false" />
@@ -134,6 +132,20 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="surgeries">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="room_id" Type="int" Nullable="false" />
+          <Property Name="patient_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="80" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="date_pay" Type="datetime" />
+          <Property Name="date_call" Type="datetime" />
+          <Property Name="date_test" Type="datetime" />
+          <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="type_product">
           <Key>
@@ -296,6 +308,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_surgeries_patients">
+          <End Role="patients" Type="Self.patients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="surgeries" Type="Self.surgeries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="surgeries">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_surgeries_rooms">
+          <End Role="rooms" Type="Self.rooms" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="surgeries" Type="Self.surgeries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rooms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="surgeries">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_users_roles">
           <End Role="roles" Type="Self.roles" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
@@ -322,6 +362,7 @@
           <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shedule" EntityType="Self.shedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="statuses_patient" EntityType="Self.statuses_patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="surgeries" EntityType="Self.surgeries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="type_product" EntityType="Self.type_product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_appointment_patients" Association="Self.FK_appointment_patients">
@@ -368,6 +409,14 @@
             <End Role="group_services" EntitySet="group_services" />
             <End Role="services" EntitySet="services" />
           </AssociationSet>
+          <AssociationSet Name="FK_surgeries_patients" Association="Self.FK_surgeries_patients">
+            <End Role="patients" EntitySet="patients" />
+            <End Role="surgeries" EntitySet="surgeries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_surgeries_rooms" Association="Self.FK_surgeries_rooms">
+            <End Role="rooms" EntitySet="rooms" />
+            <End Role="surgeries" EntitySet="surgeries" />
+          </AssociationSet>
           <AssociationSet Name="FK_users_roles" Association="Self.FK_users_roles">
             <End Role="roles" EntitySet="roles" />
             <End Role="users" EntitySet="users" />
@@ -387,11 +436,11 @@
           <Property Name="room_id" Type="Int32" Nullable="false" />
           <Property Name="shedule_id" Type="Int32" Nullable="false" />
           <Property Name="name_patient" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="patient" Relationship="Self.FK_appointment_patients" FromRole="appointment" ToRole="patients" />
           <NavigationProperty Name="room" Relationship="Self.FK_appointment_rooms" FromRole="appointment" ToRole="rooms" />
           <NavigationProperty Name="shedule" Relationship="Self.FK_appointment_shedule" FromRole="appointment" ToRole="shedule" />
           <Property Name="treatment_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="phone_patient" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="patient" Relationship="PrezidentClinicModel.FK_appointment_patients" FromRole="appointment" ToRole="patient" />
         </EntityType>
         <EntityType Name="group_services">
           <Key>
@@ -425,26 +474,6 @@
           <Property Name="name_service" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
           <Property Name="price_service" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="patient">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="first_name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="last_name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="other_name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
-          <Property Name="birthday" Type="DateTime" Precision="0" />
-          <Property Name="reg_date" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="appointments" Relationship="Self.FK_appointment_patients" FromRole="patients" ToRole="appointment" />
-          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="status_id" Type="Int32" Nullable="false" />
-          <Property Name="num_card" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="statuses_patient" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="patient" ToRole="statuses_patient" />
-          <NavigationProperty Name="orders" Relationship="PrezidentClinicModel.FK_orders_patients" FromRole="patient" ToRole="order" />
-        </EntityType>
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="id" />
@@ -472,6 +501,7 @@
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="appointments" Relationship="Self.FK_appointment_rooms" FromRole="rooms" ToRole="appointment" />
           <NavigationProperty Name="user" Relationship="Self.FK_rooms_users" FromRole="rooms" ToRole="users" />
+          <NavigationProperty Name="surgeries" Relationship="PrezidentClinicModel.FK_surgeries_rooms" FromRole="room" ToRole="surgery" />
         </EntityType>
         <EntityType Name="service">
           <Key>
@@ -508,18 +538,6 @@
           <NavigationProperty Name="role" Relationship="Self.FK_users_roles" FromRole="users" ToRole="roles" />
           <NavigationProperty Name="rooms" Relationship="Self.FK_rooms_users" FromRole="users" ToRole="rooms" />
         </EntityType>
-        <Association Name="FK_appointment_patients">
-          <End Role="patients" Type="Self.patient" Multiplicity="1" />
-          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="patients">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="appointment">
-              <PropertyRef Name="patient_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_appointment_rooms">
           <End Role="rooms" Type="Self.room" Multiplicity="1" />
           <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
@@ -611,17 +629,12 @@
           <EntitySet Name="group_services" EntityType="Self.group_services" />
           <EntitySet Name="orders" EntityType="Self.order" />
           <EntitySet Name="orders_services" EntityType="Self.orders_services" />
-          <EntitySet Name="patients" EntityType="Self.patient" />
           <EntitySet Name="products" EntityType="Self.product" />
           <EntitySet Name="roles" EntityType="Self.role" />
           <EntitySet Name="rooms" EntityType="Self.room" />
           <EntitySet Name="services" EntityType="Self.service" />
           <EntitySet Name="shedules" EntityType="Self.shedule" />
           <EntitySet Name="users" EntityType="Self.user" />
-          <AssociationSet Name="FK_appointment_patients" Association="Self.FK_appointment_patients">
-            <End Role="patients" EntitySet="patients" />
-            <End Role="appointment" EntitySet="appointments" />
-          </AssociationSet>
           <AssociationSet Name="FK_appointment_rooms" Association="Self.FK_appointment_rooms">
             <End Role="rooms" EntitySet="rooms" />
             <End Role="appointment" EntitySet="appointments" />
@@ -656,19 +669,33 @@
             <End Role="product" EntitySet="products" />
           </AssociationSet>
           <EntitySet Name="statuses_patient" EntityType="PrezidentClinicModel.statuses_patient" />
-          <AssociationSet Name="FK_patients_statuses_patient" Association="PrezidentClinicModel.FK_patients_statuses_patient">
-            <End Role="statuses_patient" EntitySet="statuses_patient" />
-            <End Role="patient" EntitySet="patients" />
-          </AssociationSet>
-          <AssociationSet Name="FK_orders_patients" Association="PrezidentClinicModel.FK_orders_patients">
-            <End Role="patient" EntitySet="patients" />
-            <End Role="order" EntitySet="orders" />
-          </AssociationSet>
           <EntitySet Name="contacts_firm" EntityType="PrezidentClinicModel.contacts_firm" />
           <EntitySet Name="firms" EntityType="PrezidentClinicModel.firm" />
           <AssociationSet Name="FK_contacts_firm_firm" Association="PrezidentClinicModel.FK_contacts_firm_firm">
             <End Role="firm" EntitySet="firms" />
             <End Role="contacts_firm" EntitySet="contacts_firm" />
+          </AssociationSet>
+          <EntitySet Name="surgeries" EntityType="PrezidentClinicModel.surgery" />
+          <AssociationSet Name="FK_surgeries_rooms" Association="PrezidentClinicModel.FK_surgeries_rooms">
+            <End Role="room" EntitySet="rooms" />
+            <End Role="surgery" EntitySet="surgeries" />
+          </AssociationSet>
+          <EntitySet Name="patients" EntityType="PrezidentClinicModel.patient" />
+          <AssociationSet Name="FK_appointment_patients" Association="PrezidentClinicModel.FK_appointment_patients">
+            <End Role="patient" EntitySet="patients" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orders_patients" Association="PrezidentClinicModel.FK_orders_patients">
+            <End Role="patient" EntitySet="patients" />
+            <End Role="order" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_patients_statuses_patient" Association="PrezidentClinicModel.FK_patients_statuses_patient">
+            <End Role="statuses_patient" EntitySet="statuses_patient" />
+            <End Role="patient" EntitySet="patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_surgeries_patients" Association="PrezidentClinicModel.FK_surgeries_patients">
+            <End Role="patient" EntitySet="patients" />
+            <End Role="surgery" EntitySet="surgeries" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="type_product">
@@ -701,34 +728,6 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="patients" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="statuses_patient" ToRole="patient" />
         </EntityType>
-        <Association Name="FK_patients_statuses_patient">
-          <End Type="PrezidentClinicModel.statuses_patient" Role="statuses_patient" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="statuses_patient">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="patient">
-              <PropertyRef Name="status_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_orders_patients">
-          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="PrezidentClinicModel.order" Role="order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="patient">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="order">
-              <PropertyRef Name="patient_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="contacts_firm">
           <Key>
             <PropertyRef Name="id" />
@@ -764,6 +763,109 @@
             </Principal>
             <Dependent Role="contacts_firm">
               <PropertyRef Name="id_firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="surgery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="room_id" Type="Int32" Nullable="false" />
+          <Property Name="patient_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="date_pay" Type="DateTime" Precision="3" />
+          <Property Name="date_call" Type="DateTime" Precision="3" />
+          <Property Name="date_test" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="room" Relationship="PrezidentClinicModel.FK_surgeries_rooms" FromRole="surgery" ToRole="room" />
+          <NavigationProperty Name="patient" Relationship="PrezidentClinicModel.FK_surgeries_patients" FromRole="surgery" ToRole="patient" />
+        </EntityType>
+        <Association Name="FK_surgeries_rooms">
+          <End Type="PrezidentClinicModel.room" Role="room" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.surgery" Role="surgery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="surgery">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="other_name" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_id" Type="Int32" Nullable="false" />
+          <Property Name="num_card" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="appointments" Relationship="PrezidentClinicModel.FK_appointment_patients" FromRole="patient" ToRole="appointment" />
+          <NavigationProperty Name="orders" Relationship="PrezidentClinicModel.FK_orders_patients" FromRole="patient" ToRole="order" />
+          <NavigationProperty Name="statuses_patient" Relationship="PrezidentClinicModel.FK_patients_statuses_patient" FromRole="patient" ToRole="statuses_patient" />
+          <NavigationProperty Name="surgeries" Relationship="PrezidentClinicModel.FK_surgeries_patients" FromRole="patient" ToRole="surgery" />
+        </EntityType>
+        <Association Name="FK_appointment_patients">
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="1" />
+          <End Type="PrezidentClinicModel.appointment" Role="appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orders_patients">
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.order" Role="order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_patients_statuses_patient">
+          <End Type="PrezidentClinicModel.statuses_patient" Role="statuses_patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="statuses_patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_surgeries_patients">
+          <End Type="PrezidentClinicModel.patient" Role="patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrezidentClinicModel.surgery" Role="surgery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="surgery">
+              <PropertyRef Name="patient_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -814,24 +916,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="service_id" ColumnName="service_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="patients">
-            <EntityTypeMapping TypeName="PrezidentClinicModel.patient">
-              <MappingFragment StoreEntitySet="patients">
-                <ScalarProperty Name="num_card" ColumnName="num_card" />
-                <ScalarProperty Name="status_id" ColumnName="status_id" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="first_name" ColumnName="first_name" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
-                <ScalarProperty Name="other_name" ColumnName="other_name" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="birthday" ColumnName="birthday" />
-                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -931,6 +1015,37 @@
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="surgeries">
+            <EntityTypeMapping TypeName="PrezidentClinicModel.surgery">
+              <MappingFragment StoreEntitySet="surgeries">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="date_test" ColumnName="date_test" />
+                <ScalarProperty Name="date_call" ColumnName="date_call" />
+                <ScalarProperty Name="date_pay" ColumnName="date_pay" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patients">
+            <EntityTypeMapping TypeName="PrezidentClinicModel.patient">
+              <MappingFragment StoreEntitySet="patients">
+                <ScalarProperty Name="num_card" ColumnName="num_card" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="other_name" ColumnName="other_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

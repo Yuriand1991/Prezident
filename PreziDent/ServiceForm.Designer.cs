@@ -39,11 +39,11 @@ namespace PreziDent
             this.PriceService = new MaterialSkin.Controls.MaterialTextBox();
             this.GroupServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.GroupService = new MaterialSkin.Controls.MaterialComboBox();
+            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NameServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.NameService = new MaterialSkin.Controls.MaterialTextBox();
             this.CodeServiceLabel = new MaterialSkin.Controls.MaterialLabel();
             this.CodeService = new MaterialSkin.Controls.MaterialTextBox();
-            this.groupservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupservicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,6 +203,10 @@ namespace PreziDent
             this.GroupService.TabIndex = 4;
             this.GroupService.ValueMember = "id";
             // 
+            // groupservicesBindingSource
+            // 
+            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
+            // 
             // NameServiceLabel
             // 
             this.NameServiceLabel.AutoSize = true;
@@ -262,10 +266,6 @@ namespace PreziDent
             this.CodeService.Size = new System.Drawing.Size(252, 50);
             this.CodeService.TabIndex = 0;
             this.CodeService.Text = "";
-            // 
-            // groupservicesBindingSource
-            // 
-            this.groupservicesBindingSource.DataSource = typeof(PreziDent.group_services);
             // 
             // ServiceForm
             // 

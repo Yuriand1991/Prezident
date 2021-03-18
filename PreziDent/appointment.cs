@@ -23,8 +23,8 @@ namespace PreziDent
         public string treatment_desc { get; set; }
         public string phone_patient { get; set; }
     
-        public virtual patient patient { get; set; }
         public virtual room room { get; set; }
         public virtual shedule shedule { get; set; }
+        public virtual patient patient { get; set; }
     }
 }

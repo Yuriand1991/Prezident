@@ -12,22 +12,32 @@ namespace PreziDent
     using System;
     using System.Collections.Generic;
     
-    public partial class room
+    public partial class patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public room()
+        public patient()
         {
             this.appointments = new HashSet<appointment>();
+            this.orders = new HashSet<order>();
             this.surgeries = new HashSet<surgery>();
         }
     
         public int id { get; set; }
-        public int number { get; set; }
-        public int user_id { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string other_name { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
+        public string notes { get; set; }
+        public string address { get; set; }
+        public int status_id { get; set; }
+        public string num_card { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
-        public virtual user user { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<order> orders { get; set; }
+        public virtual statuses_patient statuses_patient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<surgery> surgeries { get; set; }
     }

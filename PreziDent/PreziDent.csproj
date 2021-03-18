@@ -250,6 +250,9 @@
     <Compile Include="statuses_patient.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="surgery.cs">
+      <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="TypeProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +267,12 @@
     </Compile>
     <Compile Include="type_product.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurgeryForm.Designer.cs">
+      <DependentUpon>SurgeryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="user.cs">
       <DependentUpon>PreziDentDBEntities.tt</DependentUpon>
@@ -322,6 +331,9 @@
     </Compile>
     <EmbeddedResource Include="ServiceForm.resx">
       <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurgeryForm.resx">
+      <DependentUpon>SurgeryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TypeProductsForm.resx">
       <DependentUpon>TypeProductsForm.cs</DependentUpon>

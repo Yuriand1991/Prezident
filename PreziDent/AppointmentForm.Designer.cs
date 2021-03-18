@@ -343,7 +343,7 @@ namespace PreziDent
             this.Controls.Add(this.DateTimeBox);
             this.Controls.Add(this.PatientBox);
             this.Name = "AppointmentForm";
-            this.Text = "AppointmentForm";
+            this.Text = "Запись на прием";
             this.Shown += new System.EventHandler(this.AppointmentForm_Shown);
             this.TreatmentBox.ResumeLayout(false);
             this.DateTimeBox.ResumeLayout(false);

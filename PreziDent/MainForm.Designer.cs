@@ -36,6 +36,7 @@
             this.MainDrawer = new MaterialSkin.Controls.MaterialDrawer();
             this.MainTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.Room = new System.Windows.Forms.TabPage();
+            this.SurgeryButton = new MaterialSkin.Controls.MaterialButton();
             this.OrderButton = new MaterialSkin.Controls.MaterialButton();
             this.SheduleDayCabinetViewLabel = new System.Windows.Forms.GroupBox();
             this.SheduleDayCabinetView = new System.Windows.Forms.DataGridView();
@@ -132,14 +133,6 @@
             this.ChangePatientButton = new MaterialSkin.Controls.MaterialButton();
             this.AddPatientButton = new MaterialSkin.Controls.MaterialButton();
             this.PatientsView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.othernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Firms = new System.Windows.Forms.TabPage();
             this.ContactsFirmButton = new MaterialSkin.Controls.MaterialButton();
@@ -153,6 +146,12 @@
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.othernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SheduleDayCabinetViewMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
@@ -188,13 +187,13 @@
             this.SheduleDayCabinetViewMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DeleteToolStripMenuItem});
             this.SheduleDayCabinetViewMenuStrip.Name = "SheduleDayCabinetViewMenuStrip";
-            this.SheduleDayCabinetViewMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.SheduleDayCabinetViewMenuStrip.Size = new System.Drawing.Size(119, 26);
             // 
             // DeleteToolStripMenuItem
             // 
             this.DeleteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.DeleteToolStripMenuItem.Text = "Удалить";
             this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
@@ -263,6 +262,7 @@
             // Room
             // 
             this.Room.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Room.Controls.Add(this.SurgeryButton);
             this.Room.Controls.Add(this.OrderButton);
             this.Room.Controls.Add(this.SheduleDayCabinetViewLabel);
             this.Room.Controls.Add(this.MyCabinetCalendar);
@@ -274,6 +274,28 @@
             this.Room.TabIndex = 2;
             this.Room.Text = "Мой кабинет";
             // 
+            // SurgeryButton
+            // 
+            this.SurgeryButton.AutoSize = false;
+            this.SurgeryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SurgeryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.SurgeryButton.Depth = 0;
+            this.SurgeryButton.DrawShadows = true;
+            this.SurgeryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SurgeryButton.HighEmphasis = true;
+            this.SurgeryButton.Icon = null;
+            this.SurgeryButton.Location = new System.Drawing.Point(960, 93);
+            this.SurgeryButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.SurgeryButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SurgeryButton.Name = "SurgeryButton";
+            this.SurgeryButton.Size = new System.Drawing.Size(175, 36);
+            this.SurgeryButton.TabIndex = 6;
+            this.SurgeryButton.Text = "Запись на операцию";
+            this.SurgeryButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.SurgeryButton.UseAccentColor = false;
+            this.SurgeryButton.UseVisualStyleBackColor = false;
+            this.SurgeryButton.Click += new System.EventHandler(this.SurgeryButton_Click);
+            // 
             // OrderButton
             // 
             this.OrderButton.AutoSize = false;
@@ -284,11 +306,11 @@
             this.OrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.OrderButton.HighEmphasis = true;
             this.OrderButton.Icon = null;
-            this.OrderButton.Location = new System.Drawing.Point(1032, 141);
+            this.OrderButton.Location = new System.Drawing.Point(959, 141);
             this.OrderButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OrderButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(102, 36);
+            this.OrderButton.Size = new System.Drawing.Size(175, 36);
             this.OrderButton.TabIndex = 5;
             this.OrderButton.Text = "Заказ";
             this.OrderButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1520,9 +1542,7 @@
             this.lastnameDataGridViewTextBoxColumn,
             this.othernameDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.birthdayDataGridViewTextBoxColumn,
-            this.regdateDataGridViewTextBoxColumn});
+            this.emailDataGridViewTextBoxColumn});
             this.PatientsView.DataSource = this.patientBindingSource;
             this.PatientsView.Dock = System.Windows.Forms.DockStyle.Left;
             this.PatientsView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1532,70 +1552,6 @@
             this.PatientsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PatientsView.Size = new System.Drawing.Size(939, 626);
             this.PatientsView.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // firstnameDataGridViewTextBoxColumn
-            // 
-            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
-            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstnameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // lastnameDataGridViewTextBoxColumn
-            // 
-            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
-            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
-            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastnameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // othernameDataGridViewTextBoxColumn
-            // 
-            this.othernameDataGridViewTextBoxColumn.DataPropertyName = "other_name";
-            this.othernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.othernameDataGridViewTextBoxColumn.Name = "othernameDataGridViewTextBoxColumn";
-            this.othernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.othernameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // birthdayDataGridViewTextBoxColumn
-            // 
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "День рождения";
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-            this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
-            this.birthdayDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // regdateDataGridViewTextBoxColumn
-            // 
-            this.regdateDataGridViewTextBoxColumn.DataPropertyName = "reg_date";
-            this.regdateDataGridViewTextBoxColumn.HeaderText = "Дата регистрации";
-            this.regdateDataGridViewTextBoxColumn.Name = "regdateDataGridViewTextBoxColumn";
-            this.regdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.regdateDataGridViewTextBoxColumn.Visible = false;
             // 
             // patientBindingSource
             // 
@@ -1783,6 +1739,54 @@
             // 
             this.firmBindingSource.DataSource = typeof(PreziDent.firm);
             // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstnameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastnameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // othernameDataGridViewTextBoxColumn
+            // 
+            this.othernameDataGridViewTextBoxColumn.DataPropertyName = "other_name";
+            this.othernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.othernameDataGridViewTextBoxColumn.Name = "othernameDataGridViewTextBoxColumn";
+            this.othernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.othernameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1929,14 +1933,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonepatientDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn othernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn regdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn type_product;
@@ -1954,7 +1950,6 @@
         protected internal System.Windows.Forms.MonthCalendar AllCabinetCalendar;
         private System.Windows.Forms.TabPage Firms;
         private System.Windows.Forms.DataGridView FirmsView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource firmBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
@@ -1968,6 +1963,13 @@
         private MaterialSkin.Controls.MaterialButton OpenNineRoomButton;
         private MaterialSkin.Controls.MaterialButton OpenTwoRoomButton;
         private MaterialSkin.Controls.MaterialButton OpenOneRoomButton;
+        private MaterialSkin.Controls.MaterialButton SurgeryButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn othernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
 
