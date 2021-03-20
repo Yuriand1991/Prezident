@@ -36,6 +36,7 @@ namespace PreziDent
             this.NotesContactLabel = new MaterialSkin.Controls.MaterialLabel();
             this.FirmContactLabel = new MaterialSkin.Controls.MaterialLabel();
             this.FirmContact = new MaterialSkin.Controls.MaterialComboBox();
+            this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DepartmentContactLabel = new MaterialSkin.Controls.MaterialLabel();
             this.DepartmentContact = new MaterialSkin.Controls.MaterialTextBox();
             this.PostContactLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -46,7 +47,6 @@ namespace PreziDent
             this.PhoneContact = new MaterialSkin.Controls.MaterialTextBox();
             this.NameContactLabel = new MaterialSkin.Controls.MaterialLabel();
             this.NameContact = new MaterialSkin.Controls.MaterialTextBox();
-            this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.firmBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +161,10 @@ namespace PreziDent
             this.FirmContact.TabIndex = 11;
             this.FirmContact.UseTallSize = false;
             this.FirmContact.ValueMember = "id";
+            // 
+            // firmBindingSource
+            // 
+            this.firmBindingSource.DataSource = typeof(PreziDent.firm);
             // 
             // DepartmentContactLabel
             // 
@@ -316,10 +320,6 @@ namespace PreziDent
             this.NameContact.TabIndex = 0;
             this.NameContact.Text = "";
             this.NameContact.UseTallSize = false;
-            // 
-            // firmBindingSource
-            // 
-            this.firmBindingSource.DataSource = typeof(PreziDent.firm);
             // 
             // ContactForm
             // 

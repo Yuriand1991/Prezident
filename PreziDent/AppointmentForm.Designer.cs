@@ -36,23 +36,23 @@ namespace PreziDent
             this.Treatment = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.DateTimeBox = new System.Windows.Forms.GroupBox();
             this.EndTime = new MaterialSkin.Controls.MaterialComboBox();
+            this.sheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.EntTimeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.StartTimeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AppointmentDateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.StartTime = new MaterialSkin.Controls.MaterialComboBox();
+            this.sheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PatientBox = new System.Windows.Forms.GroupBox();
             this.NamePatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.PhonePatientLabel = new MaterialSkin.Controls.MaterialLabel();
             this.PhonePatient = new MaterialSkin.Controls.MaterialTextBox();
             this.NamePatient = new MaterialSkin.Controls.MaterialTextBox();
-            this.sheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TreatmentBox.SuspendLayout();
             this.DateTimeBox.SuspendLayout();
-            this.PatientBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource)).BeginInit();
+            this.PatientBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // CnclButton
@@ -169,6 +169,10 @@ namespace PreziDent
             this.EndTime.TabIndex = 4;
             this.EndTime.ValueMember = "id";
             // 
+            // sheduleBindingSource1
+            // 
+            this.sheduleBindingSource1.DataSource = typeof(PreziDent.shedule);
+            // 
             // EntTimeLabel
             // 
             this.EntTimeLabel.AutoSize = true;
@@ -245,6 +249,10 @@ namespace PreziDent
             this.StartTime.TabIndex = 3;
             this.StartTime.ValueMember = "id";
             this.StartTime.SelectedIndexChanged += new System.EventHandler(this.StartTime_SelectedIndexChanged);
+            // 
+            // sheduleBindingSource
+            // 
+            this.sheduleBindingSource.DataSource = typeof(PreziDent.shedule);
             // 
             // PatientBox
             // 
@@ -324,14 +332,6 @@ namespace PreziDent
             this.NamePatient.TabIndex = 0;
             this.NamePatient.Text = "";
             // 
-            // sheduleBindingSource1
-            // 
-            this.sheduleBindingSource1.DataSource = typeof(PreziDent.shedule);
-            // 
-            // sheduleBindingSource
-            // 
-            this.sheduleBindingSource.DataSource = typeof(PreziDent.shedule);
-            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,10 +348,10 @@ namespace PreziDent
             this.TreatmentBox.ResumeLayout(false);
             this.DateTimeBox.ResumeLayout(false);
             this.DateTimeBox.PerformLayout();
-            this.PatientBox.ResumeLayout(false);
-            this.PatientBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheduleBindingSource)).EndInit();
+            this.PatientBox.ResumeLayout(false);
+            this.PatientBox.PerformLayout();
             this.ResumeLayout(false);
 
         }

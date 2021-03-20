@@ -146,12 +146,30 @@
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surgeries = new System.Windows.Forms.TabPage();
+            this.DeleteSurgeryButton = new MaterialSkin.Controls.MaterialButton();
+            this.ChangeSurgeryButton = new MaterialSkin.Controls.MaterialButton();
+            this.AddSurgeryButton = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.SurgeriesView = new System.Windows.Forms.DataGridView();
+            this.surgeryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idPatientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.othernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSurgeryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datepayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datecallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datetestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SheduleDayCabinetViewMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.Room.SuspendLayout();
@@ -179,6 +197,9 @@
             this.Firms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FirmsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmBindingSource)).BeginInit();
+            this.Surgeries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SurgeriesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surgeryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SheduleDayCabinetViewMenuStrip
@@ -248,6 +269,7 @@
             this.MainTabControl.Controls.Add(this.Services);
             this.MainTabControl.Controls.Add(this.Patients);
             this.MainTabControl.Controls.Add(this.Firms);
+            this.MainTabControl.Controls.Add(this.Surgeries);
             this.MainTabControl.Depth = 0;
             this.MainTabControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MainTabControl.Location = new System.Drawing.Point(188, 107);
@@ -1481,7 +1503,7 @@
             this.DeletePatientButton.Name = "DeletePatientButton";
             this.DeletePatientButton.Size = new System.Drawing.Size(185, 36);
             this.DeletePatientButton.TabIndex = 3;
-            this.DeletePatientButton.Text = "Удалить";
+            this.DeletePatientButton.Text = "Удалить пациента";
             this.DeletePatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeletePatientButton.UseAccentColor = false;
             this.DeletePatientButton.UseVisualStyleBackColor = false;
@@ -1503,7 +1525,7 @@
             this.ChangePatientButton.Name = "ChangePatientButton";
             this.ChangePatientButton.Size = new System.Drawing.Size(185, 36);
             this.ChangePatientButton.TabIndex = 2;
-            this.ChangePatientButton.Text = "Изменить";
+            this.ChangePatientButton.Text = "Изменить пациента";
             this.ChangePatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ChangePatientButton.UseAccentColor = false;
             this.ChangePatientButton.UseVisualStyleBackColor = false;
@@ -1525,7 +1547,7 @@
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.Size = new System.Drawing.Size(185, 36);
             this.AddPatientButton.TabIndex = 1;
-            this.AddPatientButton.Text = "Добавить";
+            this.AddPatientButton.Text = "Добавить пациента";
             this.AddPatientButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddPatientButton.UseAccentColor = false;
             this.AddPatientButton.UseVisualStyleBackColor = false;
@@ -1537,7 +1559,7 @@
             this.PatientsView.AutoGenerateColumns = false;
             this.PatientsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PatientsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
+            this.idPatientColumn,
             this.firstnameDataGridViewTextBoxColumn,
             this.lastnameDataGridViewTextBoxColumn,
             this.othernameDataGridViewTextBoxColumn,
@@ -1739,13 +1761,144 @@
             // 
             this.firmBindingSource.DataSource = typeof(PreziDent.firm);
             // 
-            // idDataGridViewTextBoxColumn2
+            // Surgeries
             // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Visible = false;
+            this.Surgeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Surgeries.Controls.Add(this.DeleteSurgeryButton);
+            this.Surgeries.Controls.Add(this.ChangeSurgeryButton);
+            this.Surgeries.Controls.Add(this.AddSurgeryButton);
+            this.Surgeries.Controls.Add(this.materialButton1);
+            this.Surgeries.Controls.Add(this.SurgeriesView);
+            this.Surgeries.Location = new System.Drawing.Point(4, 22);
+            this.Surgeries.Name = "Surgeries";
+            this.Surgeries.Padding = new System.Windows.Forms.Padding(3);
+            this.Surgeries.Size = new System.Drawing.Size(1141, 632);
+            this.Surgeries.TabIndex = 7;
+            this.Surgeries.Text = "Операции";
+            // 
+            // DeleteSurgeryButton
+            // 
+            this.DeleteSurgeryButton.AutoSize = false;
+            this.DeleteSurgeryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteSurgeryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.DeleteSurgeryButton.Depth = 0;
+            this.DeleteSurgeryButton.DrawShadows = true;
+            this.DeleteSurgeryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeleteSurgeryButton.HighEmphasis = true;
+            this.DeleteSurgeryButton.Icon = null;
+            this.DeleteSurgeryButton.Location = new System.Drawing.Point(952, 105);
+            this.DeleteSurgeryButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DeleteSurgeryButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteSurgeryButton.Name = "DeleteSurgeryButton";
+            this.DeleteSurgeryButton.Size = new System.Drawing.Size(182, 36);
+            this.DeleteSurgeryButton.TabIndex = 4;
+            this.DeleteSurgeryButton.Text = "Удалить операцию";
+            this.DeleteSurgeryButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.DeleteSurgeryButton.UseAccentColor = false;
+            this.DeleteSurgeryButton.UseVisualStyleBackColor = false;
+            // 
+            // ChangeSurgeryButton
+            // 
+            this.ChangeSurgeryButton.AutoSize = false;
+            this.ChangeSurgeryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ChangeSurgeryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ChangeSurgeryButton.Depth = 0;
+            this.ChangeSurgeryButton.DrawShadows = true;
+            this.ChangeSurgeryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChangeSurgeryButton.HighEmphasis = true;
+            this.ChangeSurgeryButton.Icon = null;
+            this.ChangeSurgeryButton.Location = new System.Drawing.Point(952, 57);
+            this.ChangeSurgeryButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ChangeSurgeryButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ChangeSurgeryButton.Name = "ChangeSurgeryButton";
+            this.ChangeSurgeryButton.Size = new System.Drawing.Size(182, 36);
+            this.ChangeSurgeryButton.TabIndex = 3;
+            this.ChangeSurgeryButton.Text = "Изменить операцию";
+            this.ChangeSurgeryButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ChangeSurgeryButton.UseAccentColor = false;
+            this.ChangeSurgeryButton.UseVisualStyleBackColor = false;
+            this.ChangeSurgeryButton.Click += new System.EventHandler(this.ChangeSurgeryButton_Click);
+            // 
+            // AddSurgeryButton
+            // 
+            this.AddSurgeryButton.AutoSize = false;
+            this.AddSurgeryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddSurgeryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.AddSurgeryButton.Depth = 0;
+            this.AddSurgeryButton.DrawShadows = true;
+            this.AddSurgeryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddSurgeryButton.HighEmphasis = true;
+            this.AddSurgeryButton.Icon = null;
+            this.AddSurgeryButton.Location = new System.Drawing.Point(952, 9);
+            this.AddSurgeryButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.AddSurgeryButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddSurgeryButton.Name = "AddSurgeryButton";
+            this.AddSurgeryButton.Size = new System.Drawing.Size(182, 36);
+            this.AddSurgeryButton.TabIndex = 2;
+            this.AddSurgeryButton.Text = "Добавить операцию";
+            this.AddSurgeryButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.AddSurgeryButton.UseAccentColor = false;
+            this.AddSurgeryButton.UseVisualStyleBackColor = false;
+            this.AddSurgeryButton.Click += new System.EventHandler(this.AddSurgeryButton_Click);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(961, 180);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(158, 36);
+            this.materialButton1.TabIndex = 1;
+            this.materialButton1.Text = "materialButton1";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // SurgeriesView
+            // 
+            this.SurgeriesView.AllowUserToAddRows = false;
+            this.SurgeriesView.AutoGenerateColumns = false;
+            this.SurgeriesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SurgeriesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idSurgeryColumn,
+            this.patientidDataGridViewTextBoxColumn,
+            this.roomidDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn2,
+            this.patientDataGridViewTextBoxColumn,
+            this.roomDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.datepayDataGridViewTextBoxColumn,
+            this.datecallDataGridViewTextBoxColumn,
+            this.datetestDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.SurgeriesView.DataSource = this.surgeryBindingSource;
+            this.SurgeriesView.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.SurgeriesView.Location = new System.Drawing.Point(6, 6);
+            this.SurgeriesView.Name = "SurgeriesView";
+            this.SurgeriesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SurgeriesView.Size = new System.Drawing.Size(939, 623);
+            this.SurgeriesView.TabIndex = 0;
+            this.SurgeriesView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.SurgeriesView_DataError);
+            // 
+            // surgeryBindingSource
+            // 
+            this.surgeryBindingSource.DataSource = typeof(PreziDent.surgery);
+            // 
+            // idPatientColumn
+            // 
+            this.idPatientColumn.DataPropertyName = "id";
+            this.idPatientColumn.HeaderText = "id";
+            this.idPatientColumn.Name = "idPatientColumn";
+            this.idPatientColumn.ReadOnly = true;
+            this.idPatientColumn.Visible = false;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -1786,6 +1939,88 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idSurgeryColumn
+            // 
+            this.idSurgeryColumn.DataPropertyName = "id";
+            this.idSurgeryColumn.HeaderText = "id";
+            this.idSurgeryColumn.Name = "idSurgeryColumn";
+            this.idSurgeryColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idSurgeryColumn.Visible = false;
+            // 
+            // patientidDataGridViewTextBoxColumn
+            // 
+            this.patientidDataGridViewTextBoxColumn.DataPropertyName = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.HeaderText = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.Name = "patientidDataGridViewTextBoxColumn";
+            this.patientidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // roomidDataGridViewTextBoxColumn
+            // 
+            this.roomidDataGridViewTextBoxColumn.DataPropertyName = "room_id";
+            this.roomidDataGridViewTextBoxColumn.HeaderText = "room_id";
+            this.roomidDataGridViewTextBoxColumn.Name = "roomidDataGridViewTextBoxColumn";
+            this.roomidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // patientDataGridViewTextBoxColumn
+            // 
+            this.patientDataGridViewTextBoxColumn.DataPropertyName = "patient";
+            this.patientDataGridViewTextBoxColumn.HeaderText = "Пациент";
+            this.patientDataGridViewTextBoxColumn.Name = "patientDataGridViewTextBoxColumn";
+            this.patientDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // roomDataGridViewTextBoxColumn
+            // 
+            this.roomDataGridViewTextBoxColumn.DataPropertyName = "room";
+            this.roomDataGridViewTextBoxColumn.HeaderText = "Кабинет №";
+            this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
+            this.roomDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата операции";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // datepayDataGridViewTextBoxColumn
+            // 
+            this.datepayDataGridViewTextBoxColumn.DataPropertyName = "date_pay";
+            this.datepayDataGridViewTextBoxColumn.HeaderText = "Дата оплаты";
+            this.datepayDataGridViewTextBoxColumn.Name = "datepayDataGridViewTextBoxColumn";
+            this.datepayDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // datecallDataGridViewTextBoxColumn
+            // 
+            this.datecallDataGridViewTextBoxColumn.DataPropertyName = "date_call";
+            this.datecallDataGridViewTextBoxColumn.HeaderText = "Дата обращения";
+            this.datecallDataGridViewTextBoxColumn.Name = "datecallDataGridViewTextBoxColumn";
+            this.datecallDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // datetestDataGridViewTextBoxColumn
+            // 
+            this.datetestDataGridViewTextBoxColumn.DataPropertyName = "date_test";
+            this.datetestDataGridViewTextBoxColumn.HeaderText = "Дата анализов";
+            this.datetestDataGridViewTextBoxColumn.Name = "datetestDataGridViewTextBoxColumn";
+            this.datetestDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.FalseValue = "0";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Закрыта";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.statusDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.statusDataGridViewTextBoxColumn.TrueValue = "1";
+            this.statusDataGridViewTextBoxColumn.Width = 70;
             // 
             // MainForm
             // 
@@ -1831,6 +2066,10 @@
             this.Firms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FirmsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmBindingSource)).EndInit();
+            this.Surgeries.ResumeLayout(false);
+            this.Surgeries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SurgeriesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surgeryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1964,12 +2203,30 @@
         private MaterialSkin.Controls.MaterialButton OpenTwoRoomButton;
         private MaterialSkin.Controls.MaterialButton OpenOneRoomButton;
         private MaterialSkin.Controls.MaterialButton SurgeryButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TabPage Surgeries;
+        private System.Windows.Forms.DataGridView SurgeriesView;
+        private System.Windows.Forms.BindingSource surgeryBindingSource;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton DeleteSurgeryButton;
+        private MaterialSkin.Controls.MaterialButton ChangeSurgeryButton;
+        private MaterialSkin.Controls.MaterialButton AddSurgeryButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPatientColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn othernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSurgeryColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datepayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datecallDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datetestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
 

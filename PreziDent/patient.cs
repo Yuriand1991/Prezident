@@ -35,6 +35,11 @@ namespace PreziDent
 
         public string full_name { get { return last_name.Trim() + " " + first_name.Trim() + " " + other_name.Trim(); } }
 
+        public override string ToString()
+        {
+            return full_name;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

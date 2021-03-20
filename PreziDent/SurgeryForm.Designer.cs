@@ -48,7 +48,11 @@ namespace PreziDent
             this.CnclButton = new MaterialSkin.Controls.MaterialButton();
             this.SurgeryName = new MaterialSkin.Controls.MaterialTextBox();
             this.SurgeryNameLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.SurgeryCabinetNum = new MaterialSkin.Controls.MaterialComboBox();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // patientBindingSource
@@ -111,7 +115,7 @@ namespace PreziDent
             this.SurgeryDateCall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.SurgeryDateCall.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDateCall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDateCall.Location = new System.Drawing.Point(25, 282);
+            this.SurgeryDateCall.Location = new System.Drawing.Point(27, 346);
             this.SurgeryDateCall.Name = "SurgeryDateCall";
             this.SurgeryDateCall.Size = new System.Drawing.Size(171, 24);
             this.SurgeryDateCall.TabIndex = 6;
@@ -123,7 +127,7 @@ namespace PreziDent
             this.SurgeryDateCallLabel.Depth = 0;
             this.SurgeryDateCallLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDateCallLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDateCallLabel.Location = new System.Drawing.Point(22, 260);
+            this.SurgeryDateCallLabel.Location = new System.Drawing.Point(24, 324);
             this.SurgeryDateCallLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.SurgeryDateCallLabel.Name = "SurgeryDateCallLabel";
             this.SurgeryDateCallLabel.Size = new System.Drawing.Size(131, 19);
@@ -137,7 +141,7 @@ namespace PreziDent
             this.SurgeryDataLabel.Depth = 0;
             this.SurgeryDataLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDataLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDataLabel.Location = new System.Drawing.Point(22, 316);
+            this.SurgeryDataLabel.Location = new System.Drawing.Point(24, 380);
             this.SurgeryDataLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.SurgeryDataLabel.Name = "SurgeryDataLabel";
             this.SurgeryDataLabel.Size = new System.Drawing.Size(118, 19);
@@ -149,7 +153,7 @@ namespace PreziDent
             this.SurgeryData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.SurgeryData.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryData.Location = new System.Drawing.Point(25, 338);
+            this.SurgeryData.Location = new System.Drawing.Point(27, 402);
             this.SurgeryData.Name = "SurgeryData";
             this.SurgeryData.Size = new System.Drawing.Size(171, 24);
             this.SurgeryData.TabIndex = 8;
@@ -161,7 +165,7 @@ namespace PreziDent
             this.SurgeryDatePayLabel.Depth = 0;
             this.SurgeryDatePayLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDatePayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDatePayLabel.Location = new System.Drawing.Point(22, 381);
+            this.SurgeryDatePayLabel.Location = new System.Drawing.Point(24, 445);
             this.SurgeryDatePayLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.SurgeryDatePayLabel.Name = "SurgeryDatePayLabel";
             this.SurgeryDatePayLabel.Size = new System.Drawing.Size(103, 19);
@@ -173,7 +177,7 @@ namespace PreziDent
             this.SurgeryDatePay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.SurgeryDatePay.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDatePay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDatePay.Location = new System.Drawing.Point(25, 403);
+            this.SurgeryDatePay.Location = new System.Drawing.Point(27, 467);
             this.SurgeryDatePay.Name = "SurgeryDatePay";
             this.SurgeryDatePay.Size = new System.Drawing.Size(171, 24);
             this.SurgeryDatePay.TabIndex = 10;
@@ -185,7 +189,7 @@ namespace PreziDent
             this.SurgeryDateTestLabel.Depth = 0;
             this.SurgeryDateTestLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDateTestLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDateTestLabel.Location = new System.Drawing.Point(22, 442);
+            this.SurgeryDateTestLabel.Location = new System.Drawing.Point(24, 506);
             this.SurgeryDateTestLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.SurgeryDateTestLabel.Name = "SurgeryDateTestLabel";
             this.SurgeryDateTestLabel.Size = new System.Drawing.Size(118, 19);
@@ -197,7 +201,7 @@ namespace PreziDent
             this.SurgeryDateTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.SurgeryDateTest.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.SurgeryDateTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryDateTest.Location = new System.Drawing.Point(25, 464);
+            this.SurgeryDateTest.Location = new System.Drawing.Point(27, 528);
             this.SurgeryDateTest.Name = "SurgeryDateTest";
             this.SurgeryDateTest.Size = new System.Drawing.Size(171, 24);
             this.SurgeryDateTest.TabIndex = 12;
@@ -209,7 +213,7 @@ namespace PreziDent
             this.SurgeryIsOpen.Checked = true;
             this.SurgeryIsOpen.Depth = 0;
             this.SurgeryIsOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryIsOpen.Location = new System.Drawing.Point(243, 424);
+            this.SurgeryIsOpen.Location = new System.Drawing.Point(27, 555);
             this.SurgeryIsOpen.Margin = new System.Windows.Forms.Padding(0);
             this.SurgeryIsOpen.MouseLocation = new System.Drawing.Point(-1, -1);
             this.SurgeryIsOpen.MouseState = MaterialSkin.MouseState.HOVER;
@@ -229,7 +233,7 @@ namespace PreziDent
             this.SurgeryIsClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.SurgeryIsClose.Depth = 0;
             this.SurgeryIsClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SurgeryIsClose.Location = new System.Drawing.Point(243, 461);
+            this.SurgeryIsClose.Location = new System.Drawing.Point(152, 555);
             this.SurgeryIsClose.Margin = new System.Windows.Forms.Padding(0);
             this.SurgeryIsClose.MouseLocation = new System.Drawing.Point(-1, -1);
             this.SurgeryIsClose.MouseState = MaterialSkin.MouseState.HOVER;
@@ -252,7 +256,7 @@ namespace PreziDent
             this.OkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.OkButton.HighEmphasis = true;
             this.OkButton.Icon = null;
-            this.OkButton.Location = new System.Drawing.Point(25, 549);
+            this.OkButton.Location = new System.Drawing.Point(27, 613);
             this.OkButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OkButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OkButton.Name = "OkButton";
@@ -275,7 +279,7 @@ namespace PreziDent
             this.CnclButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CnclButton.HighEmphasis = true;
             this.CnclButton.Icon = null;
-            this.CnclButton.Location = new System.Drawing.Point(130, 549);
+            this.CnclButton.Location = new System.Drawing.Point(132, 613);
             this.CnclButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CnclButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CnclButton.Name = "CnclButton";
@@ -317,11 +321,55 @@ namespace PreziDent
             this.SurgeryNameLabel.TabIndex = 19;
             this.SurgeryNameLabel.Text = "Наименование операции:";
             // 
+            // SurgeryCabinetNum
+            // 
+            this.SurgeryCabinetNum.AutoResize = false;
+            this.SurgeryCabinetNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.SurgeryCabinetNum.DataSource = this.roomBindingSource;
+            this.SurgeryCabinetNum.Depth = 0;
+            this.SurgeryCabinetNum.DisplayMember = "number";
+            this.SurgeryCabinetNum.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.SurgeryCabinetNum.DropDownHeight = 174;
+            this.SurgeryCabinetNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SurgeryCabinetNum.DropDownWidth = 121;
+            this.SurgeryCabinetNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.SurgeryCabinetNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SurgeryCabinetNum.FormattingEnabled = true;
+            this.SurgeryCabinetNum.IntegralHeight = false;
+            this.SurgeryCabinetNum.ItemHeight = 43;
+            this.SurgeryCabinetNum.Location = new System.Drawing.Point(23, 263);
+            this.SurgeryCabinetNum.MaxDropDownItems = 4;
+            this.SurgeryCabinetNum.MouseState = MaterialSkin.MouseState.OUT;
+            this.SurgeryCabinetNum.Name = "SurgeryCabinetNum";
+            this.SurgeryCabinetNum.Size = new System.Drawing.Size(128, 49);
+            this.SurgeryCabinetNum.TabIndex = 20;
+            this.SurgeryCabinetNum.ValueMember = "id";
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataSource = typeof(PreziDent.room);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(23, 241);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel2.TabIndex = 21;
+            this.materialLabel2.Text = "Номер кабинета:";
+            // 
             // SurgeryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 619);
+            this.ClientSize = new System.Drawing.Size(353, 671);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.SurgeryCabinetNum);
             this.Controls.Add(this.PatientList);
             this.Controls.Add(this.CnclButton);
             this.Controls.Add(this.OkButton);
@@ -341,7 +389,9 @@ namespace PreziDent
             this.Controls.Add(this.SurgeryNameLabel);
             this.Name = "SurgeryForm";
             this.Text = "Запись на операцию";
+            this.Shown += new System.EventHandler(this.SurgeryForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +416,8 @@ namespace PreziDent
         protected internal MaterialSkin.Controls.MaterialRadioButton SurgeryIsClose;
         protected internal MaterialSkin.Controls.MaterialTextBox SurgeryName;
         private MaterialSkin.Controls.MaterialLabel SurgeryNameLabel;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        protected internal MaterialSkin.Controls.MaterialComboBox SurgeryCabinetNum;
     }
 }

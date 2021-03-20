@@ -77,14 +77,19 @@ namespace PreziDent
             //Загрузка расписания (просто таблицы из бд)
             DataBase.db.appointments.Load();
 
+            //Загрузка операций
+            DataBase.db.surgeries.Load();
+            SurgeriesView.DataSource = DataBase.db.surgeries.Local.ToBindingList();
+
+            //Загрузка кабинетов
+            DataBase.db.rooms.Load();
             DateTime NowDate = DateTime.Now.Date;
             if (this.User.role_id != ADMIN)//Если пользователь не администратор, а врач
             {
                 //Загрузка записей приема
                 int UserId = this.User.id;
                 // MessageBox.Show(UserId.ToString());
-                DataBase.db.rooms.Where(r => r.user_id == UserId).Load();
-                this.Cabinet = DataBase.db.rooms.Local.FirstOrDefault();
+                this.Cabinet = DataBase.db.rooms.Local.Where(r => r.user_id == UserId).FirstOrDefault();
                 if (Cabinet != null)
                 {
                     MyCabinetNumLabel.Text = "Кабинет № " + this.Cabinet.number.ToString();
@@ -225,6 +230,81 @@ namespace PreziDent
             rowIndex = row.Index;
 
             Grid.Rows[rowIndex].Selected = true;
+        }
+
+        /********************************/
+        /*  Метод записи на операцию    */
+        /********************************/
+        public void AddSurgery(SurgeryForm surgeryForm)
+        {
+            if (Convert.ToInt32(surgeryForm.Patient.Tag) == 0)//созаем нового пациента
+            {
+                statuses_patient StatusPatient = DataBase.db.statuses_patient.Where(sp => sp.name == "Первичный").FirstOrDefault();
+
+                using (var transaction = DataBase.db.Database.BeginTransaction())//создаем транзакцию
+                {
+                    try
+                    {
+                        patient Patient = new patient
+                        {
+                            last_name = surgeryForm.FullName[0],
+                            first_name = surgeryForm.FullName[1],
+                            other_name = surgeryForm.FullName[2],
+                            phone = "",
+                            email = "",
+                            num_card = "",
+                            status_id = StatusPatient.id,
+                            address = "",
+                            notes = ""
+                        };
+
+                        DataBase.db.patients.Add(Patient);
+                        DataBase.db.Entry(Patient).State = EntityState.Added;
+                        DataBase.db.SaveChanges();
+
+                        surgery Surgery = new surgery
+                        {
+                            patient_id = Patient.id,
+                            date = surgeryForm.SurgeryData.Value,
+                            date_call = surgeryForm.SurgeryDateCall.Value,
+                            date_pay = surgeryForm.SurgeryDatePay.Value,
+                            date_test = surgeryForm.SurgeryDateTest.Value,
+                            status = surgeryForm.Status,
+                            room_id = this.Cabinet.id,
+                            name = surgeryForm.SurgeryName.Text
+                        };
+
+                        DataBase.db.surgeries.Add(Surgery);
+                        DataBase.db.Entry(Surgery).State = EntityState.Added;
+                        DataBase.db.SaveChanges();
+
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                    }
+                }
+
+            }
+            else//привязываем к существующему пациенту
+            {
+                surgery Surgery = new surgery
+                {
+                    patient_id = Convert.ToInt32(surgeryForm.Patient.Tag),
+                    date = surgeryForm.SurgeryData.Value,
+                    date_call = surgeryForm.SurgeryDateCall.Value,
+                    date_pay = surgeryForm.SurgeryDatePay.Value,
+                    date_test = surgeryForm.SurgeryDateTest.Value,
+                    status = surgeryForm.Status,
+                    room_id = this.Cabinet.id,
+                    name = surgeryForm.SurgeryName.Text
+                };
+
+                DataBase.db.surgeries.Add(Surgery);
+                DataBase.db.Entry(Surgery).State = EntityState.Added;
+                DataBase.db.SaveChanges();
+            }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -1031,79 +1111,108 @@ namespace PreziDent
         private void SurgeryButton_Click(object sender, EventArgs e)
         {
             SurgeryForm surgeryForm = new SurgeryForm();
+            
+            surgeryForm.SurgeryCabinetNum.SelectedIndex = surgeryForm.SurgeryCabinetNum.FindStringExact(DataBase.db.rooms.Find(this.Cabinet.id).number.ToString());
             DialogResult result = surgeryForm.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
                 return;
-           
-            if(Convert.ToInt32(surgeryForm.Patient.Tag) == 0)//созаем нового пациента
+
+            AddSurgery(surgeryForm);
+
+            idPatientColumn.Visible = false;
+            idSurgeryColumn.Visible = false;
+
+            SurgeriesView.Refresh();
+            PatientsView.Refresh();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            DataBase.db.SaveChanges();
+        }
+
+        /********************************************************************************/
+        /*  Обработка ошибок при редактировании недопустимых полей в таблице  Операции  */
+        /********************************************************************************/
+        private void SurgeriesView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Из этой таблицы нельзя изменить данный столбец!\nДля изменения данного столбца нажмите кнопку ИЗМЕНИТЬ.");
+            SurgeriesView.CancelEdit();
+        }
+
+        /*******************************************/
+        /*  Запись на операцию  из вкладки операции*/
+        /*******************************************/
+        private void AddSurgeryButton_Click(object sender, EventArgs e)
+        {
+            SurgeryForm surgeryForm = new SurgeryForm();
+            DialogResult result = surgeryForm.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            AddSurgery(surgeryForm);
+
+            SurgeriesView.Refresh();
+            PatientsView.Refresh();
+        }
+
+        /****************************************/
+        /*  Метод изменения записи об операции  */
+        /****************************************/
+        private void ChangeSurgeryButton_Click(object sender, EventArgs e)
+        {
+            if (SurgeriesView.SelectedRows.Count > 0)
             {
-                statuses_patient StatusPatient = DataBase.db.statuses_patient.Where(sp => sp.name == "Первичный").FirstOrDefault();
+                int index = SurgeriesView.SelectedRows[0].Index;
+                int id = 0, patientId = 0;
+               
+                //id операции
+                bool converted = Int32.TryParse(SurgeriesView[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
 
-                using (var transaction = DataBase.db.Database.BeginTransaction())//создаем транзакцию
-                {
-                    try
-                    {
-                        patient Patient = new patient
-                        {
-                            last_name = surgeryForm.FullName[0],
-                            first_name = surgeryForm.FullName[1],
-                            other_name = surgeryForm.FullName[2],
-                            phone = "",
-                            email = "",
-                            num_card = "",
-                            status_id = StatusPatient.id,
-                            address = "",
-                            notes = ""
-                        };
+                //id пациента
+                converted = Int32.TryParse(SurgeriesView[1, index].Value.ToString(), out patientId);
+                if (converted == false)
+                    return;
 
-                        DataBase.db.patients.Add(Patient);
-                        DataBase.db.Entry(Patient).State = EntityState.Added;
-                        DataBase.db.SaveChanges();
+                surgery Surgery = DataBase.db.surgeries.Find(id);
+                patient Patient = DataBase.db.patients.Find(patientId);
 
-                        surgery Surgery = new surgery
-                        {
-                            patient_id = Patient.id,
-                            date = surgeryForm.SurgeryData.Value,
-                            date_call = surgeryForm.SurgeryDateCall.Value,
-                            date_pay = surgeryForm.SurgeryDatePay.Value,
-                            date_test = surgeryForm.SurgeryDateTest.Value,
-                            status = surgeryForm.Status,
-                            room_id = this.Cabinet.id,
-                            name = surgeryForm.SurgeryName.Text
-                        };
-                        
-                        DataBase.db.surgeries.Add(Surgery);
-                        DataBase.db.Entry(Surgery).State = EntityState.Added;
-                        DataBase.db.SaveChanges();
+                SurgeryForm surgeryForm = new SurgeryForm();
 
-                        transaction.Commit();
-                    }
-                    catch(Exception)
-                    {
-                        transaction.Rollback();
-                    }
-                }
+                surgeryForm.Patient.Tag = patientId;
+                surgeryForm.Patient.Text = Patient.full_name;
+                surgeryForm.SurgeryData.Value = (DateTime)Surgery.date;
+                surgeryForm.SurgeryDateCall.Value = (DateTime)Surgery.date_call;
+                surgeryForm.SurgeryDatePay.Value = (DateTime)Surgery.date_pay;
+                surgeryForm.SurgeryDateTest.Value = (DateTime)Surgery.date_test;
+                surgeryForm.Status = Surgery.status;
+                surgeryForm.SurgeryCabinetNum.SelectedIndex = surgeryForm.SurgeryCabinetNum.FindStringExact(DataBase.db.rooms.Find(Surgery.room_id).number.ToString());
+                surgeryForm.SurgeryName.Text = Surgery.name;
+               
+                if (Surgery.status == 1)
+                    surgeryForm.SurgeryIsClose.Checked = true;
+                else
+                    surgeryForm.SurgeryIsClose.Checked = false;
 
-            }
-            else//привязываем к существующему пациенту
-            {
-                surgery Surgery = new surgery
-                {
-                    patient_id = Convert.ToInt32(surgeryForm.Patient.Tag),
-                    date = surgeryForm.SurgeryData.Value,
-                    date_call = surgeryForm.SurgeryDateCall.Value,
-                    date_pay = surgeryForm.SurgeryDatePay.Value,
-                    date_test = surgeryForm.SurgeryDateTest.Value,
-                    status = surgeryForm.Status,
-                    room_id = this.Cabinet.id,
-                    name = surgeryForm.SurgeryName.Text
-                };
+                DialogResult Result = surgeryForm.ShowDialog(this);
 
-                DataBase.db.surgeries.Add(Surgery);
-                DataBase.db.Entry(Surgery).State = EntityState.Added;
+                if (Result == DialogResult.Cancel)
+                    return;
+
+               /* Firm.name = firmForm.NameFirm.Text;
+                Firm.address = firmForm.AddressFirm.Text;
+                Firm.notes = firmForm.NotesFirm.Text;
+
+                DataBase.db.Entry(Firm).State = EntityState.Modified;
                 DataBase.db.SaveChanges();
+
+                FirmsView.Refresh(); // обновляем грид*/
             }
         }
+
     }
 }

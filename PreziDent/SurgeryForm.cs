@@ -20,6 +20,7 @@ namespace PreziDent
             InitializeComponent();
             PatientList.DataSource = DataBase.db.patients.Local.ToBindingList();
             FullName = Patient.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            SurgeryCabinetNum.DataSource = DataBase.db.rooms.Local.ToBindingList();
         }
 
         /********************/
@@ -115,6 +116,10 @@ namespace PreziDent
         private void SurgeryIsOpen_Click(object sender, EventArgs e)
         {
             Status = 0;
+        }
+
+        private void SurgeryForm_Shown(object sender, EventArgs e)
+        {
         }
     }
 }
