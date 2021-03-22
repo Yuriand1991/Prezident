@@ -28,6 +28,7 @@ namespace PreziDent
         /********************/
         private void Patient_TextChanged(object sender, EventArgs e)
         {
+            Patient.Tag = 0;
             FullName = Patient.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string FirstName = "";
             string LastName = "";
@@ -84,8 +85,8 @@ namespace PreziDent
         private void PatientList_Click(object sender, EventArgs e)
         {
             Patient.Text = PatientList.Text;
-            Patient.Tag = PatientList.SelectedValue;//id
             PatientList.Visible = false;
+            Patient.Tag = PatientList.SelectedValue;//id
         }
 
         private void OkButton_Click(object sender, EventArgs e)

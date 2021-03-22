@@ -270,7 +270,7 @@ namespace PreziDent
                             date_pay = surgeryForm.SurgeryDatePay.Value,
                             date_test = surgeryForm.SurgeryDateTest.Value,
                             status = surgeryForm.Status,
-                            room_id = this.Cabinet.id,
+                            room_id = (int)surgeryForm.SurgeryCabinetNum.SelectedValue,
                             name = surgeryForm.SurgeryName.Text
                         };
 
@@ -297,7 +297,7 @@ namespace PreziDent
                     date_pay = surgeryForm.SurgeryDatePay.Value,
                     date_test = surgeryForm.SurgeryDateTest.Value,
                     status = surgeryForm.Status,
-                    room_id = this.Cabinet.id,
+                    room_id = (int)surgeryForm.SurgeryCabinetNum.SelectedValue,
                     name = surgeryForm.SurgeryName.Text
                 };
 
